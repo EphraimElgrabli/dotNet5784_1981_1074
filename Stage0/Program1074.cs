@@ -10,8 +10,8 @@ namespace Targil0
             Console.ReadKey();
 
         }
-        static partial void Welcome1074();
-        private static void Welcome1981() { }
+        static partial void Welcome1981();
+        private static void Welcome1074() { }
 
     }
 }
