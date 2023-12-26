@@ -11,6 +11,5 @@ namespace Targil0
         }
         static partial void Welcome1981();
         private static void Welcome1074() { }
-
     }
 }
