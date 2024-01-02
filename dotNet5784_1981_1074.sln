@@ -5,9 +5,11 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stage0", "Stage0\Stage0.csproj", "{D1F0E9AB-1A0C-4877-B67C-7AA3435B9F60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DalFacade", "DalFacade\DalFacade.csproj", "{327E7645-04DD-4F7A-A1CD-A8EF3BE4D126}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalFacade", "DalFacade\DalFacade.csproj", "{327E7645-04DD-4F7A-A1CD-A8EF3BE4D126}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DalTest", "DalTest\DalTest.csproj", "{6B5E35BF-9B32-4C95-8CC6-16B37CA7A52D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalTest", "DalTest\DalTest.csproj", "{6B5E35BF-9B32-4C95-8CC6-16B37CA7A52D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalList", "DalList\DalList.csproj", "{9AE04FD6-D1E0-4584-A77D-40E79C187E7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{6B5E35BF-9B32-4C95-8CC6-16B37CA7A52D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B5E35BF-9B32-4C95-8CC6-16B37CA7A52D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B5E35BF-9B32-4C95-8CC6-16B37CA7A52D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AE04FD6-D1E0-4584-A77D-40E79C187E7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AE04FD6-D1E0-4584-A77D-40E79C187E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AE04FD6-D1E0-4584-A77D-40E79C187E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AE04FD6-D1E0-4584-A77D-40E79C187E7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
