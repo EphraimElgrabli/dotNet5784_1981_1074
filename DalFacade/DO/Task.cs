@@ -22,4 +22,12 @@ public record Task
     string Deliverables,
     string Remarks,
     int EngineerId  //conect to engineerid
-);
+)
+{
+    public Task() : this(0) { } //empty ctor for stage 3
+
+    /// <summary>
+    /// RegistrationDate - registration date of the current student record
+    /// </summary>
+    public DateTime RegistrationDate => DateTime.Now; //get only
+}
