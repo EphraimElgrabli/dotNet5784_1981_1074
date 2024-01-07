@@ -7,7 +7,7 @@ public record Task
     DateTime CreatedAtDate,
     TimeSpan RequiredEffortTime,
     bool IsMilestone,
-    DO.EngineerExperience Copmlexity,
+    DO.UserLevel Copmlexity,
     DateTime StartDate,
     DateTime ScheduledDate,
     DateTime DeadlineDate,

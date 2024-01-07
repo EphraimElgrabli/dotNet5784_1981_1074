@@ -2,13 +2,13 @@
 namespace DO;
 
 
-public enum EngineerExperience
+public enum UserLevel
 {
-  Beginner,
-  AdvancedBeginner,
-  Intermediate,
-  Advanced,
-  Expert
+  supportes,
+  closeFriends,
+  bride,
+  groom,
+  producer
 }
   
 public enum Status
