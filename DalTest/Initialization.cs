@@ -1,5 +1,6 @@
 ﻿namespace DalTest;
 
+using System.Data.Common;
 using DalApi;
 using DO;
 public static class Initialization
@@ -11,10 +12,9 @@ public static class Initialization
     private static void createTask()
     {
         string[] arr = new string[] {
-
+           
         }; ///we need choose a name for the Task  i
-
-
+        s_dalTask.Create()
     }
 
     private static void createUser()
