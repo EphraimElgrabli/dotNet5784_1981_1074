@@ -5,6 +5,7 @@ using DalApi;
 using DO;
 using System.Reflection;
 using System.Security.Cryptography;
+using System;
 
 public static class Initialization
 {
@@ -75,19 +76,27 @@ public static class Initialization
             int engId = s_rand.Next(1000, 1020);
 
             Task newTask = new(0,alias, description, createdDate, efforttime, isMilestone, (DO.UserLevel)userLvl, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId);
-            s_dalTask!.Create
+            s_dalTask!.Create(newTask);
         }
     }
 
     private static void createUser()
     {
-        
-        User Motherofgroom= new User();
-        User Motherofbride= new User();
-        User Fatherofgroom = new User();
-        User Fatherofbride = new User();
-        User Groom= new User();
-        User Bride= new User();
+        string[] users = new string[] {
+            "bigMama",
+            "bigPapa",
+            "Kala",
+            "Hatan",
+            "yoram",
+            "shimoshon"
+        };
+        foreach (string user in users) {
+            int id = s_rand.Next(1, 100);
+            int userLvl = s_rand.Next(0, 4);
+            int phoneNumber = s_rand.Next(97200, 97299);
+            User newUser = new(id, user + "@gmail.com", phoneNumber, user, (DO.UserLevel)userLvl);
+            s_dalUser!.Create(newUser);
+        }
     }
     private static void createDependency() { 
     
