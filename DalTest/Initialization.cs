@@ -94,11 +94,31 @@ public static class Initialization
             int id = s_rand.Next(1, 100);
             int userLvl = s_rand.Next(0, 4);
             int phoneNumber = s_rand.Next(97200, 97299);
-            User newUser = new(id, user + "@gmail.com", phoneNumber, user, (DO.UserLevel)userLvl);
+            User newUser = new(id, user + "@gmail.com", phoneNumber.ToString(), user, (DO.UserLevel)userLvl);
             s_dalUser!.Create(newUser);
         }
     }
-    private static void createDependency() { 
-    
+    private static void createDependency()
+    {
+        for (int i = 0; i < 50; i++)
+        {
+            int depend = s_rand.Next(0, 30);
+            int dependTo = s_rand.Next(0, 30);
+            if (depend != dependTo) 
+            { 
+                Dependency newDependency = new(0,depend,dependTo);
+                s_dalDependency!.Create(newDependency);
+            }
+        }
+    }
+
+    public static Do(IDependency a, IUser b, ITask c)
+    {
+        IDependency? dalDependency;
+        IUser? dalUser;
+        ITask? dalTask;
+        s_dalDependency = dalDependency ?? throw new NullReferenceException("DAL can not be null!");
+        s_dalUser = dalUser ?? throw new NullReferenceException("DAL can not be null!");
+        s_dalTask = dalTask ?? throw new NullReferenceException("DAL can not be null!");
     }
 }
