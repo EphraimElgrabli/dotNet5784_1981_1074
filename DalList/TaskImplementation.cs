@@ -9,8 +9,6 @@ internal class TaskImplementation : ITask
     {
         if (Read(item.Id) != null)
             throw new Exception($"Task with ID={item.Id} already exists");
-        
-
         DataSource.Tasks.Add(item);///the func add item to the list
         return item.Id;
     }

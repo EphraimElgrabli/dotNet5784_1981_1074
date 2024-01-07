@@ -9,11 +9,14 @@ public class DependencyImplementation : IDependency
 
     public int Create(Dependency item)
     {
-        if (Read(item.Id)!=null)
-            throw new Exception($"Dependency with ID={item.Id} already exists");
-        DataSource.Dependencys.Add(item);///the func add item to the list
-        return item.Id;
-
+      
+        int id= DataSource.Config.NextDependencyId;
+        Dependency dependency = new Dependency();
+        dependency = item with { Id = id };
+          DataSource.Dependencys.Add(dependency);
+        return id;
+        
+        
     }
 
     public void Delete(int id)

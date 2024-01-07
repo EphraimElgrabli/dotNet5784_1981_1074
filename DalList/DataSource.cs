@@ -10,7 +10,7 @@ internal static class DataSource
         /// and one for the dependncy, there isnt one for the engineer since
         /// his is is already unique
         /// </summary>
-        
+
         //Task id running number
         internal const int startTaskId = 1000;
         private static int nextTaskId = startTaskId;
