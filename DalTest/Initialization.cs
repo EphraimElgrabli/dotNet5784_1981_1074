@@ -10,7 +10,7 @@ public static class Initialization
     private static readonly Random s_rand=new();
     private static void createTask()
     {
-        string[] arr = new string[] {}  ///we need choose a name for the Task  
+        string[] arr = new string[] {}  ///we need choose a name for the Task  i
 
      }
 }
