@@ -9,14 +9,11 @@ public class DependencyImplementation : IDependency
 
     public int Create(Dependency item)
     {
-      
         int id= DataSource.Config.NextDependencyId;
         Dependency dependency = new Dependency();
         dependency = item with { Id = id };
-          DataSource.Dependencys.Add(dependency);
-        return id;
-        
-        
+        DataSource.Dependencys.Add(dependency);
+        return id; 
     }
 
     public void Delete(int id)
