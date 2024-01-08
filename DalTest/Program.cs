@@ -229,24 +229,35 @@ internal class Program
                     alias = GetString("Alias: ");
                     description = GetString("Description: ");
                     isMilestone = bool.Parse(GetString("is it a milestone: "));
-                    DO.UserLevel level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
-                    DateTime startDate = Convert.ToDateTime(GetString("Start Date (Formatted: 1/1/0001: "));
-                    DateTime scheduledDate = Convert.ToDateTime(GetString("Scedualed Date (Formatted: 1/1/0001: "));
-                    DateTime deadlineDate = Convert.ToDateTime(GetString("Deadline Date (Formatted: 1/1/0001: "));
-                    DateTime completeDate = Convert.ToDateTime(GetString("Complete Date (Formatted: 1/1/0001: "));
-                    string deliverables = GetString("Deliverables: ");
-                    string remarks = GetString("Remarks: ");
-                    if ( == "")
-                        Email = temp.Email;
-                    if (PhoneNumber == "")
-                        PhoneNumber = temp.PhoneNumber;
-                    if (Name == "")
-                        Name = temp.Name;
-                    if ((int)(Level) < 0 || (int)(Level) > 5)
-                        Level = temp.Level;
+                    level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
+                    startDate = Convert.ToDateTime(GetString("Start Date (Formatted: 1/1/0001: "));
+                    scheduledDate = Convert.ToDateTime(GetString("Scedualed Date (Formatted: 1/1/0001: "));
+                    deadlineDate = Convert.ToDateTime(GetString("Deadline Date (Formatted: 1/1/0001: "));
+                    completeDate = Convert.ToDateTime(GetString("Complete Date (Formatted: 1/1/0001: "));
+                    deliverables = GetString("Deliverables: ");
+                    remarks = GetString("Remarks: ");
 
-                    User Helpuscheck = new(Id, Email, PhoneNumber, Name, Level);
-                    s_dalUser!.Update(Helpuscheck);
+                    DateTime dt = new DateTime();
+                    if (alias == "")
+                        alias = temp.Alias;
+                    if (description == "")
+                        description = temp.Description;
+                    if ((int)(level) < 0 || (int)(level) > 5)
+                       level = temp.Copmlexity;
+                    if (scheduledDate == dt)
+                        scheduledDate = temp.ScheduledDate;
+                    if (deadlineDate == dt)
+                        deadlineDate = temp.DeadlineDate;
+                    if (completeDate == dt)
+                        completeDate = temp.CompleteDate;
+                    if (deliverables == "")
+                        deliverables = temp.Deliverables;
+                    if (remarks == "")
+                        remarks = temp.Remarks;
+                    
+
+                    Task Helpuscheck = new(Id,alias, description,temp.CreatedAtDate,isMilestone,level,startDate,scheduledDate,deadlineDate,completeDate,deliverables,remarks,0);
+                    s_dalTask!.Update(Helpuscheck);
                     break;
 
             }
