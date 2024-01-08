@@ -15,7 +15,7 @@ public record Task
     DateTime CompleteDate,
     string Deliverables,
     string Remarks,
-    int UserId  //conect to engineerid
+    int UserId  //conect to Userid
 )
 {
     
