@@ -14,8 +14,8 @@ internal class Program
         Console.WriteLine("Choose one of the following:");
         Console.WriteLine("0: exit");
         Console.WriteLine("1: Dependency");
-        Console.WriteLine("0: Task");
-        Console.WriteLine("0: User");
+        Console.WriteLine("2: Task");
+        Console.WriteLine("3: User");
         int entity = int.Parse(Console.ReadLine()!);
         return entity;
     }
@@ -32,10 +32,37 @@ internal class Program
         int entity = int.Parse(Console.ReadLine()!);
         return entity;
     }
-
+    public static string GetString(string s)
+    {
+        Console.WriteLine(s);
+        return Console.ReadLine();
+    }
     private static void User()
     {
+
         int numtask = functask("User");
+
+        switch (numtask)
+        {
+           case 0: return;
+
+
+           case 1:
+                Console.WriteLine("\nPlease Enter Details\n");
+                int Id = int.Parse(GetString("4 Last Digit Of Id: "));
+                string Email= GetString("Email: ");
+                string PhoneNumber = GetString("PhoneNumber: ");
+                string Name= GetString("Name: ");
+                DO.UserLevel Level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
+                User newUser = new(Id, Email, PhoneNumber.ToString(),Name,Level);
+                s_dalUser!.Create(newUser);
+                break;
+           case 2:
+
+
+
+        }
+
 
     }
 
