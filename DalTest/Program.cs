@@ -2,6 +2,7 @@
 using Dal;
 using DalApi;
 using DO;
+using System;
 
 internal class Program
 {
@@ -37,16 +38,14 @@ internal class Program
         Console.WriteLine(s);
         return Console.ReadLine();
     }
+
+   
     private static void User()
     {
-
         int numtask = functask("User");
-
         switch (numtask)
         {
            case 0: return;
-
-
            case 1:
                 Console.WriteLine("\nPlease Enter Details\n");
                 int Id = int.Parse(GetString("4 Last Digit Of Id: "));
@@ -59,13 +58,54 @@ internal class Program
                 break;
            case 2:
 
-
-
         }
-
-
     }
 
+    private static void Task()
+    {
+        int numtask = functask("Task");
+        try
+        {
+            switch (numtask)
+            {
+                case 0: return;
+                case 1:
+                    Console.WriteLine("\nPlease Enter Details\n");
+                    string alias = GetString("Alias: ");
+                    string description = GetString("Description: ");
+                    DateTime createdDate = DateTime.Now;
+                    bool isMilestone = false;
+                    DO.UserLevel level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
+                    DateTime startDate = Convert.ToDateTime(GetString("Start Date (Formatted: 1/1/0001: "));
+                    DateTime scheduledDate = Convert.ToDateTime(GetString("Scedualed Date (Formatted: 1/1/0001: "));
+                    DateTime deadlineDate = Convert.ToDateTime(GetString("Deadline Date (Formatted: 1/1/0001: "));
+                    DateTime completeDate = Convert.ToDateTime(GetString("Complete Date (Formatted: 1/1/0001: "));
+                    string deliverables = GetString("Deliverables: ");
+                    string remarks = GetString("Remarks: ");
+                    Task newTask = new(0,alias, description, createdDate, isMilestone, level, startDate, scheduledDate, deadlineDate, completeDate,deliverables,remarks,0);
+                    s_dalTask!.Create(newTask);
+                    break;
+                case 2:
+
+            }
+        }
+    }
+    /// <summary>
+    /// int Id,
+    //string Alias, v 
+    //string Description, v
+    //DateTime CreatedAtDate, v
+    //bool IsMilestone, v
+    //DO.UserLevel Copmlexity,
+    //DateTime StartDate,
+    //DateTime ScheduledDate,
+    //DateTime DeadlineDate,
+    //DateTime CompleteDate,
+    //string Deliverables,
+    //string Remarks,
+    //int EngineerId  //conect to engineerid
+    /// </summary>
+    /// <param name="args"></param>
     static void Main(string[] args)
     {
         int entity = funcentity();

@@ -7,7 +7,6 @@ public record Task
     string Alias,
     string Description,
     DateTime CreatedAtDate,
-    TimeSpan RequiredEffortTime,
     bool IsMilestone,
     DO.UserLevel Copmlexity,
     DateTime StartDate,
@@ -16,7 +15,7 @@ public record Task
     DateTime CompleteDate,
     string Deliverables,
     string Remarks,
-    int EngineerId  //conect to engineerid
+    int UserId  //conect to engineerid
 )
 {
     
