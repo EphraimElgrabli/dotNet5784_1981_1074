@@ -6,6 +6,8 @@ using Dal;
 using DalApi;
 using DO;
 using System;
+using System.Reflection.Emit;
+using System.Xml.Linq;
 
 internal class Program
 {
@@ -124,6 +126,7 @@ internal class Program
             switch (numtask)
             {
                 case 0: return;
+
                 case 1:
                     Console.WriteLine("\nPlease Enter Details\n");
                     int Id = int.Parse(GetString("Task id: "));
@@ -132,6 +135,7 @@ internal class Program
                     Dependency newDepn = new(Id, dependentTask, dependsOnTask);
                     Console.WriteLine(s_dalDependency!.Create(newDepn));
                     break;
+
                 case 2:
                     Id = int.Parse(GetString("Id: "));
                     Dependency? temPrint = s_dalDependency!.Read(Id);
@@ -140,6 +144,7 @@ internal class Program
                         Console.WriteLine(temPrint);
                     }
                     break;
+
                 case 3:
                     List<Dependency> temPrintAll = s_dalDependency!.ReadAll();
                     foreach (Dependency dep in temPrintAll)
@@ -147,10 +152,33 @@ internal class Program
                         Console.WriteLine(dep);
                     }
                     break;
-                //case 4:
-                    //Id = int.Parse(GetString("Id: "));
+
+                case 4:
+                    Id = int.Parse(GetString("Id: "));
+                    User? temp = s_dalUser!.Read(Id);
+                    Console.WriteLine(temp);
+                    Console.WriteLine("\nPlease Enter Details\n");
+                    dependentTask = Int16.Parse(GetString("Dependent Task: "));
+                    dependsOnTask = Int16.Parse(GetString("Depends On Task: "));
+
+                    if ( == "")
+                        Email = temp.Email;
+                    if (PhoneNumber == "")
+                        PhoneNumber = temp.PhoneNumber;
+                    if (Name == "")
+                        Name = temp.Name;
+                    if ((int)(Level) < 0 || (int)(Level) > 5)
+                        Level = temp.Level;
+
+                    User Helpuscheck = new(Id, Email, PhoneNumber, Name, Level);
+                    s_dalUser!.Update(Helpuscheck);
+                    break;
 
             }
+        }
+        catch (Exception ex)
+        {
+            throw ex;
         }
     }
 
