@@ -1,5 +1,6 @@
 ﻿namespace DalTest;
 
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using Dal;
 using DalApi;
@@ -39,6 +40,7 @@ internal class Program
         Console.WriteLine(s);
         return Console.ReadLine();
     }
+   
     private static void User()
     {
 
@@ -55,8 +57,7 @@ internal class Program
                     string PhoneNumber = GetString("PhoneNumber: ");
                     string Name = GetString("Name: ");
                     DO.UserLevel Level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
-                    User newUser = new(Id, Email, PhoneNumber.ToString(), Name, Level);
-
+                    User newUser = new(Id, Email, PhoneNumber, Name, Level);
                     Console.WriteLine(s_dalUser!.Create(newUser));
                     break;
                 case 2:
@@ -75,6 +76,30 @@ internal class Program
                     break;
                 case 4:
                     Id = int.Parse(GetString("Id: "));
+                    User? temp = s_dalUser!.Read(Id);
+                    Console.WriteLine(temp);
+                    Console.WriteLine("\nPlease Enter Details\n");
+                    Email = GetString("Email: ");
+                    PhoneNumber = GetString("PhoneNumber: ");
+                    Name = GetString("Name: ");
+                    Level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
+                    
+                    if (Email=="") 
+                        Email = temp.Email;
+                    if (PhoneNumber == "")
+                        PhoneNumber = temp.PhoneNumber;
+                    if (Name == "")
+                        Name = temp.Name;
+                    if ((int)(Level) < 0 || (int)(Level) > 5)
+                        Level = temp.Level;
+
+                    User Helpuscheck = new(Id, Email, PhoneNumber, Name, Level);
+                    break;
+
+
+
+
+
 
             }
         
