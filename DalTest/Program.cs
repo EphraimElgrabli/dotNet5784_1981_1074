@@ -228,21 +228,21 @@ internal class Program
    
     static void Main(string[] args)
     {
+        Initialization.Do(s_dalDependency, s_dalUser, s_dalTask);
         try
         {
             int entity = funcentity();
+            switch(entity)
+            {
+                case 0: break;
+                case 1: Dependency(); break;
+                case 2: Task(); break;
+                case 3: User(); break;   
+            }
         }
         catch ( Exception e)
         {
             Console.WriteLine(e.Message);
         }
-
-        User? temp = s_dalUser!.Read(entity);
-        entity=functask();
-
-        Initialization.Do(s_dalDependency,s_dalUser, s_dalTask);
-        
-      
-
     }
 }
