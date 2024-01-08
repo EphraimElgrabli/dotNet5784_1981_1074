@@ -222,8 +222,38 @@ internal class Program
                         Console.WriteLine(task);
                     }
                     break;
+                case 4:
+                    Id = int.Parse(GetString("Id: "));
+                    Task? temp = s_dalTask!.Read(Id);
+                    Console.WriteLine(temp);
+                    alias = GetString("Alias: ");
+                    description = GetString("Description: ");
+                    isMilestone = bool.Parse(GetString("is it a milestone: "));
+                    DO.UserLevel level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
+                    DateTime startDate = Convert.ToDateTime(GetString("Start Date (Formatted: 1/1/0001: "));
+                    DateTime scheduledDate = Convert.ToDateTime(GetString("Scedualed Date (Formatted: 1/1/0001: "));
+                    DateTime deadlineDate = Convert.ToDateTime(GetString("Deadline Date (Formatted: 1/1/0001: "));
+                    DateTime completeDate = Convert.ToDateTime(GetString("Complete Date (Formatted: 1/1/0001: "));
+                    string deliverables = GetString("Deliverables: ");
+                    string remarks = GetString("Remarks: ");
+                    if ( == "")
+                        Email = temp.Email;
+                    if (PhoneNumber == "")
+                        PhoneNumber = temp.PhoneNumber;
+                    if (Name == "")
+                        Name = temp.Name;
+                    if ((int)(Level) < 0 || (int)(Level) > 5)
+                        Level = temp.Level;
+
+                    User Helpuscheck = new(Id, Email, PhoneNumber, Name, Level);
+                    s_dalUser!.Update(Helpuscheck);
+                    break;
 
             }
+        }
+        catch (Exception ex)
+        {
+            throw ex;
         }
     }
    
