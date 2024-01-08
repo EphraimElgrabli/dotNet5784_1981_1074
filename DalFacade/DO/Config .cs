@@ -8,7 +8,7 @@ public record Config
     DateTime EndDate
 )
 {
-    public Config() : this(0,0,0) { } //empty ctor for stage 3
+    public Config() : this(0) { } //empty ctor for stage 3
 
     /// <summary>
     /// RegistrationDate - registration date of the current student record
