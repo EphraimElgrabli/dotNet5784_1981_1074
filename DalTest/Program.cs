@@ -49,7 +49,8 @@ internal class Program
         {
             switch (numtask)
             {
-                case 0: return;
+                case 0:break;
+
                 case 1:
                     Console.WriteLine("\nPlease Enter Details\n");
                     int Id = int.Parse(GetString("4 Last Digit Of Id: "));
@@ -59,21 +60,24 @@ internal class Program
                     DO.UserLevel Level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
                     User newUser = new(Id, Email, PhoneNumber, Name, Level);
                     Console.WriteLine(s_dalUser!.Create(newUser));
-                    break;
+                break;
+
                 case 2:
                     Id = int.Parse(GetString("Id: "));
                     User? temPrint = s_dalUser!.Read(Id);
                     if (temPrint != null) {
                         Console.WriteLine(temPrint);
                     }
-                    break;
+                break;
+
                 case 3:
                     List<User> temPrintAll = s_dalUser!.ReadAll();
                     foreach (User p in temPrintAll)
                     {
                         Console.WriteLine(p);
                     }
-                    break;
+                break;
+
                 case 4:
                     Id = int.Parse(GetString("Id: "));
                     User? temp = s_dalUser!.Read(Id);
@@ -94,15 +98,22 @@ internal class Program
                         Level = temp.Level;
 
                     User Helpuscheck = new(Id, Email, PhoneNumber, Name, Level);
-                    break;
+                    s_dalUser!.Update(Helpuscheck);
+                break;
 
-
-
-
-
+                case 5:
+                    Id = int.Parse(GetString("Id: "));
+                    s_dalUser!.Delete(Id);
+                break;
 
             }
+
         }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        
     }
 
     private static void Dependency()
