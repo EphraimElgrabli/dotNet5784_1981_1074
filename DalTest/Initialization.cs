@@ -112,13 +112,11 @@ public static class Initialization
         }
     }
 
-    public static Do(IDependency a, IUser b, ITask c)
+    public static void Do(IDependency a, IUser b, ITask c)
     {
-        IDependency? dalDependency;
-        IUser? dalUser;
-        ITask? dalTask;
-        s_dalDependency = dalDependency ?? throw new NullReferenceException("DAL can not be null!");
-        s_dalUser = dalUser ?? throw new NullReferenceException("DAL can not be null!");
-        s_dalTask = dalTask ?? throw new NullReferenceException("DAL can not be null!");
+
+        s_dalDependency = a ?? throw new NullReferenceException("DAL can not be null!");
+        s_dalUser = b ?? throw new NullReferenceException("DAL can not be null!");
+        s_dalTask = c ?? throw new NullReferenceException("DAL can not be null!");
     }
 }
