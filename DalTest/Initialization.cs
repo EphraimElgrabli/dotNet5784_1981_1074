@@ -57,8 +57,6 @@ public static class Initialization
 
             DateTime createdDate = DateTime.Now;
 
-            TimeSpan efforttime = TimeSpan.FromDays(2);
-
             bool isMilestone = (s_rand.Next(0, 1000) % 2) == 0 ? true : false;
 
             int userLvl = s_rand.Next(0, 4);
@@ -75,7 +73,7 @@ public static class Initialization
             string Remarks = "Hurry Up, the groom is going to regrat from getting married";
             int engId = s_rand.Next(1000, 1020);
 
-            Task newTask = new(0,alias, description, createdDate, efforttime, isMilestone, (DO.UserLevel)userLvl, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId);
+            Task newTask = new(0,alias, description, createdDate, isMilestone, (DO.UserLevel)userLvl, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId);
             s_dalTask!.Create(newTask);
         }
     }

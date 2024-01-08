@@ -7,7 +7,6 @@ public record Task
     string Alias,
     string Description,
     DateTime CreatedAtDate,
-    TimeSpan RequiredEffortTime,
     bool IsMilestone,
     DO.UserLevel Copmlexity,
     DateTime StartDate,

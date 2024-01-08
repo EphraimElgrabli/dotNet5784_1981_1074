@@ -5,6 +5,7 @@ using System.Diagnostics;
 using Dal;
 using DalApi;
 using DO;
+using System;
 
 internal class Program
 {
@@ -43,7 +44,6 @@ internal class Program
    
     private static void User()
     {
-
         int numtask = functask("User");
         try
         {
@@ -102,17 +102,91 @@ internal class Program
 
 
             }
-        
-
-        
-
-
-
-           
-
         }
     }
 
+    private static void Dependency()
+    {
+        int numtask = functask("Dependency");
+        try
+        {
+            switch (numtask)
+            {
+                case 0: return;
+                case 1:
+                    Console.WriteLine("\nPlease Enter Details\n");
+                    int Id = int.Parse(GetString("Task id: "));
+                    int dependentTask = int.Parse(GetString("Dependent Task: "));
+                    int dependsOnTask = int.Parse(GetString("Depends On Task: "));
+                    Dependency newDepn = new(Id, dependentTask, dependsOnTask);
+                    Console.WriteLine(s_dalDependency!.Create(newDepn));
+                    break;
+                case 2:
+                    Id = int.Parse(GetString("Id: "));
+                    Dependency? temPrint = s_dalDependency!.Read(Id);
+                    if (temPrint != null)
+                    {
+                        Console.WriteLine(temPrint);
+                    }
+                    break;
+                case 3:
+                    List<Dependency> temPrintAll = s_dalDependency!.ReadAll();
+                    foreach (Dependency dep in temPrintAll)
+                    {
+                        Console.WriteLine(dep);
+                    }
+                    break;
+                //case 4:
+                    //Id = int.Parse(GetString("Id: "));
+
+            }
+        }
+    }
+
+    private static void Task()
+    {
+        int numtask = functask("Task");
+        try
+        {
+            switch (numtask)
+            {
+                case 0: return;
+                case 1:
+                    Console.WriteLine("\nPlease Enter Details\n");
+                    string alias = GetString("Alias: ");
+                    string description = GetString("Description: ");
+                    DateTime createdDate = DateTime.Now;
+                    bool isMilestone = false;
+                    DO.UserLevel level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
+                    DateTime startDate = Convert.ToDateTime(GetString("Start Date (Formatted: 1/1/0001: "));
+                    DateTime scheduledDate = Convert.ToDateTime(GetString("Scedualed Date (Formatted: 1/1/0001: "));
+                    DateTime deadlineDate = Convert.ToDateTime(GetString("Deadline Date (Formatted: 1/1/0001: "));
+                    DateTime completeDate = Convert.ToDateTime(GetString("Complete Date (Formatted: 1/1/0001: "));
+                    string deliverables = GetString("Deliverables: ");
+                    string remarks = GetString("Remarks: ");
+                    Task newTask = new(0,alias, description, createdDate, isMilestone, level, startDate, scheduledDate, deadlineDate, completeDate,deliverables,remarks,0);
+                    s_dalTask!.Create(newTask);
+                    break;
+                case 2:
+                    int Id = int.Parse(GetString("Id: "));
+                    Task? temPrint = s_dalTask.Read(Id);
+                    if (temPrint != null)
+                    {
+                        Console.WriteLine(temPrint);
+                    }
+                    break;
+                case 3:
+                    List<Task> temPrintAll = s_dalTask!.ReadAll();
+                    foreach (Task task in temPrintAll)
+                    {
+                        Console.WriteLine(task);
+                    }
+                    break;
+
+            }
+        }
+    }
+   
     static void Main(string[] args)
     {
         try
