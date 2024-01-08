@@ -1,4 +1,6 @@
-﻿namespace DO;
+﻿using System.Collections.Generic;
+
+namespace DO;
 public record Task
 (
     int Id,
@@ -17,6 +19,7 @@ public record Task
     int EngineerId  //conect to engineerid
 )
 {
+    
     public Task() : this(0) { } //empty ctor for stage 3
 
     /// <summary>

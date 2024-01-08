@@ -91,7 +91,8 @@ public static class Initialization
             "shimoshon"
         };
         foreach (string user in users) {
-            int id = s_rand.Next(1, 100);
+            int i = 1;
+            int id = i++;
             int userLvl = s_rand.Next(0, 4);
             int phoneNumber = s_rand.Next(97200, 97299);
             User newUser = new(id, user + "@gmail.com", phoneNumber.ToString(), user, (DO.UserLevel)userLvl);
