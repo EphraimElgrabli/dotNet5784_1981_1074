@@ -79,10 +79,44 @@ internal class Program
                     Id = int.Parse(GetString("Id: "));
 
             }
-        
+        }
+    }
 
-        
+    private static void Dependency()
+    {
+        int numtask = functask("Dependency");
+        try
+        {
+            switch (numtask)
+            {
+                case 0: return;
+                case 1:
+                    Console.WriteLine("\nPlease Enter Details\n");
+                    int Id = int.Parse(GetString("Task id: "));
+                    int dependentTask = int.Parse(GetString("Dependent Task: "));
+                    int dependsOnTask = int.Parse(GetString("Depends On Task: "));
+                    Dependency newDepn = new(Id, dependentTask, dependsOnTask);
+                    Console.WriteLine(s_dalDependency!.Create(newDepn));
+                    break;
+                case 2:
+                    Id = int.Parse(GetString("Id: "));
+                    Dependency? temPrint = s_dalDependency!.Read(Id);
+                    if (temPrint != null)
+                    {
+                        Console.WriteLine(temPrint);
+                    }
+                    break;
+                case 3:
+                    List<Dependency> temPrintAll = s_dalDependency!.ReadAll();
+                    foreach (Dependency dep in temPrintAll)
+                    {
+                        Console.WriteLine(dep);
+                    }
+                    break;
+                //case 4:
+                    //Id = int.Parse(GetString("Id: "));
 
+            }
         }
     }
 
@@ -111,26 +145,25 @@ internal class Program
                     s_dalTask!.Create(newTask);
                     break;
                 case 2:
+                    int Id = int.Parse(GetString("Id: "));
+                    Task? temPrint = s_dalTask.Read(Id);
+                    if (temPrint != null)
+                    {
+                        Console.WriteLine(temPrint);
+                    }
+                    break;
+                case 3:
+                    List<Task> temPrintAll = s_dalTask!.ReadAll();
+                    foreach (Task task in temPrintAll)
+                    {
+                        Console.WriteLine(task);
+                    }
+                    break;
 
             }
         }
     }
-    /// <summary>
-    /// int Id,
-    //string Alias, v 
-    //string Description, v
-    //DateTime CreatedAtDate, v
-    //bool IsMilestone, v
-    //DO.UserLevel Copmlexity,
-    //DateTime StartDate,
-    //DateTime ScheduledDate,
-    //DateTime DeadlineDate,
-    //DateTime CompleteDate,
-    //string Deliverables,
-    //string Remarks,
-    //int EngineerId  //conect to engineerid
-    /// </summary>
-    /// <param name="args"></param>
+   
     static void Main(string[] args)
     {
         try
