@@ -155,23 +155,24 @@ internal class Program
 
                 case 4:
                     Id = int.Parse(GetString("Id: "));
-                    User? temp = s_dalUser!.Read(Id);
+                    Dependency? temp = s_dalDependency!.Read(Id);
                     Console.WriteLine(temp);
                     Console.WriteLine("\nPlease Enter Details\n");
                     dependentTask = Int16.Parse(GetString("Dependent Task: "));
                     dependsOnTask = Int16.Parse(GetString("Depends On Task: "));
 
-                    if ( == "")
-                        Email = temp.Email;
-                    if (PhoneNumber == "")
-                        PhoneNumber = temp.PhoneNumber;
-                    if (Name == "")
-                        Name = temp.Name;
-                    if ((int)(Level) < 0 || (int)(Level) > 5)
-                        Level = temp.Level;
+                    if ( dependentTask== '\n')
+                        dependentTask = temp.DependentTask;
+                    if (dependsOnTask == '\n')
+                        dependsOnTask = temp.DependsOnTask;
 
-                    User Helpuscheck = new(Id, Email, PhoneNumber, Name, Level);
-                    s_dalUser!.Update(Helpuscheck);
+
+                    Dependency Helpuscheck = new(Id, dependentTask, dependsOnTask);
+                    s_dalDependency!.Update(Helpuscheck);
+                    break;
+                case 5:
+                    Id = int.Parse(GetString("Id: "));
+                    s_dalDependency!.Delete(Id);
                     break;
 
             }
