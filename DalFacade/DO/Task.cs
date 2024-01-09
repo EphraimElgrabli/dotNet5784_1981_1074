@@ -7,19 +7,19 @@ public record Task
     string Alias,
     string Description,
     DateTime CreatedAtDate,
-    bool IsMilestone,
-    DO.UserLevel Copmlexity,
-    DateTime StartDate,
-    DateTime ScheduledDate,
-    DateTime DeadlineDate,
-    DateTime CompleteDate,
-    string Deliverables,
-    string Remarks,
-    int UserId  //conect to Userid
+    bool IsMilestone = false,
+    DateTime? StartDate = null,
+    DateTime? ScheduledDate = null,
+    DateTime? DeadlineDate = null,
+    DateTime? CompleteDate = null,
+    string? Deliverables = null,
+    string? Remarks = null,
+    int? UserId = null,
+    DO.UserLevel? Copmlexity = null
 )
 {
     
-    public Task() : this(0) { } //empty ctor for stage 3
+    public Task() : this(0, "", "", DateTime.Now) { } //empty ctor for stage 3
 
     /// <summary>
     /// RegistrationDate - registration date of the current student record

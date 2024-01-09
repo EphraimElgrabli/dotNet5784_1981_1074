@@ -22,7 +22,6 @@ internal static class DataSource
         private static int nextDependencyId = startDependencyId;
         internal static int NextDependencyId { get => nextDependencyId++; }
     }
-    internal static List<DO.Config> Configs { get; } = new();
     internal static List<DO.Dependency> Dependencys { get; } = new();
     internal static List<DO.User> Users { get; } = new();
     internal static List<DO.Task> Tasks { get; } = new();

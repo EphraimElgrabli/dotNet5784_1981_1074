@@ -9,8 +9,8 @@
 public record Dependency
 (
     int Id,
-  int DependentTask,
-  int DependsOnTask
+  int? DependentTask=null,
+  int? DependsOnTask = null
 )
 {
 

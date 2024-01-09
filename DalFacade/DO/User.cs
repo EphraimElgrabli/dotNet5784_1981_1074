@@ -10,5 +10,5 @@ public record User
     DO.UserLevel Level
 )
 {
-    public User() : this(0) { } //empty ctor for stage 3
+    public User() : this(0,"","","",0) { } //empty ctor for stage 3
 };

@@ -16,7 +16,7 @@ public static class Initialization
     private static void createTask()
     {
         string[] taskArr = new string[] {
-            "overallBudget", 
+            "overallBudget",
             "weddingDate",
             "guestList",
             "venue",
@@ -48,12 +48,12 @@ public static class Initialization
             "postWeddingTasksCompleted",
             "mikva",
             "hina"
-        }; 
+        };
 
         foreach (var task in taskArr)
         {
-            string alias = task;
-            string description = task;
+            string? alias = task;
+            string? description = task;
 
             DateTime createdDate = DateTime.Now;
 
@@ -73,8 +73,9 @@ public static class Initialization
             string Remarks = "Hurry Up, the groom is going to regrat from getting married";
             int engId = s_rand.Next(1000, 1020);
 
-            Task newTask = new(0,alias, description, createdDate, isMilestone, (DO.UserLevel)userLvl, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId);
+            Task newTask = new(0, alias, description, createdDate, isMilestone, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId, (DO.UserLevel)userLvl);
             s_dalTask!.Create(newTask);
+
         }
     }
 
@@ -89,26 +90,46 @@ public static class Initialization
             "shimoshon"
         };
         foreach (string user in users) {
-            int i = 1;
-            int id = i++;
+            int id =s_rand.Next(200000000, 400000000);
             int userLvl = s_rand.Next(0, 4);
             int phoneNumber = s_rand.Next(97200, 97299);
-            User newUser = new(id, user + "@gmail.com", phoneNumber.ToString(), user, (DO.UserLevel)userLvl);
+            string nate = user + "@gmail.com";
+            User newUser = new(id, nate, phoneNumber.ToString(), user, (DO.UserLevel)userLvl);
             s_dalUser!.Create(newUser);
         }
     }
     private static void createDependency()
     {
-        for (int i = 0; i < 50; i++)
+
+        (int, int)[] dependency = new (int, int)[]
         {
-            int depend = s_rand.Next(0, 30);
-            int dependTo = s_rand.Next(0, 30);
-            if (depend != dependTo) 
-            { 
-                Dependency newDependency = new(0,depend,dependTo);
-                s_dalDependency!.Create(newDependency);
-            }
+            (1001,1000),(1002,1001),(1003,1000),(1003,1001),
+            (1004,1001),(1004,1000),(1004,1003),(1005,1000),
+            (1005,1003),(1005,1004),(1006,1000),(1006,1003),
+            (1007,1001),(1008,1000),(1008,1002),(1009,1000),
+            (1010,1002),(1011,1000),(1011,1002),(1012,1001),
+            (1012,1002),(1012,1009),(1013,1000),(1013,1003),
+            (1013,1011),(1014,1001),(1014,1003),(1014,1012),
+            (1015,1001),(1015,1011),(1015,1012),(1016,1000),
+            (1016,1003),(1016,1011),(1017,1000),(1017,1003),
+            (1017,1011),(1018,1001),(1018,1015),(1019,1000),
+            (1019,1003),(1019,1011),(1020,1003),(1020,1015),
+            (1021,1002),(1021,1012),(1021,1018),(1022,1000),
+            (1022,1012),(1022,1018),(1023,1000),(1023,1011),
+            (1023,1018),(1024,1002),(1024,1018),(1025,1003),
+            (1025,1018),(1026,1000),(1026,1011),(1026,1018),
+            (1027,1003),(1027,1018),(1028,1003),(1028,1018),
+            (1029,1003),(1029,1020),(1030,1003),(1030,1025),
+            (1031,1003),(1031,1015),(1032,1027),(1032,1028),
+            (1032,1030),(1033,1000),(1034,1001)
+        };
+        foreach((int hey1,int hey2)  in dependency)
+        {
+            Dependency temp = new(0, hey1, hey2);
+            s_dalDependency!.Create(temp);
         }
+
+
     }
 
     public static void Do(IDependency a, IUser b, ITask c)
@@ -117,5 +138,9 @@ public static class Initialization
         s_dalDependency = a ?? throw new NullReferenceException("DAL can not be null!");
         s_dalUser = b ?? throw new NullReferenceException("DAL can not be null!");
         s_dalTask = c ?? throw new NullReferenceException("DAL can not be null!");
+
+        createTask();
+        createDependency();
+        createUser();
     }
 }
