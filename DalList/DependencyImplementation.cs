@@ -7,7 +7,7 @@ using DO;
 /// <summary>
 /// Implementation of the data access layer for managing dependencies.
 /// </summary>
-public class DependencyImplementation : IDependency
+internal class DependencyImplementation : IDependency
 {
     /// <summary>
     /// Creates a new dependency record in the data source.

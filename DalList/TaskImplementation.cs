@@ -7,7 +7,7 @@ using System.Collections.Generic;
 /// <summary>
 /// Implementation of the data access layer for managing tasks.
 /// </summary>
-public class TaskImplementation : ITask
+internal class TaskImplementation : ITask
 {
     /// <summary>
     /// Creates a new task record in the data source.

@@ -11,9 +11,7 @@ using System.Xml.Linq;
 
 internal class Program
 {
-    private static IDependency? s_dalDependency = new DependencyImplementation(); //stage 1
-    private static IUser? s_dalUser = new UserImplementation(); //stage 1
-    private static ITask? s_dalTask = new TaskImplementation(); //stage 1
+    
 
     // Function to interact with different entities (Dependency, Task, User)
     static int funcentity()
@@ -94,12 +92,12 @@ internal class Program
                     string Name = GetString("Name: ");
                     DO.UserLevel Level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
                     User newUser = new(Id, Email, PhoneNumber, Name, Level);
-                    Console.WriteLine(s_dalUser!.Create(newUser));
+                    Console.WriteLine(s_dal!.User.Create(newUser));
                     break;
 
                 case 2:
                     Id = int.Parse(GetString("Id: "));
-                    User? temPrint = s_dalUser!.Read(Id);
+                    User? temPrint = s_dal!.User.Read(Id);
                     if (temPrint != null)
                     {
                         Console.WriteLine(temPrint);
@@ -107,7 +105,7 @@ internal class Program
                     break;
 
                 case 3:
-                    List<User> temPrintAll = s_dalUser!.ReadAll();
+                    List<User> temPrintAll = s_dal!.User.ReadAll();
                     foreach (User p in temPrintAll)
                     {
                         Console.WriteLine(p);
@@ -116,7 +114,7 @@ internal class Program
 
                 case 4:
                     Id = int.Parse(GetString("Id: "));
-                    User? temp = s_dalUser!.Read(Id);
+                    User? temp = s_dal!.User.Read(Id);
                     Console.WriteLine(temp);
                     Console.WriteLine("\nPlease Enter Details\n");
                     Email = GetString("Email: ");
@@ -134,12 +132,12 @@ internal class Program
                         Level = temp.Level;
 
                     User Helpuscheck = new(Id, Email, PhoneNumber, Name, Level);
-                    s_dalUser!.Update(Helpuscheck);
+                    s_dal!.User.Update(Helpuscheck);
                     break;
 
                 case 5:
                     Id = int.Parse(GetString("Id: "));
-                    s_dalUser!.Delete(Id);
+                    s_dal!.User.Delete(Id);
                     break;           
             }
             numtask = functask("User");
@@ -162,12 +160,12 @@ internal class Program
                     int? dependentTask = int.Parse(GetString("Dependent Task: "));
                     int? dependsOnTask = int.Parse(GetString("Depends On Task: "));
                     Dependency newDepn = new(Id, dependentTask, dependsOnTask);
-                    Console.WriteLine(s_dalDependency!.Create(newDepn));
+                    Console.WriteLine(s_dal!.Dependency.Create(newDepn));
                     break;
 
                 case 2:
                     Id = int.Parse(GetString("Id: "));
-                    Dependency? temPrint = s_dalDependency!.Read(Id);
+                    Dependency? temPrint = s_dal!.Dependency.Read(Id);
                     if (temPrint != null)
                     {
                         Console.WriteLine(temPrint);
@@ -175,7 +173,7 @@ internal class Program
                     break;
 
                 case 3:
-                    List<Dependency> temPrintAll = s_dalDependency!.ReadAll();
+                    List<Dependency> temPrintAll = s_dal!.Dependency.ReadAll();
                     foreach (Dependency dep in temPrintAll)
                     {
                         Console.WriteLine(dep);
@@ -184,7 +182,7 @@ internal class Program
 
                 case 4:
                     Id = int.Parse(GetString("Id: "));
-                    Dependency? temp = s_dalDependency!.Read(Id);
+                    Dependency? temp = s_dal!.Dependency.Read(Id);
                     Console.WriteLine(temp);
                     Console.WriteLine("\nPlease Enter Details\n");
                     dependentTask = Int16.Parse(GetString("Dependent Task: "));
@@ -196,11 +194,11 @@ internal class Program
                         dependsOnTask = temp.DependsOnTask;
 
                     Dependency Helpuscheck = new(Id, dependentTask, dependsOnTask);
-                    s_dalDependency!.Update(Helpuscheck);
+                    s_dal!.Dependency.Update(Helpuscheck);
                     break;
                 case 5:
                     Id = int.Parse(GetString("Id: "));
-                    s_dalDependency!.Delete(Id);
+                    s_dal!.Dependency.Delete(Id);
                     break;
             }
             numtask = functask("Dependency");
@@ -230,18 +228,18 @@ internal class Program
                     string? deliverables = GetString("Deliverables: ");
                     string? remarks = GetString("Remarks: ");
                     Task newTask = new(0, alias, description, createdDate, isMilestone, startDate, scheduledDate, deadlineDate, completeDate, deliverables, remarks, 0, level);
-                    s_dalTask!.Create(newTask);
+                    s_dal!.Task.Create(newTask);
                     break;
                 case 2:
                     int Id = int.Parse(GetString("Id: "));
-                    Task? temPrint = s_dalTask!.Read(Id);
+                    Task? temPrint = s_dal!.Task.Read(Id);
                     if (temPrint != null)
                     {
                         Console.WriteLine(temPrint);
                     }
                     break;
                 case 3:
-                    List<Task> temPrintAll = s_dalTask!.ReadAll();
+                    List<Task> temPrintAll = s_dal!.Task.ReadAll();
                     foreach (Task task in temPrintAll)
                     {
                         Console.WriteLine(task);
@@ -249,7 +247,7 @@ internal class Program
                     break;
                 case 4:
                     Id = int.Parse(GetString("Id: "));
-                    Task? temp = s_dalTask!.Read(Id);
+                    Task? temp = s_dal!.Task.Read(Id);
                     Console.WriteLine(temp);
                     alias = GetString("Alias: ");
                     description = GetString("Description: ");
@@ -280,23 +278,29 @@ internal class Program
                     if (remarks == "")
                         remarks = temp.Remarks;
                     Task Helpuscheck = new(Id, alias, description, temp.CreatedAtDate, isMilestone, startDate, scheduledDate, deadlineDate, completeDate, deliverables, remarks, 0, level);
-                    s_dalTask!.Update(Helpuscheck);
+                    s_dal!.Task.Update(Helpuscheck);
                     break;
 
                 case 5:
                     Id = int.Parse(GetString("Id: "));
-                    s_dalTask!.Delete(Id);
+                    s_dal!.Task.Delete(Id);
                     break;
             }
             numtask = functask("Task");
         } while (numtask != 0);
        
     }
-   
+    static readonly IDal s_dal = new DalList(); //stage 2
     static void Main(string[] args)
     {
-        // Main entry point of the program
-        Initialization.Do(s_dalDependency, s_dalUser, s_dalTask); // Initializing data access layer instances
-        funcentity(); // Performing operations on different entities
+        try
+        {
+            // Main entry point of the program
+            Initialization.Do(s_dal); //stage 2
+            funcentity(); // Performing operations on different entities
+        }catch(Exception e)
+        {
+            Console.WriteLine(e);
+        }
     }
 }

@@ -10,9 +10,7 @@ using System;
 public static class Initialization
 {
     // Data access layer instances for Dependency, User, and Task
-    private static IDependency? s_dalDependency;//stage 1
-    private static IUser? s_dalUser;//stage 1
-    private static ITask? s_dalTask;//stage 1
+    private static IDal? s_dal;
     private static readonly Random s_rand=new();
 
     /// <summary>
@@ -76,7 +74,7 @@ public static class Initialization
 
             // Create a new Task object and add it to the data access layer
             Task newTask = new(0, alias, description, createdDate, isMilestone, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId, (DO.UserLevel)userLvl);
-            s_dalTask!.Create(newTask);
+            s_dal!.Task.Create(newTask);
         }
     }
 
@@ -104,7 +102,7 @@ public static class Initialization
 
             // Create a new User object and add it to the data access layer
             User newUser = new(id, nate, phoneNumber.ToString(), user, (DO.UserLevel)userLvl);
-            s_dalUser!.Create(newUser);
+            s_dal!.User.Create(newUser);
         }
     }
 
@@ -141,7 +139,7 @@ public static class Initialization
         {
             // Create a new Dependency object and add it to the data access layer
             Dependency temp = new(0, hey1, hey2);
-            s_dalDependency!.Create(temp);
+            s_dal!.Dependency.Create(temp);
         }
     }
 
@@ -152,12 +150,11 @@ public static class Initialization
     /// <param name="b"></param>
     /// <param name="c"></param>
     /// <exception cref="NullReferenceException"></exception>
-    public static void Do(IDependency a, IUser b, ITask c)
+    public static void Do(IDal dal)
     {
         // Ensure that data access layer instances are not null
-        s_dalDependency = a ?? throw new NullReferenceException("DAL can not be null!");
-        s_dalUser = b ?? throw new NullReferenceException("DAL can not be null!");
-        s_dalTask = c ?? throw new NullReferenceException("DAL can not be null!");
+        s_dal=dal ?? throw new NullReferenceException("DAL can not be null!");
+        
 
         // Create initial data for tasks, dependencies, and users
         createTask();

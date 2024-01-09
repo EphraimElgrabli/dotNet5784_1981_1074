@@ -4,7 +4,7 @@ using DalApi;
 using DO;
 using System.Collections.Generic;
 
-public class UserImplementation: IUser
+internal class UserImplementation: IUser
 {
     public int Create(User item)
     {
