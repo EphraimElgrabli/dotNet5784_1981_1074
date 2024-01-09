@@ -14,6 +14,8 @@ internal class Program
     private static IDependency? s_dalDependency = new DependencyImplementation(); //stage 1
     private static IUser? s_dalUser = new UserImplementation(); //stage 1
     private static ITask? s_dalTask = new TaskImplementation(); //stage 1
+
+    // Function to interact with different entities (Dependency, Task, User)
     static int funcentity()
     {
         Console.WriteLine("\nCheck entity\n");
@@ -26,8 +28,7 @@ internal class Program
         try
         {
             do
-            {
-                
+            {   
                 switch (entity)
                 {
                     case 0: break;
@@ -51,6 +52,8 @@ internal class Program
         }
         return entity;
     }
+
+    // Function to interact with different task operations (Create, Read, Update, Delete)
     static int functask(string s)
     {
         
@@ -65,12 +68,15 @@ internal class Program
             int entity = int.Parse(Console.ReadLine()!);
             return entity;
     }
+
+    // Function to get user input as a string
     public static string GetString(string s)
     {
         Console.WriteLine(s);
         return Console.ReadLine();
     }
-   
+
+    // Function to handle user-related operations
     private static void User()
     {
         int numtask = functask("User");
@@ -137,13 +143,10 @@ internal class Program
                     break;           
             }
             numtask = functask("User");
-        } while (numtask != 0);
-
-        
-        
-        
+        } while (numtask != 0);       
     }
 
+    // Function to handle dependency-related operations
     private static void Dependency()
     {
         int numtask = functask("Dependency");
@@ -192,7 +195,6 @@ internal class Program
                     if (dependsOnTask == '\n')
                         dependsOnTask = temp.DependsOnTask;
 
-
                     Dependency Helpuscheck = new(Id, dependentTask, dependsOnTask);
                     s_dalDependency!.Update(Helpuscheck);
                     break;
@@ -200,12 +202,12 @@ internal class Program
                     Id = int.Parse(GetString("Id: "));
                     s_dalDependency!.Delete(Id);
                     break;
-
             }
             numtask = functask("Dependency");
         } while (numtask != 0);
     }
 
+    /// Function to handle task-related operations
     private static void Task()
     {
         int numtask = functask("Task");
@@ -266,7 +268,7 @@ internal class Program
                     if (description == "")
                         description = temp.Description;
                     if ((int)(level) < 0 || (int)(level) > 5)
-                        level = temp.Copmlexity;
+                        level = temp.Complexity;
                     if (scheduledDate == dt)
                         scheduledDate = temp.ScheduledDate;
                     if (deadlineDate == dt)
@@ -293,9 +295,8 @@ internal class Program
    
     static void Main(string[] args)
     {
-
-        Initialization.Do(s_dalDependency, s_dalUser, s_dalTask);
-        funcentity();
-
+        // Main entry point of the program
+        Initialization.Do(s_dalDependency, s_dalUser, s_dalTask); // Initializing data access layer instances
+        funcentity(); // Performing operations on different entities
     }
 }

@@ -9,12 +9,18 @@ using System;
 
 public static class Initialization
 {
+    // Data access layer instances for Dependency, User, and Task
     private static IDependency? s_dalDependency;//stage 1
     private static IUser? s_dalUser;//stage 1
     private static ITask? s_dalTask;//stage 1
     private static readonly Random s_rand=new();
+
+    /// <summary>
+    /// Function to create random task
+    /// </summary>
     private static void createTask()
     {
+        // Array of task aliases and descriptions
         string[] taskArr = new string[] {
             "overallBudget",
             "weddingDate",
@@ -52,35 +58,34 @@ public static class Initialization
 
         foreach (var task in taskArr)
         {
+            // Generate random values for task creation
             string? alias = task;
             string? description = task;
-
             DateTime createdDate = DateTime.Now;
-
             bool isMilestone = (s_rand.Next(0, 1000) % 2) == 0 ? true : false;
-
             int userLvl = s_rand.Next(0, 4);
-
             DateTime end = new DateTime(2025, 1, 1);
             int range = (end - DateTime.Today).Days;
             DateTime scedualed = end.AddDays(s_rand.Next(range));
-
             DateTime Startdate = scedualed.AddDays(-2);
             DateTime deadDate = scedualed.AddDays(+1);
             DateTime completeDate = scedualed;
-
             string Delivarbles = "Hurry Up, the groom is going to regrat from getting married";
             string Remarks = "Hurry Up, the groom is going to regrat from getting married";
             int engId = s_rand.Next(1000, 1020);
 
+            // Create a new Task object and add it to the data access layer
             Task newTask = new(0, alias, description, createdDate, isMilestone, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId, (DO.UserLevel)userLvl);
             s_dalTask!.Create(newTask);
-
         }
     }
 
+    /// <summary>
+    /// Function to create random users
+    /// </summary>
     private static void createUser()
     {
+        // Array of user names
         string[] users = new string[] {
             "bigMama",
             "bigPapa",
@@ -89,20 +94,29 @@ public static class Initialization
             "yoram",
             "shimoshon"
         };
+
         foreach (string user in users) {
+            // Generate random values for user creation
             int id =s_rand.Next(200000000, 400000000); 
             int userLvl = s_rand.Next(0, 4);
             int phoneNumber = s_rand.Next(97200, 97299);
             string nate = user + "@gmail.com";
+
+            // Create a new User object and add it to the data access layer
             User newUser = new(id, nate, phoneNumber.ToString(), user, (DO.UserLevel)userLvl);
             s_dalUser!.Create(newUser);
         }
     }
+
+    /// <summary>
+    /// Function to create dependencies between tasks
+    /// </summary>
     private static void createDependency()
     {
-
+        // Array of task dependencies
         (int, int)[] dependency = new (int, int)[]
         {
+            // List of task dependencies
             (1001,1000),(1002,1001),(1003,1000),(1003,1001),
             (1004,1001),(1004,1000),(1004,1003),(1005,1000),
             (1005,1003),(1005,1004),(1006,1000),(1006,1003),
@@ -125,20 +139,27 @@ public static class Initialization
         };
         foreach((int hey1,int hey2)  in dependency)
         {
+            // Create a new Dependency object and add it to the data access layer
             Dependency temp = new(0, hey1, hey2);
             s_dalDependency!.Create(temp);
         }
-
-
     }
 
+    /// <summary>
+    /// Create a new Dependency object and add it to the data access layer
+    /// </summary>
+    /// <param name="a"></param>
+    /// <param name="b"></param>
+    /// <param name="c"></param>
+    /// <exception cref="NullReferenceException"></exception>
     public static void Do(IDependency a, IUser b, ITask c)
     {
-
+        // Ensure that data access layer instances are not null
         s_dalDependency = a ?? throw new NullReferenceException("DAL can not be null!");
         s_dalUser = b ?? throw new NullReferenceException("DAL can not be null!");
         s_dalTask = c ?? throw new NullReferenceException("DAL can not be null!");
 
+        // Create initial data for tasks, dependencies, and users
         createTask();
         createDependency();
         createUser();
