@@ -8,7 +8,8 @@ public class UserImplementation: IUser
 {
     public int Create(User item)
     {
-        if (Read(item.Id) != null)
+        User? u = DataSource.Users.Find(D => D.Id == item.Id);
+        if(u != null)
             throw new Exception($"Engineer with ID={item.Id} already exists");
         DataSource.Users.Add(item);///the func add item to the list
         return item.Id;

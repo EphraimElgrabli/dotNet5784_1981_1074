@@ -90,7 +90,7 @@ public static class Initialization
             "shimoshon"
         };
         foreach (string user in users) {
-            int id =s_rand.Next(200000000, 400000000);
+            int id =s_rand.Next(200000000, 400000000); 
             int userLvl = s_rand.Next(0, 4);
             int phoneNumber = s_rand.Next(97200, 97299);
             string nate = user + "@gmail.com";
