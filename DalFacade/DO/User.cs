@@ -7,7 +7,7 @@
 /// <param name="Email">The email address of the user.</param>
 /// <param name="PhoneNumber">The phone number of the user.</param>
 /// <param name="Name">The name of the user.</param>
-/// <param name="Level">The level of involvement of the user (e.g., supportes, closeFriends).</param>
+/// <param name="Level">The level of involvement of the user (e.g., Friends, Staff).</param>
 public record User
 (
     int Id,
