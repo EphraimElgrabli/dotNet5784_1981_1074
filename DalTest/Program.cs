@@ -51,7 +51,11 @@ internal class Program
         return entity;
     }
 
-    // Function to interact with different task operations (Create, Read, Update, Delete)
+    /// <summary>
+    /// Function to interact with different task operations (Create, Read, Update, Delete)
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
     static int functask(string s)
     {
         
@@ -67,14 +71,20 @@ internal class Program
             return entity;
     }
 
-    // Function to get user input as a string
+    /// <summary>
+    /// Function to get user input as a string
+    /// </summary>
+    /// <param name="s"></param>
+    /// <returns></returns>
     public static string GetString(string s)
     {
         Console.WriteLine(s);
         return Console.ReadLine();
     }
 
-    // Function to handle user-related operations
+    /// <summary>
+    /// Function to handle user-related operations
+    /// </summary>
     private static void User()
     {
         int numtask = functask("User");
@@ -90,7 +100,7 @@ internal class Program
                     string Email = GetString("Email: ");
                     string PhoneNumber = GetString("PhoneNumber: ");
                     string Name = GetString("Name: ");
-                    DO.UserLevel Level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
+                    DO.UserLevel Level = (DO.UserLevel)Int16.Parse(GetString("0: Friends\r\n  1: Staff\r\n  2: FamilyMember\r\n  3: FamilyMemberWithRoles\r\n  4: Producer "));
                     User newUser = new(Id, Email, PhoneNumber, Name, Level);
                     Console.WriteLine(s_dal!.User.Create(newUser));
                     break;
@@ -120,7 +130,7 @@ internal class Program
                     Email = GetString("Email: ");
                     PhoneNumber = GetString("PhoneNumber: ");
                     Name = GetString("Name: ");
-                    Level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
+                    Level = (DO.UserLevel)Int16.Parse(GetString("0: Friends\r\n  1: Staff\r\n  2: FamilyMember\r\n  3: FamilyMemberWithRoles\r\n  4: Producer "));
 
                     if (Email == "")
                         Email = temp.Email;
@@ -144,7 +154,9 @@ internal class Program
         } while (numtask != 0);       
     }
 
-    // Function to handle dependency-related operations
+    /// <summary>
+    /// Function to handle dependency-related operations
+    /// </summary>
     private static void Dependency()
     {
         int numtask = functask("Dependency");
@@ -205,7 +217,9 @@ internal class Program
         } while (numtask != 0);
     }
 
+    /// <summary>
     /// Function to handle task-related operations
+    /// </summary>
     private static void Task()
     {
         int numtask = functask("Task");
@@ -220,7 +234,7 @@ internal class Program
                     string description = GetString("Description: ");
                     DateTime createdDate = DateTime.Now;
                     bool isMilestone = false;
-                    DO.UserLevel? level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
+                    DO.UserLevel? level = (DO.UserLevel)Int16.Parse(GetString("0: Friends\r\n  1: Staff\r\n  2: FamilyMember\r\n  3: FamilyMemberWithRoles\r\n  4: Producer "));
                     DateTime? startDate = Convert.ToDateTime(GetString("Start Date (Formatted: 1/1/0001: "));
                     DateTime? scheduledDate = Convert.ToDateTime(GetString("Scedualed Date (Formatted: 1/1/0001: "));
                     DateTime? deadlineDate = Convert.ToDateTime(GetString("Deadline Date (Formatted: 1/1/0001: "));
@@ -252,7 +266,7 @@ internal class Program
                     alias = GetString("Alias: ");
                     description = GetString("Description: ");
                     isMilestone = bool.Parse(GetString("is it a milestone: "));
-                    level = (DO.UserLevel)Int16.Parse(GetString("0: supportes\r\n  1: closeFriends\r\n  2: bride\r\n  3: groom\r\n  4: producer "));
+                    level = (DO.UserLevel)Int16.Parse(GetString("0: Friends\r\n  1: Staff\r\n  2: FamilyMember\r\n  3: FamilyMemberWithRoles\r\n  4: Producer "));
                     startDate = Convert.ToDateTime(GetString("Start Date (Formatted: 1/1/0001: "));
                     scheduledDate = Convert.ToDateTime(GetString("Scedualed Date (Formatted: 1/1/0001: "));
                     deadlineDate = Convert.ToDateTime(GetString("Deadline Date (Formatted: 1/1/0001: "));
