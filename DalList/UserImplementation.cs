@@ -25,17 +25,29 @@ internal class UserImplementation: IUser
 
     public User? Read(int id)
     {
-        User? User = DataSource.Users.Find(D => D.Id == id);///i search for id in the Engineer list
-        if (User == null)
-        {
-            throw new Exception($"User with ID={id} not exists");
-        }
-        return User;
+        var query = from user in DataSource.Users
+                    where user.Id == id
+                    select user;
+        return query.FirstOrDefault();
     }
 
-    public List<User> ReadAll()
+    public User? Read(Func<User, bool> filter)
     {
-        return new List<User>(DataSource.Users);
+        return (from user in DataSource.Users
+                where filter(user)
+                select user).FirstOrDefault();
+    }
+
+    public IEnumerable<User> ReadAll(Func<User, bool>? filter = null)
+    {
+        if(filter != null)
+        {
+            return from user in DataSource.Users
+                   where filter(user)
+                   select user;
+        }
+        return from user in DataSource.Users
+               select user;
     }
 
     public void Update(User item)

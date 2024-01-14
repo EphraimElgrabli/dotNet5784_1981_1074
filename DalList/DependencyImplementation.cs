@@ -1,8 +1,10 @@
 ﻿namespace Dal;
 
 using System.Collections.Immutable;
+using System.Collections.Generic;
 using DalApi;
 using DO;
+using System.Linq;
 
 /// <summary>
 /// Implementation of the data access layer for managing dependencies.
@@ -42,21 +44,38 @@ internal class DependencyImplementation : IDependency
     /// <returns>The dependency with the specified ID, or null if not found.</returns>
     public Dependency? Read(int id)
     {
-        Dependency? dependency = DataSource.Dependencys.Find(D => D.Id == id); // Search for the dependency in the list
-        if (dependency == null)
-        {
-            throw new Exception($"Dependency with ID={id} does not exist");
-        }
-        return dependency;
+        var query = from depend in DataSource.Dependencys
+                        where depend.Id == id 
+                        select depend;
+        return query.FirstOrDefault();
+    }
+
+    /// <summary>
+    /// Reads a specific dependency record based on a filter from the data source.
+    /// </summary>
+    /// <param name="">The unique identifier of the dependency to be retrieved.</param>
+    /// <returns>The dependency with the specified ID, or null if not found.</returns>
+    public Dependency? Read(Func<Dependency, bool> filter)
+    {
+        return (from depend in DataSource.Dependencys
+               where filter(depend)
+               select depend).FirstOrDefault();
     }
 
     /// <summary>
     /// Retrieves all dependency records from the data source.
     /// </summary>
     /// <returns>A list containing all dependency records.</returns>
-    public List<Dependency> ReadAll()
+    public IEnumerable<Dependency> ReadAll(Func<Dependency, bool>? filter = null)
     {
-        return new List<Dependency>(DataSource.Dependencys);
+        if (filter != null)
+        {
+            return from depend in DataSource.Dependencys
+                   where filter(depend)
+                   select depend;
+        }
+        return from depend in DataSource.Dependencys
+               select depend;
     }
 
     /// <summary>

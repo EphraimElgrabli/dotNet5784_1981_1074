@@ -42,21 +42,33 @@ internal class TaskImplementation : ITask
     /// <returns>The task with the specified ID, or null if not found.</returns>
     public Task? Read(int id)
     {
-        Task? task = DataSource.Tasks.Find(D => D.Id == id); // Search for the task in the list
-        if (task == null)
-        {
-            throw new Exception($"Task with ID={id} does not exist");
-        }
-        return task;
+        var query = from task in DataSource.Tasks
+                    where task.Id == id
+                    select task;
+        return query.FirstOrDefault();
+    }
+
+    public Task? Read(Func<Task, bool> filter)
+    {
+        return (from task in DataSource.Tasks
+                where filter(task)
+                select task).FirstOrDefault();
     }
 
     /// <summary>
     /// Retrieves all task records from the data source.
     /// </summary>
     /// <returns>A list containing all task records.</returns>
-    public List<Task> ReadAll()
+    public IEnumerable<Task> ReadAll(Func<Task, bool>? filter = null)
     {
-        return new List<Task>(DataSource.Tasks); // Create a new list with the values of the original list and return the new list
+        if (filter != null)
+        {
+            return from task in DataSource.Tasks
+                   where filter(task)
+                   select task;
+        }
+        return from task in DataSource.Tasks
+               select task;
     }
 
     /// <summary>

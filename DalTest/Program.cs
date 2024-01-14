@@ -115,7 +115,7 @@ internal class Program
                     break;
 
                 case 3:
-                    List<User> temPrintAll = s_dal!.User.ReadAll();
+                    List<User> temPrintAll = s_dal!.User.ReadAll().ToList();
                     foreach (User p in temPrintAll)
                     {
                         Console.WriteLine(p);
@@ -185,7 +185,7 @@ internal class Program
                     break;
 
                 case 3:
-                    List<Dependency> temPrintAll = s_dal!.Dependency.ReadAll();
+                    List<Dependency> temPrintAll = s_dal!.Dependency.ReadAll().ToList();
                     foreach (Dependency dep in temPrintAll)
                     {
                         Console.WriteLine(dep);
@@ -253,7 +253,7 @@ internal class Program
                     }
                     break;
                 case 3:
-                    List<Task> temPrintAll = s_dal!.Task.ReadAll();
+                    List<Task> temPrintAll = s_dal!.Task.ReadAll().ToList();
                     foreach (Task task in temPrintAll)
                     {
                         Console.WriteLine(task);
