@@ -3,6 +3,7 @@
 using DalApi;
 using DO;
 using System.Collections.Generic;
+using System.Linq;
 
 /// <summary>
 /// Implementation of the data access layer for managing tasks.
@@ -31,7 +32,7 @@ internal class TaskImplementation : ITask
     {
         Task? task = Read(id); // Search for the task with the specified ID
         if (task == null)
-            throw new Exception($"Task with ID={id} does not exist");
+            throw new DalDoesNotExistException($"Task with ID={id} does not exist");
         DataSource.Tasks.Remove(task); // Remove the task from the data source
     }
 
@@ -42,17 +43,13 @@ internal class TaskImplementation : ITask
     /// <returns>The task with the specified ID, or null if not found.</returns>
     public Task? Read(int id)
     {
-        var query = from task in DataSource.Tasks
-                    where task.Id == id
-                    select task;
-        return query.FirstOrDefault();
+        var query = DataSource.Tasks.FirstOrDefault(u => u.Id == id);
+        return query;
     }
 
     public Task? Read(Func<Task, bool> filter)
     {
-        return (from task in DataSource.Tasks
-                where filter(task)
-                select task).FirstOrDefault();
+        return (DataSource.Tasks.FirstOrDefault(filter));
     }
 
     /// <summary>
@@ -78,7 +75,7 @@ internal class TaskImplementation : ITask
     public void Update(Task item)
     {
         if (Read(item.Id) == null)
-            throw new Exception($"Task with ID={item.Id} does not exist");
+            throw new DalDoesNotExistException($"Task with ID={item.Id} does not exist");
 
         DataSource.Tasks.Remove(Read(item.Id)!); // Remove the existing task
         DataSource.Tasks.Add(item); // Add the updated task to the data source

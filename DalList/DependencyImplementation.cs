@@ -33,7 +33,7 @@ internal class DependencyImplementation : IDependency
     {
         Dependency? dependency = Read(id);
         if (dependency == null)
-            throw new Exception($"Dependency with ID={id} does not exist");
+            throw new DalDoesNotExistException($"Dependency with ID={id} does not exist");
         DataSource.Dependencys.Remove(dependency); // Remove the dependency from the data source
     }
 
@@ -44,10 +44,8 @@ internal class DependencyImplementation : IDependency
     /// <returns>The dependency with the specified ID, or null if not found.</returns>
     public Dependency? Read(int id)
     {
-        var query = from depend in DataSource.Dependencys
-                        where depend.Id == id 
-                        select depend;
-        return query.FirstOrDefault();
+        var query = DataSource.Dependencys.FirstOrDefault(u => u.Id == id);
+        return query;
     }
 
     /// <summary>
@@ -57,9 +55,7 @@ internal class DependencyImplementation : IDependency
     /// <returns>The dependency with the specified ID, or null if not found.</returns>
     public Dependency? Read(Func<Dependency, bool> filter)
     {
-        return (from depend in DataSource.Dependencys
-               where filter(depend)
-               select depend).FirstOrDefault();
+        return (DataSource.Dependencys.FirstOrDefault(filter));
     }
 
     /// <summary>
@@ -85,7 +81,7 @@ internal class DependencyImplementation : IDependency
     public void Update(Dependency item)
     {
         if (Read(item.Id) == null)
-            throw new Exception($"Dependency with ID={item.Id} does not exist");
+            throw new DalDoesNotExistException($"Dependency with ID={item.Id} does not exist");
 
         DataSource.Dependencys.Remove(Read(item.Id)!); // Remove the existing dependency
         DataSource.Dependencys.Add(item); // Add the updated dependency to the data source

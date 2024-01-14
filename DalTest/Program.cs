@@ -96,7 +96,7 @@ internal class Program
 
                 case 1:
                     Console.WriteLine("\nPlease Enter Details\n");
-                    int Id = int.Parse(GetString("4 Last Digit Of Id: "));
+                    int Id = int.Parse(GetString("Digit Of Id: "));
                     string Email = GetString("Email: ");
                     string PhoneNumber = GetString("PhoneNumber: ");
                     string Name = GetString("Name: ");
