@@ -25,6 +25,13 @@ public class DalAlreadyExistException : Exception
     /// <param name="message">The message that describes the error.</param>
     public DalAlreadyExistException(string? message) : base(message) { }
 }
+[Serializable]
+public class CanNotDeletedException : Exception
+{
+    public CanNotDeletedException(string? message) : base(message) { }
+}
+
+
 
 public class DalXMLFileLoadCreateException: Exception
 {
