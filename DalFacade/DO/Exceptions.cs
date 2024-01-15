@@ -25,3 +25,12 @@ public class DalAlreadyExistException : Exception
     /// <param name="message">The message that describes the error.</param>
     public DalAlreadyExistException(string? message) : base(message) { }
 }
+
+public class DalXMLFileLoadCreateException: Exception
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DalXMLFileLoadCreateException"/> class with a specified error message.
+    /// </summary>
+    /// <param name="message">The message that describes the error.</param>
+    public DalXMLFileLoadCreateException(string? message) : base(message) { }
+}
