@@ -1,6 +1,8 @@
 ﻿namespace DO;
 
-// Enum representing the different levels of user involvement in a wedding management app
+/// <summary>
+/// Enum representing the different levels of user involvement in a wedding management app
+/// </summary>
 public enum UserLevel
 {
     Friends,                  // Friends providing supporting roles in the wedding
