@@ -18,8 +18,8 @@
 - [x] Ch 8: updating the CRUD to work with Linq.
 - [x] Ch 9: updateing the readall function to return a list of object using a specific filter
 - [x] Ch 10: adding a new readfunction that will return object based on a filter.
-- [ ] Ch 11: adding exceptions to the entire program : good luck with that Maor :> also add comments to this entire code.
-- [ ] Ch 12: making sure that we didnt broke anything and creating a tag.
+- [x] Ch 11: adding exceptions to the entire program : good luck with that Maor :> also add comments to this entire code.
+- [x] Ch 12: making sure that we didnt broke anything and creating a tag.
 
 # Stage 3
 - [ ] writing a detailed todo based on the instructions.
