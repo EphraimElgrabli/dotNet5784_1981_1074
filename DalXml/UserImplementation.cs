@@ -11,7 +11,7 @@ internal class UserImplementation : IUser
     readonly string s_users_xml = "users";
     public int Create(User item)
     {
-        List<User> users = XMLTools.LoadListFromXMLSerializer<User>(s_users_xml);
+        List<User>? users = XMLTools.LoadListFromXMLSerializer<User>(s_users_xml);
         User? u = users.Find(D => D.Id == item.Id);
         if (u != null)
             throw new DalAlreadyExistException($"User with ID={item.Id} already exists");

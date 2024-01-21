@@ -2,10 +2,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using DalApi;
 using DO;
 
-internal class DependencyImplementation:IDependency
+internal class DependencyImplementation : IDependency
 {
     readonly string s_dependencys_xml = "dependencys";
 
@@ -22,7 +23,9 @@ internal class DependencyImplementation:IDependency
 
     public Dependency? Read(int id)
     {
-        throw new NotImplementedException();
+        XElement root = XMLTools.LoadListFromXMLElement(s_dependencys_xml);
+        var t = root.Elements().FirstOrDefault(dep => (int?)dep.Element("Id") == id);
+        return t;
     }
 
     public Dependency? Read(Func<Dependency, bool> filter)
