@@ -8,6 +8,7 @@ using DO;
 using System;
 using System.Reflection.Emit;
 using System.Xml.Linq;
+using System.Runtime.InteropServices;
 
 internal class Program
 {
@@ -304,13 +305,20 @@ internal class Program
         } while (numtask != 0);
        
     }
-    static readonly IDal s_dal = new DalList(); //stage 2
+    //static readonly IDal s_dal = new DalList(); //stage 2
+    static readonly IDal s_dal = new DalXml(); //stage 3
     static void Main(string[] args)
     {
         try
         {
-            // Main entry point of the program
-            Initialization.Do(s_dal); //stage 2
+            Console.WriteLine("Would you like to create Initial data? (Y/N)");
+            string? ans = Console.ReadLine() ?? throw new FormatException("Wrong input");
+            if (ans == "Y" || ans == "y")
+            {
+                // Main entry point of the program
+                Initialization.Do(s_dal); //stage 2
+            }
+            
             funcentity(); // Performing operations on different entities
         }catch(Exception e)
         {
