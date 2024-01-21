@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Xml.Linq;
 using DalApi;
 using DO;
 
@@ -11,8 +12,12 @@ internal class DependencyImplementation:IDependency
 
     public int Create(Dependency item)
     {
-
-        throw new NotImplementedException();
+        XElement root = XMLTools.LoadListFromXMLElement(s_dependencys_xml);
+        int id = Config.NextDependencyId;
+        XElement xmlObj = BuildOrderItemXElemnt(item);
+        root.Add(xmlObj);
+        XMLTools.SaveListToXMLElement(root, s_dependencys_xml);
+        return obj.OrderID;
     }
 
     public void Delete(int id)
