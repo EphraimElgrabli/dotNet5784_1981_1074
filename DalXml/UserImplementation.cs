@@ -31,7 +31,12 @@ internal class UserImplementation : IUser
         users.Remove(User);
         XMLTools.SaveListToXMLSerializer<User>(users, s_users_xml);
     }
-
+    public void DeleteAll()
+    {
+        List<User> users = XMLTools.LoadListFromXMLSerializer<User>(s_users_xml);
+        users.Clear();
+        XMLTools.SaveListToXMLSerializer<User>(users, s_users_xml);
+    }
     public User? Read(int id)
     {
         List<User> users = XMLTools.LoadListFromXMLSerializer<User>(s_users_xml);

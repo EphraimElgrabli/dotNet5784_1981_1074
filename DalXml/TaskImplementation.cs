@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Common;
+using System.Xml.Linq;
 using DalApi;
 using DO;
 
@@ -37,6 +38,14 @@ internal class TaskImplementation: ITask
             throw new DalDoesNotExistException($"Task with ID={id} does not exist");
         tasks.Remove(task); // Remove the task from the data source
         XMLTools.SaveListToXMLSerializer<Task>(tasks, s_tasks_xml);
+    }
+
+    public void DeleteAll()
+    {
+        List<Task> tasks = XMLTools.LoadListFromXMLSerializer<Task>(s_tasks_xml);
+        tasks.Clear();
+        XMLTools.SaveListToXMLSerializer<Task>(tasks, s_tasks_xml);
+        XMLTools.ResetId("data-config", "NextTaskId");
     }
 
     /// <summary>

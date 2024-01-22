@@ -12,7 +12,7 @@ using System.Runtime.InteropServices;
 
 internal class Program
 {
-    
+
 
     // Function to interact with different entities (Dependency, Task, User)
     static int funcentity()
@@ -27,7 +27,7 @@ internal class Program
         try
         {
             do
-            {   
+            {
                 switch (entity)
                 {
                     case 0: break;
@@ -59,17 +59,17 @@ internal class Program
     /// <returns></returns>
     static int functask(string s)
     {
-        
-            Console.WriteLine("\nchoose operation\n");
-            Console.WriteLine("Choose one of the following:");
-            Console.WriteLine("0: exit");
-            Console.WriteLine("1: Create new ", s);
-            Console.WriteLine("2: Read ", s);
-            Console.WriteLine("3: ReadAll ", s);
-            Console.WriteLine("4: Update ", s);
-            Console.WriteLine("5: Delete ", s);
-            int entity = int.Parse(Console.ReadLine()!);
-            return entity;
+
+        Console.WriteLine("\nchoose operation\n");
+        Console.WriteLine("Choose one of the following:");
+        Console.WriteLine("0: exit");
+        Console.WriteLine("1: Create new ", s);
+        Console.WriteLine("2: Read ", s);
+        Console.WriteLine("3: ReadAll ", s);
+        Console.WriteLine("4: Update ", s);
+        Console.WriteLine("5: Delete ", s);
+        int entity = int.Parse(Console.ReadLine()!);
+        return entity;
     }
 
     /// <summary>
@@ -149,10 +149,10 @@ internal class Program
                 case 5:
                     Id = int.Parse(GetString("Id: "));
                     s_dal!.User.Delete(Id);
-                    break;           
+                    break;
             }
             numtask = functask("User");
-        } while (numtask != 0);       
+        } while (numtask != 0);
     }
 
     /// <summary>
@@ -303,24 +303,22 @@ internal class Program
             }
             numtask = functask("Task");
         } while (numtask != 0);
-       
+
     }
     //static readonly IDal s_dal = new DalList(); //stage 2
     static readonly IDal s_dal = new DalXml(); //stage 3
     static void Main(string[] args)
     {
+        // Main entry point of the program
         try
         {
             Console.WriteLine("Would you like to create Initial data? (Y/N)");
             string? ans = Console.ReadLine() ?? throw new FormatException("Wrong input");
             if (ans == "Y" || ans == "y")
-            {
-                // Main entry point of the program
-                Initialization.Do(s_dal); //stage 2
-            }
-            
+                Initialization.Do(s_dal); //stage 2          
             funcentity(); // Performing operations on different entities
-        }catch(Exception e)
+        }
+        catch (Exception e)
         {
             Console.WriteLine(e);
         }

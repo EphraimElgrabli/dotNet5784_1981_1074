@@ -35,7 +35,11 @@ internal class TaskImplementation : ITask
             throw new DalDoesNotExistException($"Task with ID={id} does not exist");
         DataSource.Tasks.Remove(task); // Remove the task from the data source
     }
+    public void DeleteAll()
+    {
+        DataSource.Tasks.Clear();
 
+    }
     /// <summary>
     /// Reads a specific task record from the data source.
     /// </summary>

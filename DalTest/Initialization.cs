@@ -154,9 +154,12 @@ public static class Initialization
     {
         // Ensure that data access layer instances are not null
         s_dal=dal ?? throw new NullReferenceException("DAL can not be null!");
-        
+
 
         // Create initial data for tasks, dependencies, and users
+        s_dal.Task.DeleteAll();
+        s_dal.Dependency.DeleteAll();
+        s_dal.User.DeleteAll();
         createTask();
         createDependency();
         createUser();

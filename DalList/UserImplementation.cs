@@ -31,7 +31,11 @@ internal class UserImplementation : IUser
             throw new DalDoesNotExistException($"User with ID={id} not exists");
         DataSource.Users.Remove(User);
     }
+    public void DeleteAll()
+    {
+        DataSource.Users.Clear();
 
+    }
     /// <summary>
     /// Reads a User based on the given ID.
     /// </summary>
