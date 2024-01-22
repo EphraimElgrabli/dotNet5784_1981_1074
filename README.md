@@ -26,7 +26,7 @@
 - [x] Ch 2: Creating a configuration files that will used as the database for the project in a library called "xml".
 - [x] Ch 3: Creating a config class.
 - [x] Ch 4: Implemelmentig the XmlTools file into the project.
-- [ ] Ch 5: IMplamnting the data access classes in the project DalXml
-- [ ] Ch 6: Creating a new class named DalXml that will implemnt IDal
-- [ ] Ch 7: Testing the entire project and the database layer using DalTest.
-- [ ] Ch 8: Making sure that we didnt broke anything and creating a tag.
+- [x] Ch 5: IMplamnting the data access classes in the project DalXml
+- [x] Ch 6: Creating a new class named DalXml that will implemnt IDal
+- [x] Ch 7: Testing the entire project and the database layer using DalTest.
+- [x] Ch 8: Making sure that we didnt broke anything and creating a tag.
