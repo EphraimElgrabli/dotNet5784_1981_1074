@@ -91,9 +91,10 @@ internal class DependencyImplementation : IDependency
     {
         // Load XML data, select all Dependency elements, and apply the filter if provided
         if (filter != null)
-            return XMLTools.LoadListFromXMLElement(s_dependencys_xml).Elements().Select(dep => GetDependency(dep));
-        else
             return XMLTools.LoadListFromXMLElement(s_dependencys_xml).Elements().Select(dep => GetDependency(dep)).Where(filter);
+
+        else
+            return XMLTools.LoadListFromXMLElement(s_dependencys_xml).Elements().Select(dep => GetDependency(dep));
     }
 
     /// <summary>
