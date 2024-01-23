@@ -1,8 +1,11 @@
-﻿using DalApi;
+﻿using System.Diagnostics;
+using DalApi;
 namespace Dal;
 
-sealed public class DalXml : IDal
+sealed internal class DalXml : IDal
 {
+    public static IDal Instance { get; } = new DalXml();
+    private DalXml() { }
     public IDependency Dependency => new DependencyImplementation();
 
     public ITask Task =>  new TaskImplementation();

@@ -150,11 +150,11 @@ public static class Initialization
     /// <param name="b"></param>
     /// <param name="c"></param>
     /// <exception cref="NullReferenceException"></exception>
-    public static void Do(IDal dal)
+    public static void Do()
     {
+        s_dal = Factory.Get; //stage 4
         // Ensure that data access layer instances are not null
-        s_dal=dal ?? throw new NullReferenceException("DAL can not be null!");
-
+        //s_dal=dal ?? throw new NullReferenceException("DAL can not be null!");
 
         // Create initial data for tasks, dependencies, and users
         s_dal.Task.DeleteAll();

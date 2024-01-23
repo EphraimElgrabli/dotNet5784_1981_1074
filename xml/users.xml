@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Id>247166522</Id>
+    <Id>329873441</Id>
     <Email>bigMama@gmail.com</Email>
-    <PhoneNumber>97269</PhoneNumber>
+    <PhoneNumber>97296</PhoneNumber>
     <Name>bigMama</Name>
-    <Level>Staff</Level>
-  </User>
-  <User>
-    <Id>387990061</Id>
-    <Email>bigPapa@gmail.com</Email>
-    <PhoneNumber>97226</PhoneNumber>
-    <Name>bigPapa</Name>
     <Level>FamilyMemberWithRoles</Level>
   </User>
   <User>
-    <Id>300316949</Id>
+    <Id>365352217</Id>
+    <Email>bigPapa@gmail.com</Email>
+    <PhoneNumber>97228</PhoneNumber>
+    <Name>bigPapa</Name>
+    <Level>Friends</Level>
+  </User>
+  <User>
+    <Id>315530828</Id>
     <Email>Kala@gmail.com</Email>
-    <PhoneNumber>97235</PhoneNumber>
+    <PhoneNumber>97211</PhoneNumber>
     <Name>Kala</Name>
-    <Level>Staff</Level>
+    <Level>Friends</Level>
   </User>
   <User>
-    <Id>329241939</Id>
+    <Id>394565021</Id>
     <Email>Hatan@gmail.com</Email>
-    <PhoneNumber>97283</PhoneNumber>
+    <PhoneNumber>97258</PhoneNumber>
     <Name>Hatan</Name>
+    <Level>Friends</Level>
+  </User>
+  <User>
+    <Id>365959005</Id>
+    <Email>yoram@gmail.com</Email>
+    <PhoneNumber>97251</PhoneNumber>
+    <Name>yoram</Name>
     <Level>Staff</Level>
   </User>
   <User>
-    <Id>208968639</Id>
-    <Email>yoram@gmail.com</Email>
-    <PhoneNumber>97234</PhoneNumber>
-    <Name>yoram</Name>
-    <Level>FamilyMember</Level>
-  </User>
-  <User>
-    <Id>200309929</Id>
+    <Id>256812433</Id>
     <Email>shimoshon@gmail.com</Email>
-    <PhoneNumber>97205</PhoneNumber>
+    <PhoneNumber>97242</PhoneNumber>
     <Name>shimoshon</Name>
     <Level>FamilyMemberWithRoles</Level>
   </User>
