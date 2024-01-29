@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlApi;
-public interface IBl
+namespace BlImplementation
 {
-    public IUser User { get; }
-    public ITask Task { get; }
+    internal class TaskImplemtation
+    {
+    }
 }
