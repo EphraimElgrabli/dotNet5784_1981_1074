@@ -25,13 +25,19 @@ public class BlAlreadyExistException : Exception
     /// <param name="message">The message that describes the error.</param>
     public BlAlreadyExistException(string? message) : base(message) { }
 }
+
+/// <summary>
+/// Exception thrown when an element can not be deleted.
+/// </summary>
 [Serializable]
 public class CanNotDeletedException : Exception
 {
     public CanNotDeletedException(string? message) : base(message) { }
 }
 
-
+/// <summary>
+///  exception that alert the user about an error about the xml file
+/// </summary>
 [Serializable]
 public class BlXMLFileLoadCreateException : Exception
 {
@@ -42,6 +48,9 @@ public class BlXMLFileLoadCreateException : Exception
     public BlXMLFileLoadCreateException(string? message) : base(message) { }
 }
 
+/// <summary>
+/// exception that alert using null object.
+/// </summary>
 [Serializable]
 public class BlNullPropertyException : Exception
 {
