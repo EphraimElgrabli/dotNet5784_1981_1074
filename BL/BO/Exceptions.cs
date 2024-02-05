@@ -1,4 +1,4 @@
-﻿namespace DO;
+﻿namespace BO;
 
 /// <summary>
 /// Exception thrown when a BL does not exist.
@@ -13,6 +13,15 @@ public class BlDoesNotExistException : Exception
     public BlDoesNotExistException(string? message) : base(message) { }
 }
 
+public class BlValueNotExistException : Exception
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="BlValueNotExistException"/> class with a specified error message.
+    /// </summary>
+    /// <param name="message">The message that describes the error.</param>
+    public BlValueNotExistException(string? message) : base(message) { }
+
+}
 /// <summary>
 /// Exception thrown when a BL already exists.
 /// </summary>
@@ -24,7 +33,12 @@ public class BlAlreadyExistException : Exception
     /// </summary>
     /// <param name="message">The message that describes the error.</param>
     public BlAlreadyExistException(string? message) : base(message) { }
+
+    public BlAlreadyExistException() { }
+
+    public BlAlreadyExistException(string? message, Exception? innerException) : base(message, innerException) { }
 }
+
 
 /// <summary>
 /// Exception thrown when an element can not be deleted.
@@ -59,4 +73,21 @@ public class BlNullPropertyException : Exception
     /// </summary>
     /// <param name="message">The message that describes the error.</param>
     public BlNullPropertyException(string? message) : base(message) { }
+}
+
+public class BlDateProblemException : Exception
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="BlDateProblemException"/> class with a specified error message.
+    /// </summary>
+    /// <param name="message">The message that describes the error.</param>
+    public BlDateProblemException(string? message) : base(message) { }
+}
+public class BlValueInvalidException : Exception
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="BlDateProblemException"/> class with a specified error message.
+    /// </summary>
+    /// <param name="message">The message that describes the error.</param>
+    public BlValueInvalidException(string? message) : base(message) { }
 }

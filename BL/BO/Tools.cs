@@ -3,7 +3,7 @@ using System.Reflection;
 
 namespace BO;
 
-static class Tools
+ static class Tools
 {
     public static string ToStringProperty<T>(this T entity)
     {
@@ -30,4 +30,5 @@ static class Tools
         }
         return st;
     }
+   
 }

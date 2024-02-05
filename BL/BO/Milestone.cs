@@ -12,6 +12,6 @@ public class Milestone
     public DateTime? CompleteDate { get; set; }
     public double completionPrecentage { get; set; }
     public string? Remarks { get; set; }
-    public List<TaskInList> Dependencies { get; set; } = null;
+    public List<TaskInList>? Dependencies { get; set; } = null;
     public override string ToString() => this.ToStringProperty();
 }

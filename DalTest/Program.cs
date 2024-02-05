@@ -9,6 +9,7 @@ using System;
 using System.Reflection.Emit;
 using System.Xml.Linq;
 using System.Runtime.InteropServices;
+using System.Diagnostics.Contracts;
 
 internal class Program
 {
@@ -185,7 +186,7 @@ internal class Program
 
                 case 3:
                     List<Dependency?> temPrintAll = s_dal!.Dependency.ReadAll().ToList();
-                    foreach (Dependency dep in temPrintAll)
+                    foreach (Dependency? dep in temPrintAll)
                     {
                         Console.WriteLine(dep);
                     }
@@ -233,11 +234,11 @@ internal class Program
                     string description = GetString("Description: ");
                     DateTime createdDate = DateTime.Now;
                     bool isMilestone = false;
-                    DO.UserLevel? level = (DO.UserLevel)Int16.Parse(GetString("\r0: Friends\r\n1: Staff\r\n2: FamilyMember\r\n3: FamilyMemberWithRoles\r\n4: Producer"));
+                    DO.Status? level = (DO.Status)Int16.Parse(GetString("0: Unscheduled\r\n  1: Scheduled\r\n  2: OnTrack\r\n  3: InJeopardy\r\n  4: Done "));
                     DateTime? startDate =  Convert.ToDateTime(GetString("Start Date (Formatted: 1/1/0001): "));
                     DateTime? scheduledDate = Convert.ToDateTime(GetString("Scedualed Date (Formatted: 1/1/0001): "));
                     DateTime? deadlineDate = Convert.ToDateTime(GetString("Deadline Date (Formatted: 1/1/0001): "));
-                    DateTime? completeDate = Convert.ToDateTime(GetString("Complete Date (Formatted: 1/1/0001): "));
+                    DateTime? completeDate = Convert.ToDateTime(DateTime.Parse(GetString("Complete Date (Formatted: 1/1/0001): ")));
                     string? deliverables = GetString("Deliverables: ");
                     string? remarks = GetString("Remarks: ");
                     Task newTask = new(0, alias, description, createdDate, isMilestone, startDate, scheduledDate, deadlineDate, completeDate, deliverables, remarks, 0, level);
@@ -265,7 +266,7 @@ internal class Program
                     alias = GetString("Alias: ");
                     description = GetString("Description: ");
                     isMilestone = bool.Parse(GetString("is it a milestone: "));
-                    level = (DO.UserLevel)Int16.Parse(GetString("0: Friends\r\n  1: Staff\r\n  2: FamilyMember\r\n  3: FamilyMemberWithRoles\r\n  4: Producer "));
+                    level = (DO.Status)Int16.Parse(GetString("0: Unscheduled\r\n  1: Scheduled\r\n  2: OnTrack\r\n  3: InJeopardy\r\n  4: Done "));
                     startDate = Convert.ToDateTime(GetString("Start Date (Formatted: 1/1/0001: "));
                     scheduledDate = Convert.ToDateTime(GetString("Scedualed Date (Formatted: 1/1/0001: "));
                     deadlineDate = Convert.ToDateTime(GetString("Deadline Date (Formatted: 1/1/0001: "));

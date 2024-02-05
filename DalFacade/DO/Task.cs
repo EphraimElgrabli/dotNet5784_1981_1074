@@ -18,7 +18,7 @@ public record Task
     string? Deliverables = null,
     string? Remarks = null,
     int? UserId = null,
-    DO.UserLevel? Complexity = null
+    DO.Status? Complexity = null
 )
 {
     /// <summary>
