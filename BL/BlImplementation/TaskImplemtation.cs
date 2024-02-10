@@ -1,18 +1,20 @@
-﻿using DO;
+﻿namespace BlImplementation;
 
-namespace BlImplementation;
+
 
 internal class TaskImplemtation : BlApi.ITask
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
     public int Create(BO.Task doTask)
     {
-
-
         try
         {
             if (doTask.Alias == "") throw new BO.BlValueNotExistException("Alias is empty");
             doTask.Dependencies?.Select(d => _dal.Dependency.Create(new(0, d.Id, doTask.Id)));
+            if(doTask.User!=null)
+            {
+                if (_dal.User.Read(doTask.User.Id) == null) throw new BO.BlDoesNotExistException($"User with ID={doTask.User.Id} does Not exist");
+            }
             int idTask = _dal.Task.Create(new DO.Task()
             {
                 Id = doTask.Id,
@@ -29,13 +31,21 @@ internal class TaskImplemtation : BlApi.ITask
                 UserId = doTask.User?.Id,
                 IsMilestone = (doTask.Milestone?.Id == null) ? false : true,
             });
-
+            if (doTask.User.Id != null)
+            {
+                //all this because i do in User a list of tasks and here i add the task to the list
+               BlApi.IBl? user = BlApi.Factory.Get();
+               BO.User? t= user.User.Read(doTask.User.Id);
+               BO.TaskInUser temp = new BO.TaskInUser() { Id = idTask, Alias = doTask.Alias };
+               t.Tasks.Add(temp);
+               user.User.Update(t);
+            }
             return idTask;
 
         }
         catch (DO.DalAlreadyExistException ex)
         {
-            throw new BO.BlAlreadyExistException($"Task with ID={doTask.Id} does not exist");
+            throw new BO.BlAlreadyExistException($"Task with ID={doTask.Id} does not exist",ex);
         }
 
     }
@@ -45,7 +55,7 @@ internal class TaskImplemtation : BlApi.ITask
         try { _dal.Task.Delete(id); }
         catch (DO.CanNotDeletedException ex)
         {
-            throw new BO.CanNotDeletedException($"Task with ID={id} can not deleted");
+            throw new BO.CanNotDeletedException($"Task with ID={id} can not deleted",ex);
         }
 
     }
@@ -124,6 +134,25 @@ internal class TaskImplemtation : BlApi.ITask
                 UserId = task.User?.Id,
                 IsMilestone = (task.Milestone?.Id == null) ? false : true,
             });
+            if (task.User != null)
+            {
+                //all this because i do in User a list of tasks and here i add the task to the list
+                BO.User? t = new UserImplementation().Read(task.User.Id);
+             
+                BO.TaskInUser temp = new BO.TaskInUser() { Id = task.Id, Alias = task.Alias };
+                if (t.Tasks == null) t.Tasks.Add(temp);
+                else
+                {
+                    if (t.Tasks.Find(t => t.Id == task.Id).Id != temp.Id)
+                    {
+                        t.Tasks.Add(temp);
+                    }
+                }
+                new UserImplementation().Update(t);
+
+
+            }
+
             foreach (DO.Dependency dependency in _dal.Dependency.ReadAll(d => d.DependsOnTask == task.Id)) { _dal.Dependency.Delete(dependency.Id); }
 
             foreach (var d in task.Dependencies)

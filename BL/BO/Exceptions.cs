@@ -11,6 +11,8 @@ public class BlDoesNotExistException : Exception
     /// </summary>
     /// <param name="message">The message that describes the error.</param>
     public BlDoesNotExistException(string? message) : base(message) { }
+    public BlDoesNotExistException() { }
+    public BlDoesNotExistException(string? message, Exception? innerException) : base(message, innerException) { }
 }
 
 public class BlValueNotExistException : Exception
@@ -20,6 +22,8 @@ public class BlValueNotExistException : Exception
     /// </summary>
     /// <param name="message">The message that describes the error.</param>
     public BlValueNotExistException(string? message) : base(message) { }
+    public BlValueNotExistException() { }
+    public BlValueNotExistException(string? message, Exception? innerException) : base(message, innerException) { }
 
 }
 /// <summary>
@@ -47,6 +51,8 @@ public class BlAlreadyExistException : Exception
 public class CanNotDeletedException : Exception
 {
     public CanNotDeletedException(string? message) : base(message) { }
+    public CanNotDeletedException() { }
+    public CanNotDeletedException(string? message, Exception? innerException) : base(message, innerException) { }
 }
 
 /// <summary>
@@ -60,6 +66,8 @@ public class BlXMLFileLoadCreateException : Exception
     /// </summary>
     /// <param name="message">The message that describes the error.</param>
     public BlXMLFileLoadCreateException(string? message) : base(message) { }
+    public BlXMLFileLoadCreateException() { }
+    public BlXMLFileLoadCreateException(string? message, Exception? innerException) : base(message, innerException) { }
 }
 
 /// <summary>
@@ -73,6 +81,8 @@ public class BlNullPropertyException : Exception
     /// </summary>
     /// <param name="message">The message that describes the error.</param>
     public BlNullPropertyException(string? message) : base(message) { }
+    public BlNullPropertyException() { }
+    public BlNullPropertyException(string? message, Exception? innerException) : base(message, innerException) { }
 }
 
 public class BlDateProblemException : Exception
@@ -82,6 +92,8 @@ public class BlDateProblemException : Exception
     /// </summary>
     /// <param name="message">The message that describes the error.</param>
     public BlDateProblemException(string? message) : base(message) { }
+    public BlDateProblemException() { }
+    public BlDateProblemException(string? message, Exception? innerException) : base(message, innerException) { }
 }
 public class BlValueInvalidException : Exception
 {
@@ -90,4 +102,6 @@ public class BlValueInvalidException : Exception
     /// </summary>
     /// <param name="message">The message that describes the error.</param>
     public BlValueInvalidException(string? message) : base(message) { }
+    public BlValueInvalidException() { }
+    public BlValueInvalidException(string? message, Exception? innerException) : base(message, innerException) { }
 }

@@ -2,7 +2,6 @@
 
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
-using Dal;
 using DalApi;
 using DO;
 using System;
@@ -25,10 +24,11 @@ internal class Program
         Console.WriteLine("2: Task");
         Console.WriteLine("3: User");
         int entity = int.Parse(Console.ReadLine()!);
-        try
+        do
         {
-            do
-            {
+            try
+        {
+            
                 switch (entity)
                 {
                     case 0: break;
@@ -44,12 +44,13 @@ internal class Program
                 Console.WriteLine("2: Task");
                 Console.WriteLine("3: User");
                 entity = int.Parse(Console.ReadLine()!);
-            } while (entity != 0);
+            
         }
         catch (Exception e)
         {
             Console.WriteLine(e.Message);
         }
+        } while (entity != 0);
         return entity;
     }
 
@@ -310,17 +311,13 @@ internal class Program
     static void Main(string[] args)
     {
         // Main entry point of the program
-        try
-        {
+        
             Console.WriteLine("Would you like to create Initial data? (Y/N)");
             string? ans = Console.ReadLine() ?? throw new FormatException("Wrong input");
             if (ans == "Y" || ans == "y")
                 Initialization.Do(); //stage 2          
             funcentity(); // Performing operations on different entities
-        }
-        catch (Exception e)
-        {
-            Console.WriteLine(e);
-        }
+        
+        
     }
 }
