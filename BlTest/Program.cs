@@ -69,7 +69,7 @@ internal class Program
                         break;
                     case 3:
                         Console.WriteLine("Now you are about to set dates for tasks");
-                        Schedule(s_bl.Task);
+                        Schedule();
                         UpdatedMainMenu();
                         break;
                     default:
@@ -239,7 +239,7 @@ internal class Program
             int id;
             if (isUpdate)
             {
-                Console.WriteLine("Enter Id:");
+                Console.WriteLine("Enter Id: ");
                 id = int.Parse(Console.ReadLine()!);
             }
             else
@@ -271,19 +271,18 @@ internal class Program
             List<TaskInList> dependencies = new List<TaskInList>();
 
             do
-            {
+            {//do change
                 Console.WriteLine("Enter the Id of the previous task:");
                 int previousTaskId = int.Parse(Console.ReadLine()!);
                 string taskDescription = ("Enter the description of the dependency task:"); ;
                 string taskAlias = GetString("Enter the alias of the dependency task:");
                 Console.WriteLine("Enter the status of the dependency task:");
                 BO.Status status = Enum.Parse<BO.Status>(Console.ReadLine()!);
-                Console.WriteLine("would you like to add another dependency? if so press 1");
+                Console.WriteLine("would you like to add another dependency?\n if so press 1");
                 TaskInList taskInList = new TaskInList() { Id = previousTaskId, Description = taskDescription, Alias = taskDescription, Status = status };
                 dependencies.Add(taskInList);
                 menu = int.Parse(Console.ReadLine()!);
             } while (menu == 1);
-
             // Create a new Task object with the updated details
             return new BO.Task()
             {
@@ -297,7 +296,7 @@ internal class Program
                 DeadlineDate = deadlineDate,
                 CompleteDate = completeDate,
                 Deliverables = deliverables,
-                Dependencies = (from tsk in dependencies select new TaskInList() { Id = tsk.Id, Description = tsk.Description, Alias = tsk.Alias, Status = tsk.status }),
+                Dependencies = (from tsk in dependencies select new TaskInList() { Id = tsk.Id, Description = tsk.Description, Alias = tsk.Alias, Status = tsk.Status }),
             };
         }
         void createTask(BlApi.ITask? s_dalTask)
@@ -365,5 +364,12 @@ internal class Program
         //############################
         //dates and sceduale functions
         //############################
+
+        void Schedule()
+        {
+            //לבדוק את כל הרשימות לתת לכולם זמן תחילת פרוויקט
+            //לבדוק שכולם אחרי התאריך הקודם שלהם
+            
+        }
     }
 }
