@@ -1,0 +1,40 @@
+﻿<Window x:Class="PL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+        xmlns:local="clr-namespace:PL"
+        ui:ThemeManager.IsThemeAware="True"
+        ui:TitleBar.ExtendViewIntoTitleBar="True"    
+        ui:WindowHelper.SystemBackdropType="Mica"
+        ui:TitleBar.IsBackButtonVisible="False"
+        ui:WindowHelper.UseModernWindowStyle="True"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="640" Width="480">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="500*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="0" VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Initalze DB" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+            <Label Grid.Column="1" Content="BH" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="center"/>
+        </Grid>
+        <Label Grid.Row="1" Content="Your Perfect Day Made Easy!" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Center"/>
+        <!--Internal, Upper Grid-->
+        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="2" VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Users" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Height="60" Width="220" Click="Button_Click"/>
+            <Button Grid.Column="1" Content="Admin" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="60" Width="220"/>
+        </Grid>
+    </Grid>
+</Window>
