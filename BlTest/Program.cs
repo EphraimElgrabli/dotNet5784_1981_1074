@@ -69,7 +69,7 @@ internal class Program
                         break;
                     case 3:
                         Console.WriteLine("Now you are about to set dates for tasks");
-                        Schedule(s_bl.Task);
+                        Calander(s_bl.Task);
                         UpdatedMainMenu();
                         break;
                     default:
@@ -365,5 +365,13 @@ internal class Program
         //############################
         //dates and sceduale functions
         //############################
+        void Calander(BlApi.ITask? s_dalTask)
+        {
+            Console.WriteLine("Please enter the task start date");
+            DateTime projectStartTime = DateTime.Parse(Console.ReadLine()!);
+
+            DalApi.IDal dal = Factory.Get; //maor how did you handle the factory in dal? it seems to not work properly
+            dal.SaveProject(projectStartTime);
+        }
     }
 }
