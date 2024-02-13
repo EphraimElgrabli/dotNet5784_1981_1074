@@ -22,9 +22,17 @@ namespace PL
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnUser_Click(object sender, RoutedEventArgs e)
         {
             new UserList().Show();
+        }
+
+        private void initDb_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you to initialize the Database?","InitDB - Warning.", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                    DalTest.Initialization.Do();
+            }
         }
     }
 }

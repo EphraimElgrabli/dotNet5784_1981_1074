@@ -7,23 +7,26 @@
         xmlns:local="clr-namespace:PL"
         ui:ThemeManager.IsThemeAware="True"
         ui:TitleBar.ExtendViewIntoTitleBar="True"    
-        ui:WindowHelper.SystemBackdropType="Mica"
+        ui:WindowHelper.SystemBackdropType="Acrylic"
         ui:TitleBar.IsBackButtonVisible="False"
         ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
-        Title="MainWindow" Height="640" Width="480">
+        Title="MainWindow" Height="640" Width="480"
+        ResizeMode="CanMinimize"
+        ui:WindowHelper.CornerStyle="Round" Background="Bisque"
+        Loaded="Window_Loaded">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30*"/>
+            <RowDefinition Height="35*"/>
             <RowDefinition Height="500*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="0" VerticalAlignment="Stretch" Width="auto">
+        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="0" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Initalze DB" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+            <Button Grid.Column="0" Content="Initalze DB" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" Click="initDb_Click"/>
             <Label Grid.Column="1" Content="BH" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="center"/>
         </Grid>
         <Label Grid.Row="1" Content="Your Perfect Day Made Easy!" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Center"/>
@@ -33,7 +36,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Users" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Height="60" Width="220" Click="Button_Click"/>
+            <Button Grid.Column="0" Content="Users" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Height="60" Width="220" Click="btnUser_Click"/>
             <Button Grid.Column="1" Content="Admin" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="60" Width="220"/>
         </Grid>
     </Grid>

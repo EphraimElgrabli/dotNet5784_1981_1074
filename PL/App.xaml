@@ -4,7 +4,12 @@
              xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
              xmlns:local="clr-namespace:PL"
              StartupUri="MainWindow.xaml">
-    <Application.Resources>
-
-    </Application.Resources>
+        <Application.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ui:ThemeResources/>
+                    <ui:XamlControlsResources />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Application.Resources>
 </Application>
