@@ -10,6 +10,7 @@ sealed internal class DalList : IDal
     public ITask Task =>  new TaskImplementation();
 
     public IUser User =>  new UserImplementation();
+    public IClock Clock => new ClockImplementation();
 
-    
+
 }

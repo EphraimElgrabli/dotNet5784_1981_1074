@@ -1,6 +1,7 @@
-﻿namespace BlApi;
+﻿
+namespace DalApi;
 
-public interface IClock
+public  interface IClock
 {
     public DateTime? GetStartProject();
     public DateTime? GetEndProject();
@@ -8,7 +9,4 @@ public interface IClock
     public DateTime? SetStartProject(DateTime dateTime);
     public DateTime? SetEndProject(DateTime dateTime);
     public void resetTimeProject();
-
-    public BO.StatusProject GetStatusProject();
-
 }

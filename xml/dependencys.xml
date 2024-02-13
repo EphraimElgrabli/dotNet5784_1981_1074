@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ArrayOfDependency>
+<Dependency>
   <Dependency>
     <Id>1000</Id>
     <DependentTask>1001</DependentTask>
@@ -375,9 +375,4 @@
     <DependentTask>1034</DependentTask>
     <DependsOnTask>1001</DependsOnTask>
   </Dependency>
-  <Dependency>
-    <Id>1075</Id>
-    <DependentTask>1255</DependentTask>
-    <DependsOnTask>1455</DependsOnTask>
-  </Dependency>
-</ArrayOfDependency>
+</Dependency>
