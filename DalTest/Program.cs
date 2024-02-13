@@ -1,14 +1,8 @@
 ﻿namespace DalTest;
-
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 using DalApi;
 using DO;
 using System;
-using System.Reflection.Emit;
-using System.Xml.Linq;
-using System.Runtime.InteropServices;
-using System.Diagnostics.Contracts;
+
 
 internal class Program
 {
@@ -234,15 +228,16 @@ internal class Program
                     string alias = GetString("Alias: ");
                     string description = GetString("Description: ");
                     DateTime createdDate = DateTime.Now;
+                    int cost = int.Parse(GetString("Cost: "));
                     bool isMilestone = false;
-                    DO.Status? level = (DO.Status)Int16.Parse(GetString("0: Unscheduled\r\n  1: Scheduled\r\n  2: OnTrack\r\n  3: InJeopardy\r\n  4: Done "));
+                    DO.UserLevel? level = (DO.UserLevel)Int16.Parse(GetString("\r0: Friends\r\n1: Staff\r\n2: FamilyMember\r\n3: FamilyMemberWithRoles\r\n4: Producer")); 
                     DateTime? startDate =  Convert.ToDateTime(GetString("Start Date (Formatted: 1/1/0001): "));
                     DateTime? scheduledDate = Convert.ToDateTime(GetString("Scedualed Date (Formatted: 1/1/0001): "));
                     DateTime? deadlineDate = Convert.ToDateTime(GetString("Deadline Date (Formatted: 1/1/0001): "));
                     DateTime? completeDate = Convert.ToDateTime(DateTime.Parse(GetString("Complete Date (Formatted: 1/1/0001): ")));
                     string? deliverables = GetString("Deliverables: ");
                     string? remarks = GetString("Remarks: ");
-                    Task newTask = new(0, alias, description, createdDate, isMilestone, startDate, scheduledDate, deadlineDate, completeDate, deliverables, remarks, 0, level);
+                    Task newTask = new(0, alias, description,cost, createdDate, isMilestone, startDate, scheduledDate, deadlineDate, completeDate, deliverables, remarks, 0, level);
                     s_dal!.Task.Create(newTask);
                     break;
                 case 2:
@@ -264,10 +259,11 @@ internal class Program
                     Id = int.Parse(GetString("Id: "));
                     Task? temp = s_dal!.Task.Read(Id);
                     Console.WriteLine(temp);
+                    cost = int.Parse(GetString("Cost: "));
                     alias = GetString("Alias: ");
                     description = GetString("Description: ");
                     isMilestone = bool.Parse(GetString("is it a milestone: "));
-                    level = (DO.Status)Int16.Parse(GetString("0: Unscheduled\r\n  1: Scheduled\r\n  2: OnTrack\r\n  3: InJeopardy\r\n  4: Done "));
+                    level = (DO.UserLevel)Int16.Parse(GetString("\r0: Friends\r\n1: Staff\r\n2: FamilyMember\r\n3: FamilyMemberWithRoles\r\n4: Producer"));
                     startDate = Convert.ToDateTime(GetString("Start Date (Formatted: 1/1/0001: "));
                     scheduledDate = Convert.ToDateTime(GetString("Scedualed Date (Formatted: 1/1/0001: "));
                     deadlineDate = Convert.ToDateTime(GetString("Deadline Date (Formatted: 1/1/0001: "));
@@ -282,6 +278,8 @@ internal class Program
                         description = temp.Description;
                     if ((int)(level) < 0 || (int)(level) > 5)
                         level = temp.Complexity;
+                    if(cost==temp.cost)
+                        cost = temp.cost;
                     if (scheduledDate == dt)
                         scheduledDate = temp.ScheduledDate;
                     if (deadlineDate == dt)
@@ -292,7 +290,7 @@ internal class Program
                         deliverables = temp.Deliverables;
                     if (remarks == "")
                         remarks = temp.Remarks;
-                    Task Helpuscheck = new(Id, alias, description, temp.CreatedAtDate, isMilestone, startDate, scheduledDate, deadlineDate, completeDate, deliverables, remarks, 0, level);
+                    Task Helpuscheck = new(Id, alias, description,cost, temp.CreatedAtDate, isMilestone, startDate, scheduledDate, deadlineDate, completeDate, deliverables, remarks, 0, level);
                     s_dal!.Task.Update(Helpuscheck);
                     break;
 

@@ -1,14 +1,27 @@
-﻿namespace BlImplementation;
+﻿using BO;
+
+namespace BlImplementation;
 
 internal class ClockImplementation : BlApi.IClock
 {
-    public DateTime GetStartProject()
+    private readonly DalApi.IDal _dal = DalApi.Factory.Get;
+    public DateTime? GetStartProject()=>_dal.Clock.GetStartProject();
+    
+    public DateTime? GetEndProject()=>_dal.Clock.GetEndProject();
+    
+    public DateTime? SetStartProject(DateTime startdateTime)=>_dal.Clock.SetStartProject(startdateTime);
+    
+    public DateTime? SetEndProject(DateTime enddateTime)=>_dal.Clock.SetEndProject(enddateTime);
+
+    public StatusProject GetStatusProject()
     {
-        throw new NotImplementedException();
+        if (GetEndProject() < DateTime.Now)
+            return StatusProject.Done;
+        if (GetStartProject() < DateTime.Now)
+            return StatusProject.InProgress;
+        return StatusProject.UnStarted;
+
     }
 
-    public DateTime SetStartProject(DateTime dateTime)
-    {
-        throw new NotImplementedException();
-    }
+    public void resetTimeProject()=>_dal.Clock.resetTimeProject();
 }

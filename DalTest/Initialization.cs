@@ -60,6 +60,7 @@ public static class Initialization
             string? alias = task;
             string? description = task;
             DateTime createdDate = DateTime.Now;
+            int cost = s_rand.Next(1000, 10000);
             bool isMilestone = (s_rand.Next(0, 1000) % 2) == 0 ? true : false;
             int userLvl = s_rand.Next(0, 4);
             DateTime end = new DateTime(2025, 1, 1);
@@ -73,7 +74,7 @@ public static class Initialization
             int engId = s_rand.Next(1000, 1020);
 
             // Create a new Task object and add it to the data access layer
-            Task newTask = new(0, alias, description, createdDate, isMilestone, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId, (DO.Status)userLvl);
+            Task newTask = new(0, alias, description,cost, createdDate, isMilestone, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId, (DO.UserLevel)userLvl);
             s_dal!.Task.Create(newTask);
         }
     }
@@ -160,6 +161,7 @@ public static class Initialization
         s_dal.Task.DeleteAll();
         s_dal.Dependency.DeleteAll();
         s_dal.User.DeleteAll();
+
         createTask();
         createDependency();
         createUser();
