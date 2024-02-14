@@ -9,6 +9,7 @@
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 		<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
 		<RootNamespace>Dal</RootNamespace>
+		<Platforms>AnyCPU;x64;ARM64</Platforms>
 	</PropertyGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\DalFacade\DalFacade.csproj" />
