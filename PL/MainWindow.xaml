@@ -3,18 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:local="clr-namespace:PL"
-        ui:ThemeManager.IsThemeAware="True"
-        ui:TitleBar.ExtendViewIntoTitleBar="True"    
-        ui:WindowHelper.SystemBackdropType="Acrylic"
-        ui:TitleBar.IsBackButtonVisible="False"
-        ui:WindowHelper.UseModernWindowStyle="True"
         mc:Ignorable="d"
         Title="MainWindow" Height="640" Width="480"
         ResizeMode="CanMinimize"
-        ui:WindowHelper.CornerStyle="Round" Background="Bisque"
-        Loaded="Window_Loaded">
+        Background="Bisque">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="35*"/>
