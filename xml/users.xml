@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Id>375483828</Id>
+    <Id>297090872</Id>
     <Email>bigMama@gmail.com</Email>
-    <PhoneNumber>97264</PhoneNumber>
+    <PhoneNumber>97243</PhoneNumber>
     <Name>bigMama</Name>
-    <Level>FamilyMember</Level>
+    <Level>FamilyMemberWithRoles</Level>
   </User>
   <User>
-    <Id>258824232</Id>
+    <Id>250843379</Id>
     <Email>bigPapa@gmail.com</Email>
-    <PhoneNumber>97297</PhoneNumber>
+    <PhoneNumber>97233</PhoneNumber>
     <Name>bigPapa</Name>
-    <Level>FamilyMember</Level>
-  </User>
-  <User>
-    <Id>221689723</Id>
-    <Email>Kala@gmail.com</Email>
-    <PhoneNumber>97202</PhoneNumber>
-    <Name>Kala</Name>
-    <Level>FamilyMemberWithRoles</Level>
-  </User>
-  <User>
-    <Id>295101515</Id>
-    <Email>Hatan@gmail.com</Email>
-    <PhoneNumber>97274</PhoneNumber>
-    <Name>Hatan</Name>
-    <Level>Staff</Level>
-  </User>
-  <User>
-    <Id>232445055</Id>
-    <Email>yoram@gmail.com</Email>
-    <PhoneNumber>97224</PhoneNumber>
-    <Name>yoram</Name>
-    <Level>FamilyMemberWithRoles</Level>
-  </User>
-  <User>
-    <Id>206427582</Id>
-    <Email>shimoshon@gmail.com</Email>
-    <PhoneNumber>97287</PhoneNumber>
-    <Name>shimoshon</Name>
     <Level>Friends</Level>
+  </User>
+  <User>
+    <Id>341393148</Id>
+    <Email>Kala@gmail.com</Email>
+    <PhoneNumber>97240</PhoneNumber>
+    <Name>Kala</Name>
+    <Level>Friends</Level>
+  </User>
+  <User>
+    <Id>386917740</Id>
+    <Email>Hatan@gmail.com</Email>
+    <PhoneNumber>97291</PhoneNumber>
+    <Name>Hatan</Name>
+    <Level>FamilyMemberWithRoles</Level>
+  </User>
+  <User>
+    <Id>255432491</Id>
+    <Email>yoram@gmail.com</Email>
+    <PhoneNumber>97240</PhoneNumber>
+    <Name>yoram</Name>
+    <Level>Friends</Level>
+  </User>
+  <User>
+    <Id>355307891</Id>
+    <Email>shimoshon@gmail.com</Email>
+    <PhoneNumber>97261</PhoneNumber>
+    <Name>shimoshon</Name>
+    <Level>FamilyMember</Level>
   </User>
 </ArrayOfUser>

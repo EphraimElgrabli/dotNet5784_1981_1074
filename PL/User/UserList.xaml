@@ -6,7 +6,8 @@
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:local="clr-namespace:PL.User"
         mc:Ignorable="d"
-        Title="UserList" Height="800" Width="500">
+        Title="UserList" Height="800" Width="500"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
     <!--Extrnal Grid-->
     <Grid>
         <Grid.RowDefinitions>
@@ -21,9 +22,9 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Grid.Column="0" Content="Select:" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
-            <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+            <ComboBox SelectedValue="{Binding usrLevel, Mode=TwoWay}" ItemsSource="{Binding Source={StaticResource UserLevelKey}}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="ComboBox_UserLevelSelectionChanged"/>
         </Grid>
-        <ListView Grid.Row="1">
+        <ListView Grid.Row="1" ItemsSource="{Binding UserListing}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
