@@ -12,14 +12,14 @@
     <Email>bigPapa@gmail.com</Email>
     <PhoneNumber>97242</PhoneNumber>
     <Name>bigPapa</Name>
-    <Level>Friends</Level>
+    <Level>FamilyMember</Level>
   </User>
   <User>
     <Id>365537017</Id>
     <Email>Kala@gmail.com</Email>
     <PhoneNumber>97254</PhoneNumber>
     <Name>Kala</Name>
-    <Level>Friends</Level>
+    <Level>FamilyMemberWithRoles</Level>
   </User>
   <User>
     <Id>300784414</Id>

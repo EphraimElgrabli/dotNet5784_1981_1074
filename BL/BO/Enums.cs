@@ -9,8 +9,7 @@ public enum UserLevel
     Staff,                    // Close friends of the couple actively involved in wedding preparations
     FamilyMember,             // Immediate family members participating in the wedding
     FamilyMemberWithRoles,    // Immediate family members with specific assigned roles in the wedding
-    Producer,                  // Wedding producer or planner overseeing the entire event
-    None
+    Producer                  // Wedding producer or planner overseeing the entire event
 }
 
 // Enum representing the status of a wedding task in the wedding management app
