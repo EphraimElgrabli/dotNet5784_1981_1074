@@ -1,25 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net7.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <UseWPF>true</UseWPF>
-	<BaseOutputPath>$(SolutionDir)\bin\</BaseOutputPath>
-	<OutputPath>$(SolutionDir)\bin\</OutputPath>
-	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-	<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
-	<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net7.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<UseWPF>true</UseWPF>
+		<BaseOutputPath>$(SolutionDir)\bin\</BaseOutputPath>
+		<OutputPath>$(SolutionDir)\bin\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="WPF-UI" Version="2.1.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="WPF-UI" Version="3.0.0" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\BL\BL.csproj" />
-    <ProjectReference Include="..\DalTest\DalTest.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\BL\BL.csproj" />
+		<ProjectReference Include="..\DalTest\DalTest.csproj" />
+	</ItemGroup>
 
 </Project>
