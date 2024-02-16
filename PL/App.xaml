@@ -4,13 +4,14 @@
              xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
              xmlns:local="clr-namespace:PL"
              StartupUri="MainWindow.xaml">
-        <Application.Resources>
-        <local:UserLevelCollection x:Key="UserLevelKey" />
-        <ResourceDictionary x:Key="UiLibrary">
-                <ResourceDictionary.MergedDictionaries>
-                    <ui:ThemesDictionary Theme="Dark" />
-                    <ui:ControlsDictionary />
-                </ResourceDictionary.MergedDictionaries>
-            </ResourceDictionary>
-        </Application.Resources>
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ui:ThemesDictionary Theme="Dark" />
+                <ui:ControlsDictionary />
+            </ResourceDictionary.MergedDictionaries>
+
+            <local:UserLevelCollection x:Key="UserLevelKey" />
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>
