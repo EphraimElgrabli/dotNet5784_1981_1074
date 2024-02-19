@@ -157,9 +157,9 @@ internal class UserImplementation : BlApi.IUser
     {
         try
         {
-            if (user.Id < 99999999 || user.Id > 999999999 || user.Name == "" || !new EmailAddressAttribute().IsValid(user.Email))
+            if (user.Id < 99999999 || user.Id > 999999999 || user.Name == "") //|| !new EmailAddressAttribute().IsValid(user.Email))
             {
-                throw new BO.BlValueInvalidException($"value Invalid can not create user");
+                throw new BO.BlValueInvalidException($"value Invalid, can not update user");
             }
             _dal.User.Update(new DO.User()
             {

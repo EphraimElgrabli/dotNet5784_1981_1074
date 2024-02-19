@@ -5,7 +5,7 @@
     <Email>bigMama@gmail.com</Email>
     <PhoneNumber>97296</PhoneNumber>
     <Name>bigMama</Name>
-    <Level>FamilyMember</Level>
+    <Level>Friends</Level>
   </User>
   <User>
     <Id>246989274</Id>
@@ -41,5 +41,12 @@
     <PhoneNumber>97202</PhoneNumber>
     <Name>shimoshon</Name>
     <Level>Staff</Level>
+  </User>
+  <User>
+    <Id>111222333</Id>
+    <Email>+972</Email>
+    <PhoneNumber>+972</PhoneNumber>
+    <Name>Ephraim Elgrabli</Name>
+    <Level>FamilyMemberWithRoles</Level>
   </User>
 </ArrayOfUser>
