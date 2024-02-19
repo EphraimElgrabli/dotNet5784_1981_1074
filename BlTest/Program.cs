@@ -172,7 +172,7 @@ internal class Program
         }
     }
     /// <summary>
-    /// //User menu
+    /// Displays the menu options for managing dependencies.
     /// </summary>
     static void CreateDependency()
     {
