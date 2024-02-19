@@ -46,5 +46,16 @@ namespace PL.User
         {
             UserListing = (usrLevel == BO.UserLevel.None) ? s_bl?.User.ReadAllUser()! : s_bl?.User.ReadAllUser(item => item.Level == usrLevel)!;
         }
+
+        private void btn_AddUserInList(object sender, RoutedEventArgs e)
+        {
+            new AddUpdateUser().ShowDialog();
+        }
+
+        private void usrLstView_DoubleClicked(object sender, MouseButtonEventArgs e)
+        {
+            BO.User? userToUpdate = (sender as ListView)?.SelectedItem as BO.User;
+            new AddUpdateUser(userToUpdate.Id).ShowDialog();
+        }
     }
 }

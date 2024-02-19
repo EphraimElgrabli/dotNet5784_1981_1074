@@ -5,8 +5,65 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.User"
         mc:Ignorable="d"
-        Title="AddUpdateUser" Height="450" Width="800">
+        Title="AddUpdateUser" Height="640" Width="480"
+        DataContext="{Binding ThisUser, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="0" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
+            <Label Grid.Column="0" Content="Name:" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="center"/>
+        </Grid>
+        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="1" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
+            <Label Grid.Column="0" Content="Phone:" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="center"/>
+        </Grid>
+        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="2" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
+            <Label Grid.Column="0" Content="Email:" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="center"/>
+        </Grid>
+        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="3" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
+            <Label Grid.Column="0" Content="Id:" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="center"/>
+        </Grid>
+        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="4" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="4*"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox ItemsSource="{Binding Source={StaticResource UserLevelKey}}" SelectedValue="{Binding Level, Mode=TwoWay, NotifyOnValidationError=true, 
+ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
+            <Label Grid.Column="0" Content="User Level:" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="center"/>
+        </Grid>
+        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="5" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,0,25" Click="btnAddUpdate_Click"/>
+        </Grid>
     </Grid>
 </Window>

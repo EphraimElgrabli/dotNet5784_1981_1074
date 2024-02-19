@@ -6,6 +6,8 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <local:UserLevelCollection x:Key="UserLevelKey" />
+        <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
+        <local:IsEnabled x:Key="IsEnabled"/>
         <ResourceDictionary x:Key="UiLibrary">
             <ResourceDictionary.MergedDictionaries>
                 <ui:ThemesDictionary Theme="Dark" />

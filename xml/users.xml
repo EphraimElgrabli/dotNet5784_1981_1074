@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Id>235774707</Id>
+    <Id>375437072</Id>
     <Email>bigMama@gmail.com</Email>
-    <PhoneNumber>97206</PhoneNumber>
+    <PhoneNumber>97288</PhoneNumber>
     <Name>bigMama</Name>
-    <Level>FamilyMember</Level>
+    <Level>Friends</Level>
   </User>
   <User>
-    <Id>229613367</Id>
-    <Email>bigPapa@gmail.com</Email>
-    <PhoneNumber>97242</PhoneNumber>
-    <Name>bigPapa</Name>
-    <Level>FamilyMember</Level>
-  </User>
-  <User>
-    <Id>365537017</Id>
-    <Email>Kala@gmail.com</Email>
-    <PhoneNumber>97254</PhoneNumber>
-    <Name>Kala</Name>
-    <Level>FamilyMemberWithRoles</Level>
-  </User>
-  <User>
-    <Id>300784414</Id>
+    <Id>312593712</Id>
     <Email>Hatan@gmail.com</Email>
-    <PhoneNumber>97226</PhoneNumber>
+    <PhoneNumber>97232</PhoneNumber>
     <Name>Hatan</Name>
-    <Level>Staff</Level>
+    <Level>FamilyMember</Level>
   </User>
   <User>
-    <Id>346021730</Id>
+    <Id>243055628</Id>
     <Email>yoram@gmail.com</Email>
-    <PhoneNumber>97216</PhoneNumber>
+    <PhoneNumber>97247</PhoneNumber>
     <Name>yoram</Name>
-    <Level>Staff</Level>
+    <Level>Friends</Level>
   </User>
   <User>
-    <Id>292285954</Id>
+    <Id>278476218</Id>
     <Email>shimoshon@gmail.com</Email>
-    <PhoneNumber>97277</PhoneNumber>
+    <PhoneNumber>97241</PhoneNumber>
     <Name>shimoshon</Name>
     <Level>Staff</Level>
+  </User>
+  <User>
+    <Id>319309904</Id>
+    <Email>97213</Email>
+    <PhoneNumber>97213</PhoneNumber>
+    <Name>Maor Levi</Name>
+    <Level>Producer</Level>
+  </User>
+  <User>
+    <Id>0</Id>
+    <Email>+97244444444</Email>
+    <PhoneNumber>+97244444444</PhoneNumber>
+    <Name>Ephraim Elgrabli</Name>
+    <Level>Producer</Level>
+  </User>
+  <User>
+    <Id>215861631</Id>
+    <Email>97266</Email>
+    <PhoneNumber>97266</PhoneNumber>
+    <Name>Johny</Name>
+    <Level>FamilyMemberWithRoles</Level>
   </User>
 </ArrayOfUser>
