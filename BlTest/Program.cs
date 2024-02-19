@@ -135,7 +135,10 @@ internal class Program
                         }
                         break;
                     case 4:
-                        Console.WriteLine("Now you are about to set dates for tasks");
+                    Console.WriteLine("enter the start date of the project");
+                    DateTime start = DateTime.Parse(Console.ReadLine()!);
+                    s_bl.Clock.SetStartProject(start);
+                    Console.WriteLine("Now you are about to set dates for tasks");
                     foreach (var task in s_bl.Task.ReadAllTask())
                     {
                         try
@@ -156,6 +159,7 @@ internal class Program
                             Console.WriteLine(ex.Message);
                         }
                     }
+                    return;
             
                         break;
                     default:
@@ -423,8 +427,7 @@ internal class Program
     /// </summary>
     static void Schedule()
     {
-        Console.WriteLine("Enter the start date of the project");
-        DateTime startproject = DateTime.Parse(Console.ReadLine()!);
+        
         while (s_bl!.Task.ReadAllTask(item => item.Status == BO.Status.Unscheduled).ToList().Any())
         {
             foreach (var task in s_bl!.Task.ReadAllTask(item => item.Status == BO.Status.Unscheduled))
@@ -432,14 +435,14 @@ internal class Program
                 try
                 {
                     Console.WriteLine($"Enter the scehdule date of task {task.Id}");
-                    //DateTime scheduleDate = DateTime.Parse(Console.ReadLine()!);
-                    DateTime scheduleDate = DateTime.Now;
+                    DateTime scheduleDate = DateTime.Parse(Console.ReadLine()!);
+                    //DateTime scheduleDate = DateTime.Now;
                     s_bl.Task.UpdateDates(task.Id, scheduleDate);
                 }
                 catch (BO.BlDateProblemException ex) { Console.WriteLine(ex.Message); }
             }
         }
-        s_bl!.Clock.SetStartProject(startproject);
+   
     }
     
    /// <summary>
@@ -629,12 +632,12 @@ internal class Program
         }
         if (s_bl.Clock.GetStatusProject() == BO.StatusProject.UnStarted)
         {
-            Console.WriteLine("The planing stage");
+            Console.WriteLine("The planing stage");//stage 1 and 2 of the project
             Stage1project();
         }
         if (s_bl.Clock.GetStatusProject() == BO.StatusProject.InProgress)
         {
-            Console.WriteLine("The project is in progress");
+            Console.WriteLine("The project is in progress");//stage 3 of the project
             Stage2project();    
 
         }

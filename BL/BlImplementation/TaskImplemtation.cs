@@ -1,10 +1,5 @@
-﻿
-using BlApi;
-using BO;
-
+﻿using BO;
 namespace BlImplementation;
-
-
 /// <summary>
 /// Implementation of the ITask interface for managing tasks.
 /// </summary>
@@ -113,7 +108,6 @@ internal class TaskImplemtation : BlApi.ITask
             throw new BO.BlDoesNotExistException($"Task with ID={id} does Not exist");
         return new BO.Task()
         {
-
             Id = doTask.Id,
             Description = doTask.Description,
             Alias = doTask.Alias,
@@ -330,10 +324,16 @@ internal class TaskImplemtation : BlApi.ITask
         }
 
     }
+    /// <summary>
+    /// //Updates the status of a task.
+    /// </summary>
+    /// <param name="task"></param>
+    /// <returns></returns>
+    /// <exception cref="BO.BlDateProblemException"></exception>
     public DateTime CalculateStartTime(BO.Task task)
     {
-        
-        DateTime minTime= new DateTime();
+
+        DateTime? minTime = _dal.Clock.GetStartProject();          
         foreach (var d in task.Dependencies)
         {
             BO.Task? task1 = Read(d.Id);
@@ -344,10 +344,16 @@ internal class TaskImplemtation : BlApi.ITask
                     minTime= Convert.ToDateTime(task1.DeadlineDate);
 
         }
-        return minTime;
+        return Convert.ToDateTime(minTime);
 
     }
 
+    /// <summary>
+    /// //Updates the status of a task.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
+    /// <exception cref="BO.BlAlreadyExistException"></exception>
     public  void promoteStatusTask(int id)
     {
 
