@@ -8,20 +8,6 @@
     <Level>Friends</Level>
   </User>
   <User>
-    <Id>312593712</Id>
-    <Email>Hatan@gmail.com</Email>
-    <PhoneNumber>97232</PhoneNumber>
-    <Name>Hatan</Name>
-    <Level>FamilyMember</Level>
-  </User>
-  <User>
-    <Id>243055628</Id>
-    <Email>yoram@gmail.com</Email>
-    <PhoneNumber>97247</PhoneNumber>
-    <Name>yoram</Name>
-    <Level>Friends</Level>
-  </User>
-  <User>
     <Id>278476218</Id>
     <Email>shimoshon@gmail.com</Email>
     <PhoneNumber>97241</PhoneNumber>
@@ -47,6 +33,27 @@
     <Email>97266</Email>
     <PhoneNumber>97266</PhoneNumber>
     <Name>Johny</Name>
+    <Level>FamilyMemberWithRoles</Level>
+  </User>
+  <User>
+    <Id>312593712</Id>
+    <Email>97232</Email>
+    <PhoneNumber>97232</PhoneNumber>
+    <Name>Hataniko</Name>
+    <Level>FamilyMember</Level>
+  </User>
+  <User>
+    <Id>243055628</Id>
+    <Email>97247</Email>
+    <PhoneNumber>97247</PhoneNumber>
+    <Name>yoramiko</Name>
+    <Level>Friends</Level>
+  </User>
+  <User>
+    <Id>111222333</Id>
+    <Email>+972</Email>
+    <PhoneNumber>+972</PhoneNumber>
+    <Name>Ephraim Elgrabli</Name>
     <Level>FamilyMemberWithRoles</Level>
   </User>
 </ArrayOfUser>

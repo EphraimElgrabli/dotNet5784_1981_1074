@@ -50,12 +50,14 @@ namespace PL.User
         private void btn_AddUserInList(object sender, RoutedEventArgs e)
         {
             new AddUpdateUser().ShowDialog();
+            UserListing = s_bl?.User.ReadAllUser()!;
         }
 
         private void usrLstView_DoubleClicked(object sender, MouseButtonEventArgs e)
         {
             BO.User? userToUpdate = (sender as ListView)?.SelectedItem as BO.User;
             new AddUpdateUser(userToUpdate.Id).ShowDialog();
+            UserListing = s_bl?.User.ReadAllUser()!;
         }
     }
 }

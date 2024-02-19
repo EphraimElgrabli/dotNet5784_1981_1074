@@ -35,7 +35,6 @@ namespace PL.User
             DependencyProperty.Register("user", typeof(BO.User), typeof(AddUpdateUser));
 
 
-
         public AddUpdateUser(int Id = 0)
         {
             try
@@ -63,13 +62,13 @@ namespace PL.User
                     Id = ThisUser.Id,
                     Name = ThisUser.Name,
                     PhoneNumber = ThisUser.PhoneNumber,
-                    Email = ThisUser.PhoneNumber,
+                    Email = ThisUser.Email,
                     Level = ThisUser.Level
                 };
-                if (ThisUser.Id == 0)
-                    s_bl?.User.Create(user);
-                else
+                if (flag == false)
                     s_bl?.User.Update(user);
+                else
+                    s_bl?.User.Create(user);
                 this.Close();
             }
             catch (Exception ex)
