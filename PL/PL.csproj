@@ -14,7 +14,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <None Remove="Images\background.jpg" />
+	  <None Remove="images\Gantt.png" />
+	  <None Remove="images\LogoNoText.png" />
+	  <None Remove="images\Tasks.png" />
+	  <None Remove="images\Users.png" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -27,7 +30,10 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Resource Include="Images\background.jpg" />
+	  <Resource Include="images\Gantt.png" />
+	  <Resource Include="images\LogoNoText.png" />
+	  <Resource Include="images\Tasks.png" />
+	  <Resource Include="images\Users.png" />
 	</ItemGroup>
 
 	<ItemGroup>

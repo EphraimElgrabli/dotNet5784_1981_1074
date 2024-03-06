@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PL">
     <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
            TargetType="{x:Type RadioButton}"
            x:Key="MenuIcons">
@@ -10,8 +11,7 @@
                         <Grid VerticalAlignment="Stretch" 
                               HorizontalAlignment="Stretch" 
                               Background="{TemplateBinding Background}">
-                            
-                             <Image Source="{TemplateBinding Property=Content}"/>
+                            <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" MaxHeight="30" MaxWidth="30"/>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
@@ -24,6 +24,10 @@
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background" Value="#DAC0A3"/>
             </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="#DAC0A3"/>
+            </Trigger>
+
         </Style.Triggers>
     </Style>
 </ResourceDictionary>

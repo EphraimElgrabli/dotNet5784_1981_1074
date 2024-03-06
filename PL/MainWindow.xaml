@@ -9,6 +9,7 @@
         WindowStyle="None"
         Background="Transparent"
         Title="MainWindow" Height="600" Width="1000"
+        Top="240" Left="460"
         ResizeMode="NoResize">
     <Border Background="#EADBC8" CornerRadius="20">
         <Grid>
@@ -20,17 +21,24 @@
                 <RowDefinition Height="60"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image Grid.Column="0" Grid.Row="0" Source="Images/LogoNoText.png"/>
+            <Image Grid.Column="0" 
+                   Grid.Row="0" 
+                   Height ="60" 
+                   Width="60" 
+                   Source="/images/LogoNoText.png"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   />
             <StackPanel Grid.Row="1">
-                <RadioButton Content="Images/users.png"
+                <RadioButton Content="../images/Users.png"
                              Height="50"
                              Style="{StaticResource MenuIcons}"/>
 
-                <RadioButton Content="Images/tasks.png"
+                <RadioButton Content="../images/Tasks.png"
                              Height="50"
                              Style="{StaticResource MenuIcons}"/>
 
-                <RadioButton Content="Images/gantt.png"
+                <RadioButton Content="../images/Gantt.png"
                              Height="50"
                              Style="{StaticResource MenuIcons}"/>
             </StackPanel>
