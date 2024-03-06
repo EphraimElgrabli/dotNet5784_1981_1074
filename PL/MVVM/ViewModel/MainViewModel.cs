@@ -34,7 +34,7 @@ namespace PL.MVVM.ViewModel
             });
             UserListViewCommand = new RelayCommend(o =>
             {
-                CurrentView = UserListVM ;
+                CurrentView = UserListVM;
             });
         }
     }

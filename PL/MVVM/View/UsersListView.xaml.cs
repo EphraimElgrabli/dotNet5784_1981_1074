@@ -35,11 +35,11 @@ namespace PL.MVVM.View
 
         public BO.UserLevel usrLevel { get; set; } = BO.UserLevel.None;
 
-        //public UserListView()
-        //{
-        //    InitializeComponent();
-        //    UserListing = s_bl?.User.ReadAllUser()!;
-        //}
+        public UsersListView()
+        {
+            InitializeComponent();
+            UserListing = s_bl?.User.ReadAllUser()!;
+        }
 
         private void ComboBox_UserLevelSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
