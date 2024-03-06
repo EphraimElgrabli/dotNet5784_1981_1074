@@ -4,7 +4,7 @@ namespace BlTest;
 internal class Program
 {
     static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
-    
+
     /// <summary>
     /// //entity menu
     /// </summary>
@@ -55,17 +55,17 @@ internal class Program
         int choice2;
         while (choice != 0)
         {
-            
-                switch (choice)
-                {
-                    case 0:
-                        break;
-                    case 1:
-                     
-                        EntityMenu("User");
-                        choice2 = int.Parse(Console.ReadLine()!);
-                        while (choice2 != 0)
-                        {
+
+            switch (choice)
+            {
+                case 0:
+                    break;
+                case 1:
+
+                    EntityMenu("User");
+                    choice2 = int.Parse(Console.ReadLine()!);
+                    while (choice2 != 0)
+                    {
                         try
                         {
                             switch (choice2)
@@ -83,16 +83,16 @@ internal class Program
                         }
                         catch (Exception ex) { Console.WriteLine(ex.Message); }
                         EntityMenu("User");
-                            choice2 = int.Parse(Console.ReadLine()!);
-                        
-                        }
-                        break;
-                    case 2:
-                        EntityMenu("Task");
                         choice2 = int.Parse(Console.ReadLine()!);
-                    
-                        while (choice2 != 0)
-                        {
+
+                    }
+                    break;
+                case 2:
+                    EntityMenu("Task");
+                    choice2 = int.Parse(Console.ReadLine()!);
+
+                    while (choice2 != 0)
+                    {
                         try
                         {
                             switch (choice2)
@@ -107,16 +107,17 @@ internal class Program
                                     Console.WriteLine("Incorrect input, plese press a number from 0 to 5");
                                     break;
                             }
-                        }catch (Exception ex) { Console.WriteLine(ex.Message); }
-                            EntityMenu("Task");
-                            choice2 = int.Parse(Console.ReadLine()!);
                         }
-                        break;
-                    case 3:
-                        dependecymenu();
+                        catch (Exception ex) { Console.WriteLine(ex.Message); }
+                        EntityMenu("Task");
                         choice2 = int.Parse(Console.ReadLine()!);
-                        while (choice2 != 0)
-                        {
+                    }
+                    break;
+                case 3:
+                    dependecymenu();
+                    choice2 = int.Parse(Console.ReadLine()!);
+                    while (choice2 != 0)
+                    {
                         try
                         {
                             switch (choice2)
@@ -129,13 +130,17 @@ internal class Program
                                     Console.WriteLine("Incorrect input, plese press a number from 0 to 3");
                                     break;
                             }
-                        }catch (Exception ex) { Console.WriteLine(ex.Message); }
-                            dependecymenu();
-                            choice2 = int.Parse(Console.ReadLine()!);
                         }
-                        break;
-                    case 4:
-                        Console.WriteLine("Now you are about to set dates for tasks");
+                        catch (Exception ex) { Console.WriteLine(ex.Message); }
+                        dependecymenu();
+                        choice2 = int.Parse(Console.ReadLine()!);
+                    }
+                    break;
+                case 4:
+                    Console.WriteLine("enter the start date of the project");
+                    DateTime start = DateTime.Parse(Console.ReadLine()!);
+                    s_bl.Clock.SetStartProject(start);
+                    Console.WriteLine("Now you are about to set dates for tasks");
                     foreach (var task in s_bl.Task.ReadAllTask())
                     {
                         try
@@ -156,19 +161,20 @@ internal class Program
                             Console.WriteLine(ex.Message);
                         }
                     }
-            
-                        break;
-                    default:
-                        Console.WriteLine("Incorrect input, plese press a number from 1 to 4");
-                        break;
-                }
-            
+                    return;
+
+                    break;
+                default:
+                    Console.WriteLine("Incorrect input, plese press a number from 1 to 4");
+                    break;
+            }
+
             MainMenu();
             choice = int.Parse(Console.ReadLine()!);
         }
     }
     /// <summary>
-    /// //User menu
+    /// Displays the menu options for managing dependencies.
     /// </summary>
     static void CreateDependency()
     {
@@ -222,7 +228,7 @@ internal class Program
             searchDependency(task.Id);
         }
     }
-  
+
 
 
     //###############
@@ -355,15 +361,15 @@ internal class Program
         // Create a new Task object with the updated details
         return new BO.Task()
         {
-            
+
             Id = id,
             Alias = alias,
             Description = description,
-            Cost=cost,
+            Cost = cost,
             CreatedAtDate = createAtDate,
             Complexity = level,
             Deliverables = deliverables,
-            Remarks=remarks,
+            Remarks = remarks,
             // Dependencies = (from tsk in dependencies select new TaskInList() { Id = tsk.Id, Description = tsk.Description, Alias = tsk.Alias, Status = tsk.Status }).ToList(),
         };
 
@@ -401,7 +407,7 @@ internal class Program
     static void printAllTasks(BlApi.ITask? s_dalTask)
     {
         foreach (var task in s_bl!.Task.ReadAllTask())
-                        { Console.WriteLine(task); }
+        { Console.WriteLine(task); }
     }
     /// <summary>
     /// //Task crud functions
@@ -423,8 +429,7 @@ internal class Program
     /// </summary>
     static void Schedule()
     {
-        Console.WriteLine("Enter the start date of the project");
-        DateTime startproject = DateTime.Parse(Console.ReadLine()!);
+
         while (s_bl!.Task.ReadAllTask(item => item.Status == BO.Status.Unscheduled).ToList().Any())
         {
             foreach (var task in s_bl!.Task.ReadAllTask(item => item.Status == BO.Status.Unscheduled))
@@ -432,21 +437,21 @@ internal class Program
                 try
                 {
                     Console.WriteLine($"Enter the scehdule date of task {task.Id}");
-                    //DateTime scheduleDate = DateTime.Parse(Console.ReadLine()!);
-                    DateTime scheduleDate = DateTime.Now;
+                    DateTime scheduleDate = DateTime.Parse(Console.ReadLine()!);
+                    //DateTime scheduleDate = DateTime.Now;
                     s_bl.Task.UpdateDates(task.Id, scheduleDate);
                 }
                 catch (BO.BlDateProblemException ex) { Console.WriteLine(ex.Message); }
             }
         }
-        s_bl!.Clock.SetStartProject(startproject);
+
     }
-    
-   /// <summary>
-   /// //User menu
-   /// </summary>
-   /// <exception cref="BO.BlDoesNotExistException"></exception>
-   /// <exception cref="BO.BlAlreadyExistException"></exception>
+
+    /// <summary>
+    /// //User menu
+    /// </summary>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
+    /// <exception cref="BO.BlAlreadyExistException"></exception>
     static void assigntoUser()
     {
         Console.WriteLine("Enter the id of the task");
@@ -455,14 +460,14 @@ internal class Program
         Console.WriteLine("Enter the id of the user");
         int userId = int.Parse(Console.ReadLine()!);
         if (s_bl?.User.Read(userId) == null) throw new BO.BlDoesNotExistException($"User with ID={userId} does Not exist");
-        BO.Task task= s_bl?.Task.Read(id)!;
+        BO.Task task = s_bl?.Task.Read(id)!;
         if (task.User != null)
             throw new BO.BlAlreadyExistException($"Task with ID={id} is already assigned to a user");
-        BO.UserInTask userInTask = new BO.UserInTask() { Id = userId, Name = s_bl?.User.Read(userId)!.Name }; 
-        task.User=userInTask;
+        BO.UserInTask userInTask = new BO.UserInTask() { Id = userId, Name = s_bl?.User.Read(userId)!.Name };
+        task.User = userInTask;
 
-        BO.User user= s_bl?.User.Read(userId)!;
-        BO.TaskInUser taskInUser = new BO.TaskInUser() { Id = id, Alias = s_bl?.Task.Read(id)!.Alias};
+        BO.User user = s_bl?.User.Read(userId)!;
+        BO.TaskInUser taskInUser = new BO.TaskInUser() { Id = id, Alias = s_bl?.Task.Read(id)!.Alias };
         user.Tasks.Add(taskInUser);
         s_bl?.Task.Update(task);
         s_bl?.User.Update(user);
@@ -477,21 +482,21 @@ internal class Program
         int id = int.Parse(GetString("Enter the id of the task"));
         if (s_bl?.Task.Read(id) == null) throw new BO.BlDoesNotExistException($"Task with ID={id} does Not exist");
 
-        string? des =GetString("Write Description of task: ");
-        string? alias=GetString("Write Alias of task: ");
-        int cost=int.Parse(GetString("Enter Cost of task: "));
-        string? del= GetString("Write Deliverables: ");
-        string? rem= GetString("Write Remarks");
+        string? des = GetString("Write Description of task: ");
+        string? alias = GetString("Write Alias of task: ");
+        int cost = int.Parse(GetString("Enter Cost of task: "));
+        string? del = GetString("Write Deliverables: ");
+        string? rem = GetString("Write Remarks");
         BO.Task task = s_bl?.Task.Read(id)!;
-        if(des!=null)
+        if (des != null)
             task.Description = des;
-        if(alias!=null)
+        if (alias != null)
             task.Alias = alias;
-        if(cost!=0)
+        if (cost != 0)
             task.Cost = cost;
-        if(del!=null)
+        if (del != null)
             task.Deliverables = del;
-        if(rem!=null)
+        if (rem != null)
             task.Remarks = rem;
         s_bl?.Task.Update(task);
     }
@@ -536,10 +541,10 @@ internal class Program
     /// </summary>
     static void Stage2project()
     {
-        menumainproject2(); 
+        menumainproject2();
         int choice = int.Parse(Console.ReadLine()!);
         int choice2;
-        while(choice != 0)
+        while (choice != 0)
         {
             switch (choice)
             {
@@ -566,14 +571,14 @@ internal class Program
                         }
                         catch (Exception ex) { Console.WriteLine(ex.Message); }
                         usermenu();
-                            choice2 = int.Parse(Console.ReadLine()!);
-                       
+                        choice2 = int.Parse(Console.ReadLine()!);
+
                     }
                     break;
                 case 2:
                     taskmenu();
                     choice2 = int.Parse(Console.ReadLine()!);
-                    
+
                     while (choice2 != 0)
                     {
                         try
@@ -596,12 +601,12 @@ internal class Program
                         }
                         catch (Exception ex) { Console.WriteLine(ex.Message); }
                         taskmenu();
-                            choice2 = int.Parse(Console.ReadLine()!);
-                        
+                        choice2 = int.Parse(Console.ReadLine()!);
+
                     }
                     break;
-                    case 3:
-                    try { assigntoUser(); }catch (Exception ex) { Console.WriteLine(ex.Message); }
+                case 3:
+                    try { assigntoUser(); } catch (Exception ex) { Console.WriteLine(ex.Message); }
                     break;
                 default:
                     Console.WriteLine("Incorrect input, plese press a number from 0 to 2");
@@ -609,8 +614,8 @@ internal class Program
             }
             menumainproject2();
             choice = int.Parse(Console.ReadLine()!);
-        }   
-    
+        }
+
     }
     /// <summary>
     /// this is the main function of the program
@@ -629,13 +634,13 @@ internal class Program
         }
         if (s_bl.Clock.GetStatusProject() == BO.StatusProject.UnStarted)
         {
-            Console.WriteLine("The planing stage");
+            Console.WriteLine("The planing stage");//stage 1 and 2 of the project
             Stage1project();
         }
         if (s_bl.Clock.GetStatusProject() == BO.StatusProject.InProgress)
         {
-            Console.WriteLine("The project is in progress");
-            Stage2project();    
+            Console.WriteLine("The project is in progress");//stage 3 of the project
+            Stage2project();
 
         }
         if (s_bl.Clock.GetStatusProject() == BO.StatusProject.Done)
