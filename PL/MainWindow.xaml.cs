@@ -9,6 +9,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Wpf;
 
 namespace PL
 {
@@ -34,5 +35,10 @@ namespace PL
                 DalTest.Initialization.Do();
             }
         }
+        /// <summary>
+        /// don't have any meaning.  
+        /// this function aims to invoke the lib, and make sure the Wpf.Ui.dll not be deleted automatically
+        /// </summary>
+
     }
 }

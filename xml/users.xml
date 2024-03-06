@@ -56,4 +56,11 @@
     <Name>Ephraim Elgrabli</Name>
     <Level>FamilyMemberWithRoles</Level>
   </User>
+  <User>
+    <Id>212341567</Id>
+    <Email>chanii@gmail.com</Email>
+    <PhoneNumber>+972541234567</PhoneNumber>
+    <Name>Chanibo</Name>
+    <Level>FamilyMember</Level>
+  </User>
 </ArrayOfUser>

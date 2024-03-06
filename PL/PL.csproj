@@ -14,12 +14,14 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="WPF-UI" Version="3.0.0" />
+		<ProjectReference Include="..\BL\BL.csproj" />
+		<ProjectReference Include="..\DalTest\DalTest.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\BL\BL.csproj" />
-		<ProjectReference Include="..\DalTest\DalTest.csproj" />
+	  <Reference Include="Wpf.Ui">
+	    <HintPath>\\Mac\Home\Downloads\Wpf.Ui.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 </Project>
