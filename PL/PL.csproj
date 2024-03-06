@@ -15,6 +15,7 @@
 
 	<ItemGroup>
 	  <None Remove="images\Gantt.png" />
+	  <None Remove="images\Home.png" />
 	  <None Remove="images\LogoNoText.png" />
 	  <None Remove="images\Tasks.png" />
 	  <None Remove="images\Users.png" />
@@ -31,6 +32,7 @@
 
 	<ItemGroup>
 	  <Resource Include="images\Gantt.png" />
+	  <Resource Include="images\Home.png" />
 	  <Resource Include="images\LogoNoText.png" />
 	  <Resource Include="images\Tasks.png" />
 	  <Resource Include="images\Users.png" />
@@ -39,8 +41,6 @@
 	<ItemGroup>
 	  <Folder Include="Fonts\" />
 	  <Folder Include="MVVM\Model\" />
-	  <Folder Include="MVVM\View\" />
-	  <Folder Include="MVVM\ViewModel\" />
 	</ItemGroup>
 
 </Project>

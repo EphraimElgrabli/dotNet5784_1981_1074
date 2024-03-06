@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="PL.MVVM.View.UsersListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PL.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="#DAC0A3" CornerRadius="10">
+        <Grid Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="0" VerticalAlignment="Stretch" Width="auto">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="Choose a level to filter by:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="#FFF2D8" FontWeight="Bold"/>
+                <ComboBox SelectedValue="{Binding usrLevel, Mode=TwoWay}" ItemsSource="{Binding Source={StaticResource UserLevelKey}}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="40" SelectionChanged="ComboBox_UserLevelSelectionChanged"/>
+            </Grid>
+            <ListView Grid.Row="1" ItemsSource="{Binding UserListing}" MouseDoubleClick="usrLstView_DoubleClicked">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="40" Width="100" Click="btn_AddUserInList" Margin="5"/>
+        </Grid>
+    </Border>
+</UserControl>

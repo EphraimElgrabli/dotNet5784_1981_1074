@@ -11,7 +11,7 @@
                         <Grid VerticalAlignment="Stretch" 
                               HorizontalAlignment="Stretch" 
                               Background="{TemplateBinding Background}">
-                            <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" MaxHeight="30" MaxWidth="30"/>
+                            <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" MaxHeight="25" MaxWidth="25"/>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
@@ -25,7 +25,7 @@
                 <Setter Property="Background" Value="#DAC0A3"/>
             </Trigger>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#DAC0A3"/>
+                <Setter Property="Background" Value="#E1CCB5"/>
             </Trigger>
 
         </Style.Triggers>

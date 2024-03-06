@@ -5,12 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:local="clr-namespace:PL"
+        xmlns:viewModel="clr-namespace:PL.MVVM.ViewModel"
         mc:Ignorable="d"
         WindowStyle="None"
         Background="Transparent"
         Title="MainWindow" Height="600" Width="1000"
-        Top="240" Left="460"
-        ResizeMode="NoResize">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <viewModel:MainViewModel/>
+    </Window.DataContext>
     <Border Background="#EADBC8" CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
@@ -29,10 +33,16 @@
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    />
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="1" Margin="0,10,0,25">
+                <RadioButton Content="../images/Home.png"
+                             Height="50"
+                             Style="{StaticResource MenuIcons}"
+                             IsChecked="True"
+                             Command="{Binding HomeViewCommand}"/>
                 <RadioButton Content="../images/Users.png"
                              Height="50"
-                             Style="{StaticResource MenuIcons}"/>
+                             Style="{StaticResource MenuIcons}"
+                             Command="{Binding UserListViewCommand }"/>
 
                 <RadioButton Content="../images/Tasks.png"
                              Height="50"
@@ -42,6 +52,10 @@
                              Height="50"
                              Style="{StaticResource MenuIcons}"/>
             </StackPanel>
+            <ContentControl Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="0"
+                            Content="{Binding CurrentView}"/>
         </Grid>
     </Border>
 </Window>
