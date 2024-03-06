@@ -1,0 +1,52 @@
+﻿<Window x:Class="PL.Admin.AdminPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Admin"
+        mc:Ignorable="d"
+        Title="Admin" Height="450" Width="800"
+        >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu Grid.ColumnSpan="2">
+            <MenuItem Header="_File" Click="MenuItem_Click">
+                <MenuItem Header="_New"/>
+                <MenuItem Header="_Open"/>
+                <MenuItem Header="_Save"/>
+                <MenuItem Header="_Exit"/>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="_Cut"/>
+                <MenuItem Header="_Copy"/>
+                <MenuItem Header="_Paste"/>
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="_About"/>
+            </MenuItem>
+        </Menu>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Button Content="Button" HorizontalAlignment="Left" Width="75"/>
+            <Button Content="Button" HorizontalAlignment="Left" Width="75"/>
+            <Button Content="Button" HorizontalAlignment="Left" Width="75"/>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,10,10,10">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}"/>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                    <DataGridTextColumn Header="Password" Binding="{Binding Password}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+
+    </Grid>
+</Window>

@@ -1,9 +1,9 @@
 ﻿<Window x:Class="PL.User.AddUpdateUser"
+        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:local="clr-namespace:PL.User"
         mc:Ignorable="d"
         Title="AddUpdateUser" Height="640" Width="480"
@@ -38,7 +38,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="4*"/>
             </Grid.ColumnDefinitions>
-            <TextBox Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
+            <TextBox Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=True,  ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
             <Label Grid.Column="0" Content="Email:" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="center"/>
         </Grid>
         <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="3" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">

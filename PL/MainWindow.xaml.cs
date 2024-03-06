@@ -1,4 +1,5 @@
 ﻿using PL.User;
+using PL.Admin;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,6 +34,11 @@ namespace PL
             {
                 DalTest.Initialization.Do();
             }
+        }
+
+        private void btnAdminpanel_click(object sender, RoutedEventArgs e)
+        {
+            new AdminPanel().Show();
         }
     }
 }
