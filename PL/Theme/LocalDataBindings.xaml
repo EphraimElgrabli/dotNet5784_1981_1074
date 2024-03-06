@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PL">
+    <local:UserLevelCollection x:Key="UserLevelKey" />
+    <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
+    <local:IsEnabled x:Key="IsEnabled"/>
+</ResourceDictionary>

@@ -6,35 +6,34 @@
         xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:local="clr-namespace:PL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="850"
-        ResizeMode="CanMinimize">
-    <Window.Background>
-        <ImageBrush ImageSource="images/background.jpg"/>
-    </Window.Background>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="37*"/>
-            <RowDefinition Height="230*"/>
-            <RowDefinition Height="297*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        <Grid Height="auto" Grid.Row="0" Margin="0,0,0,242" Width="auto" Grid.RowSpan="2">
+        WindowStyle="None"
+        Background="Transparent"
+        Title="MainWindow" Height="600" Width="1000"
+        ResizeMode="NoResize">
+    <Border Background="#EADBC8" CornerRadius="20">
+        <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="70"/>
+                <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Reset" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Click="initDb_Click" Background="#a9f5ee" Height="21" Width="86"/>
-            <Label Grid.Column="1" Content="BH&#xD;&#xA;" HorizontalAlignment="Right" Margin="0,0,10,0" VerticalAlignment="center"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="60"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image Grid.Column="0" Grid.Row="0" Source="Images/LogoNoText.png"/>
+            <StackPanel Grid.Row="1">
+                <RadioButton Content="Images/users.png"
+                             Height="50"
+                             Style="{StaticResource MenuIcons}"/>
+
+                <RadioButton Content="Images/tasks.png"
+                             Height="50"
+                             Style="{StaticResource MenuIcons}"/>
+
+                <RadioButton Content="Images/gantt.png"
+                             Height="50"
+                             Style="{StaticResource MenuIcons}"/>
+            </StackPanel>
         </Grid>
-        <Label Grid.Row="1" Content="Your Perfect Day Made Easy!" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <!--Internal, Upper Grid-->
-        <Grid Height="auto" Grid.Row="2" Width="auto" Margin="0,256,0,0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button Grid.Column="0" Content="Users" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom" Height="60" Width="220" Click="btnUser_Click" Background="#a9f5ee"/>
-            <Button Grid.Column="1" Content="Admin" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Height="60" Width="220" Background="#a9f5ee" Click="btnAdminpanel_click"/>
-        </Grid>
-    </Grid>
+    </Border>
 </Window>
