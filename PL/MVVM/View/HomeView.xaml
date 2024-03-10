@@ -7,10 +7,10 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              >
-    <Border Background="#DAC0A3" CornerRadius="10">
+    <Border Background="{DynamicResource StrongBeige}" CornerRadius="10">
         <StackPanel Orientation="Vertical" Margin="20">
             <Label Content="Home View." 
-                   Foreground="#EADBC8" 
+                   Foreground="{DynamicResource BoldBlue}" 
                    FontSize="36" 
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>

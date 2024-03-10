@@ -4,12 +4,15 @@
              xmlns:local="clr-namespace:PL"
              xmlns:viewModel="clr-namespace:PL.MVVM.ViewModel"
              xmlns:view="clr-namespace:PL.MVVM.View"
-             StartupUri="MainWindow.xaml">
+             StartupUri="LoginScreen.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuButtonIcons.xaml"/>
                 <ResourceDictionary Source="Theme/LocalDataBindings.xaml"/>
+                <ResourceDictionary Source="Theme/Colors.xaml"/>
+                <ResourceDictionary Source="Theme/CustomTextBox.xaml"/>
+                <ResourceDictionary Source="Theme/CustomButtons.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">

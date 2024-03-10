@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
-    <Border Background="#DAC0A3" CornerRadius="10">
+    <Border Background="{DynamicResource StrongBeige}" CornerRadius="10">
         <Grid Margin="10">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -19,7 +19,7 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Content="Choose a level to filter by:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="#FFF2D8" FontWeight="Bold"/>
+                <Label Grid.Column="0" Content="Choose a level to filter by:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="{DynamicResource BoldBlue}" FontWeight="Bold"/>
                 <ComboBox SelectedValue="{Binding usrLevel, Mode=TwoWay}" ItemsSource="{Binding Source={StaticResource UserLevelKey}}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="40" SelectionChanged="ComboBox_UserLevelSelectionChanged"/>
             </Grid>
             <ListView Grid.Row="1" ItemsSource="{Binding UserListing}" MouseDoubleClick="usrLstView_DoubleClicked">
