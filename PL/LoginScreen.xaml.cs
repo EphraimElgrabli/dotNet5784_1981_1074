@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PL;
+using PL.User;
 
 namespace PL
 {
@@ -19,9 +21,23 @@ namespace PL
     /// </summary>
     public partial class LoginScreen : Window
     {
+        static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
+        public BO.User? UserToLogin
+        {
+            get { return (BO.User?)GetValue(UserToLoginProperty); }
+            set { SetValue(UserToLoginProperty, value); }
+        }
+        public static readonly DependencyProperty UserToLoginProperty =
+            DependencyProperty.Register("UserToLogin", typeof(BO.User), typeof(LoginScreen), new PropertyMetadata(null));
         public LoginScreen()
         {
             InitializeComponent();
+        }
+
+        private void loginBtn_click(object sender, RoutedEventArgs e)
+        {
+                new MainWindow().Show();
+                this.Close();
         }
     }
 }

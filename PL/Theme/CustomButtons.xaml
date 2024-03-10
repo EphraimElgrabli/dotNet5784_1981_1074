@@ -8,17 +8,20 @@
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="20"
-                        Background="{DynamicResource LightBeige}"
+                        <Border CornerRadius="10"
+                        Background="{DynamicResource BoldBlue}"
                         Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
                             <Grid>
                                 <Button Content="{TemplateBinding Content}"
                                     Height="{TemplateBinding Height}"
                                     Width="{TemplateBinding Width}"
                                     Background="Transparent"
-                                    Foreground="{DynamicResource StrongBeige}"
+                                    Foreground="{DynamicResource LightBeige}"
                                     FontFamily="{TemplateBinding FontFamily}"
-                                    FontSize="{TemplateBinding FontSize}"/>
+                                    FontSize="{TemplateBinding FontSize}"
+                                    BorderThickness="0"
+                                    
+                                    />
                             </Grid>
                         </Border>
                     </ControlTemplate>
@@ -29,9 +32,7 @@
         </Style.Setters>
 
         <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource BoldBlue}"/>
-            </Trigger>
+
 
         </Style.Triggers>
     </Style>

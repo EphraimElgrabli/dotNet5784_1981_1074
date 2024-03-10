@@ -5,7 +5,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
-                    <Border CornerRadius="20"
+                    <Border CornerRadius="10"
                         Background="{DynamicResource LightBeige}"
                         Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
                         <Grid>
