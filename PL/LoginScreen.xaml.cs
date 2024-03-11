@@ -39,5 +39,11 @@ namespace PL
                 new MainWindow().Show();
                 this.Close();
         }
+
+        private void MoveLoginWindow(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
     }
 }

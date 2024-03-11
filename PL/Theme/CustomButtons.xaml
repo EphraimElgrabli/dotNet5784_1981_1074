@@ -11,17 +11,18 @@
                         <Border CornerRadius="10"
                         Background="{DynamicResource BoldBlue}"
                         Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
-                            <Grid>
-                                <Button Content="{TemplateBinding Content}"
+                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                                <ContentPresenter Margin="0,0,0,0"
+                                    TextBlock.FontFamily="{DynamicResource Playfair Regular}"
+                                    TextBlock.FontSize="16"
+                                    TextBlock.Foreground="{DynamicResource StrongBeige}"
+                                    TextBlock.TextAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" 
+                                    RecognizesAccessKey="True"
                                     Height="{TemplateBinding Height}"
                                     Width="{TemplateBinding Width}"
-                                    Background="Transparent"
-                                    Foreground="{DynamicResource LightBeige}"
-                                    FontFamily="{TemplateBinding FontFamily}"
-                                    FontSize="{TemplateBinding FontSize}"
-                                    BorderThickness="0"
-                                    
-                                    />
+                                 />
                             </Grid>
                         </Border>
                     </ControlTemplate>
@@ -32,8 +33,16 @@
         </Style.Setters>
 
         <Style.Triggers>
+            <Trigger Property="ContentPresenter.IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{DynamicResource StrongBeige}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource BoldBlue}"/>
+                <Setter Property="BorderThickness" Value="1"/>
+                <Setter Property="Foreground" Value="{DynamicResource BoldBlue}"/>
+            </Trigger>
 
-
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource StrongBeige}"/>
+            </Trigger>
         </Style.Triggers>
     </Style>
 </ResourceDictionary>

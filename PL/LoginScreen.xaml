@@ -25,11 +25,12 @@
             <Border Background="{DynamicResource StrongBeige}" CornerRadius="20" Grid.Column="0">
                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
                     <Image Source="images/LogoLogin.png" MaxWidth="200" Margin="0,0,0,0"/>
-                    <TextBox Height="40" Width="190" Margin="10" Style="{StaticResource ModernTB}" FontFamily="Fonts/#Playfair Display Regular" FontSize="14" ToolTip="Username:"/>
-                    <TextBox Height="40" Width="190" Margin="10" Style="{StaticResource ModernTB}" FontFamily="Fonts/#Password" FontSize="14" ToolTip="Password:" />
-                    <Button Content="Sign In" Height="40" Width="190" Margin="20" Style="{StaticResource ModernBTN}" FontFamily="Fonts/#Playfair Display Regular" FontSize="14" IsCancel="True" Click="loginBtn_click"/>
+                    <TextBox Height="40" Width="190" Margin="10" Style="{StaticResource ModernTB}" FontFamily="{DynamicResource Playfair Regular}" FontSize="14" ToolTip="Username:"/>
+                    <TextBox Height="40" Width="190" Margin="10" Style="{StaticResource ModernTB}" FontFamily="{DynamicResource Password}" FontSize="14" ToolTip="Password:" />
+                    <Button Content="Sign In" Height="40" Width="190" Margin="20" Style="{StaticResource ModernBTN}" FontFamily="{DynamicResource Playfair Regular}" FontWeight="ExtraBold" FontSize="14" IsCancel="True" Click="loginBtn_click"/>
                 </StackPanel>
             </Border>
+            <Border Background="Transparent" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" MouseDown="MoveLoginWindow"/>
         </Grid>
     </Border>
 </Window>

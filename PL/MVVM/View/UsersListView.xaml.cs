@@ -31,7 +31,7 @@ namespace PL.MVVM.View
 
         // Using a DependencyProperty as the backing store for UserListing.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty UserListingProperty =
-            DependencyProperty.Register("UserListing", typeof(IEnumerable<BO.User?>), typeof(UserList), new PropertyMetadata(null));
+            DependencyProperty.Register("UserListing", typeof(IEnumerable<BO.User?>), typeof(UsersListView), new PropertyMetadata(null));
 
         public BO.UserLevel usrLevel { get; set; } = BO.UserLevel.None;
 
@@ -55,7 +55,7 @@ namespace PL.MVVM.View
         private void usrLstView_DoubleClicked(object sender, MouseButtonEventArgs e)
         {
             BO.User? userToUpdate = (sender as ListView)?.SelectedItem as BO.User;
-            new AddUpdateUser(userToUpdate.Id).ShowDialog();
+            new AddUpdateUser(userToUpdate!.Id).ShowDialog();
             UserListing = s_bl?.User.ReadAllUser()!;
         }
     }

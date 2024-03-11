@@ -23,11 +23,6 @@ namespace PL
             InitializeComponent();
         }
 
-        private void btnUser_Click(object sender, RoutedEventArgs e)
-        {
-            new UserList().Show();
-        }
-
         private void initDb_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Are you sure you to initialize the Database?", "InitDB - Warning.", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
@@ -39,6 +34,12 @@ namespace PL
         private void btnAdminpanel_click(object sender, RoutedEventArgs e)
         {
             new AdminPanel().Show();
+        }
+
+        private void MoveAdminWindow(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
         }
     }
 }

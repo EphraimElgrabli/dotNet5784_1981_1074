@@ -11,8 +11,11 @@
                 <ResourceDictionary Source="Theme/MenuButtonIcons.xaml"/>
                 <ResourceDictionary Source="Theme/LocalDataBindings.xaml"/>
                 <ResourceDictionary Source="Theme/Colors.xaml"/>
+                <ResourceDictionary Source="Theme/Fonts.xaml"/>
                 <ResourceDictionary Source="Theme/CustomTextBox.xaml"/>
                 <ResourceDictionary Source="Theme/CustomButtons.xaml"/>
+                <ResourceDictionary Source="Theme/CustomComboBox.xaml"/>
+                <ResourceDictionary Source="Theme/CustomListViewForUsers.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">

@@ -19,17 +19,11 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="0" Content="Choose a level to filter by:" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="20" Foreground="{DynamicResource BoldBlue}" FontWeight="Bold"/>
-                <ComboBox SelectedValue="{Binding usrLevel, Mode=TwoWay}" ItemsSource="{Binding Source={StaticResource UserLevelKey}}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="40" SelectionChanged="ComboBox_UserLevelSelectionChanged"/>
+                <Label Grid.Column="0" Content="Choose a level to filter by:" FontFamily="{DynamicResource Playfair Regular}" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="22" Foreground="{DynamicResource BoldBlue}" FontWeight="ExtraBold"/>
+                <ComboBox SelectedValue="{Binding usrLevel, Mode=TwoWay}" ItemsSource="{Binding Source={StaticResource UserLevelKey}}" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="40" SelectionChanged="ComboBox_UserLevelSelectionChanged" Style="{StaticResource ComboBoxFlatStyle}"/>
             </Grid>
-            <ListView Grid.Row="1" ItemsSource="{Binding UserListing}" MouseDoubleClick="usrLstView_DoubleClicked">
-                <ListView.View>
-                    <GridView>
-                        <GridViewColumn/>
-                    </GridView>
-                </ListView.View>
-            </ListView>
-            <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="40" Width="100" Click="btn_AddUserInList" Margin="5"/>
+            <ListView Grid.Row="1" ItemsSource="{Binding UserListing, UpdateSourceTrigger=PropertyChanged}" MouseDoubleClick="usrLstView_DoubleClicked" ItemContainerStyle="{StaticResource UserCard}" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden" />
+            <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="40" Width="100" Click="btn_AddUserInList" Margin="5" Style="{StaticResource ModernBTN}" FontFamily="{DynamicResource Playfair Regular}"/>
         </Grid>
     </Border>
 </UserControl>
