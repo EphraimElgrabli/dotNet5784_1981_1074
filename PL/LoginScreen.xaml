@@ -9,28 +9,19 @@
         Background="Transparent"
         Title="MainWindow" Height="600" Width="1000"
         ResizeMode="NoResize"
-        WindowStartupLocation="CenterScreen"
-        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
+        WindowStartupLocation="CenterScreen">
     <Border Background="#EADBC8" CornerRadius="20">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Rectangle Width="1000" Height="600" Grid.ColumnSpan="2" RadiusX="20" RadiusY="20">
+            <Rectangle Width="1200" Height="800" Grid.ColumnSpan="2" RadiusX="20" RadiusY="20" >
                 <Rectangle.Fill>
-                    <ImageBrush ImageSource="images/Background.png"/>
+                    <ImageBrush ImageSource="images/Bg2.jpeg"/>
                 </Rectangle.Fill>
             </Rectangle>
-            <Border Background="{DynamicResource StrongBeige}" CornerRadius="20" Grid.Column="1">
-                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                    <Image Source="images/LogoLogin.png" MaxWidth="200" Margin="0,0,0,0"/>
-                    
-                    <TextBox Height="40" Width="190" Margin="10" Style="{StaticResource ModernTB}" FontFamily="Fonts/#Playfair Display Regular" FontSize="14" ToolTip="Username:"/>
-                    <TextBox Height="40" Width="190" Margin="10" Style="{StaticResource ModernTB}" FontFamily="Fonts/#Password" FontSize="14" ToolTip="Password:" />
-                    <Button Content="Sign In" Height="40" Width="190" Margin="20" Style="{StaticResource ModernBTN}" FontFamily="Fonts/#Playfair Display Regular" FontSize="14" IsCancel="True" Click="loginBtn_click"/>
-                </StackPanel>
-            </Border>
+            <Border Grid.Column="1" Background="#DAC0A3" CornerRadius="20"/>
         </Grid>
     </Border>
 </Window>
