@@ -5,7 +5,7 @@
 - [x] completed.
 
 ## Stage 1
-- [x] completed.
+- [x] completed. test.
 
 ## Stage 2
 - [x] Ch 1: Creating an ICrud.
