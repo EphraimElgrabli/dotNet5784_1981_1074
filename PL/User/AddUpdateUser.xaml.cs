@@ -81,5 +81,11 @@ namespace PL.User
                          MessageBoxResult.Cancel);
             }
         }
+
+        private void AddUser_Draggable(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
     }
 }

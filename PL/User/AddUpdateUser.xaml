@@ -7,64 +7,94 @@
         xmlns:local="clr-namespace:PL.User"
         mc:Ignorable="d"
         Title="AddUpdateUser" Height="640" Width="480"
+        WindowStyle="None" Background="Transparent"
+        ResizeMode="NoResize"
         DataContext="{Binding ThisUser, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="0" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
-            <TextBox Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
-            <Label Grid.Column="0" Content="Name:" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="center"/>
+    <Border CornerRadius="10,10,10,10">
+        <Border.Background>
+            <ImageBrush Stretch="Fill" ImageSource="https://api.dicebear.com/7.x/shapes/png?backgroundColor=0f2c59&amp;shape1Color=8fc398,dac0a3,e1ccb5&amp;shape2Color=8fc398,dac0a3,e1ccb5&amp;shape3Color=8fc398,dac0a3,e1ccb5&amp;size=256"/>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height = "*"/>
+                <RowDefinition Height ="3*"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="{DynamicResource StrongBeige}" CornerRadius="10" Grid.Row="1">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="10"
+                          Opacity=".25"
+                          ShadowDepth="6" />
+                </Border.Effect>
+                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="0,50,0,15">
+                    <TextBox Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
+                             HorizontalAlignment="Center" 
+                             Width="360" 
+                             Margin="10" 
+                             Height="50" 
+                             Style="{StaticResource ModernTB}" 
+                             FontFamily="{DynamicResource Playfair Regular}" 
+                             FontSize="18" 
+                             FontWeight="ExtraBold"/>
+
+                    <TextBox Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
+                             HorizontalAlignment="Center" 
+                             Width="360" 
+                             Margin="10" 
+                             Height="50" 
+                             Style="{StaticResource ModernTB}" 
+                             FontFamily="{DynamicResource Playfair Regular}" 
+                             FontSize="18" 
+                             FontWeight="ExtraBold"/>
+
+                    <TextBox Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=True,  ValidatesOnExceptions=true}" 
+                             HorizontalAlignment="Center" 
+                             Width="360" 
+                             Margin="10" 
+                             Height="50" 
+                             Style="{StaticResource ModernTB}" 
+                             FontFamily="{DynamicResource Playfair Regular}" 
+                             FontSize="18" 
+                             FontWeight="ExtraBold"/>
+
+                    <TextBox Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
+                             HorizontalAlignment="Center" 
+                             Width="360" 
+                             Margin="10" 
+                             Height="50" 
+                             Style="{StaticResource ModernTB}" 
+                             FontFamily="{DynamicResource Playfair Regular}" 
+                             FontSize="18" 
+                             FontWeight="ExtraBold"/>
+
+                    <ComboBox ItemsSource="{Binding Source={StaticResource UserLevelKey}}" 
+                              SelectedValue="{Binding Level, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
+                              Margin="10"  
+                              VerticalAlignment="Center" 
+                              Width="360" 
+                              Height="50" 
+                              Style="{StaticResource ComboBoxFlatStyle}"/>
+
+                    <Button Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"   
+                            HorizontalAlignment="Center" 
+                            Height="50" 
+                            Width="360" 
+                            Margin="10" 
+                            Click="btnAddUpdate_Click" 
+                            Style="{StaticResource ModernBTN}"/>
+
+                </StackPanel>
+            </Border>
+            <Border Background="{DynamicResource BoldBlue}" 
+                    Height="150" 
+                    Width="150"
+                    CornerRadius="100"
+                    Grid.RowSpan="2"
+                    VerticalAlignment="Top"
+                    Margin="0,55,0,0">
+                <Image Source="https://api.dicebear.com/7.x/lorelei/png" MaxHeight="120" MaxWidth="120"/>
+            </Border>
+            <Border Background="Transparent" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" MouseDown="AddUser_Draggable" Grid.Row="0"/>
         </Grid>
-        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="1" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
-            <TextBox Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
-            <Label Grid.Column="0" Content="Phone:" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="center"/>
-        </Grid>
-        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="2" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
-            <TextBox Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=True,  ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
-            <Label Grid.Column="0" Content="Email:" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="center"/>
-        </Grid>
-        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="3" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
-            <TextBox Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
-            <Label Grid.Column="0" Content="Id:" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="center"/>
-        </Grid>
-        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="4" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="4*"/>
-            </Grid.ColumnDefinitions>
-            <ComboBox ItemsSource="{Binding Source={StaticResource UserLevelKey}}" SelectedValue="{Binding Level, Mode=TwoWay, NotifyOnValidationError=true, 
-ValidatesOnExceptions=true}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,25,25"/>
-            <Label Grid.Column="0" Content="User Level:" HorizontalAlignment="center" Margin="0,0,0,0" VerticalAlignment="center"/>
-        </Grid>
-        <Grid HorizontalAlignment="Stretch" Height="auto" Grid.Row="5" Margin="0,0,0,0" VerticalAlignment="Stretch" Width="auto">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" Grid.Column="1"  VerticalAlignment="Stretch" Width="auto" Margin="0,25,0,25" Click="btnAddUpdate_Click"/>
-        </Grid>
-    </Grid>
+    </Border>
 </Window>
