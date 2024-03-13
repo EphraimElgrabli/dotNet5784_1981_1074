@@ -16,15 +16,21 @@
                 <ResourceDictionary Source="Theme/CustomButtons.xaml"/>
                 <ResourceDictionary Source="Theme/CustomComboBox.xaml"/>
                 <ResourceDictionary Source="Theme/CustomListViewForUsers.xaml"/>
+                <ResourceDictionary Source="Theme/HorizontalListViewForTasks.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
             </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewModel:TasksViewModel}">
+                <view:TasksView/>
+            </DataTemplate>
+
             <DataTemplate DataType="{x:Type viewModel:UsersListViewModel}">
                 <view:UsersListView/>
             </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>

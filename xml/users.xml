@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Id>252152609</Id>
-    <Email>shimoshon@gmail.com</Email>
-    <PhoneNumber>97209</PhoneNumber>
-    <Name>shimoshon</Name>
-    <Level>Staff</Level>
-  </User>
-  <User>
     <Id>252152607</Id>
     <Email>shimosh@gmail.com</Email>
     <PhoneNumber>97210</PhoneNumber>
@@ -76,5 +69,12 @@
     <PhoneNumber>97209</PhoneNumber>
     <Name>shimoshon</Name>
     <Level>FamilyMember</Level>
+  </User>
+  <User>
+    <Id>252152609</Id>
+    <Email>shimoshon@gmail.com</Email>
+    <PhoneNumber>97209</PhoneNumber>
+    <Name>shimoshon</Name>
+    <Level>Staff</Level>
   </User>
 </ArrayOfUser>

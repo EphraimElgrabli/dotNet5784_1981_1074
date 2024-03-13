@@ -46,7 +46,8 @@
 
                 <RadioButton Content="../images/Tasks.png"
                              Height="50"
-                             Style="{StaticResource MenuIcons}"/>
+                             Style="{StaticResource MenuIcons}"
+                             Command="{Binding TasksViewCommand}"/>
 
                 <RadioButton Content="../images/Gantt.png"
                              Height="50"
