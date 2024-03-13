@@ -45,5 +45,7 @@ namespace PL
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
+
+        
     }
 }
