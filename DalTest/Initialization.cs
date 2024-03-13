@@ -106,7 +106,7 @@ public static class Initialization
             User newUser = new(id, nate, phoneNumber.ToString(),Password, user, (DO.UserLevel)userLvl);
             s_dal!.User.Create(newUser);
         }
-        User newUser1 = new(111111, "Admin@gmail.com","0584615194","Pro12345","Admin", DO.UserLevel.Producer);
+        User newUser1 = new(328301981, "Admin@gmail.com","0584615194","Pro12345","Admin", DO.UserLevel.Producer);
         s_dal!.User.Create(newUser1);
     }
 
