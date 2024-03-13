@@ -14,17 +14,32 @@
             <Setter.Value>
                 <ControlTemplate TargetType="ListViewItem">
                     <Border Background="{DynamicResource LightBeige}"
-                            Height="300"
-                            Width="250"
+                            Height="400"
+                            Width="210"
                             CornerRadius="10"
                             Margin="8,2,8,2"
                             x:Name="Border">
-                        <StackPanel Orientation="Vertical"
-                                    Margin="10,0,0,0">
-                            <Border Width="40" Height="40" CornerRadius="30" Background="{DynamicResource BoldBlue}" VerticalAlignment="Center"/>
-                            <StackPanel Orientation="Horizontal">
-                                <Label Content="{Binding Alias}" FontFamily="{DynamicResource Playfair Regular}" FontSize="22" FontWeight="ExtraBold" Foreground="{DynamicResource BoldBlue}" VerticalAlignment="Center" Margin="10,0,0,0"/>
-                                <Label Content="{Binding Description}" FontFamily="{DynamicResource Playfair Italic}" FontSize="12" FontWeight="Thin" Foreground="{DynamicResource GreenTexture}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                        <StackPanel Orientation="Vertical">
+                            <Border CornerRadius="10,10,0,0" Height="125" Width="210">
+                                <Border.Background>
+                                    <ImageBrush Stretch="UniformToFill" ImageSource="https://picsum.photos/500/840"/>
+                                </Border.Background>
+                            </Border>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <Label Content="{Binding Alias}" 
+                                       FontFamily="{DynamicResource Playfair Regular}" 
+                                       FontSize="22" 
+                                       FontWeight="ExtraBold" 
+                                       Foreground="{DynamicResource BoldBlue}" 
+                                       VerticalAlignment="Center" 
+                                       Margin="10,0,0,0"/>
+                                
+                                <Label Content="{Binding Description}" 
+                                       FontFamily="{DynamicResource Playfair Italic}" 
+                                       FontSize="12" FontWeight="Thin" 
+                                       Foreground="{DynamicResource GreenTexture}" 
+                                       VerticalAlignment="Center" 
+                                       HorizontalAlignment="Left"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
