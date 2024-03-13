@@ -46,10 +46,11 @@ namespace PL
             new MainWindow().Show();
            
               
-                if (UserToLogin.Level == BO.UserLevel.Producer)
+                if (UserToLogin.Level == BO.UserLevel.Producer && UserToLogin.Level==BO.UserLevel.FamilyMemberWithRoles)
                 {
                     new MainWindow().Show();
                 }
+
               
               
                 
@@ -64,6 +65,7 @@ namespace PL
                         MessageBoxImage.Hand,
                         MessageBoxResult.Cancel);
             }
+
         }
 
         private void MoveLoginWindow(object sender, MouseButtonEventArgs e)

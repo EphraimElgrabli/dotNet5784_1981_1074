@@ -91,6 +91,7 @@ public static class Initialization
             "Kala",
             "Hatan",
             "yoram",
+            "Shira",
             "shimoshon"
         };
 
@@ -103,7 +104,7 @@ public static class Initialization
             string nate = user + "@gmail.com";
 
             // Create a new User object and add it to the data access layer
-            User newUser = new(id, nate, phoneNumber.ToString(),Password, user, (DO.UserLevel)userLvl);
+            User newUser = new(id, nate, phoneNumber.ToString(), user, Password, (DO.UserLevel)userLvl);
             s_dal!.User.Create(newUser);
         }
         User newUser1 = new(328301981, "Admin@gmail.com","0584615194","Pro12345","Admin", DO.UserLevel.Producer);
