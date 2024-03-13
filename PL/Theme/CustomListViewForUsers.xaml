@@ -16,7 +16,8 @@
                     <Border Background="{DynamicResource LightBeige}"
                             Height="60"
                             CornerRadius="10"
-                            Margin="8,2,8,2">
+                            Margin="8,2,8,2"
+                            x:Name="Border">
                         <StackPanel Orientation="Horizontal"
                                     Margin="10,0,0,0">
                             <Border Width="40" Height="40" CornerRadius="30" Background="{DynamicResource BoldBlue}" VerticalAlignment="Center"/>
@@ -26,6 +27,11 @@
                             </StackPanel>
                         </StackPanel>
                     </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource MidBeige}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
