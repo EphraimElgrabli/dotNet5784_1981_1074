@@ -5,7 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PL.MVVM.View"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
     <Border Background="{DynamicResource StrongBeige}" CornerRadius="10">
         <Grid Margin="10">
             <Grid.RowDefinitions>
@@ -13,7 +14,7 @@
                 <RowDefinition Height="7*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <ListView Grid.Row="1" ItemsSource="{Binding TaskListing, UpdateSourceTrigger=PropertyChanged}" MouseDoubleClick="usrLstView_DoubleClicked" ItemContainerStyle="{StaticResource TaskCard}" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
+            <ListView Grid.Row="1" ItemsSource="{Binding TaskListing, UpdateSourceTrigger=PropertyChanged}" ItemContainerStyle="{StaticResource TaskCard}" Background="Transparent" BorderThickness="0" ScrollViewer.VerticalScrollBarVisibility="Hidden"/>
             <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="40" Width="100" Click="btn_AddTaskInList" Margin="5" Style="{StaticResource ModernBTN}" FontFamily="{DynamicResource Playfair Regular}"/>
         </Grid>
     </Border>
