@@ -70,4 +70,11 @@
     <Name>shimosho</Name>
     <Level>Staff</Level>
   </User>
+  <User>
+    <Id>205401747</Id>
+    <Email>Hatan@gmail.com</Email>
+    <PhoneNumber>97222</PhoneNumber>
+    <Name>jjHatan</Name>
+    <Level>FamilyMemberWithRoles</Level>
+  </User>
 </ArrayOfUser>
