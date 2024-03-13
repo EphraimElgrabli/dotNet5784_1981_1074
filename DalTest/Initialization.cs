@@ -99,12 +99,15 @@ public static class Initialization
             int id =s_rand.Next(200000000, 400000000); 
             int userLvl = s_rand.Next(0, 4);
             int phoneNumber = s_rand.Next(97200, 97299);
+            string Password = "123456";
             string nate = user + "@gmail.com";
 
             // Create a new User object and add it to the data access layer
-            User newUser = new(id, nate, phoneNumber.ToString(), user, (DO.UserLevel)userLvl);
+            User newUser = new(id, nate, phoneNumber.ToString(),Password, user, (DO.UserLevel)userLvl);
             s_dal!.User.Create(newUser);
         }
+        User newUser1 = new(111111, "Admin@gmail.com","0584615194","Pro12345","Admin", DO.UserLevel.Producer);
+        s_dal!.User.Create(newUser1);
     }
 
     /// <summary>

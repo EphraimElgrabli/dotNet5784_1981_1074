@@ -36,8 +36,21 @@ namespace PL
 
         private void loginBtn_click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+              
+                if (s_bl.User.Read(UserToLogin.Id).Level == BO.UserLevel.Producer)
+                {
+                    new MainWindow().Show();
+                }
+              
                 new MainWindow().Show();
                 this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void MoveLoginWindow(object sender, MouseButtonEventArgs e)

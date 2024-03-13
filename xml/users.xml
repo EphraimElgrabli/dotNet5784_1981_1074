@@ -1,80 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Id>252152609</Id>
-    <Email>shimoshon@gmail.com</Email>
-    <PhoneNumber>97209</PhoneNumber>
-    <Name>shimoshon</Name>
-    <Level>Staff</Level>
-  </User>
-  <User>
-    <Id>252152607</Id>
-    <Email>shimosh@gmail.com</Email>
-    <PhoneNumber>97210</PhoneNumber>
-    <Name>shimos</Name>
-    <Level>Staff</Level>
-  </User>
-  <User>
-    <Id>212341567</Id>
-    <Email>chanii@gmail.com</Email>
-    <PhoneNumber>+972541234567</PhoneNumber>
-    <Name>Chanibo</Name>
-    <Level>FamilyMember</Level>
-  </User>
-  <User>
-    <Id>207419021</Id>
+    <Id>277871164</Id>
     <Email>bigMama@gmail.com</Email>
-    <PhoneNumber>97268</PhoneNumber>
-    <Name>big Mama</Name>
-    <Level>Friends</Level>
+    <PhoneNumber>97284</PhoneNumber>
+    <Name>123456</Name>
+    <password>bigMama</password>
+    <Level>Staff</Level>
   </User>
   <User>
-    <Id>270682352</Id>
+    <Id>316034461</Id>
     <Email>bigPapa@gmail.com</Email>
-    <PhoneNumber>97259</PhoneNumber>
-    <Name>big Papa</Name>
-    <Level>Staff</Level>
-  </User>
-  <User>
-    <Id>376826448</Id>
-    <Email>Kala@gmail.com</Email>
-    <PhoneNumber>97297</PhoneNumber>
-    <Name>Kala</Name>
-    <Level>Producer</Level>
-  </User>
-  <User>
-    <Id>252152608</Id>
-    <Email>shimosho@gmail.com</Email>
-    <PhoneNumber>597211</PhoneNumber>
-    <Name>shimosho</Name>
-    <Level>Staff</Level>
-  </User>
-  <User>
-    <Id>212444212</Id>
-    <Email>rtiytiyi@gmail.com</Email>
-    <PhoneNumber>+97267897065</PhoneNumber>
-    <Name>Georgy Armany</Name>
+    <PhoneNumber>97244</PhoneNumber>
+    <Name>123456</Name>
+    <password>bigPapa</password>
     <Level>FamilyMemberWithRoles</Level>
   </User>
   <User>
-    <Id>325198364</Id>
-    <Email>yoram@gmail.com</Email>
-    <PhoneNumber>67834297222</PhoneNumber>
-    <Name>yoram</Name>
+    <Id>227702070</Id>
+    <Email>Kala@gmail.com</Email>
+    <PhoneNumber>97274</PhoneNumber>
+    <Name>123456</Name>
+    <password>Kala</password>
     <Level>Staff</Level>
   </User>
   <User>
-    <Id>205401747</Id>
+    <Id>224926171</Id>
     <Email>Hatan@gmail.com</Email>
-    <PhoneNumber>97222</PhoneNumber>
-    <Name>jjHatan</Name>
-    <Level>Producer</Level>
+    <PhoneNumber>97230</PhoneNumber>
+    <Name>123456</Name>
+    <password>Hatan</password>
+    <Level>FamilyMember</Level>
   </User>
   <User>
-    <Id>252152609</Id>
-    <Email>shimoshon@gmail.com</Email>
-    <PhoneNumber>97209</PhoneNumber>
-    <Name>shimoshon</Name>
+    <Id>261857097</Id>
+    <Email>yoram@gmail.com</Email>
+    <PhoneNumber>97236</PhoneNumber>
+    <Name>123456</Name>
+    <password>yoram</password>
     <Level>FamilyMember</Level>
+  </User>
+  <User>
+    <Id>236659977</Id>
+    <Email>shimoshon@gmail.com</Email>
+    <PhoneNumber>97241</PhoneNumber>
+    <Name>123456</Name>
+    <password>shimoshon</password>
+    <Level>Staff</Level>
+  </User>
+  <User>
+    <Id>328301981</Id>
+    <Email>Admin@gmail.com</Email>
+    <PhoneNumber>0584615194</PhoneNumber>
+    <Name>Pro12345</Name>
+    <password>Admin</password>
+    <Level>Producer</Level>
   </User>
 </ArrayOfUser>
