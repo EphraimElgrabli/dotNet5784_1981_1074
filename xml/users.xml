@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Id>325198364</Id>
-    <Email>yoram@gmail.com</Email>
-    <PhoneNumber>97222</PhoneNumber>
-    <Name>yoram</Name>
-    <Level>Staff</Level>
-  </User>
-  <User>
     <Id>252152609</Id>
     <Email>shimoshon@gmail.com</Email>
     <PhoneNumber>97209</PhoneNumber>
@@ -19,13 +12,6 @@
     <Email>shimoshon@gmail.com</Email>
     <PhoneNumber>97209</PhoneNumber>
     <Name>shimoshon</Name>
-    <Level>Staff</Level>
-  </User>
-  <User>
-    <Id>252152608</Id>
-    <Email>shimosho@gmail.com</Email>
-    <PhoneNumber>97211</PhoneNumber>
-    <Name>shimosho</Name>
     <Level>Staff</Level>
   </User>
   <User>
@@ -69,5 +55,26 @@
     <PhoneNumber>97222</PhoneNumber>
     <Name>jjHatan</Name>
     <Level>FamilyMemberWithRoles</Level>
+  </User>
+  <User>
+    <Id>252152608</Id>
+    <Email>shimosho@gmail.com</Email>
+    <PhoneNumber>597211</PhoneNumber>
+    <Name>shimosho</Name>
+    <Level>Staff</Level>
+  </User>
+  <User>
+    <Id>212444212</Id>
+    <Email>rtiytiyi@gmail.com</Email>
+    <PhoneNumber>+97267897065</PhoneNumber>
+    <Name>Georgy Armany</Name>
+    <Level>FamilyMemberWithRoles</Level>
+  </User>
+  <User>
+    <Id>325198364</Id>
+    <Email>yoram@gmail.com</Email>
+    <PhoneNumber>67834297222</PhoneNumber>
+    <Name>yoram</Name>
+    <Level>Staff</Level>
   </User>
 </ArrayOfUser>

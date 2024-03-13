@@ -2,47 +2,43 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style BasedOn="{StaticResource {x:Type Button}}"
-           TargetType="{x:Type Button}"
-           x:Key="ModernBTN">
+       TargetType="{x:Type Button}"
+       x:Key="ModernBTN">
         <Style.Setters>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
-                        <Border CornerRadius="10"
-                        Background="{DynamicResource BoldBlue}"
-                        Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
-                            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
-                                <ContentPresenter Margin="0,0,0,0"
-                                    TextBlock.FontFamily="{DynamicResource Playfair Regular}"
-                                    TextBlock.FontSize="16"
-                                    TextBlock.Foreground="{DynamicResource StrongBeige}"
-                                    TextBlock.TextAlignment="Center"
-                                    HorizontalAlignment="Center"
-                                    VerticalAlignment="Center" 
-                                    RecognizesAccessKey="True"
-                                    Height="{TemplateBinding Height}"
-                                    Width="{TemplateBinding Width}"
-                                 />
+                        <Border x:Name="Border" CornerRadius="10"
+                            Background="{DynamicResource BoldBlue}"
+                            Width="{TemplateBinding Width}" Height="{TemplateBinding Height}">
+                            <Grid>
+                                <ContentPresenter x:Name="ContentPresenter" Margin="5"
+                                              TextBlock.FontFamily="{DynamicResource Playfair Regular}"
+                                              TextBlock.FontSize="16"
+                                              TextBlock.Foreground="{DynamicResource StrongBeige}"
+                                              TextBlock.TextAlignment="Center"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              RecognizesAccessKey="True" />
                             </Grid>
                         </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="{DynamicResource StrongBeige}"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource BoldBlue}"/>
+                                <Setter TargetName="Border" Property="BorderThickness" Value="2"/>
+                                <Setter TargetName="ContentPresenter" Property="TextBlock.Foreground" Value="{DynamicResource BoldBlue}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="{DynamicResource BoldBlue}"/>
+                                <Setter TargetName="ContentPresenter" Property="TextBlock.Foreground" Value="{DynamicResource StrongBeige}"/>
+                                <Setter TargetName="Border" Property="BorderThickness" Value="2"/>
+                                <Setter TargetName="Border" Property="Opacity" Value="0.8"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0"/>
         </Style.Setters>
-
-        <Style.Triggers>
-            <Trigger Property="ContentPresenter.IsMouseOver" Value="True">
-                <Setter Property="Background" Value="{DynamicResource StrongBeige}"/>
-                <Setter Property="BorderBrush" Value="{DynamicResource BoldBlue}"/>
-                <Setter Property="BorderThickness" Value="1"/>
-                <Setter Property="Foreground" Value="{DynamicResource BoldBlue}"/>
-            </Trigger>
-
-            <Trigger Property="IsPressed" Value="True">
-                <Setter Property="Foreground" Value="{StaticResource StrongBeige}"/>
-            </Trigger>
-        </Style.Triggers>
     </Style>
 </ResourceDictionary>
