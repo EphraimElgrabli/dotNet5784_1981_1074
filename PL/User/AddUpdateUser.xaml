@@ -35,7 +35,10 @@
                              Style="{StaticResource ModernTB}" 
                              FontFamily="{DynamicResource Playfair Regular}" 
                              FontSize="18" 
-                             FontWeight="ExtraBold"/>
+                             FontWeight="ExtraBold" TextChanged="TextBox_TextChanged"
+                             ToolTip="Name"
+                             />
+                    
 
                     <TextBox Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
                              HorizontalAlignment="Center" 
@@ -82,6 +85,7 @@
                             Margin="10" 
                             Click="btnAddUpdate_Click" 
                             Style="{StaticResource ModernBTN}"/>
+                    <TextBlock TextWrapping="Wrap" Text="TextBlock"/>
 
                 </StackPanel>
             </Border>

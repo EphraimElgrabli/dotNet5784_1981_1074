@@ -98,7 +98,7 @@ internal class Program
                     string PhoneNumber = GetString("PhoneNumber: ");
                     string Name = GetString("Name: ");
                     DO.UserLevel Level = (DO.UserLevel)Int16.Parse(GetString("\r0: Friends\r\n1: Staff\r\n2: FamilyMember\r\n3: FamilyMemberWithRoles\r\n4: Producer"));
-                    User newUser = new(Id, Email, PhoneNumber, Name, Level);
+                    User newUser = new(Id, Email, PhoneNumber,"12345", Name, Level);
                     Console.WriteLine(s_dal!.User.Create(newUser));
                     break;
 
@@ -138,7 +138,7 @@ internal class Program
                     if ((int)(Level) < 0 || (int)(Level) > 5)
                         Level = temp.Level;
 
-                    User Helpuscheck = new(Id, Email, PhoneNumber, Name, Level);
+                    User Helpuscheck = new(Id, Email, PhoneNumber,"12345", Name, Level);
                     s_dal!.User.Update(Helpuscheck);
                     break;
 

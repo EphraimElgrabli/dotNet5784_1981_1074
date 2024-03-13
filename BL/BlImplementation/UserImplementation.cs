@@ -23,11 +23,16 @@ internal class UserImplementation : BlApi.IUser
                 throw new BO.BlValueInvalidException($"value Invalid can not create user");
             }
 
+            if(user.Password.Length>8 && user.Password.Length<5)
+            {
+                throw new BO.BlValueInvalidException($"Password must be at least 5-8 characters long");
+            }
             idUser = _dal.User.Create(new DO.User()
             {
                 Id = user.Id,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
+                password= user.Password,
                 Name = user.Name,
                 Level = (DO.UserLevel)user.Level
             });
@@ -85,6 +90,7 @@ internal class UserImplementation : BlApi.IUser
             Id = douser.Id,
             Email = douser.Email,
             PhoneNumber = douser.PhoneNumber,
+            Password = douser.password,
             Name = douser.Name,
             Level = (BO.UserLevel)douser.Level
 
@@ -127,9 +133,11 @@ internal class UserImplementation : BlApi.IUser
             return from user in _dal.User.ReadAll()
                    select new BO.User
                    {
+
                        Id = user.Id,
                        Email = user.Email,
                        PhoneNumber = user.PhoneNumber,
+                       Password = user.password,
                        Name = user.Name,
                        Level = (BO.UserLevel)user.Level
                    };
@@ -142,6 +150,7 @@ internal class UserImplementation : BlApi.IUser
                        Id = user.Id,
                        Email = user.Email,
                        PhoneNumber = user.PhoneNumber,
+                       Password = user.password,
                        Name = user.Name,
                        Level = (BO.UserLevel)user.Level
                    }
@@ -161,11 +170,16 @@ internal class UserImplementation : BlApi.IUser
             {
                 throw new BO.BlValueInvalidException($"value Invalid, can not update user");
             }
+            if (user.Password.Length > 8 && user.Password.Length < 5)
+            {
+                throw new BO.BlValueInvalidException($"Password must be at least 5-8 characters long");
+            }
             _dal.User.Update(new DO.User()
             {
                 Id = user.Id,
                 Email = user.Email,
                 PhoneNumber = user.PhoneNumber,
+                password = user.Password,
                 Name = user.Name,
                 Level = (int)user.Level > (int)(Read(user.Id)).Level ? (DO.UserLevel)user.Level : (DO.UserLevel)(Read(user.Id)).Level
             });

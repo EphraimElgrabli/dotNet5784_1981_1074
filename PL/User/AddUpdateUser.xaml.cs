@@ -62,6 +62,7 @@ namespace PL.User
                     Id = ThisUser.Id,
                     Name = ThisUser.Name,
                     PhoneNumber = ThisUser.PhoneNumber,
+                    Password = ThisUser.Password,
                     Email = ThisUser.Email,
                     Level = ThisUser.Level
                 };
@@ -86,6 +87,11 @@ namespace PL.User
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

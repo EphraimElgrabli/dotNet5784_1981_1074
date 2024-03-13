@@ -14,6 +14,7 @@ public record User
     string Email,
     string PhoneNumber,
     string Name,
+    string password,
     DO.UserLevel Level
 )
 {
@@ -21,5 +22,5 @@ public record User
     /// Initializes a new instance of the <see cref="User"/> class.
     /// </summary>
     /// <param name="Id">The unique identifier for the user.</param>
-    public User() : this(0, "", "", "", 0) { } // Empty constructor for stage 3
+    public User() : this(0, "", "", "","12345", 0) { } // Empty constructor for stage 3
 };

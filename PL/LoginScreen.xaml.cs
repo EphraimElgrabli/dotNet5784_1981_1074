@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BO;
 using PL;
 using PL.User;
 
@@ -38,11 +39,33 @@ namespace PL
 
         private void loginBtn_click(object sender, RoutedEventArgs e)
         {
-            int id = 5;
-            string password = Password;
-            UserToLogin = s_bl?.User.Read(id)!;
+            try
+            {
+                string password = Password;
+            UserToLogin = s_bl?.User.Read((int.Parse(Id)));
             new MainWindow().Show();
+           
+              
+                if (UserToLogin.Level == BO.UserLevel.Producer && UserToLogin.Level==BO.UserLevel.FamilyMemberWithRoles)
+                {
+                    new MainWindow().Show();
+                }
+
+              
+              
+                
                 this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                        ex.Message,
+                        "Error",
+                        MessageBoxButton.OK,
+                        MessageBoxImage.Hand,
+                        MessageBoxResult.Cancel);
+            }
+
         }
 
         private void MoveLoginWindow(object sender, MouseButtonEventArgs e)
@@ -50,5 +73,7 @@ namespace PL
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
         }
+
+        
     }
 }
