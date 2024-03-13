@@ -52,7 +52,7 @@
                              Height="50"
                              Style="{StaticResource MenuIcons}"/>
             </StackPanel>
-            <ContentControl Grid.Row="1"
+            <ContentControl Grid.RowSpan="2"
                             Grid.Column="1"
                             Margin="0"
                             Content="{Binding CurrentView}"/>
