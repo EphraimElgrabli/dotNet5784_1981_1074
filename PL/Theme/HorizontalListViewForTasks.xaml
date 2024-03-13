@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="ListViewItem" x:Key="TaskCard">
+
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{DynamicResource BoldBlue}"/>
+            </Trigger>
+        </Style.Triggers>
+
+        <Setter Property="Background" Value="Transparent"/>
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ListViewItem">
+                    <Border Background="{DynamicResource LightBeige}"
+                            Height="300"
+                            Width="250"
+                            CornerRadius="10"
+                            Margin="8,2,8,2"
+                            x:Name="Border">
+                        <StackPanel Orientation="Vertical"
+                                    Margin="10,0,0,0">
+                            <Border Width="40" Height="40" CornerRadius="30" Background="{DynamicResource BoldBlue}" VerticalAlignment="Center"/>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="{Binding Alias}" FontFamily="{DynamicResource Playfair Regular}" FontSize="22" FontWeight="ExtraBold" Foreground="{DynamicResource BoldBlue}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                <Label Content="{Binding Description}" FontFamily="{DynamicResource Playfair Italic}" FontSize="12" FontWeight="Thin" Foreground="{DynamicResource GreenTexture}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="{DynamicResource MidBeige}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

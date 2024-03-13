@@ -21,6 +21,8 @@ namespace PL
     /// </summary>
     public partial class LoginScreen : Window
     {
+        public string Id { get; set; }
+        public string Password { get; set; }
         static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
         public BO.User? UserToLogin
         {
@@ -36,6 +38,10 @@ namespace PL
 
         private void loginBtn_click(object sender, RoutedEventArgs e)
         {
+            int id = 5;
+            string password = Password;
+            UserToLogin = s_bl?.User.Read(id)!;
+            new MainWindow().Show();
             try
             {
               

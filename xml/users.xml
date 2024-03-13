@@ -1,15 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Id>277871164</Id>
-    <Email>bigMama@gmail.com</Email>
-    <PhoneNumber>97284</PhoneNumber>
-    <Name>123456</Name>
-    <password>bigMama</password>
+    <Id>252152607</Id>
+    <Email>shimosh@gmail.com</Email>
+    <PhoneNumber>97210</PhoneNumber>
+    <Name>shimos</Name>
     <Level>Staff</Level>
   </User>
   <User>
-    <Id>316034461</Id>
+    <Id>212341567</Id>
+    <Email>chanii@gmail.com</Email>
+    <PhoneNumber>+972541234567</PhoneNumber>
+    <Name>Chanibo</Name>
+    <Level>FamilyMember</Level>
+  </User>
+  <User>
+    <Id>207419021</Id>
+    <Email>bigMama@gmail.com</Email>
+    <PhoneNumber>97268</PhoneNumber>
+    <Name>big Mama</Name>
+    <Level>Friends</Level>
+  </User>
+  <User>
+    <Id>270682352</Id>
+    <Email>bigMama@gmail.com</Email>
+    <PhoneNumber>97268</PhoneNumber>
+    <Name>big Mama</Name>
+    <Level>Friends</Level>
+  </User>
+  <User>
+    <Id>270682352</Id>
     <Email>bigPapa@gmail.com</Email>
     <PhoneNumber>97244</PhoneNumber>
     <Name>123456</Name>
@@ -55,5 +75,12 @@
     <Name>Pro12345</Name>
     <password>Admin</password>
     <Level>Producer</Level>
+  </User>
+  <User>
+    <Id>252152609</Id>
+    <Email>shimoshon@gmail.com</Email>
+    <PhoneNumber>97209</PhoneNumber>
+    <Name>shimoshon</Name>
+    <Level>FamilyMember</Level>
   </User>
 </ArrayOfUser>
