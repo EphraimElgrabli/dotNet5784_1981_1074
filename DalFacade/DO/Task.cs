@@ -10,6 +10,9 @@ public record Task
     string Alias,
     string Description,
     int cost,
+    double pracentstart,
+    double pracentbetween,
+    double pracentend,
     DateTime CreatedAtDate,
     bool IsMilestone = false,
     DateTime? StartDate = null,
@@ -26,7 +29,7 @@ public record Task
     /// Initializes a new instance of the <see cref="Task"/> class.
     /// </summary>
     /// <param name="Id">The unique identifier for the task.</param>
-    public Task() : this(0, "", "",0, DateTime.Now) { } // Empty constructor for stage 3
+    public Task() : this(0, "", "",0,0,0,0, DateTime.Now) { } // Empty constructor for stage 3
 
     /// <summary>
     /// Gets the registration date of the current task record.

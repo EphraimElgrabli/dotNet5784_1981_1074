@@ -237,7 +237,7 @@ internal class Program
                     DateTime? completeDate = Convert.ToDateTime(DateTime.Parse(GetString("Complete Date (Formatted: 1/1/0001): ")));
                     string? deliverables = GetString("Deliverables: ");
                     string? remarks = GetString("Remarks: ");
-                    Task newTask = new(0, alias, description,cost, createdDate, isMilestone, startDate, scheduledDate, deadlineDate, completeDate, deliverables, remarks, 0, level);
+                    Task newTask = new(0, alias, description,cost,0,0,0, createdDate, isMilestone, startDate, scheduledDate, deadlineDate, completeDate, deliverables, remarks, 0, level);
                     s_dal!.Task.Create(newTask);
                     break;
                 case 2:
@@ -290,7 +290,7 @@ internal class Program
                         deliverables = temp.Deliverables;
                     if (remarks == "")
                         remarks = temp.Remarks;
-                    Task Helpuscheck = new(Id, alias, description,cost, temp.CreatedAtDate, isMilestone, startDate, scheduledDate, deadlineDate, completeDate, deliverables, remarks, 0, level);
+                    Task Helpuscheck = new(Id, alias, description,cost,0,0,0, temp.CreatedAtDate, isMilestone, startDate, scheduledDate, deadlineDate, completeDate, deliverables, remarks, 0, level);
                     s_dal!.Task.Update(Helpuscheck);
                     break;
 
