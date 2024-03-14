@@ -30,7 +30,7 @@ namespace PL.MVVM.View
 
         // Using a DependencyProperty as the backing store for UserListing.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TaskListingProperty =
-            DependencyProperty.Register("TaskListing", typeof(IEnumerable<BO.Task?>), typeof(TasksView), new PropertyMetadata(null));
+            DependencyProperty.Register("TaskListing", typeof(IEnumerable<BO.Task?>), typeof(GanttView), new PropertyMetadata(null));
 
         public GanttView()
         {
