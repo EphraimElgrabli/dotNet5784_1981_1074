@@ -33,7 +33,8 @@
                             <Border HorizontalAlignment="Stretch" 
                                     VerticalAlignment="Stretch"
                                     Background="{DynamicResource BoldBlue}"
-                                    Grid.Column="1"/>
+                                    Grid.Column="1"
+                                    CornerRadius="10"/>
                             
                             <Border HorizontalAlignment="Stretch" 
                                     VerticalAlignment="Stretch"
