@@ -23,3 +23,5 @@ public class Task
     public double pracentend { get; set; }
     public override string ToString() => this.ToStringProperty();
 }
+/*
+ */
