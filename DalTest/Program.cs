@@ -164,8 +164,8 @@ internal class Program
                 case 0: return;
 
                 case 1:
-                    int? dependentTask = int.Parse(GetString("Dependent Task: "));
-                    int? dependsOnTask = int.Parse(GetString("Depends On Task: "));
+                    int dependentTask = int.Parse(GetString("Dependent Task: "));
+                    int dependsOnTask = int.Parse(GetString("Depends On Task: "));
                     Dependency newDepn = new(0,dependentTask, dependsOnTask);
                     Console.WriteLine(s_dal!.Dependency.Create(newDepn));
                     break;

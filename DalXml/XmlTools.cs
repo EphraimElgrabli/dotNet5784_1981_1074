@@ -158,7 +158,7 @@ static class XMLTools
             throw new DalXMLFileLoadCreateException($"fail to create xml file: {s_xml_dir + filePath}, {ex.Message}");
         }
     }
-
+    
     /// <summary>
     /// Loads the list from an XML file using XML serialization.
     /// </summary>

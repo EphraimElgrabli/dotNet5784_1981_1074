@@ -10,6 +10,7 @@ using System.Linq;
 /// </summary>
 internal class TaskImplementation : ITask
 {
+    private DalApi.IDal _dal = DalApi.Factory.Get;
     /// <summary>
     /// Creates a new task record in the data source.
     /// </summary>
@@ -84,4 +85,5 @@ internal class TaskImplementation : ITask
         DataSource.Tasks.Remove(Read(item.Id)!); // Remove the existing task
         DataSource.Tasks.Add(item); // Add the updated task to the data source
     }
+    
 }

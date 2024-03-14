@@ -70,13 +70,10 @@ internal class DependencyImplementation : IDependency
     {
         if (filter != null)
         {
-            return from depend in DataSource.Dependencys
-                   where filter(depend)
-                   select depend;
+            return DataSource.Dependencys.Where(filter);
         }
-        return from depend in DataSource.Dependencys
-               select depend;
-    }
+        return DataSource.Dependencys.Select(Dependency => Dependency);
+            }
 
     /// <summary>
     /// Updates an existing dependency record in the data source.

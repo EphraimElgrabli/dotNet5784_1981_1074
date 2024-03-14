@@ -6,13 +6,13 @@
 public record Dependency
 (
     int Id,
-    int? DependentTask = null,
-    int? DependsOnTask = null
+    int DependentTask,
+    int DependsOnTask
 )
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="Dependency"/> class.
     /// </summary>
     /// <param name="Id">The unique identifier for the dependency.</param>
-    public Dependency() : this(0) { } // Empty constructor for stage 3
+    public Dependency() : this(Id:0, DependentTask:0, DependsOnTask:0) { } // Empty constructor for stage 3
 }

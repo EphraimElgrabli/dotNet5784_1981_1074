@@ -43,9 +43,10 @@ internal class DependencyImplementation : IDependency
         if (dep == null)
             throw new DalDoesNotExistException($"Dependency with ID={id} does not exist");
         // Load XML data, find the element with the specified ID, and remove it
-        XElement? root = XMLTools.LoadListFromXMLElement(s_dependencys_xml).Elements().FirstOrDefault(dep => (int?)dep.Element("Id") == id);
+        XElement root = XMLTools.LoadListFromXMLElement(s_dependencys_xml);
+            XElement el = root.Elements("Dependency").FirstOrDefault(dep => (int?)dep.Element("Id") == id);
         // Remove the Dependency from the data source
-        root?.Remove();
+        el.Remove();
         // Save the updated XML data back to the file
         XMLTools.SaveListToXMLElement(root, s_dependencys_xml);
     }
@@ -71,7 +72,7 @@ internal class DependencyImplementation : IDependency
     public Dependency? Read(int id)
     {
         // Load XML data, find the element with the specified ID, and return the Dependency
-        XElement? root = XMLTools.LoadListFromXMLElement(s_dependencys_xml).Elements().FirstOrDefault(dep => (int?)dep.Element("Id") == id);
+        XElement? root = XMLTools.LoadListFromXMLElement(s_dependencys_xml).Elements("Dependency").FirstOrDefault(dep => dep.Element("Id")!.Value == id.ToString());
         return root is null ? null : GetDependency(root);
     }
 
@@ -90,11 +91,11 @@ internal class DependencyImplementation : IDependency
     public IEnumerable<Dependency?> ReadAll(Func<Dependency, bool>? filter = null)
     {
         // Load XML data, select all Dependency elements, and apply the filter if provided
-        if (filter != null)
-            return XMLTools.LoadListFromXMLElement(s_dependencys_xml).Elements().Select(dep => GetDependency(dep)).Where(filter);
-
+        var element = XMLTools.LoadListFromXMLElement(s_dependencys_xml).Elements("Dependency");
+        if (filter is null)
+            return element.Select(GetDependency);
         else
-            return XMLTools.LoadListFromXMLElement(s_dependencys_xml).Elements().Select(dep => GetDependency(dep));
+            return element.Select(GetDependency).Where(filter);
     }
 
     /// <summary>
@@ -119,16 +120,14 @@ internal class DependencyImplementation : IDependency
     /// <summary>
     /// Creates a new Dependency object based on the provided XML element.
     /// </summary>
-    public Dependency GetDependency(XElement s)
-    {
-        // Create a new Dependency and initialize its properties from the XML element
-        return new Dependency()
-        {
-            Id = (int)s.Element("Id"),
-            DependsOnTask = (int?)s.Element("DependsOnTask"),
-            DependentTask = (int?)s.Element("DependentTask"),
-        };
-    }
+    public Dependency GetDependency(XElement s) => new
+    (
+            // Create a new Dependency and initialize its properties from the XML element
+
+            Id: int.Parse(s.Element("Id")!.Value)!,
+            DependsOnTask: int.Parse(s.Element("DependsOnTask")!.Value!),
+            DependentTask: int.Parse(s.Element("DependentTask")!.Value!)
+        );
 }
 
 

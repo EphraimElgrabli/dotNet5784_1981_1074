@@ -1,4 +1,6 @@
-﻿namespace DalTest;
+﻿using DalApi;
+
+namespace DalTest;
 
 using System.Data.Common;
 using DalApi;
@@ -6,6 +8,7 @@ using DO;
 using System.Reflection;
 using System.Security.Cryptography;
 using System;
+
 
 public static class Initialization
 {
@@ -16,6 +19,7 @@ public static class Initialization
     /// <summary>
     /// Function to create random task
     /// </summary>
+    /// public void GanttTimestart()
     private static void createTask()
     {
         // Array of task aliases and descriptions
@@ -53,7 +57,14 @@ public static class Initialization
             "mikva",
             "hina"
         };
-
+        DateTime? minTime = s_dal.Clock.GetStartProject();
+        foreach (var v in s_dal.Task.ReadAll())
+        {
+            if (minTime < v.DeadlineDate)
+            {
+                minTime = v.DeadlineDate;
+            }
+        }
         foreach (var task in taskArr)
         {
             // Generate random values for task creation
@@ -69,12 +80,14 @@ public static class Initialization
             DateTime Startdate = scedualed.AddDays(-2);
             DateTime deadDate = scedualed.AddDays(+1);
             DateTime completeDate = scedualed;
+            //double pracentstart = (((Startdate - DateTime.Now).TotalDays) % ((deadDate - DateTime.Now).TotalDays)) * 100;
+            //double pracentbetween = (((deadDate - Startdate).TotalDays) % ((deadDate - DateTime.Now).TotalDays)) * 100;
+            //double pracentend = (((minTime - deadDate).Value.TotalDays) % ((deadDate - DateTime.Now).TotalDays)) * 100;
             string Delivarbles = "Hurry Up, the groom is going to regrat from getting married";
             string Remarks = "Hurry Up, the groom is going to regrat from getting married";
-            int engId = s_rand.Next(1000, 1020);
 
             // Create a new Task object and add it to the data access layer
-            Task newTask = new(0, alias, description,cost,0,0,0, createdDate, isMilestone, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId, (DO.UserLevel)userLvl);
+            Task newTask = new(0, alias, description,cost,0,0,0, createdDate, isMilestone, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks,null, (DO.UserLevel)userLvl);
             s_dal!.Task.Create(newTask);
         }
     }

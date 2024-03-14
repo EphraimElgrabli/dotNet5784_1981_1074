@@ -370,6 +370,7 @@ internal class Program
             Complexity = level,
             Deliverables = deliverables,
             Remarks = remarks,
+            User = null,
             // Dependencies = (from tsk in dependencies select new TaskInList() { Id = tsk.Id, Description = tsk.Description, Alias = tsk.Alias, Status = tsk.Status }).ToList(),
         };
 

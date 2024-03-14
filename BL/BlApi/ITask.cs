@@ -11,5 +11,6 @@ public interface ITask
     public void UpdateDates(int id, DateTime date);
     public void promoteStatusTask(int id);
     public DateTime CalculateStartTime(BO.Task task);
+    public void GanttTime();
 
 }

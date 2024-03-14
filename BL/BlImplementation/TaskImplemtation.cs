@@ -1,4 +1,5 @@
 ﻿using BO;
+using DalApi;
 namespace BlImplementation;
 /// <summary>
 /// Implementation of the ITask interface for managing tasks.
@@ -106,6 +107,7 @@ internal class TaskImplemtation : BlApi.ITask
         DO.Task? doTask = _dal.Task.Read(id);
         if (doTask == null)
             throw new BO.BlDoesNotExistException($"Task with ID={id} does Not exist");
+        UserInTask? u = userintask(doTask.Id);
         return new BO.Task()
         {
             Id = doTask.Id,
@@ -118,13 +120,10 @@ internal class TaskImplemtation : BlApi.ITask
             CompleteDate = doTask.CompleteDate,
             Deliverables = doTask.Deliverables,
             Remarks = doTask.Remarks,
+            User= u,
             Complexity = (BO.UserLevel)doTask.Complexity,
-            Dependencies = (from DO.Dependency d in _dal.Dependency.ReadAll(d => d.DependentTask == doTask.Id)
-                            select new BO.TaskInList
-                            {
-                                Id = (int)d.DependsOnTask!,
-                                Alias = _dal.Task.Read((int)d.DependsOnTask!)!.Alias
-                            }).ToList(),
+            Dependencies = GetAllDependencie(doTask.Id),
+           
         };
     }
 
@@ -163,12 +162,27 @@ internal class TaskImplemtation : BlApi.ITask
     {
         if (id == null) return null;
 
-        BO.Task u = Read((int)id)!;
+        foreach(var v in new UserImplementation().ReadAllUser())
+        {
+            if (v.Tasks != null)
+            {
+                foreach (var t in v.Tasks)
+                {
+                    if (t.Id == id)
+                    {
+                        return new UserInTask() { Id = v.Id, Name = v.Name };
+                    }
+                }
+            }
+        }
+        return null;
+     /*   BO.Task u = Read((int)id)!;
         return new UserInTask()
         {
             Id = u.Id,
             Name = u.Alias
         };
+     */
     }
 
     /// <summary>
@@ -178,8 +192,10 @@ internal class TaskImplemtation : BlApi.ITask
     /// <returns>An IEnumerable of tasks based on the specified filter.</returns>
     public IEnumerable<BO.Task> ReadAllTask(Func<BO.Task, bool>? filter = null)
     {
+
         if (filter == null)
         {
+
             return (from DO.Task doTask in _dal.Task.ReadAll()
 
                     select new BO.Task
@@ -196,12 +212,7 @@ internal class TaskImplemtation : BlApi.ITask
                         Deliverables = doTask.Deliverables,
                         Remarks = doTask.Remarks,
                         User = userintask(doTask.Id),
-                        Dependencies = (from DO.Dependency d in _dal.Dependency.ReadAll(d => d.DependentTask == doTask.Id)
-                                        select new BO.TaskInList
-                                        {
-                                            Id = (int)d.DependsOnTask!,
-                                            Alias = _dal.Task.Read((int)d.DependsOnTask!)!.Alias
-                                        }).ToList(),
+                        Dependencies = GetAllDependencie(doTask.Id)
                     });
         }
         else
@@ -221,16 +232,25 @@ internal class TaskImplemtation : BlApi.ITask
                         Deliverables = doTask.Deliverables,
                         Remarks = doTask.Remarks,
                         User = userintask(doTask.Id),
-                        Dependencies = (from DO.Dependency d in _dal.Dependency.ReadAll(d => d.DependentTask == doTask.Id)
-                                        select new BO.TaskInList
-                                        {
-                                            Id = (int)d.DependsOnTask!,
-                                            Alias = _dal.Task.Read((int)d.DependsOnTask!)!.Alias
-                                        }).ToList(),
+                        Dependencies = GetAllDependencie(doTask.Id)
                     }
                     where filter(boTask)
                     select boTask);
         }
+    }
+    public List<BO.TaskInList> GetAllDependencie(int id)
+    {
+        IEnumerable<BO.TaskInList> temp = from DO.Dependency d in _dal.Dependency.ReadAll()
+                                          where d.DependentTask == id
+                                          let t = _dal.Task.Read(d.DependsOnTask)
+                                          select new BO.TaskInList
+                                          {
+                                              Id = t.Id,
+                                              Description = t.Description,
+                                              Alias = t.Alias
+
+                                          };
+        return temp.ToList();
     }
     /// <summary>
     /// Updates a task with new information.
@@ -246,6 +266,9 @@ internal class TaskImplemtation : BlApi.ITask
                 Id = task.Id,
                 Description = task.Description,
                 Alias = task.Alias,
+                pracentstart = task.pracentstart,
+                pracentbetween = task.pracentbetween,
+                pracentend = task.pracentend,
                 CreatedAtDate = task.CreatedAtDate,
                 StartDate = task.StartDate,
                 ScheduledDate = task.ScheduledDate,
@@ -276,17 +299,17 @@ internal class TaskImplemtation : BlApi.ITask
 
             }
 
-            foreach (DO.Dependency dependency in _dal.Dependency.ReadAll(d => d.DependsOnTask == task.Id)) { _dal.Dependency.Delete(dependency.Id); }
+            foreach (DO.Dependency dependency in _dal.Dependency.ReadAll(d => d.DependentTask == task.Id))
+            { _dal.Dependency.Delete(dependency.Id); }
 
             foreach (var d in task.Dependencies)
             {
                 _dal.Dependency.Create(new DO.Dependency(0, d.Id, task.Id));
             }
-            GanttTime();
         }
         catch (DO.DalDoesNotExistException ex)
         {
-            throw new BO.BlDoesNotExistException($"Task with ID={task.Id} does Not exist");
+            throw new BO.BlDoesNotExistException(ex.Message);
         }
 
     }
@@ -349,7 +372,18 @@ internal class TaskImplemtation : BlApi.ITask
     }
     public void GanttTime() 
     {
-        DateTime? minTime = _dal.Clock.GetStartProject();
+        DateTime? minTime;
+        DateTime? start = _dal.Clock.GetStartProject();
+        if (start == null)
+        {
+            start = DateTime.Now;
+            minTime = DateTime.Now;
+        }
+        else
+        {
+            minTime = _dal.Clock.GetStartProject();
+            start= _dal.Clock.GetStartProject();
+        }
         foreach (var task in ReadAllTask())
         {
             if (minTime < task.DeadlineDate)
@@ -359,9 +393,10 @@ internal class TaskImplemtation : BlApi.ITask
         }
     foreach (var task in ReadAllTask())
         {
-            task.pracentstart = ((int)((task.StartDate-_dal.Clock.GetStartProject()).Value.TotalDays) % ((task.DeadlineDate- _dal.Clock.GetStartProject()).Value.TotalDays))*100;
-            task.pracentend = ((int)((minTime - task.DeadlineDate).Value.TotalDays) % ((task.DeadlineDate - _dal.Clock.GetStartProject()).Value.TotalDays)) * 100;
-            task.pracentbetween= ((int)((task.DeadlineDate - task.StartDate).Value.TotalDays) % ((task.DeadlineDate - _dal.Clock.GetStartProject()).Value.TotalDays))*100;
+            task.pracentstart = (((task.StartDate-start).Value.TotalDays) % ((task.DeadlineDate- start).Value.TotalDays))*100;
+            task.pracentend = (((minTime - task.DeadlineDate).Value.TotalDays) % ((task.DeadlineDate - start).Value.TotalDays)) * 100;
+            task.pracentbetween= (((task.DeadlineDate - task.StartDate).Value.TotalDays) % ((task.DeadlineDate - start).Value.TotalDays))*100;
+            Update(task);
         }
     }
 
