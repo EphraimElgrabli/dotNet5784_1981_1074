@@ -18,8 +18,8 @@ public class Task
     public string? Remarks { get; set; }
     public UserInTask? User { get; set; }
     public UserLevel Complexity { get; set; }
-    public int pracentstart { get; set; }
-    public int pracentbetween { get; set; }
-    public int pracentend { get; set; }
+    public double pracentstart { get; set; }
+    public double pracentbetween { get; set; }
+    public double pracentend { get; set; }
     public override string ToString() => this.ToStringProperty();
 }

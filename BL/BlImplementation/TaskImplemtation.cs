@@ -282,7 +282,7 @@ internal class TaskImplemtation : BlApi.ITask
             {
                 _dal.Dependency.Create(new DO.Dependency(0, d.Id, task.Id));
             }
-
+            GanttTime();
         }
         catch (DO.DalDoesNotExistException ex)
         {
@@ -347,6 +347,23 @@ internal class TaskImplemtation : BlApi.ITask
         return Convert.ToDateTime(minTime);
 
     }
+    public void GanttTime() 
+    {
+        DateTime? minTime = _dal.Clock.GetStartProject();
+        foreach (var task in ReadAllTask())
+        {
+            if (minTime < task.DeadlineDate)
+            {
+                minTime= task.DeadlineDate;
+            }
+        }
+    foreach (var task in ReadAllTask())
+        {
+            task.pracentstart = ((int)((task.StartDate-_dal.Clock.GetStartProject()).Value.TotalDays) % ((task.DeadlineDate- _dal.Clock.GetStartProject()).Value.TotalDays))*100;
+            task.pracentend = ((int)((minTime - task.DeadlineDate).Value.TotalDays) % ((task.DeadlineDate - _dal.Clock.GetStartProject()).Value.TotalDays)) * 100;
+            task.pracentbetween= ((int)((task.DeadlineDate - task.StartDate).Value.TotalDays) % ((task.DeadlineDate - _dal.Clock.GetStartProject()).Value.TotalDays))*100;
+        }
+    }
 
     /// <summary>
     /// //Updates the status of a task.
@@ -388,5 +405,14 @@ internal class TaskImplemtation : BlApi.ITask
             throw new BO.BlAlreadyExistException("The task can not promote");
         }
 
+    }
+    public int GetCost()
+    {
+        int cost = 0;
+        foreach (var task in ReadAllTask())
+        {
+            cost += task.Cost;
+        }
+        return cost;
     }
 }
