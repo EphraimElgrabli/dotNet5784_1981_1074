@@ -120,8 +120,8 @@
     <Description>themeStyle</Description>
     <cost>2310</cost>
     <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
+    <pracentbetween>10</pracentbetween>
+    <pracentend>90</pracentend>
     <CreatedAtDate>2024-03-14T13:06:43.6345482+02:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2025-08-02T00:00:00</StartDate>
@@ -138,9 +138,9 @@
     <Alias>weddingAttire</Alias>
     <Description>weddingAttire</Description>
     <cost>6614</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
+    <pracentstart>10</pracentstart>
+    <pracentbetween>10</pracentbetween>
+    <pracentend>80</pracentend>
     <CreatedAtDate>2024-03-14T13:06:43.6487636+02:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2025-01-21T00:00:00</StartDate>
@@ -157,9 +157,9 @@
     <Alias>weddingWebsite</Alias>
     <Description>weddingWebsite</Description>
     <cost>7807</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
+    <pracentstart>20</pracentstart>
+    <pracentbetween>10</pracentbetween>
+    <pracentend>70</pracentend>
     <CreatedAtDate>2024-03-14T13:06:43.6622985+02:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2025-07-15T00:00:00</StartDate>
@@ -176,9 +176,9 @@
     <Alias>saveTheDatesSent</Alias>
     <Description>saveTheDatesSent</Description>
     <cost>6159</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
+    <pracentstart>30</pracentstart>
+    <pracentbetween>10</pracentbetween>
+    <pracentend>60</pracentend>
     <CreatedAtDate>2024-03-14T13:06:43.6781567+02:00</CreatedAtDate>
     <IsMilestone>true</IsMilestone>
     <StartDate>2025-08-29T00:00:00</StartDate>

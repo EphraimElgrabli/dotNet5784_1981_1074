@@ -25,21 +25,24 @@
                                     <ImageBrush Stretch="UniformToFill" ImageSource="https://picsum.photos/500/840"/>
                                 </Border.Background>
                             </Border>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                                <Label Content="{Binding Alias}" 
-                                       FontFamily="{DynamicResource Playfair Regular}" 
-                                       FontSize="22" 
-                                       FontWeight="ExtraBold" 
-                                       Foreground="{DynamicResource BoldBlue}" 
-                                       VerticalAlignment="Center" 
-                                       Margin="10,0,0,0"/>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <TextBlock Text="{Binding Alias}" 
+                                           FontFamily="{DynamicResource Playfair Regular}" 
+                                           FontSize="24" 
+                                           FontWeight="ExtraBold" 
+                                           Foreground="{DynamicResource BoldBlue}" 
+                                           VerticalAlignment="Center" 
+                                           Margin="10,2,2,10"
+                                           TextWrapping="Wrap"/>
                                 
-                                <Label Content="{Binding Description}" 
-                                       FontFamily="{DynamicResource Playfair Italic}" 
-                                       FontSize="12" FontWeight="Thin" 
-                                       Foreground="{DynamicResource GreenTexture}" 
-                                       VerticalAlignment="Center" 
-                                       HorizontalAlignment="Left"/>
+                                <TextBlock Text="{Binding Remarks}" 
+                                           FontFamily="{DynamicResource Playfair Italic}" 
+                                           FontSize="12" FontWeight="Thin" 
+                                           Foreground="{DynamicResource StrongBeige}" 
+                                           VerticalAlignment="Center" 
+                                           HorizontalAlignment="Left"
+                                           Margin="10,2,2,10"
+                                           TextWrapping="Wrap"/>
                             </StackPanel>
                         </StackPanel>
                     </Border>
