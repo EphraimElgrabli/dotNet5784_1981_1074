@@ -14,6 +14,13 @@
                 <RowDefinition Height="7*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
+            <Label Content="Tasks." 
+                   FontFamily="{DynamicResource Playfair Regular}" 
+                   FontWeight="ExtraBold" 
+                   FontSize="30"
+                   Foreground="{DynamicResource BoldBlue}"
+                   VerticalAlignment="Center"
+                   Grid.Row="0"/>
             <ListView Grid.Row="1" 
                       ItemsSource="{Binding TaskListing, UpdateSourceTrigger=PropertyChanged}" 
                       ItemContainerStyle="{StaticResource TaskCard}" 
