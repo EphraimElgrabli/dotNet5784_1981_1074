@@ -31,12 +31,12 @@
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="10" 
-                             Height="50" 
+                             Height="40" 
                              Style="{StaticResource ModernTB}" 
                              FontFamily="{DynamicResource Playfair Regular}" 
                              FontSize="18" 
                              FontWeight="ExtraBold" TextChanged="TextBox_TextChanged"
-                             ToolTip="Name"
+                             ToolTip="Name:"
                              />
                     
 
@@ -44,49 +44,62 @@
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="10" 
-                             Height="50" 
+                             Height="40" 
                              Style="{StaticResource ModernTB}" 
                              FontFamily="{DynamicResource Playfair Regular}" 
                              FontSize="18" 
-                             FontWeight="ExtraBold"/>
+                             FontWeight="ExtraBold"
+                             ToolTip="Phone Number:"/>
 
                     <TextBox Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=True,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="10" 
-                             Height="50" 
+                             Height="40" 
                              Style="{StaticResource ModernTB}" 
                              FontFamily="{DynamicResource Playfair Regular}" 
                              FontSize="18" 
-                             FontWeight="ExtraBold"/>
+                             FontWeight="ExtraBold"
+                             ToolTip="Email:"/>
 
                     <TextBox Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="10" 
-                             Height="50" 
+                             Height="40" 
                              Style="{StaticResource ModernTB}" 
                              FontFamily="{DynamicResource Playfair Regular}" 
                              FontSize="18" 
-                             FontWeight="ExtraBold"/>
-
+                             FontWeight="ExtraBold"
+                             ToolTip="Id:"/>
+                    <TextBox Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
+                             HorizontalAlignment="Center" 
+                             Width="360" 
+                             Margin="10" 
+                             Height="40" 
+                             Style="{StaticResource ModernTB}" 
+                             FontFamily="{DynamicResource Password}" 
+                             FontSize="18" 
+                             FontWeight="ExtraBold"
+                             ToolTip="Password:"/>
                     <ComboBox ItemsSource="{Binding Source={StaticResource UserLevelKey}}" 
                               SelectedValue="{Binding Level, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
                               Margin="10"  
                               VerticalAlignment="Center" 
                               Width="360" 
-                              Height="50" 
+                              Height="40" 
                               Style="{StaticResource ComboBoxFlatStyle}"/>
 
                     <Button Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"   
                             HorizontalAlignment="Center" 
-                            Height="50" 
+                            Height="40" 
                             Width="360" 
                             Margin="10" 
                             Click="btnAddUpdate_Click" 
                             Style="{StaticResource ModernBTN}"/>
-                    <TextBlock TextWrapping="Wrap" Text="TextBlock"/>
 
+                    <TextBlock TextWrapping="Wrap" Text="TextBlock"/>
+                    
                 </StackPanel>
             </Border>
             <Border Background="{DynamicResource BoldBlue}" 
@@ -96,7 +109,7 @@
                     Grid.RowSpan="2"
                     VerticalAlignment="Top"
                     Margin="0,55,0,0">
-                <Image Source="https://api.dicebear.com/7.x/lorelei/png" MaxHeight="120" MaxWidth="120"/>
+                <Image Source="https://api.dicebear.com/7.x/lorelei/png?seed=jrkl" MaxHeight="120" MaxWidth="120"/>
             </Border>
             <Border Background="Transparent" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" MouseDown="AddUser_Draggable" Grid.Row="0"/>
         </Grid>
