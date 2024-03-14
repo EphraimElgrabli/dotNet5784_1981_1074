@@ -25,21 +25,125 @@
                                     <ImageBrush Stretch="UniformToFill" ImageSource="https://picsum.photos/500/840"/>
                                 </Border.Background>
                             </Border>
-                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                                <Label Content="{Binding Alias}" 
-                                       FontFamily="{DynamicResource Playfair Regular}" 
-                                       FontSize="22" 
-                                       FontWeight="ExtraBold" 
-                                       Foreground="{DynamicResource BoldBlue}" 
-                                       VerticalAlignment="Center" 
-                                       Margin="10,0,0,0"/>
-                                
-                                <Label Content="{Binding Description}" 
-                                       FontFamily="{DynamicResource Playfair Italic}" 
-                                       FontSize="12" FontWeight="Thin" 
-                                       Foreground="{DynamicResource GreenTexture}" 
-                                       VerticalAlignment="Center" 
-                                       HorizontalAlignment="Left"/>
+                            <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                                <TextBlock Text="{Binding Alias}" 
+                                           FontFamily="{DynamicResource Playfair Regular}" 
+                                           FontSize="26" 
+                                           FontWeight="ExtraBold" 
+                                           Foreground="{DynamicResource BoldBlue}" 
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           Margin="10,2,10,2"
+                                           TextWrapping="WrapWithOverflow"/>
+                                <Canvas Height="1" Width="180" HorizontalAlignment="Center">
+                                    <Line
+                                        X1="0" Y1="0"
+                                        X2="180" Y2="1"
+                                        Stroke="{DynamicResource BoldBlue}"
+                                        StrokeThickness="1" 
+                                        Opacity="0.5"/>
+                                </Canvas>
+                                <TextBlock Text="{Binding Remarks}" 
+                                           FontFamily="{DynamicResource Playfair Italic}" 
+                                           FontSize="12" FontWeight="Thin" 
+                                           Foreground="{DynamicResource StrongBeige}" 
+                                           VerticalAlignment="Center" 
+                                           HorizontalAlignment="Center"
+                                           Margin="10"
+                                           TextWrapping="Wrap"
+                                           TextAlignment="Justify"/>
+                                <Grid Margin="25,0,25,0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="3*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <StackPanel Grid.Column="0" 
+                                                Grid.Row="0" 
+                                                HorizontalAlignment="Left" 
+                                                VerticalAlignment="Stretch">
+                                        
+                                        <TextBlock Text="Started:"
+                                               FontFamily="{DynamicResource Playfair Regular}"
+                                               FontSize="12"
+                                               Foreground="{DynamicResource BoldBlue}"/>
+                                        <TextBlock Text="{Binding StartDate, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                               FontFamily="{DynamicResource Playfair Regular}"
+                                               FontSize="12"
+                                               Foreground="{DynamicResource BoldBlue}"/>
+                                        <TextBlock Text="Completion:"
+                                               FontFamily="{DynamicResource Playfair Regular}"
+                                               FontSize="12"
+                                               Foreground="{DynamicResource BoldBlue}"
+                                               Margin="0,5,0,0"/>
+                                        <TextBlock Text="{Binding CompleteDate, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                               FontFamily="{DynamicResource Playfair Regular}"
+                                               FontSize="12"
+                                               Foreground="{DynamicResource BoldBlue}"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1" 
+                                                Grid.Row="0" 
+                                                HorizontalAlignment="Right" 
+                                                VerticalAlignment="Stretch">
+
+                                        <TextBlock Text="Scheduled:"
+                                                   FontFamily="{DynamicResource Playfair Regular}"
+                                                   FontSize="12"
+                                                   Foreground="{DynamicResource BoldBlue}"/>
+                                        
+                                        <TextBlock Text="{Binding ScheduledDate, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                                   FontFamily="{DynamicResource Playfair Regular}"
+                                                   FontSize="12"
+                                                   Foreground="{DynamicResource BoldBlue}"
+                                                   HorizontalAlignment="Right"/>
+                                        
+                                        <TextBlock Text="Deadline:"
+                                                   FontFamily="{DynamicResource Playfair Regular}"
+                                                   FontSize="12"
+                                                   Foreground="{DynamicResource BoldBlue}"
+                                                   Margin="0,5,0,0"/>
+                                        
+                                        <TextBlock Text="{Binding DeadlineDate, StringFormat='{}{0:dd/MM/yyyy}'}"
+                                                   FontFamily="{DynamicResource Playfair Regular}"
+                                                   FontSize="12"
+                                                   Foreground="{DynamicResource BoldBlue}"
+                                                   HorizontalAlignment="Right"/>
+                                        
+                                    </StackPanel>
+                                    
+                                    <StackPanel Grid.Column="1" 
+                                                Grid.Row="1" 
+                                                HorizontalAlignment="Stretch" 
+                                                VerticalAlignment="Stretch" 
+                                                Margin="0,50,0,0">
+                                        
+                                        <TextBlock Text="{Binding Cost, StringFormat='{}{0:C}'}"
+                                               FontFamily="{DynamicResource Playfair Regular}"
+                                               FontSize="16"
+                                               Foreground="{DynamicResource BoldBlue}"
+                                               FontWeight="ExtraBold"
+                                               HorizontalAlignment="Right"
+                                               VerticalAlignment="Bottom"/>
+                                    </StackPanel>
+                                    <StackPanel Grid.Column="0" 
+                                                Grid.Row="1" 
+                                                HorizontalAlignment="Stretch" 
+                                                VerticalAlignment="Stretch"
+                                                Margin="0,50,0,0">
+                                        
+                                        <TextBlock Text="{Binding Status}"
+                                               FontFamily="{DynamicResource Playfair Regular}"
+                                               FontSize="16"
+                                               Foreground="{DynamicResource BoldBlue}"
+                                               FontWeight="ExtraBold"
+                                               HorizontalAlignment="Left"
+                                               VerticalAlignment="Bottom"/>
+                                    </StackPanel>
+                                </Grid>
                             </StackPanel>
                         </StackPanel>
                     </Border>

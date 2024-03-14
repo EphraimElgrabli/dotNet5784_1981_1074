@@ -1,5 +1,4 @@
 ﻿using PL.User;
-using PL.Admin;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -33,7 +32,7 @@ namespace PL
 
         private void btnAdminpanel_click(object sender, RoutedEventArgs e)
         {
-            new AdminPanel().Show();
+            //new AdminPanel().Show();
         }
 
         private void MoveAdminWindow(object sender, MouseButtonEventArgs e)

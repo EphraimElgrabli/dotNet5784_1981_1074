@@ -22,21 +22,21 @@ namespace PL.MVVM.View
     {
         static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
 
-        public IEnumerable<BO.Task?> TaskListing
+        public IEnumerable<BO.Task?> TaskListingGantt
         {
-            get { return (IEnumerable<BO.Task?>)GetValue(TaskListingProperty); }
-            set { SetValue(TaskListingProperty, value); }
+            get { return (IEnumerable<BO.Task?>)GetValue(TaskListingGanttProperty); }
+            set { SetValue(TaskListingGanttProperty, value); }
         }
 
         // Using a DependencyProperty as the backing store for UserListing.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty TaskListingProperty =
-            DependencyProperty.Register("TaskListing", typeof(IEnumerable<BO.Task?>), typeof(GanttView), new PropertyMetadata(null));
+        public static readonly DependencyProperty TaskListingGanttProperty =
+            DependencyProperty.Register("TaskListingGantt", typeof(IEnumerable<BO.Task?>), typeof(GanttView), new PropertyMetadata(null));
 
         public GanttView()
         {
             InitializeComponent();
-            TaskListing = s_bl?.Task.ReadAllTask()!;
-            TaskListing = TaskListing.OrderBy(Task => Task.pracentstart);
+            TaskListingGantt = s_bl?.Task.ReadAllTask()!;
+            TaskListingGantt = TaskListingGantt.OrderBy(Task => Task.pracentstart);
         }
     }
 }
