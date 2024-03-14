@@ -5,7 +5,7 @@
     <Alias>weddingWebsite</Alias>
     <Description>weddingWebsite</Description>
     <cost>0</cost>
-    <pracentstart>51626.438834879285</pracentstart>
+    <pracentstart>51625.83101208577</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>5100</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.7066842+02:00</CreatedAtDate>
@@ -24,7 +24,7 @@
     <Alias>saveTheDatesSent</Alias>
     <Description>saveTheDatesSent</Description>
     <cost>0</cost>
-    <pracentstart>43526.43883487928</pracentstart>
+    <pracentstart>43525.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>13200</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.7482982+02:00</CreatedAtDate>
@@ -43,7 +43,7 @@
     <Alias>invitationsSent</Alias>
     <Description>invitationsSent</Description>
     <cost>0</cost>
-    <pracentstart>40026.43883487928</pracentstart>
+    <pracentstart>40025.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>16700</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.7898657+02:00</CreatedAtDate>
@@ -62,7 +62,7 @@
     <Alias>ceremonyDetails</Alias>
     <Description>ceremonyDetails</Description>
     <cost>0</cost>
-    <pracentstart>46426.43883487928</pracentstart>
+    <pracentstart>46425.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>10300</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.8362627+02:00</CreatedAtDate>
@@ -81,7 +81,7 @@
     <Alias>receptionDetails</Alias>
     <Description>receptionDetails</Description>
     <cost>0</cost>
-    <pracentstart>42226.43883487928</pracentstart>
+    <pracentstart>42225.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>14500</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.8818188+02:00</CreatedAtDate>
@@ -100,7 +100,7 @@
     <Alias>necessaryDocumentsObtained</Alias>
     <Description>necessaryDocumentsObtained</Description>
     <cost>0</cost>
-    <pracentstart>42526.43883487928</pracentstart>
+    <pracentstart>42525.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>14200</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.9060436+02:00</CreatedAtDate>
@@ -119,7 +119,7 @@
     <Alias>dayOfTimeline</Alias>
     <Description>dayOfTimeline</Description>
     <cost>0</cost>
-    <pracentstart>42926.43883487928</pracentstart>
+    <pracentstart>42925.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>13800</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.9516463+02:00</CreatedAtDate>
@@ -138,7 +138,7 @@
     <Alias>transportationArranged</Alias>
     <Description>transportationArranged</Description>
     <cost>0</cost>
-    <pracentstart>51526.438834879285</pracentstart>
+    <pracentstart>51525.83101208577</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>5200</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.0008946+02:00</CreatedAtDate>
@@ -157,7 +157,7 @@
     <Alias>rehearsalDinnerDetails</Alias>
     <Description>rehearsalDinnerDetails</Description>
     <cost>0</cost>
-    <pracentstart>30326.43883487928</pracentstart>
+    <pracentstart>30325.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>26400</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.0407124+02:00</CreatedAtDate>
@@ -176,7 +176,7 @@
     <Alias>weddingRings</Alias>
     <Description>weddingRings</Description>
     <cost>0</cost>
-    <pracentstart>56726.438834879285</pracentstart>
+    <pracentstart>56725.83101208577</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>0</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.1150328+02:00</CreatedAtDate>
@@ -195,7 +195,7 @@
     <Alias>accommodations</Alias>
     <Description>accommodations</Description>
     <cost>0</cost>
-    <pracentstart>35726.43883487928</pracentstart>
+    <pracentstart>35725.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>21000</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.1512835+02:00</CreatedAtDate>
@@ -214,7 +214,7 @@
     <Alias>hairMakeupTrialsScheduled</Alias>
     <Description>hairMakeupTrialsScheduled</Description>
     <cost>0</cost>
-    <pracentstart>31126.43883487928</pracentstart>
+    <pracentstart>31125.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>25600</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.2082607+02:00</CreatedAtDate>
@@ -233,7 +233,7 @@
     <Alias>honeymoonDetails</Alias>
     <Description>honeymoonDetails</Description>
     <cost>0</cost>
-    <pracentstart>31226.43883487928</pracentstart>
+    <pracentstart>31225.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>25500</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.2421621+02:00</CreatedAtDate>
@@ -252,7 +252,7 @@
     <Alias>giftRegistry</Alias>
     <Description>giftRegistry</Description>
     <cost>0</cost>
-    <pracentstart>55726.438834879285</pracentstart>
+    <pracentstart>55725.83101208577</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>1000</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.2994139+02:00</CreatedAtDate>
@@ -271,7 +271,7 @@
     <Alias>preWeddingCelebrations</Alias>
     <Description>preWeddingCelebrations</Description>
     <cost>0</cost>
-    <pracentstart>47226.43883487928</pracentstart>
+    <pracentstart>47225.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>9500</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.3297002+02:00</CreatedAtDate>
@@ -290,7 +290,7 @@
     <Alias>finalDetailsConfirmed</Alias>
     <Description>finalDetailsConfirmed</Description>
     <cost>0</cost>
-    <pracentstart>29226.43883487928</pracentstart>
+    <pracentstart>29225.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>27500</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.3622645+02:00</CreatedAtDate>
@@ -309,7 +309,7 @@
     <Alias>seatingChart</Alias>
     <Description>seatingChart</Description>
     <cost>0</cost>
-    <pracentstart>54026.438834879285</pracentstart>
+    <pracentstart>54025.83101208577</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>2700</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.4077553+02:00</CreatedAtDate>
@@ -328,7 +328,7 @@
     <Alias>welcomeBagsAssembled</Alias>
     <Description>welcomeBagsAssembled</Description>
     <cost>0</cost>
-    <pracentstart>49326.43883487928</pracentstart>
+    <pracentstart>49325.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>7400</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.4381216+02:00</CreatedAtDate>
@@ -347,7 +347,7 @@
     <Alias>finalGuestCountConfirmed</Alias>
     <Description>finalGuestCountConfirmed</Description>
     <cost>0</cost>
-    <pracentstart>31026.43883487928</pracentstart>
+    <pracentstart>31025.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>25700</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.4551943+02:00</CreatedAtDate>
@@ -366,7 +366,7 @@
     <Alias>rehearsalConducted</Alias>
     <Description>rehearsalConducted</Description>
     <cost>0</cost>
-    <pracentstart>45326.43883487928</pracentstart>
+    <pracentstart>45325.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>11400</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.4953439+02:00</CreatedAtDate>
@@ -385,7 +385,7 @@
     <Alias>weddingDayExecuted</Alias>
     <Description>weddingDayExecuted</Description>
     <cost>0</cost>
-    <pracentstart>51726.438834879285</pracentstart>
+    <pracentstart>51725.83101208577</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>5000</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.5605369+02:00</CreatedAtDate>
@@ -404,7 +404,7 @@
     <Alias>postWeddingTasksCompleted</Alias>
     <Description>postWeddingTasksCompleted</Description>
     <cost>0</cost>
-    <pracentstart>30726.43883487928</pracentstart>
+    <pracentstart>30725.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>26000</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.6138458+02:00</CreatedAtDate>
@@ -423,7 +423,7 @@
     <Alias>mikva</Alias>
     <Description>mikva</Description>
     <cost>0</cost>
-    <pracentstart>41926.43883487928</pracentstart>
+    <pracentstart>41925.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>14800</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.6432192+02:00</CreatedAtDate>
@@ -442,7 +442,7 @@
     <Alias>hina</Alias>
     <Description>hina</Description>
     <cost>0</cost>
-    <pracentstart>38126.43883487928</pracentstart>
+    <pracentstart>38125.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>18600</pracentend>
     <CreatedAtDate>2024-03-14T17:20:34.708914+02:00</CreatedAtDate>
@@ -461,7 +461,7 @@
     <Alias>overallBudget</Alias>
     <Description>overallBudget</Description>
     <cost>0</cost>
-    <pracentstart>43526.43883487928</pracentstart>
+    <pracentstart>43525.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>13200</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.4028817+02:00</CreatedAtDate>
@@ -480,7 +480,7 @@
     <Alias>weddingDate</Alias>
     <Description>weddingDate</Description>
     <cost>0</cost>
-    <pracentstart>55126.438834879285</pracentstart>
+    <pracentstart>55125.83101208577</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>1600</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.4168385+02:00</CreatedAtDate>
@@ -499,7 +499,7 @@
     <Alias>guestList</Alias>
     <Description>guestList</Description>
     <cost>0</cost>
-    <pracentstart>55926.438834879285</pracentstart>
+    <pracentstart>55925.83101208577</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>800</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.4432839+02:00</CreatedAtDate>
@@ -518,7 +518,7 @@
     <Alias>venue</Alias>
     <Description>venue</Description>
     <cost>0</cost>
-    <pracentstart>44926.43883487928</pracentstart>
+    <pracentstart>44925.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>11800</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.526359+02:00</CreatedAtDate>
@@ -537,7 +537,7 @@
     <Alias>weddingPlannerHired</Alias>
     <Description>weddingPlannerHired</Description>
     <cost>0</cost>
-    <pracentstart>39826.43883487928</pracentstart>
+    <pracentstart>39825.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>16900</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.5461215+02:00</CreatedAtDate>
@@ -556,7 +556,7 @@
     <Alias>vendors</Alias>
     <Description>vendors</Description>
     <cost>0</cost>
-    <pracentstart>48526.43883487928</pracentstart>
+    <pracentstart>48525.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>8200</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.6004172+02:00</CreatedAtDate>
@@ -575,7 +575,7 @@
     <Alias>themeStyle</Alias>
     <Description>themeStyle</Description>
     <cost>0</cost>
-    <pracentstart>43626.43883487928</pracentstart>
+    <pracentstart>43625.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>13100</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.6687192+02:00</CreatedAtDate>
@@ -594,7 +594,7 @@
     <Alias>weddingAttire</Alias>
     <Description>weddingAttire</Description>
     <cost>0</cost>
-    <pracentstart>39026.43883487928</pracentstart>
+    <pracentstart>39025.831012085764</pracentstart>
     <pracentbetween>300</pracentbetween>
     <pracentend>17700</pracentend>
     <CreatedAtDate>2024-03-14T17:20:33.6893963+02:00</CreatedAtDate>

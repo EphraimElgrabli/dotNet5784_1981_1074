@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PL.MVVM.View"
              mc:Ignorable="d" 
+             DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
              d:DesignHeight="450" d:DesignWidth="800">
     <Border Background="{DynamicResource StrongBeige}" CornerRadius="10">
         <Grid Margin="10">
@@ -21,7 +22,7 @@
                    VerticalAlignment="Center"
                    />
             <ListView Grid.Row="1" 
-                  ItemsSource="{Binding TaskListing, UpdateSourceTrigger=PropertyChanged}" 
+                  ItemsSource="{Binding TaskListingGantt, UpdateSourceTrigger=PropertyChanged}" 
                   ItemContainerStyle="{StaticResource Gantt}" 
                   Background="Transparent" 
                   BorderThickness="0" 
