@@ -51,7 +51,8 @@
 
                 <RadioButton Content="../images/Gantt.png"
                              Height="50"
-                             Style="{StaticResource MenuIcons}"/>
+                             Style="{StaticResource MenuIcons}"
+                             Command="{Binding GanttViewCommand}"/>
             </StackPanel>
             <ContentControl Grid.RowSpan="2"
                             Grid.Column="1"

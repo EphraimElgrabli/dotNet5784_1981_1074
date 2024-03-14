@@ -17,6 +17,7 @@
                 <ResourceDictionary Source="Theme/CustomComboBox.xaml"/>
                 <ResourceDictionary Source="Theme/CustomListViewForUsers.xaml"/>
                 <ResourceDictionary Source="Theme/HorizontalListViewForTasks.xaml"/>
+                <ResourceDictionary Source="Theme/Gantt.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
@@ -29,6 +30,10 @@
 
             <DataTemplate DataType="{x:Type viewModel:UsersListViewModel}">
                 <view:UsersListView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:GanttViewModel}">
+                <view:GanttView/>
             </DataTemplate>
 
         </ResourceDictionary>

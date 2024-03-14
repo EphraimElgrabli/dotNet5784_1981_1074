@@ -47,7 +47,7 @@
                              Height="40" 
                              Style="{StaticResource ModernTB}" 
                              FontFamily="{DynamicResource Playfair Regular}" 
-                             FontSize="18" 
+                             FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Phone Number:"/>
 
@@ -58,7 +58,7 @@
                              Height="40" 
                              Style="{StaticResource ModernTB}" 
                              FontFamily="{DynamicResource Playfair Regular}" 
-                             FontSize="18" 
+                             FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Email:"/>
 
@@ -69,17 +69,17 @@
                              Height="40" 
                              Style="{StaticResource ModernTB}" 
                              FontFamily="{DynamicResource Playfair Regular}" 
-                             FontSize="18" 
+                             FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Id:"/>
-                    <TextBox Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
+                    <TextBox Text="{Binding Password, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="10" 
                              Height="40" 
                              Style="{StaticResource ModernTB}" 
                              FontFamily="{DynamicResource Password}" 
-                             FontSize="18" 
+                             FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Password:"/>
                     <ComboBox ItemsSource="{Binding Source={StaticResource UserLevelKey}}" 

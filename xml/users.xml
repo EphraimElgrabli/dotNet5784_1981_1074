@@ -64,4 +64,12 @@
     <password>123456</password>
     <Level>FamilyMember</Level>
   </User>
+  <User>
+    <Id>111222333</Id>
+    <Email>dlfkgj@gdg.com</Email>
+    <PhoneNumber>+97244444</PhoneNumber>
+    <Name>Ephraim</Name>
+    <password>Pro12345</password>
+    <Level>Producer</Level>
+  </User>
 </ArrayOfUser>
