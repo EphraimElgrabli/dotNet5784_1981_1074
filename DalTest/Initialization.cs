@@ -74,7 +74,7 @@ public static class Initialization
             int engId = s_rand.Next(1000, 1020);
 
             // Create a new Task object and add it to the data access layer
-            Task newTask = new(0, alias, description,cost, createdDate, isMilestone, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId, (DO.UserLevel)userLvl);
+            Task newTask = new(0, alias, description,cost,0,0,0, createdDate, isMilestone, Startdate, scedualed, deadDate, completeDate, Delivarbles, Remarks, engId, (DO.UserLevel)userLvl);
             s_dal!.Task.Create(newTask);
         }
     }
