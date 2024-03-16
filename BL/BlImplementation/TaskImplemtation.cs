@@ -211,7 +211,10 @@ internal class TaskImplemtation : BlApi.ITask
                         Deliverables = doTask.Deliverables,
                         Remarks = doTask.Remarks,
                         User = userintask(doTask.Id),
-                        Dependencies = GetAllDependencie(doTask.Id)
+                        Dependencies = GetAllDependencie(doTask.Id),
+                        pracentstart = doTask.pracentstart,
+                        pracentbetween = doTask.pracentbetween,
+                        pracentend = doTask.pracentend
                     });
         }
         else
