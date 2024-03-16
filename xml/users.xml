@@ -1,57 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Id>371184680</Id>
+    <Id>374723696</Id>
     <Email>bigMama@gmail.com</Email>
-    <PhoneNumber>97281</PhoneNumber>
+    <PhoneNumber>97242</PhoneNumber>
     <Name>bigMama</Name>
     <password>123456</password>
     <Level>FamilyMember</Level>
   </User>
   <User>
-    <Id>232049427</Id>
+    <Id>378030230</Id>
     <Email>bigPapa@gmail.com</Email>
-    <PhoneNumber>97264</PhoneNumber>
+    <PhoneNumber>97236</PhoneNumber>
     <Name>bigPapa</Name>
     <password>123456</password>
-    <Level>FamilyMemberWithRoles</Level>
+    <Level>Staff</Level>
   </User>
   <User>
-    <Id>387729536</Id>
+    <Id>256529237</Id>
     <Email>Kala@gmail.com</Email>
-    <PhoneNumber>97282</PhoneNumber>
+    <PhoneNumber>97225</PhoneNumber>
     <Name>Kala</Name>
     <password>123456</password>
-    <Level>Friends</Level>
+    <Level>Staff</Level>
   </User>
   <User>
-    <Id>253532994</Id>
+    <Id>272445450</Id>
     <Email>Hatan@gmail.com</Email>
-    <PhoneNumber>97283</PhoneNumber>
+    <PhoneNumber>97213</PhoneNumber>
     <Name>Hatan</Name>
+    <password>123456</password>
+    <Level>Staff</Level>
+  </User>
+  <User>
+    <Id>390497408</Id>
+    <Email>yoram@gmail.com</Email>
+    <PhoneNumber>97274</PhoneNumber>
+    <Name>yoram</Name>
     <password>123456</password>
     <Level>FamilyMemberWithRoles</Level>
   </User>
   <User>
-    <Id>296750212</Id>
-    <Email>yoram@gmail.com</Email>
-    <PhoneNumber>97295</PhoneNumber>
-    <Name>yoram</Name>
-    <password>123456</password>
-    <Level>Friends</Level>
-  </User>
-  <User>
-    <Id>218396572</Id>
+    <Id>265689724</Id>
     <Email>Shira@gmail.com</Email>
-    <PhoneNumber>97224</PhoneNumber>
+    <PhoneNumber>97219</PhoneNumber>
     <Name>Shira</Name>
     <password>123456</password>
-    <Level>Friends</Level>
+    <Level>FamilyMember</Level>
   </User>
   <User>
-    <Id>232075962</Id>
+    <Id>242492996</Id>
     <Email>shimoshon@gmail.com</Email>
-    <PhoneNumber>97282</PhoneNumber>
+    <PhoneNumber>97256</PhoneNumber>
     <Name>shimoshon</Name>
     <password>123456</password>
     <Level>FamilyMemberWithRoles</Level>

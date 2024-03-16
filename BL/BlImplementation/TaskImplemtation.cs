@@ -73,7 +73,6 @@ internal class TaskImplemtation : BlApi.ITask
                     }
                 }
                 new UserImplementation().Update(t);
-
             }
             return idTask;
 
@@ -295,8 +294,6 @@ internal class TaskImplemtation : BlApi.ITask
                     }
                 }
                 new UserImplementation().Update(t);
-
-
             }
 
             foreach (DO.Dependency dependency in _dal.Dependency.ReadAll(d => d.DependentTask == task.Id))
@@ -372,30 +369,45 @@ internal class TaskImplemtation : BlApi.ITask
     }
     public void GanttTime() 
     {
-        DateTime? minTime;
+        DateTime? minTime = DateTime.MaxValue; ;
+        DateTime? maxTime = DateTime.MinValue; ;
         DateTime? start = _dal.Clock.GetStartProject();
-        if (start == null)
+        //if (start == null)
+        //{
+        //    start = DateTime.Now;
+        //    minTime = DateTime.Now;
+        //    maxTime = DateTime.Now;
+        //}
+        //else
+        //{
+        //    minTime = _dal.Clock.GetStartProject();
+        //    maxTime = _dal.Clock.GetStartProject();
+        //    start = _dal.Clock.GetStartProject();
+        //}
+        foreach (var task in ReadAllTask())
         {
-            start = DateTime.Now;
-            minTime = DateTime.Now;
-        }
-        else
-        {
-            minTime = _dal.Clock.GetStartProject();
-            start= _dal.Clock.GetStartProject();
+            if (minTime > task.StartDate)
+            {
+                minTime= task.StartDate;
+            }
         }
         foreach (var task in ReadAllTask())
         {
-            if (minTime < task.DeadlineDate)
+            if (maxTime < task.DeadlineDate)
             {
-                minTime= task.DeadlineDate;
+                maxTime = task.DeadlineDate;
             }
         }
-    foreach (var task in ReadAllTask())
+        foreach (var task in ReadAllTask())
         {
-            task.pracentstart = (((task.StartDate-start).Value.TotalDays) % ((task.DeadlineDate- start).Value.TotalDays))*100;
-            task.pracentend = (((minTime - task.DeadlineDate).Value.TotalDays) % ((task.DeadlineDate - start).Value.TotalDays)) * 100;
-            task.pracentbetween= (((task.DeadlineDate - task.StartDate).Value.TotalDays) % ((task.DeadlineDate - start).Value.TotalDays))*100;
+            double totalHrs = (maxTime - minTime).Value.TotalHours;
+            double startHrs = (task.StartDate - minTime).Value.TotalHours;
+            double endHrs = (task.DeadlineDate - minTime).Value.TotalHours;
+
+            task.pracentstart = (int)(startHrs / totalHrs * 100);
+            task.pracentend = (int)((totalHrs - endHrs) / totalHrs * 100);
+            task.pracentbetween = 100 - task.pracentend - task.pracentstart;
+
             Update(task);
         }
     }

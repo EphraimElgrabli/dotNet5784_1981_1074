@@ -39,24 +39,14 @@ namespace PL
 
         private void loginBtn_click(object sender, RoutedEventArgs e)
         {
-            
-                
-                string password = Password;
+            string password = Password;
             UserToLogin = s_bl?.User.Read((328301981));
             new MainWindow().Show();
-
-                s_bl.Task.GanttTime();
-            
-                if (UserToLogin.Level == BO.UserLevel.Producer && UserToLogin.Level==BO.UserLevel.FamilyMemberWithRoles)
-                {
-                    new MainWindow().Show();
-                }
-            
-
-              
-              
-                
-                this.Close();
+            if (UserToLogin.Level == BO.UserLevel.Producer && UserToLogin.Level == BO.UserLevel.FamilyMemberWithRoles)
+            {
+                new MainWindow().Show();
+            }
+            this.Close();
             /*
             catch (Exception ex)
             {
@@ -68,7 +58,6 @@ namespace PL
                         MessageBoxResult.Cancel);
             }
             */
-
         }
 
         private void MoveLoginWindow(object sender, MouseButtonEventArgs e)
@@ -77,6 +66,6 @@ namespace PL
                 DragMove();
         }
 
-        
+
     }
 }
