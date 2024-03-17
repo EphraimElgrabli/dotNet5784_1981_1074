@@ -41,11 +41,7 @@ namespace PL
         {
             string password = Password;
             UserToLogin = s_bl?.User.Read((328301981));
-            new MainWindow().Show();
-            if (UserToLogin.Level == BO.UserLevel.Producer && UserToLogin.Level == BO.UserLevel.FamilyMemberWithRoles)
-            {
-                new MainWindow().Show();
-            }
+            new MainWindow(UserToLogin!).Show();
             this.Close();
             /*
             catch (Exception ex)
