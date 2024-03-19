@@ -11,7 +11,7 @@
                         <Grid VerticalAlignment="Stretch" 
                               HorizontalAlignment="Stretch" 
                               Background="{TemplateBinding Background}">
-                            <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" MaxHeight="25" MaxWidth="25" Visibility="{Binding}"/>
+                            <Image Source="{Binding Path=Content, RelativeSource={RelativeSource TemplatedParent}}" MaxHeight="25" MaxWidth="25"/>
                         </Grid>
                     </ControlTemplate>
                 </Setter.Value>
