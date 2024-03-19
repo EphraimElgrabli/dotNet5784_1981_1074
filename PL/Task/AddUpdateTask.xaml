@@ -1,0 +1,116 @@
+﻿<Window x:Class="PL.Task.AddUpdateTask"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Task"
+        mc:Ignorable="d"
+        Title="AddUpdateUser" Height="640" Width="480"
+        WindowStyle="None" Background="Transparent"
+        ResizeMode="NoResize"
+        DataContext="{Binding ThisUser, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
+    <Border CornerRadius="10,10,10,10">
+        <Border.Background>
+            <ImageBrush Stretch="Fill" ImageSource="https://api.dicebear.com/7.x/shapes/png?backgroundColor=0f2c59&amp;shape1Color=8fc398,dac0a3,e1ccb5&amp;shape2Color=8fc398,dac0a3,e1ccb5&amp;shape3Color=8fc398,dac0a3,e1ccb5&amp;size=256"/>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height = "*"/>
+                <RowDefinition Height ="3*"/>
+            </Grid.RowDefinitions>
+
+            <Border Background="{DynamicResource StrongBeige}" CornerRadius="10" Grid.Row="1">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="10"
+                          Opacity=".25"
+                          ShadowDepth="6" />
+                </Border.Effect>
+                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="0,50,0,15">
+                    <TextBox Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
+                             HorizontalAlignment="Center" 
+                             Width="360" 
+                             Margin="10" 
+                             Height="40" 
+                             Style="{StaticResource ModernTB}" 
+                             FontFamily="{DynamicResource Playfair Regular}" 
+                             FontSize="18" 
+                             FontWeight="ExtraBold" TextChanged="TextBox_TextChanged"
+                             ToolTip="Name:"
+                             />
+
+
+                    <TextBox Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
+                             HorizontalAlignment="Center" 
+                             Width="360" 
+                             Margin="10" 
+                             Height="40" 
+                             Style="{StaticResource ModernTB}" 
+                             FontFamily="{DynamicResource Playfair Regular}" 
+                             FontSize="16" 
+                             FontWeight="ExtraBold"
+                             ToolTip="Phone Number:"/>
+
+                    <TextBox Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=True,  ValidatesOnExceptions=true}" 
+                             HorizontalAlignment="Center" 
+                             Width="360" 
+                             Margin="10" 
+                             Height="40" 
+                             Style="{StaticResource ModernTB}" 
+                             FontFamily="{DynamicResource Playfair Regular}" 
+                             FontSize="16" 
+                             FontWeight="ExtraBold"
+                             ToolTip="Email:"/>
+
+                    <TextBox Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
+                             HorizontalAlignment="Center" 
+                             Width="360" 
+                             Margin="10" 
+                             Height="40" 
+                             Style="{StaticResource ModernTB}" 
+                             FontFamily="{DynamicResource Playfair Regular}" 
+                             FontSize="16" 
+                             FontWeight="ExtraBold"
+                             ToolTip="Id:"/>
+                    <TextBox Text="{Binding Password, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
+                             HorizontalAlignment="Center" 
+                             Width="360" 
+                             Margin="10" 
+                             Height="40" 
+                             Style="{StaticResource ModernTB}" 
+                             FontFamily="{DynamicResource Password}" 
+                             FontSize="16" 
+                             FontWeight="ExtraBold"
+                             ToolTip="Password:"/>
+                    <ComboBox ItemsSource="{Binding Source={StaticResource UserLevelKey}}" 
+                              SelectedValue="{Binding Level, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
+                              Margin="10"  
+                              VerticalAlignment="Center" 
+                              Width="360" 
+                              Height="40" 
+                              Style="{StaticResource ComboBoxFlatStyle}"/>
+
+                    <Button Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"   
+                            HorizontalAlignment="Center" 
+                            Height="40" 
+                            Width="360" 
+                            Margin="10" 
+                            Click="btnAddUpdate_Click" 
+                            Style="{StaticResource ModernBTN}"/>
+
+                    <TextBlock TextWrapping="Wrap" Text="TextBlock"/>
+
+                </StackPanel>
+            </Border>
+            <Border Background="{DynamicResource BoldBlue}" 
+                    Height="150" 
+                    Width="150"
+                    CornerRadius="100"
+                    Grid.RowSpan="2"
+                    VerticalAlignment="Top"
+                    Margin="0,55,0,0">
+                <Image Source="https://api.dicebear.com/7.x/lorelei/png?seed=jrkl" MaxHeight="120" MaxWidth="120"/>
+            </Border>
+            <Border Background="Transparent" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" MouseDown="AddUser_Draggable" Grid.Row="0"/>
+        </Grid>
+    </Border>
+</Window>

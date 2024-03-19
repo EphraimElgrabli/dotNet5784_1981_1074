@@ -10,6 +10,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PL.MVVM.ViewModel;
 
 namespace PL
 {
@@ -18,9 +19,15 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(BO.User? Viewer = null)
+
+        public MainWindow(BO.User? viewer = null)
         {
             InitializeComponent();
+            if (viewer != null)
+            {
+                var viewModel = (MainViewModel)DataContext;
+                viewModel.Viewer = viewer;
+            }
         }
 
         private void initDb_Click(object sender, RoutedEventArgs e)

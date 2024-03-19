@@ -27,7 +27,30 @@ class IsVisible : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return (int)(((BO.User)value).Level) >= 4 ? true : false;
+        if (value is BO.User user)
+        {
+            if ((int)user.Level >= 4)
+            {
+                return Visibility.Visible;
+            }
+        }
+        return Visibility.Hidden;
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+class NameOfViewer : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value is BO.User user)
+        {
+             return user.Name;
+        }
+        return "Unkown User";
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
