@@ -44,7 +44,7 @@
                              Height="50"
                              Style="{StaticResource MenuIcons}"
                              Command="{Binding UserListViewCommand }"
-                             Visibility="{Binding Id, Mode=OneTime, Converter={StaticResource IsVisible}}"/>
+                             Visibility="{Binding Viewer, Mode=OneTime, Converter={StaticResource IsVisible}}"/>
 
                 <RadioButton Content="../images/Tasks.png"
                              Height="50"
@@ -55,7 +55,7 @@
                              Height="50"
                              Style="{StaticResource MenuIcons}"
                              Command="{Binding GanttViewCommand}"
-                             Visibility="{Binding Id, Mode=OneTime, Converter={StaticResource IsVisible}}"/>
+                             Visibility="{Binding Viewer, Mode=OneTime,Converter={StaticResource IsVisible}}"/>
             </StackPanel>
             <ContentControl Grid.RowSpan="2"
                             Grid.Column="1"

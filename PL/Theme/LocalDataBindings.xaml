@@ -4,4 +4,5 @@
     <local:UserLevelCollection x:Key="UserLevelKey" />
     <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
     <local:IsEnabled x:Key="IsEnabled"/>
+    <local:IsVisible x:Key="IsVisible" />
 </ResourceDictionary>

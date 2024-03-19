@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
+using BO;
 
 namespace PL;
 
@@ -26,7 +27,8 @@ class IsVisible : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        return (int)value >= 4 ? true : false;
+        
+        return (int)(((BO.User)value).Level) >= 4 ? true : false;
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -55,6 +57,7 @@ class IsEnabled : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
+        
         return (int)value == 0 ? true : false;
     }
 

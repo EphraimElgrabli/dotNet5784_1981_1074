@@ -39,11 +39,18 @@ namespace PL
 
         private void loginBtn_click(object sender, RoutedEventArgs e)
         {
-            string password = Password;
-            UserToLogin = s_bl?.User.Read((328301981));
-            new MainWindow(UserToLogin!).Show();
-            this.Close();
-            /*
+            try
+            {
+
+                string password = Password;
+                UserToLogin = s_bl?.User.Read((int.Parse(Id)));
+                if (UserToLogin.Password == Password)
+                {
+                    new MainWindow(UserToLogin!).Show();
+                    this.Close();
+                }
+               
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(
@@ -53,7 +60,7 @@ namespace PL
                         MessageBoxImage.Hand,
                         MessageBoxResult.Cancel);
             }
-            */
+            
         }
 
         private void MoveLoginWindow(object sender, MouseButtonEventArgs e)
