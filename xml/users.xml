@@ -33,22 +33,6 @@
     <Level>Staff</Level>
   </User>
   <User>
-    <Id>390497408</Id>
-    <Email>yoram@gmail.com</Email>
-    <PhoneNumber>97274</PhoneNumber>
-    <Name>yoram</Name>
-    <password>123456</password>
-    <Level>FamilyMemberWithRoles</Level>
-  </User>
-  <User>
-    <Id>265689724</Id>
-    <Email>Shira@gmail.com</Email>
-    <PhoneNumber>97219</PhoneNumber>
-    <Name>Shira</Name>
-    <password>123456</password>
-    <Level>FamilyMember</Level>
-  </User>
-  <User>
     <Id>242492996</Id>
     <Email>shimoshon@gmail.com</Email>
     <PhoneNumber>97256</PhoneNumber>
@@ -63,5 +47,21 @@
     <Name>Pro12345</Name>
     <password>Admin</password>
     <Level>Producer</Level>
+  </User>
+  <User>
+    <Id>390497408</Id>
+    <Email>yoram@gmail.com</Email>
+    <PhoneNumber>97274</PhoneNumber>
+    <Name>yoram</Name>
+    <password>123456</password>
+    <Level>FamilyMemberWithRoles</Level>
+  </User>
+  <User>
+    <Id>265689724</Id>
+    <Email>Shira@gmail.com</Email>
+    <PhoneNumber>97219</PhoneNumber>
+    <Name>Shira</Name>
+    <password>123456</password>
+    <Level>FamilyMember</Level>
   </User>
 </ArrayOfUser>
