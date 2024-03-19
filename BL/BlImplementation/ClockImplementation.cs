@@ -1,4 +1,5 @@
-﻿using BO;
+﻿using BlApi;
+using BO;
 
 namespace BlImplementation;
 /// <summary>
@@ -7,6 +8,8 @@ namespace BlImplementation;
 internal class ClockImplementation : BlApi.IClock
 {
     private readonly DalApi.IDal _dal = DalApi.Factory.Get;
+    private readonly IBl _bl;
+    internal ClockImplementation(IBl bl) => _bl = bl;
 
     /// <summary>
     /// Gets the start date of the project.
@@ -33,9 +36,9 @@ internal class ClockImplementation : BlApi.IClock
     /// </summary>
     public StatusProject GetStatusProject()
     {
-        if (GetEndProject() < DateTime.Now)
+        if (GetEndProject() < _bl.DateNow)
             return StatusProject.Done;
-        if (GetStartProject() < DateTime.Now)
+        if (GetStartProject() < _bl.DateNow)
             return StatusProject.InProgress;
         return StatusProject.UnStarted;
     }

@@ -3,6 +3,6 @@
                     xmlns:local="clr-namespace:PL">
     <local:UserLevelCollection x:Key="UserLevelKey" />
     <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
-    <local:IsVisible x:Key="IsVisible"/>
     <local:IsEnabled x:Key="IsEnabled"/>
+    <local:IsVisible x:Key="IsVisible"/>
 </ResourceDictionary>
