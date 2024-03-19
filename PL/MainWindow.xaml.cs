@@ -1,4 +1,5 @@
 ﻿using PL.User;
+using BO;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,7 +18,7 @@ namespace PL
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(BO.User? Viewer = null)
         {
             InitializeComponent();
         }
