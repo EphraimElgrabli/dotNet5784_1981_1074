@@ -1,4 +1,5 @@
-﻿using BO;
+﻿using BlApi;
+using BO;
 using DalApi;
 namespace BlImplementation;
 /// <summary>
@@ -7,6 +8,8 @@ namespace BlImplementation;
 internal class TaskImplemtation : BlApi.ITask
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
+    private readonly IBl _bl;
+    internal TaskImplemtation(IBl bl) => _bl = bl;
 
     /// <summary>
     /// Calculates the status of a task based on its attributes.

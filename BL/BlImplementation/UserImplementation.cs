@@ -1,5 +1,6 @@
 ﻿namespace BlImplementation;
 using System.ComponentModel.DataAnnotations;
+using BlApi;
 
 /// <summary>
 /// Implementation of the IUser interface for handling user-related operations.
@@ -7,6 +8,9 @@ using System.ComponentModel.DataAnnotations;
 internal class UserImplementation : BlApi.IUser
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
+
+    private readonly IBl _bl;
+    internal UserImplementation(IBl bl) => _bl = bl;
 
     /// <summary>
     /// Creates a new user.
