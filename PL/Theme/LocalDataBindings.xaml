@@ -5,5 +5,4 @@
     <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
     <local:IsVisible x:Key="IsVisible"/>
     <local:IsEnabled x:Key="IsEnabled"/>
-    <local:IsVisible x:Key="IsVisible" />
 </ResourceDictionary>
