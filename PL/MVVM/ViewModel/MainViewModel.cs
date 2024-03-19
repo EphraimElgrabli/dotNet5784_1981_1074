@@ -9,6 +9,16 @@ namespace PL.MVVM.ViewModel
 {
     class MainViewModel: ObservableObject
     {
+        private BO.User _viewer;
+        public BO.User Viewer
+        {
+            get { return _viewer; }
+            set
+            {
+                _viewer = value;
+                OnPropertyChanged();
+            }
+        }
         public RelayCommend  HomeViewCommand{ get; set; }
         public RelayCommend UserListViewCommand { get; set; }
         public RelayCommend TasksViewCommand { get; set; }

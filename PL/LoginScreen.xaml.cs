@@ -49,7 +49,15 @@ namespace PL
                     new MainWindow(UserToLogin!).Show();
                     this.Close();
                 }
-               
+                else
+                {
+                    MessageBox.Show(
+                       "you dumb",
+                       "FU",
+                       MessageBoxButton.OK,
+                       MessageBoxImage.Hand,
+                       MessageBoxResult.Cancel);
+                }
             }
             catch (Exception ex)
             {
