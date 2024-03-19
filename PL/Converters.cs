@@ -27,7 +27,6 @@ class IsVisible : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        
         return (int)(((BO.User)value).Level) >= 4 ? true : false;
     }
 
