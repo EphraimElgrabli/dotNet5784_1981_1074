@@ -5,4 +5,5 @@
     <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
     <local:IsEnabled x:Key="IsEnabled"/>
     <local:IsVisible x:Key="IsVisible"/>
+    <local:NameOfViewer x:Key="NameConveter"/>
 </ResourceDictionary>

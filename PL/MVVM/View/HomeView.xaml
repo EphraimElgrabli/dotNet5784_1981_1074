@@ -21,7 +21,7 @@
                       VerticalAlignment="Center"
                       HorizontalAlignment="Center"/>
 
-                <Label Content="{Binding Viewer}" 
+                <Label Content="{Binding Viewer, Converter={StaticResource NameConveter}}" 
                         Foreground="{DynamicResource BoldBlue}"
                         FontFamily="{StaticResource Playfair Italic}"
                         FontSize="36" 
