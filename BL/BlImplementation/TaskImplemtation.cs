@@ -53,6 +53,7 @@ internal class TaskImplemtation : BlApi.ITask
                 StartDate = doTask.StartDate,
                 ScheduledDate = doTask.ScheduledDate,
                 DeadlineDate = doTask.DeadlineDate,
+                cost = doTask.Cost,
                 CompleteDate = doTask.CompleteDate,
                 Deliverables = doTask.Deliverables,
                 Remarks = doTask.Remarks,
@@ -63,7 +64,7 @@ internal class TaskImplemtation : BlApi.ITask
             if (doTask.User.Id != null)
             {
                 //all this because i do in User a list of tasks and here i add the task to the list
-                BO.User? t = new UserImplementation().Read(doTask.User.Id);
+                BO.User? t = _bl.User.Read(doTask.User.Id);
 
                 BO.TaskInUser temp = new BO.TaskInUser() { Id = doTask.Id, Alias = doTask.Alias };
 
@@ -75,7 +76,7 @@ internal class TaskImplemtation : BlApi.ITask
                         t.Tasks.Add(temp);
                     }
                 }
-                new UserImplementation().Update(t);
+                 _bl.User.Update(t);
             }
             return idTask;
 
@@ -121,6 +122,7 @@ internal class TaskImplemtation : BlApi.ITask
             DeadlineDate = doTask.DeadlineDate,
             CompleteDate = doTask.CompleteDate,
             Deliverables = doTask.Deliverables,
+            Cost=doTask.cost,
             Remarks = doTask.Remarks,
             User= u,
             Complexity = (BO.UserLevel)doTask.Complexity,
@@ -164,7 +166,7 @@ internal class TaskImplemtation : BlApi.ITask
     {
         if (id == null) return null;
 
-        foreach(var v in new UserImplementation().ReadAllUser())
+        foreach(var v in _bl.User.ReadAllUser())
         {
             if (v.Tasks != null)
             {
@@ -212,13 +214,14 @@ internal class TaskImplemtation : BlApi.ITask
                         DeadlineDate = doTask.DeadlineDate,
                         CompleteDate = doTask.CompleteDate,
                         Deliverables = doTask.Deliverables,
+                        Cost=doTask.cost,
                         Remarks = doTask.Remarks,
                         User = userintask(doTask.Id),
                         Dependencies = GetAllDependencie(doTask.Id),
                         pracentstart = doTask.pracentstart,
                         pracentbetween = doTask.pracentbetween,
                         pracentend = doTask.pracentend
-                    });
+                    });;
         }
         else
         {
@@ -235,6 +238,7 @@ internal class TaskImplemtation : BlApi.ITask
                         DeadlineDate = doTask.DeadlineDate,
                         CompleteDate = doTask.CompleteDate,
                         Deliverables = doTask.Deliverables,
+                        Cost=doTask.cost,
                         Remarks = doTask.Remarks,
                         User = userintask(doTask.Id),
                         Dependencies = GetAllDependencie(doTask.Id)
@@ -281,6 +285,7 @@ internal class TaskImplemtation : BlApi.ITask
                 CompleteDate = task.CompleteDate,
                 Deliverables = task.Deliverables,
                 Remarks = task.Remarks,
+                cost=task.Cost,
                 Complexity = (DO.UserLevel?)task.Status,
                 UserId = task.User?.Id,
                 IsMilestone = (task.Milestone?.Id == null) ? false : true,
@@ -288,7 +293,7 @@ internal class TaskImplemtation : BlApi.ITask
             if (task.User != null)
             {
                 //all this because i do in User a list of tasks and here i add the task to the list
-                BO.User? t = new UserImplementation().Read(task.User.Id);
+                BO.User? t = _bl.User.Read(task.User.Id);
 
                 BO.TaskInUser temp = new BO.TaskInUser() { Id = task.Id, Alias = task.Alias };
                 if (t.Tasks == null) t.Tasks.Add(temp);
@@ -299,7 +304,7 @@ internal class TaskImplemtation : BlApi.ITask
                         t.Tasks.Add(temp);
                     }
                 }
-                new UserImplementation().Update(t);
+                _bl.User.Update(t);
             }
 
             foreach (DO.Dependency dependency in _dal.Dependency.ReadAll(d => d.DependentTask == task.Id))
@@ -443,7 +448,7 @@ internal class TaskImplemtation : BlApi.ITask
             {
                 throw new BO.BlAlreadyExistException("The task can not promote,User not exist");
             }
-            if (new UserImplementation().Read(task.User!.Id)!.Tasks!.Any(d => Read(d.Id).Status != BO.Status.OnTrack))
+            if (_bl.User.Read(task.User!.Id)!.Tasks!.Any(d => Read(d.Id).Status != BO.Status.OnTrack))
             {
                 throw new BO.BlAlreadyExistException("The task can not promote,other task already Ontrack");
             }
