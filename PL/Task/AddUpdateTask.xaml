@@ -8,7 +8,7 @@
         Title="AddUpdateUser" Height="640" Width="480"
         WindowStyle="None" Background="Transparent"
         ResizeMode="NoResize"
-        DataContext="{Binding ThisUser, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
+        DataContext="{Binding ThisTask, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
     <Border CornerRadius="10,10,10,10">
         <Border.Background>
             <ImageBrush Stretch="Fill" ImageSource="https://api.dicebear.com/7.x/shapes/png?backgroundColor=0f2c59&amp;shape1Color=8fc398,dac0a3,e1ccb5&amp;shape2Color=8fc398,dac0a3,e1ccb5&amp;shape3Color=8fc398,dac0a3,e1ccb5&amp;size=256"/>
@@ -81,13 +81,7 @@
                              FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Password:"/>
-                    <ComboBox ItemsSource="{Binding Source={StaticResource UserLevelKey}}" 
-                              SelectedValue="{Binding Level, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
-                              Margin="10"  
-                              VerticalAlignment="Center" 
-                              Width="360" 
-                              Height="40" 
-                              Style="{StaticResource ComboBoxFlatStyle}"/>
+                    
 
                     <Button Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"   
                             HorizontalAlignment="Center" 
