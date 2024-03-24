@@ -43,10 +43,7 @@ namespace PL.MVVM.View
             {
                 TaskListing = s_bl?.Task.ReadAllTask()!; //TODO: maor fix this line so only tasks available to the user will appear
             }
-            else
-            {
-                TaskListing = s_bl?.Task.ReadAllTask()!;
-            }
+            TaskListing = s_bl?.Task.ReadAllTask()!;
         }
 
         private void btn_AddTaskInList(object sender, RoutedEventArgs e)
