@@ -5,28 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.Task"
         mc:Ignorable="d"
-        Title="AddUpdateUser" Height="640" Width="480"
+        Title="AddUpdateUser" Height="640" Width="880"
         WindowStyle="None" Background="Transparent"
         ResizeMode="NoResize"
         DataContext="{Binding ThisTask, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
     <Border CornerRadius="10,10,10,10">
         <Border.Background>
-            <ImageBrush Stretch="Fill" ImageSource="https://api.dicebear.com/7.x/shapes/png?backgroundColor=0f2c59&amp;shape1Color=8fc398,dac0a3,e1ccb5&amp;shape2Color=8fc398,dac0a3,e1ccb5&amp;shape3Color=8fc398,dac0a3,e1ccb5&amp;size=256"/>
+            <ImageBrush Stretch="Fill" ImageSource="https://picsum.photos/1760/1280"/>
         </Border.Background>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height = "*"/>
                 <RowDefinition Height ="3*"/>
             </Grid.RowDefinitions>
-
-            <Border Background="{DynamicResource StrongBeige}" CornerRadius="10" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width = "*"/>
+                <ColumnDefinition Width ="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Background="{DynamicResource StrongBeige}" CornerRadius="10,0,0,10" Grid.Row="1">
                 <Border.Effect>
                     <DropShadowEffect BlurRadius="10"
                           Opacity=".25"
                           ShadowDepth="6" />
                 </Border.Effect>
                 <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="0,50,0,15">
-                    <TextBox Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
+                    <TextBox Text="{Binding Alias, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="10" 
@@ -35,22 +38,25 @@
                              FontFamily="{DynamicResource Playfair Regular}" 
                              FontSize="18" 
                              FontWeight="ExtraBold" TextChanged="TextBox_TextChanged"
-                             ToolTip="Name:"
+                             ToolTip="Alias:"
                              />
 
 
-                    <TextBox Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
+                    <TextBox Text="{Binding Description, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="10" 
-                             Height="40" 
-                             Style="{StaticResource ModernTB}" 
+                             Height="60" 
+                             Style="{StaticResource ModernTB}"
+                             TextWrapping="Wrap"
+                             AcceptsReturn="True"
+                             VerticalScrollBarVisibility="Visible"
                              FontFamily="{DynamicResource Playfair Regular}" 
                              FontSize="16" 
                              FontWeight="ExtraBold"
-                             ToolTip="Phone Number:"/>
+                             ToolTip="Description:"/>
 
-                    <TextBox Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=True,  ValidatesOnExceptions=true}" 
+                    <TextBox Text="{Binding Deliverables, Mode=TwoWay, NotifyOnValidationError=True,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="10" 
@@ -59,9 +65,9 @@
                              FontFamily="{DynamicResource Playfair Regular}" 
                              FontSize="16" 
                              FontWeight="ExtraBold"
-                             ToolTip="Email:"/>
+                             ToolTip="Delivarables:"/>
 
-                    <TextBox Text="{Binding Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
+                    <TextBox Text="{Binding Remarks, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="10" 
@@ -70,40 +76,88 @@
                              FontFamily="{DynamicResource Playfair Regular}" 
                              FontSize="16" 
                              FontWeight="ExtraBold"
-                             ToolTip="Id:"/>
+                             ToolTip="Remarks:"/>
                     <TextBox Text="{Binding Password, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="10" 
                              Height="40" 
                              Style="{StaticResource ModernTB}" 
-                             FontFamily="{DynamicResource Password}" 
+                             FontFamily="{DynamicResource Playfair Italic}" 
                              FontSize="16" 
                              FontWeight="ExtraBold"
-                             ToolTip="Password:"/>
-                    
-
-                    <Button Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"   
-                            HorizontalAlignment="Center" 
-                            Height="40" 
-                            Width="360" 
-                            Margin="10" 
-                            Click="btnAddUpdate_Click" 
-                            Style="{StaticResource ModernBTN}"/>
-
-                    <TextBlock TextWrapping="Wrap" Text="TextBlock"/>
-
+                             ToolTip="Cost:"/>
                 </StackPanel>
             </Border>
-            <Border Background="{DynamicResource BoldBlue}" 
-                    Height="150" 
-                    Width="150"
-                    CornerRadius="100"
-                    Grid.RowSpan="2"
-                    VerticalAlignment="Top"
-                    Margin="0,55,0,0">
-                <Image Source="https://api.dicebear.com/7.x/lorelei/png?seed=jrkl" MaxHeight="120" MaxWidth="120"/>
+
+            <Border Background="{DynamicResource StrongBeige}" CornerRadius="0,10,10,0" Grid.Row="1" Grid.Column="1">
+                <Border.Effect>
+                    <DropShadowEffect BlurRadius="10"
+                          Opacity=".25"
+                          ShadowDepth="6" />
+                </Border.Effect>
+                <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="0,50,0,15">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        
+                        <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,5,0">
+                            <Label Content="Start Date:"
+                                   FontFamily="{StaticResource Playfair Regular}"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource BoldBlue}"/>
+
+                            <Calendar Height="160"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="0" Grid.Column="1" Margin="10,0,10,0">
+                            <Label Content="Scheduled Date:"
+                                   FontFamily="{StaticResource Playfair Regular}"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource BoldBlue}"/>
+                            <Calendar Height="160"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,5,5,0">
+                            <Label Content="Complition Date:"
+                                   FontFamily="{StaticResource Playfair Regular}"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource BoldBlue}"/>
+                            <Calendar Height="160"/>
+                        </StackPanel>
+                        
+                        <StackPanel Grid.Row="1" Grid.Column="1" Margin="10,5,10,0">
+                            <Label Content="Dedline Date:"
+                                   FontFamily="{StaticResource Playfair Regular}"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   Foreground="{DynamicResource BoldBlue}"/>
+                            <Calendar Height="160"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
             </Border>
+            
+            <Button Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"   
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom"
+                            Height="50" 
+                            Width="360" 
+                            Margin="0,0,0,40" 
+                            Click="btnAddUpdate_Click" 
+                            Style="{StaticResource ModernBTN}"
+                            Grid.Row="1"/>
+
             <Border Background="Transparent" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" MouseDown="AddUser_Draggable" Grid.Row="0"/>
         </Grid>
     </Border>
