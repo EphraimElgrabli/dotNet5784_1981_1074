@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:PL.MVVM.View"
+             xmlns:local="clr-namespace:PL.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              >
@@ -21,14 +21,21 @@
                       VerticalAlignment="Center"
                       HorizontalAlignment="Center"/>
 
-                <Label Content="{Binding Viewer, Converter={StaticResource NameConveter}}" 
+                <Label Content="{Binding Viewer.Name, UpdateSourceTrigger=PropertyChanged}" 
                         Foreground="{DynamicResource BoldBlue}"
                         FontFamily="{StaticResource Playfair Italic}"
+                        FontWeight="Light"
                         FontSize="36" 
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"/>
             </StackPanel>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+            </Grid>
         </Grid>
-
     </Border>
 </UserControl>

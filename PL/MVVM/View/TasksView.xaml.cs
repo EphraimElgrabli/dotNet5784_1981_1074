@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PL.MVVM.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,7 +36,17 @@ namespace PL.MVVM.View
         public TasksView()
         {
             InitializeComponent();
-            TaskListing = s_bl?.Task.ReadAllTask()!;
+            DataContext = new TasksViewModel();
+            var taskViewModel = (TasksViewModel)DataContext;
+            var viewer = taskViewModel.Viewer;
+            if (viewer != null)
+            {
+                TaskListing = s_bl?.Task.ReadAllTask()!; //TODO: maor fix this line so only tasks available to the user will appear
+            }
+            else
+            {
+                TaskListing = s_bl?.Task.ReadAllTask()!;
+            }
         }
 
         private void btn_AddTaskInList(object sender, RoutedEventArgs e)

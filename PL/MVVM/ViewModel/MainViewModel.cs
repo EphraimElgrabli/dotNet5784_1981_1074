@@ -39,7 +39,7 @@ namespace PL.MVVM.ViewModel
         }
         public MainViewModel()
         {
-            HomeVM = new HomeViewModel();
+            HomeVM = new HomeViewModel ();
             UserListVM = new UsersListViewModel ();
             TasksVM = new TasksViewModel();
             GanttVM = new GanttViewModel();

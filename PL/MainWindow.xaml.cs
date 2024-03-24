@@ -25,8 +25,10 @@ namespace PL
             InitializeComponent();
             if (viewer != null)
             {
-                var viewModel = (MainViewModel)DataContext;
-                viewModel.Viewer = viewer;
+                var mainViewModel = (MainViewModel)DataContext;
+                mainViewModel.Viewer = viewer;
+                mainViewModel.HomeVM.Viewer = viewer;
+                mainViewModel.TasksVM.Viewer = viewer;
             }
         }
 

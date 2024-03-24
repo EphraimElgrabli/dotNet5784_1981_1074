@@ -35,7 +35,6 @@
             <DataTemplate DataType="{x:Type viewModel:GanttViewModel}">
                 <view:GanttView/>
             </DataTemplate>
-
         </ResourceDictionary>
     </Application.Resources>
 </Application>
