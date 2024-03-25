@@ -14,14 +14,101 @@ using System.Windows.Shapes;
 
 namespace PL.Task
 {
-    /// <summary>
-    /// Interaction logic for AddUpdateTask.xaml
-    /// </summary>
     public partial class AddUpdateTask : Window
     {
-        public AddUpdateTask()
+        /// <summary>
+        /// Interaction logic for AddUpdateTask.xaml
+        /// </summary>
+        static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
+        public bool flag = true;
+        public BO.Task ThisTask
         {
-            InitializeComponent();
+            get { return (BO.Task)GetValue(ThisUserProperty); }
+            set { SetValue(ThisUserProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ThisUserProperty =
+            DependencyProperty.Register("task", typeof(BO.Task), typeof(AddUpdateTask));
+        public AddUpdateTask(int Id = 0)
+        {
+            try
+            {
+                if (Id == 0)
+                {
+                    ThisTask = new BO.Task() { 
+                        Id = 0,
+                        Alias = "",
+                        Description = "",
+                        pracentstart = 0,
+                        pracentbetween = 0,
+                        pracentend = 0,
+                        CreatedAtDate = DateTime.Now,
+                        StartDate = null,
+                        ScheduledDate = null,
+                        DeadlineDate = null,
+                        CompleteDate = null,
+                        Deliverables = "",
+                        Remarks = "",
+                        Complexity = BO.UserLevel.None};
+                    flag = true;
+                }
+                else
+                {
+                    ThisTask = s_bl.Task.Read(Id)!;
+                    flag = false;
+                }
+                InitializeComponent();
+            }
+            catch (Exception ex) { Console.WriteLine(ex.Message); }
+        }
+
+
+        private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                BO.Task task = new BO.Task()
+                {
+                    Id = ThisTask.Id,
+                    Alias = ThisTask.Alias,
+                    Description = ThisTask.Description,
+                    CreatedAtDate = ThisTask.CreatedAtDate,
+                    StartDate = ThisTask.StartDate,
+                    ScheduledDate = ThisTask.ScheduledDate,
+                    DeadlineDate = ThisTask.DeadlineDate,
+                    CompleteDate = ThisTask.CompleteDate,
+                    Deliverables = ThisTask.Deliverables,
+                    Remarks = ThisTask.Remarks,
+                    Complexity = ThisTask.Complexity
+                };
+                if (flag == false)
+                    s_bl?.Task.Update(task);
+                else
+                    s_bl?.Task.Create(task);
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                         ex.Message,
+                         "Error",
+                         MessageBoxButton.OK,
+                         MessageBoxImage.Hand,
+                         MessageBoxResult.Cancel);
+            }
+        }
+
+        private void AddUser_Draggable(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+                DragMove();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
+

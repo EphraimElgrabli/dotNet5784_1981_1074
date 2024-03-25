@@ -18,6 +18,7 @@
                 <ResourceDictionary Source="Theme/CustomListViewForUsers.xaml"/>
                 <ResourceDictionary Source="Theme/HorizontalListViewForTasks.xaml"/>
                 <ResourceDictionary Source="Theme/Gantt.xaml"/>
+                <ResourceDictionary Source="Theme/CustomDatePicker.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
@@ -35,7 +36,6 @@
             <DataTemplate DataType="{x:Type viewModel:GanttViewModel}">
                 <view:GanttView/>
             </DataTemplate>
-
         </ResourceDictionary>
     </Application.Resources>
 </Application>
