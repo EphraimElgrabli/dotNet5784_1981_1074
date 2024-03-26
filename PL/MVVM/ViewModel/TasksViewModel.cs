@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PL.MVVM.ViewModel
 {
-    public class TasksViewModel :ObservableObject
+     class TasksViewModel :ObservableObject
     {
         private BO.User _viewer;
         public BO.User Viewer

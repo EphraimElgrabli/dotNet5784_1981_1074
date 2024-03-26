@@ -1,4 +1,5 @@
-﻿using PL.MVVM.ViewModel;
+﻿using DalTest;
+using PL.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,17 +28,17 @@ namespace PL.MVVM.View
             get { return (IEnumerable<BO.Task?>)GetValue(TaskListingProperty); }
             set { SetValue(TaskListingProperty, value); }
         }
-
+        
         // Using a DependencyProperty as the backing store for UserListing.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty TaskListingProperty =
             DependencyProperty.Register("TaskListing", typeof(IEnumerable<BO.Task?>), typeof(TasksView), new PropertyMetadata(null));
 
         public TasksView()
-        {
-            InitializeComponent();
+        {      
             DataContext = new TasksViewModel();
             var taskViewModel = (TasksViewModel)DataContext;
             var viewer = taskViewModel.Viewer;
+         
             if (viewer != null)
             {
                 if ((int)viewer.Level >= 4)
@@ -48,7 +49,7 @@ namespace PL.MVVM.View
                     TaskListing = s_bl.Task.changeTaskList(s_bl?.User.Read(viewer.Id).Tasks!);
                 }
             }
-            TaskListing = s_bl?.Task.ReadAllTask()!;
+            InitializeComponent();
         }
 
         private void btn_AddTaskInList(object sender, RoutedEventArgs e)

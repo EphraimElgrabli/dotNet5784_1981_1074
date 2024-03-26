@@ -29,6 +29,7 @@ namespace PL
                 mainViewModel.Viewer = viewer;
                 mainViewModel.HomeVM.Viewer = viewer;
                 mainViewModel.TasksVM.Viewer = viewer;
+
             }
         }
 
