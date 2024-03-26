@@ -376,7 +376,15 @@ internal class TaskImplemtation : BlApi.ITask
 
         }
         return Convert.ToDateTime(minTime);
-
+    }
+    public IEnumerable<BO.Task> changeTaskList(IEnumerable<BO.TaskInUser>? tasks)
+    {
+        List<BO.Task> temp = new List<BO.Task>();
+        foreach (var t in tasks)
+        {
+            temp.Add(Read(t.Id)!);//add the task to the list of
+        }
+        return temp;    
     }
     public void GanttTime() 
     {

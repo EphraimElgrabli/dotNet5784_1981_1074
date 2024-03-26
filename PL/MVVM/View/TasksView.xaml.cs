@@ -13,7 +13,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
 namespace PL.MVVM.View
 {
     /// <summary>
@@ -41,7 +40,13 @@ namespace PL.MVVM.View
             var viewer = taskViewModel.Viewer;
             if (viewer != null)
             {
-                TaskListing = s_bl?.Task.ReadAllTask()!; //TODO: maor fix this line so only tasks available to the user will appear
+                if ((int)viewer.Level >= 4)
+                    TaskListing = s_bl?.Task.ReadAllTask()!; //TODO: maor fix this line so only tasks available to the user will appear
+                else
+                {
+                    IEnumerable<BO.Task> tasks = new List<BO.Task>();
+                    TaskListing = s_bl.Task.changeTaskList(s_bl?.User.Read(viewer.Id).Tasks!);
+                }
             }
             TaskListing = s_bl?.Task.ReadAllTask()!;
         }

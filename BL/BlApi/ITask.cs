@@ -10,6 +10,7 @@ public interface ITask
     public void Delete(int id);
     public void UpdateDates(int id, DateTime date);
     public void promoteStatusTask(int id);
+    public IEnumerable<BO.Task> changeTaskList(IEnumerable<BO.TaskInUser> tasks);
     public DateTime CalculateStartTime(BO.Task task);
     public void GanttTime();
 
