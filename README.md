@@ -30,3 +30,13 @@
 - [x] Ch 6: Creating a new class named DalXml that will implemnt IDal
 - [x] Ch 7: Testing the entire project and the database layer using DalTest.
 - [x] Ch 8: Making sure that we didnt broke anything and creating a tag.
+
+
+# Stage 4
+- [x] - [x] completed.
+
+# Stage 5
+- [x] completed.
+
+# Stage 6
+- [x] completed.
