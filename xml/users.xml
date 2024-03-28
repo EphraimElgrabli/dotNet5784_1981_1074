@@ -25,14 +25,6 @@
     <Level>Friends</Level>
   </User>
   <User>
-    <Id>366721278</Id>
-    <Email>Hatan@gmail.com</Email>
-    <PhoneNumber>97237</PhoneNumber>
-    <Name>Hatan</Name>
-    <password>123456</password>
-    <Level>FamilyMemberWithRoles</Level>
-  </User>
-  <User>
     <Id>252466619</Id>
     <Email>yoram@gmail.com</Email>
     <PhoneNumber>97278</PhoneNumber>
@@ -63,5 +55,21 @@
     <Name>Pro12345</Name>
     <password>Admin</password>
     <Level>Producer</Level>
+  </User>
+  <User>
+    <Id>321918484</Id>
+    <Email>ARY@GMAIL..COM</Email>
+    <PhoneNumber>0586465251</PhoneNumber>
+    <Name>ARY</Name>
+    <password>ARY123</password>
+    <Level>FamilyMember</Level>
+  </User>
+  <User>
+    <Id>366721278</Id>
+    <Email>Hatan@gmail.com</Email>
+    <PhoneNumber>97237</PhoneNumber>
+    <Name>Hatan</Name>
+    <password>123456</password>
+    <Level>FamilyMemberWithRoles</Level>
   </User>
 </ArrayOfUser>

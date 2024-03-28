@@ -34,11 +34,15 @@ namespace PL.MVVM.View
             DependencyProperty.Register("TaskListing", typeof(IEnumerable<BO.Task?>), typeof(TasksView), new PropertyMetadata(null));
 
         public TasksView()
-        {      
-            DataContext = new TasksViewModel();
-            var taskViewModel = (TasksViewModel)DataContext;
-            var viewer = taskViewModel.Viewer;
-         
+        {
+
+            //DataContext = new TasksViewModel();
+            //var taskViewModel = (TasksViewModel)DataContext;
+            //var viewer = taskViewModel.Viewer;
+            DataContext= new MainViewModel();
+            var v = (MainViewModel)DataContext;
+            var viewer = v.Viewer;
+            
             if (viewer != null)
             {
                 if ((int)viewer.Level >= 4)
@@ -49,6 +53,7 @@ namespace PL.MVVM.View
                     TaskListing = s_bl.Task.changeTaskList(s_bl?.User.Read(viewer.Id).Tasks!);
                 }
             }
+            
             InitializeComponent();
         }
 
