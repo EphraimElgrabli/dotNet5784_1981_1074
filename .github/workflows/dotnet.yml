@@ -4,15 +4,15 @@
 name: .NET
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+   push:
+     branches: [ "main" , "Design"]
+   pull_request:
+     branches: [ "main" , "Design"]
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v3
