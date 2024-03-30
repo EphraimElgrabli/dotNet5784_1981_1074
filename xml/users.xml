@@ -1,52 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Id>392331104</Id>
+    <Id>209183853</Id>
     <Email>bigMama@gmail.com</Email>
-    <PhoneNumber>97295</PhoneNumber>
+    <PhoneNumber>97253</PhoneNumber>
     <Name>bigMama</Name>
     <password>123456</password>
-    <Level>FamilyMember</Level>
+    <Level>FamilyMemberWithRoles</Level>
   </User>
   <User>
-    <Id>213623139</Id>
+    <Id>263164630</Id>
     <Email>bigPapa@gmail.com</Email>
-    <PhoneNumber>97205</PhoneNumber>
+    <PhoneNumber>97242</PhoneNumber>
     <Name>bigPapa</Name>
     <password>123456</password>
-    <Level>Friends</Level>
+    <Level>FamilyMember</Level>
   </User>
   <User>
-    <Id>300219212</Id>
+    <Id>274464262</Id>
     <Email>Kala@gmail.com</Email>
-    <PhoneNumber>97276</PhoneNumber>
+    <PhoneNumber>97222</PhoneNumber>
     <Name>Kala</Name>
-    <password>123456</password>
-    <Level>Friends</Level>
-  </User>
-  <User>
-    <Id>252466619</Id>
-    <Email>yoram@gmail.com</Email>
-    <PhoneNumber>97278</PhoneNumber>
-    <Name>yoram</Name>
     <password>123456</password>
     <Level>FamilyMember</Level>
   </User>
   <User>
-    <Id>353262927</Id>
+    <Id>353652983</Id>
+    <Email>Hatan@gmail.com</Email>
+    <PhoneNumber>97255</PhoneNumber>
+    <Name>Hatan</Name>
+    <password>123456</password>
+    <Level>FamilyMember</Level>
+  </User>
+  <User>
+    <Id>353850682</Id>
+    <Email>yoram@gmail.com</Email>
+    <PhoneNumber>97238</PhoneNumber>
+    <Name>yoram</Name>
+    <password>123456</password>
+    <Level>Staff</Level>
+  </User>
+  <User>
+    <Id>333366681</Id>
     <Email>Shira@gmail.com</Email>
-    <PhoneNumber>97248</PhoneNumber>
+    <PhoneNumber>97224</PhoneNumber>
     <Name>Shira</Name>
     <password>123456</password>
     <Level>Friends</Level>
   </User>
   <User>
-    <Id>370839749</Id>
+    <Id>320103794</Id>
     <Email>shimoshon@gmail.com</Email>
-    <PhoneNumber>97202</PhoneNumber>
+    <PhoneNumber>97258</PhoneNumber>
     <Name>shimoshon</Name>
     <password>123456</password>
-    <Level>FamilyMember</Level>
+    <Level>FamilyMemberWithRoles</Level>
   </User>
   <User>
     <Id>328301981</Id>
@@ -55,21 +63,5 @@
     <Name>Pro12345</Name>
     <password>Admin</password>
     <Level>Producer</Level>
-  </User>
-  <User>
-    <Id>321918484</Id>
-    <Email>ARY@GMAIL..COM</Email>
-    <PhoneNumber>0586465251</PhoneNumber>
-    <Name>ARY</Name>
-    <password>ARY123</password>
-    <Level>FamilyMember</Level>
-  </User>
-  <User>
-    <Id>366721278</Id>
-    <Email>Hatan@gmail.com</Email>
-    <PhoneNumber>97237</PhoneNumber>
-    <Name>Hatan</Name>
-    <password>123456</password>
-    <Level>FamilyMemberWithRoles</Level>
   </User>
 </ArrayOfUser>
