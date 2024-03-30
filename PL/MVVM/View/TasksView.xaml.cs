@@ -39,7 +39,7 @@ namespace PL.MVVM.View
             //DataContext = new TasksViewModel();
             //var taskViewModel = (TasksViewModel)DataContext;
             //var viewer = taskViewModel.Viewer;
-            DataContext= new MainViewModel();
+            //DataContext= new MainViewModel();
             var v = (MainViewModel)DataContext;
             var viewer = v.Viewer;
             

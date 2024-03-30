@@ -25,10 +25,12 @@ namespace PL
             InitializeComponent();
             if (viewer != null)
             {
+                
                 var mainViewModel = (MainViewModel)DataContext;
                 mainViewModel.Viewer = viewer;
                 mainViewModel.HomeVM.Viewer = viewer;
                 mainViewModel.TasksVM.Viewer = viewer;
+               
 
             }
         }
