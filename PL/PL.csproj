@@ -14,6 +14,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="appicon.ico" />
 	  <None Remove="Fonts\font-primary-regular.ttf" />
 	  <None Remove="Fonts\password.ttf" />
 	  <None Remove="Fonts\PlayfairDisplay-Italic-VariableFont_wght.ttf" />
@@ -37,6 +38,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Resource Include="appicon.ico" />
 	  <Resource Include="Fonts\font-primary-regular.ttf" />
 	  <Resource Include="Fonts\password.ttf" />
 	  <Resource Include="Fonts\PlayfairDisplay-Italic-VariableFont_wght.ttf" />

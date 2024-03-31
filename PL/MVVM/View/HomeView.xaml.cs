@@ -21,15 +21,6 @@ namespace PL.MVVM.View
     /// </summary>
     public partial class HomeView : UserControl
     {
-
-        static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
-        public BO.User? UserHome
-        {
-            get { return (BO.User?)GetValue(UserHomeProperty); }
-            set { SetValue(UserHomeProperty, value); }
-        }
-        public static readonly DependencyProperty UserHomeProperty =
-            DependencyProperty.Register("UserHome", typeof(BO.User), typeof(HomeView), new PropertyMetadata(null));
         public HomeView()
         {
             InitializeComponent();

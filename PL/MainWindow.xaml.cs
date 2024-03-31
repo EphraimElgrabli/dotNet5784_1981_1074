@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PL.MVVM.ViewModel;
+using PL.MVVM.View;
 
 namespace PL
 {
@@ -29,6 +30,7 @@ namespace PL
                 mainViewModel.Viewer = viewer;
                 mainViewModel.HomeVM.Viewer = viewer;
                 mainViewModel.TasksVM.Viewer = viewer;
+                mainViewModel.TasksVM.GetUserTasks();
             }
         }
 

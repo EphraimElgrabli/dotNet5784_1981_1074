@@ -9,8 +9,9 @@
         mc:Ignorable="d"
         WindowStyle="None"
         Background="Transparent"
-        Title="MainWindow" Height="600" Width="1000"
+        Title="Managment Panel." Height="600" Width="1000"
         ResizeMode="NoResize"
+        Icon="appicon.ico"
         WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <viewModel:MainViewModel/>

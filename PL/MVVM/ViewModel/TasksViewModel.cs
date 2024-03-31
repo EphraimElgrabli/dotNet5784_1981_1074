@@ -1,13 +1,12 @@
 ﻿using PL.Core;
-using System;
+using PL.MVVM.View;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 
 namespace PL.MVVM.ViewModel
 {
-    public class TasksViewModel :ObservableObject
+    public class TasksViewModel : ObservableObject
     {
         private BO.User _viewer;
         public BO.User Viewer
@@ -16,7 +15,38 @@ namespace PL.MVVM.ViewModel
             set
             {
                 _viewer = value;
-                OnPropertyChanged();
+                OnPropertyChanged(nameof(Viewer));
+            }
+        }
+
+        static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
+
+        public IEnumerable<BO.Task?> TaskListing
+        {
+            get { return _taskListing; }
+            set
+            {
+                _taskListing = value;
+                OnPropertyChanged(nameof(TaskListing));
+            }
+        }
+
+        private IEnumerable<BO.Task?> _taskListing;
+
+        public void GetUserTasks()
+        {
+            if (Viewer != null)
+            {
+                if ((int)Viewer.Level >= 4)
+                    TaskListing = s_bl?.Task.ReadAllTask()!;
+                else
+                {
+                    TaskListing = s_bl?.Task.ReadAllTask(t => t.User?.Id == Viewer.Id)!;
+                }
+            }
+            else
+            {
+                TaskListing = Enumerable.Empty<BO.Task>();
             }
         }
     }
