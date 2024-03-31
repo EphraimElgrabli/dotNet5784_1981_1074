@@ -9,6 +9,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuButtonIcons.xaml"/>
+                <ResourceDictionary Source="Theme/WarningButtons.xaml"/>
                 <ResourceDictionary Source="Theme/LocalDataBindings.xaml"/>
                 <ResourceDictionary Source="Theme/Colors.xaml"/>
                 <ResourceDictionary Source="Theme/Fonts.xaml"/>
@@ -19,10 +20,15 @@
                 <ResourceDictionary Source="Theme/HorizontalListViewForTasks.xaml"/>
                 <ResourceDictionary Source="Theme/Gantt.xaml"/>
                 <ResourceDictionary Source="Theme/CustomDatePicker.xaml"/>
+                <ResourceDictionary Source="Theme/MacButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
                 <view:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SettingsViewModel}">
+                <view:SettingsView/>
             </DataTemplate>
 
             <DataTemplate DataType="{x:Type viewModel:TasksViewModel}">

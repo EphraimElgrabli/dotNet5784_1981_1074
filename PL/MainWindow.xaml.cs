@@ -11,6 +11,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PL.MVVM.ViewModel;
+using PL.MVVM.View;
 
 namespace PL
 {
@@ -30,16 +31,7 @@ namespace PL
                 mainViewModel.Viewer = viewer;
                 mainViewModel.HomeVM.Viewer = viewer;
                 mainViewModel.TasksVM.Viewer = viewer;
-               
-
-            }
-        }
-
-        private void initDb_Click(object sender, RoutedEventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you to initialize the Database?", "InitDB - Warning.", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-            {
-                DalTest.Initialization.Do();
+                mainViewModel.TasksVM.GetUserTasks();
             }
         }
 

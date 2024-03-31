@@ -14,15 +14,18 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="appicon.ico" />
 	  <None Remove="Fonts\font-primary-regular.ttf" />
 	  <None Remove="Fonts\password.ttf" />
 	  <None Remove="Fonts\PlayfairDisplay-Italic-VariableFont_wght.ttf" />
 	  <None Remove="Fonts\PlayfairDisplay-VariableFont_wght.ttf" />
+	  <None Remove="images\AboutUs.png" />
 	  <None Remove="images\Background.png" />
 	  <None Remove="images\Gantt.png" />
 	  <None Remove="images\Home.png" />
 	  <None Remove="images\LogoLogin.png" />
 	  <None Remove="images\LogoNoText.png" />
+	  <None Remove="images\Settings.png" />
 	  <None Remove="images\Tasks.png" />
 	  <None Remove="images\Users.png" />
 	</ItemGroup>
@@ -37,15 +40,18 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Resource Include="appicon.ico" />
 	  <Resource Include="Fonts\font-primary-regular.ttf" />
 	  <Resource Include="Fonts\password.ttf" />
 	  <Resource Include="Fonts\PlayfairDisplay-Italic-VariableFont_wght.ttf" />
 	  <Resource Include="Fonts\PlayfairDisplay-VariableFont_wght.ttf" />
+	  <Resource Include="images\AboutUs.png" />
 	  <Resource Include="images\Background.png" />
 	  <Resource Include="images\Gantt.png" />
 	  <Resource Include="images\Home.png" />
 	  <Resource Include="images\LogoLogin.png" />
 	  <Resource Include="images\LogoNoText.png" />
+	  <Resource Include="images\Settings.png" />
 	  <Resource Include="images\Tasks.png" />
 	  <Resource Include="images\Users.png" />
 	</ItemGroup>

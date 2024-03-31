@@ -6,4 +6,6 @@
     <local:IsEnabled x:Key="IsEnabled"/>
     <local:IsVisible x:Key="IsVisible"/>
     <local:NameOfViewer x:Key="NameConveter"/>
+    <local:NameToProfilePicConverter x:Key="NameToProfilePicConverter"/>
+    <local:AliasToBannerPicConverter x:Key="AliasToBannerPicConverter"/>
 </ResourceDictionary>

@@ -1,0 +1,135 @@
+﻿<UserControl x:Class="PL.MVVM.View.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PL.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Border Background="{DynamicResource StrongBeige}" CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Settings." 
+                   FontFamily="{DynamicResource Playfair Regular}" 
+                   FontWeight="ExtraBold" 
+                   FontSize="30"
+                   Foreground="{DynamicResource BoldBlue}"
+                   VerticalAlignment="Center"
+                   Margin="15,0,0,0"/>
+            <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border Background="{DynamicResource LightBeige}" 
+                Margin="15"
+                Grid.Row="0"
+                Grid.Column="0"
+                CornerRadius="10">
+                <Border.Effect>
+                    <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="270"
+                    Color="Black"
+                    Opacity="0.15"
+                    BlurRadius="10"/>
+                </Border.Effect>
+
+                <StackPanel Orientation="Vertical">
+                    <Label Content=" Data Base:"
+                    Foreground="{DynamicResource BoldBlue}"
+                    FontFamily="{StaticResource Playfair Regular}"
+                    FontSize="26" 
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"/>
+                        <StackPanel Orientation="Vertical">
+                            <Button Content="Initialize DataBase." 
+                                    Margin="20" Style="{StaticResource ModernBtnWarning}" 
+                                    FontFamily="{DynamicResource Playfair Regular}" 
+                                    FontWeight="ExtraBold" 
+                                    FontSize="24" IsCancel="True" 
+                                    Click="initDb_Click"
+                                    HorizontalAlignment="Stretch"/>
+
+                            <Button Content="Reset DataBase." 
+                                    Margin="20" Style="{StaticResource ModernBtnWarning}" 
+                                    FontFamily="{DynamicResource Playfair Regular}" 
+                                    FontWeight="ExtraBold" 
+                                    FontSize="24" IsCancel="True" 
+                                    Click="ResetDB_Click"
+                                    HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+                    </StackPanel>
+
+            </Border>
+
+            <Border Background="{DynamicResource LightBeige}" 
+                Margin="15"
+                Grid.Row="1"
+                Grid.Column="0"
+                CornerRadius="10">
+                <Border.Effect>
+                    <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="270"
+                    Color="Black"
+                    Opacity="0.15"
+                    BlurRadius="10"/>
+                </Border.Effect>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <Label Content=" Project Clock:"
+                    Foreground="{DynamicResource BoldBlue}"
+                    FontFamily="{StaticResource Playfair Regular}"
+                    FontSize="26" 
+                    VerticalAlignment="Top "
+                    HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+            <Border Grid.Column="1" 
+                Grid.RowSpan="2"
+                Margin="15"
+                CornerRadius="10"
+                Background="{DynamicResource MidBeige}">
+                <Border.Effect>
+                    <DropShadowEffect
+                    ShadowDepth="4"
+                    Direction="270"
+                    Color="Black"
+                    Opacity="0.15"
+                    BlurRadius="10"/>
+                </Border.Effect>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="/images/AboutUs.png" MaxHeight="150" MaxWidth="150" Margin="0,10,0,0" HorizontalAlignment="Center">
+                        <Image.Effect>
+                            <DropShadowEffect BlurRadius="20" ShadowDepth="4" Opacity="0.1"/>
+                        </Image.Effect>
+                    </Image>
+                    <ScrollViewer Grid.Row="1" Margin="25,10,25,25" VerticalScrollBarVisibility="Hidden">
+                        <TextBlock Text="WedPlan, a university project developed by Ephraim Elgrabli and Maor Levi, is a comprehensive wedding planning management app designed to simplify the complex process of organizing a wedding. The app offers features such as task management, timeline visualization, and cost tracking to help couples stay organized and within budget. Future plans include integrating a WhatsApp-based RSVP system and a guest management tool. Created with the intention of assisting friends and couples planning their weddings, WedPlan demonstrates the developers' commitment to providing a user-friendly solution that addresses real-world challenges in wedding planning."
+                               FontFamily="{StaticResource Playfair Regular}"
+                               FontSize="16"
+                               Foreground="{DynamicResource BoldBlue}"
+                               FontStretch="Normal"
+                               TextAlignment="Justify"
+                               TextWrapping="Wrap">
+                        </TextBlock>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </Grid>
+        </Grid>
+    </Border>
+</UserControl>

@@ -19,7 +19,8 @@ public enum Status
     Unscheduled,     // Task is not yet scheduled
     Scheduled,       // Task is scheduled for execution
     OnTrack,         // Task is progressing as planned     
-    Done             // Task has been successfully completed
+    Done,             // Task has been successfully completed
+    InJeopardy
 }
 public enum StatusProject
 {

@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PL.Task"
+        xmlns:local="clr-namespace:PL.Task" 
+        xmlns:ui="clr-namespace:PL.Theme"
         mc:Ignorable="d"
         Title="AddUpdateUser" Height="640" Width="880"
         WindowStyle="None" Background="Transparent"
@@ -23,11 +24,6 @@
                 <ColumnDefinition Width ="*"/>
             </Grid.ColumnDefinitions>
             <Border Background="{DynamicResource StrongBeige}" CornerRadius="10,0,0,10" Grid.Row="1">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="10"
-                          Opacity=".25"
-                          ShadowDepth="6" />
-                </Border.Effect>
                 <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="0,50,0,15">
                     <TextBox Text="{Binding Alias, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
                              HorizontalAlignment="Center" 
@@ -153,12 +149,15 @@
                             VerticalAlignment="Bottom"
                             Height="50" 
                             Width="360" 
-                            Margin="0,0,0,40" 
+                            Margin="0,0,0,45" 
                             Click="btnAddUpdate_Click" 
                             Style="{StaticResource ModernBTN}"
                             Grid.Row="1"/>
 
             <Border Background="Transparent" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" MouseDown="AddUser_Draggable" Grid.Row="0"/>
+            <StackPanel Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70">
+                <ui:EssentialWindowsButtons Margin="10"/>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>

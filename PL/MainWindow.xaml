@@ -3,14 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+        xmlns:ui="clr-namespace:PL.Theme"
         xmlns:local="clr-namespace:PL"
         xmlns:viewModel="clr-namespace:PL.MVVM.ViewModel"
         mc:Ignorable="d"
         WindowStyle="None"
         Background="Transparent"
-        Title="MainWindow" Height="600" Width="1000"
+        Title="Managment Panel." Height="600" Width="1000"
         ResizeMode="NoResize"
+        Icon="appicon.ico"
         WindowStartupLocation="CenterScreen">
     <Window.DataContext>
         <viewModel:MainViewModel/>
@@ -22,18 +23,10 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="60"/>
+                <RowDefinition Height="25"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Image Grid.Column="0" 
-                   Grid.Row="0" 
-                   Height ="60" 
-                   Width="60" 
-                   Source="/images/LogoNoText.png"
-                   HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
-                   />
-            <StackPanel Grid.Row="1" Margin="0,10,0,25">
+            <StackPanel Grid.Row="1" Margin="0,10,0,15">
                 <RadioButton Content="../images/Home.png"
                              Height="50"
                              Style="{StaticResource MenuIcons}"
@@ -44,7 +37,7 @@
                              Height="50"
                              Style="{StaticResource MenuIcons}"
                              Command="{Binding TasksViewCommand}"/>
-                
+
                 <RadioButton Content="../images/Users.png"
                              Height="50"
                              Style="{StaticResource MenuIcons}"
@@ -56,12 +49,23 @@
                              Style="{StaticResource MenuIcons}"
                              Command="{Binding GanttViewCommand}"
                              Visibility="{Binding Viewer, Converter={StaticResource IsVisible}}"/>
+                
+                <RadioButton Content="../images/Settings.png"
+                             Height="50"
+                             Style="{StaticResource MenuIcons}"
+                             Command="{Binding SettingsViewCommand}"
+                             Visibility="{Binding Viewer, Converter={StaticResource IsVisible}}"
+                             Margin="0,300,0,0"/>
             </StackPanel>
+
             <ContentControl Grid.RowSpan="2"
                             Grid.Column="1"
                             Margin="0"
                             Content="{Binding CurrentView}"/>
             <Border Background="Transparent" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" MouseDown="MoveAdminWindow"/>
+            <StackPanel Grid.Column="0" Grid.Row="0">
+                <ui:EssentialWindowsButtons Margin="10"/>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>

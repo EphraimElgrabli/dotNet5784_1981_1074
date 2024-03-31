@@ -1,10 +1,10 @@
 ﻿<Window x:Class="PL.User.AddUpdateUser"
-        xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PL.User"
+        xmlns:local="clr-namespace:PL.User" 
+        xmlns:ui="clr-namespace:PL.Theme"
         mc:Ignorable="d"
         Title="AddUpdateUser" Height="640" Width="480"
         WindowStyle="None" Background="Transparent"
@@ -109,9 +109,12 @@
                     Grid.RowSpan="2"
                     VerticalAlignment="Top"
                     Margin="0,55,0,0">
-                <Image Source="https://api.dicebear.com/7.x/lorelei/png?seed=jrkl" MaxHeight="120" MaxWidth="120"/>
+                <Image Source="{Binding Name, Converter={StaticResource NameToProfilePicConverter}}" MaxHeight="120" MaxWidth="120"/>
             </Border>
             <Border Background="Transparent" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" MouseDown="AddUser_Draggable" Grid.Row="0"/>
+            <StackPanel Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70">
+                <ui:EssentialWindowsButtons Margin="10"/>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>

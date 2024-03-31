@@ -14,6 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PL.Task;
+using PL;
+using System.ComponentModel;
 namespace PL.MVVM.View
 {
     /// <summary>
@@ -22,16 +25,16 @@ namespace PL.MVVM.View
     public partial class TasksView : UserControl
     {
         static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
-
-        public IEnumerable<BO.Task?> TaskListing
+        public bool flag = true;
+        public BO.Task ThisTask
         {
-            get { return (IEnumerable<BO.Task?>)GetValue(TaskListingProperty); }
-            set { SetValue(TaskListingProperty, value); }
+            get { return (BO.Task)GetValue(ThisUserProperty); }
+            set { SetValue(ThisUserProperty, value); }
         }
-        
-        // Using a DependencyProperty as the backing store for UserListing.  This enables animation, styling, binding, etc...
-        public static readonly DependencyProperty TaskListingProperty =
-            DependencyProperty.Register("TaskListing", typeof(IEnumerable<BO.Task?>), typeof(TasksView), new PropertyMetadata(null));
+
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ThisUserProperty =
+            DependencyProperty.Register("task", typeof(BO.Task), typeof(AddUpdateTask));
 
         public TasksView()
         {
@@ -60,7 +63,24 @@ namespace PL.MVVM.View
 
         private void btn_AddTaskInList(object sender, RoutedEventArgs e)
         {
-
+            new AddUpdateTask().ShowDialog();
+            //Refresh();
+        }
+        public void Refresh()
+        {
+            var parent = Parent as Panel;
+            if (parent != null)
+            {
+                var index = parent.Children.IndexOf(this);
+                parent.Children.RemoveAt(index);
+                parent.Children.Insert(index, new TasksView());
+            }
+        }
+        private void TaskListView_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            BO.Task? taskToUpdate = (sender as ListView)?.SelectedItem as BO.Task;
+            new AddUpdateTask(taskToUpdate!.Id).ShowDialog();
+            //Refresh();
         }
     }
 }
