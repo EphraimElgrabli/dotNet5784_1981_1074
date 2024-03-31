@@ -16,16 +16,35 @@ internal class TaskImplemtation : BlApi.ITask
     /// </summary>
     /// <param name="id">The ID of the task to calculate the status for.</param>
     /// <returns>The status of the task.</returns>
-    public BO.Status calculatestatus(int id)
+    public BO.Status CalculateStatus(int id)
     {
         BO.Task? task = Read(id);
-        if (task.ScheduledDate == null)
+
+        DateTime currentDate = DateTime.Now;
+
+        if (task.ScheduledDate > currentDate)
+        {
             return BO.Status.Unscheduled;
-        if (task.StartDate == null)
+        }
+        else if (task.StartDate > currentDate)
+        {
             return BO.Status.Scheduled;
-        if (task.CompleteDate == null)
-            return BO.Status.OnTrack;
-        return BO.Status.Done;
+        }
+        else if (task.CompleteDate > currentDate)
+        {
+            if (task.DeadlineDate < currentDate)
+            {
+                return BO.Status.InJeopardy;
+            }
+            else
+            {
+                return BO.Status.OnTrack;
+            }
+        }
+        else
+        {
+            return BO.Status.Done;
+        }
     }
     /// <summary>
     /// Creates a new task.
@@ -209,7 +228,7 @@ internal class TaskImplemtation : BlApi.ITask
                         Alias = doTask.Alias,
                         CreatedAtDate = doTask.CreatedAtDate,
                         StartDate = doTask.StartDate,
-                        Status=calculatestatus(doTask.Id),
+                        Status=CalculateStatus(doTask.Id),
                         ScheduledDate = doTask.ScheduledDate,
                         DeadlineDate = doTask.DeadlineDate,
                         CompleteDate = doTask.CompleteDate,
@@ -233,7 +252,7 @@ internal class TaskImplemtation : BlApi.ITask
                         Alias = doTask.Alias,
                         CreatedAtDate = doTask.CreatedAtDate,
                         StartDate = doTask.StartDate,
-                        Status = calculatestatus(doTask.Id),
+                        Status = CalculateStatus(doTask.Id),
                         ScheduledDate = doTask.ScheduledDate,
                         DeadlineDate = doTask.DeadlineDate,
                         CompleteDate = doTask.CompleteDate,

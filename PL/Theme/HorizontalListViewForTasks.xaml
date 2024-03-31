@@ -35,7 +35,7 @@
                                            HorizontalAlignment="Center"
                                            Margin="10,2,10,2"
                                            TextWrapping="WrapWithOverflow"/>
-                                <Canvas Height="1" Width="180" HorizontalAlignment="Center">
+                                <Canvas Height="1" Width="180" HorizontalAlignment="Center" Margin="5">
                                     <Line
                                         X1="0" Y1="0"
                                         X2="180" Y2="1"

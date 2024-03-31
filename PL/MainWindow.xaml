@@ -53,7 +53,7 @@
                 <RadioButton Content="../images/Settings.png"
                              Height="50"
                              Style="{StaticResource MenuIcons}"
-                             Command="{Binding GanttViewCommand}"
+                             Command="{Binding SettingsViewCommand}"
                              Visibility="{Binding Viewer, Converter={StaticResource IsVisible}}"
                              Margin="0,300,0,0"/>
             </StackPanel>

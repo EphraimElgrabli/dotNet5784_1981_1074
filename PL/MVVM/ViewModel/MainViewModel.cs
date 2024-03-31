@@ -24,7 +24,9 @@ namespace PL.MVVM.ViewModel
         public RelayCommend UserListViewCommand { get; set; }
         public RelayCommend TasksViewCommand { get; set; }
         public RelayCommend GanttViewCommand { get; set; }
+        public RelayCommend SettingsViewCommand { get; set; }
         public TasksViewModel TasksVM {  get; set; }
+        public SettingsViewModel SettingsVM { get; set; }
         public HomeViewModel HomeVM { get; set; } 
         public UsersListViewModel UserListVM { get; set; }
         public GanttViewModel GanttVM { get; set; }
@@ -44,10 +46,16 @@ namespace PL.MVVM.ViewModel
             UserListVM = new UsersListViewModel ();
             TasksVM = new TasksViewModel();
             GanttVM = new GanttViewModel();
+            SettingsVM = new SettingsViewModel ();
+
             CurrentView = HomeVM;
             HomeViewCommand = new RelayCommend(o =>
             {
                 CurrentView = HomeVM;
+            });
+            SettingsViewCommand = new RelayCommend(o =>
+            {
+                CurrentView = SettingsVM;
             });
             UserListViewCommand = new RelayCommend(o =>
             {
