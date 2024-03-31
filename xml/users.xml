@@ -9,14 +9,6 @@
     <Level>FamilyMemberWithRoles</Level>
   </User>
   <User>
-    <Id>263164630</Id>
-    <Email>bigPapa@gmail.com</Email>
-    <PhoneNumber>97242</PhoneNumber>
-    <Name>bigPapa</Name>
-    <password>123456</password>
-    <Level>FamilyMember</Level>
-  </User>
-  <User>
     <Id>274464262</Id>
     <Email>Kala@gmail.com</Email>
     <PhoneNumber>97222</PhoneNumber>
@@ -63,5 +55,13 @@
     <Name>Pro12345</Name>
     <password>Admin</password>
     <Level>Producer</Level>
+  </User>
+  <User>
+    <Id>263164630</Id>
+    <Email>bigPapa@gmail.com</Email>
+    <PhoneNumber>97242</PhoneNumber>
+    <Name>bigPapa</Name>
+    <password>123456</password>
+    <Level>FamilyMember</Level>
   </User>
 </ArrayOfUser>

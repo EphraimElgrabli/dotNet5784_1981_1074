@@ -40,20 +40,21 @@ namespace PL.MVVM.View
             //var taskViewModel = (TasksViewModel)DataContext;
             //var viewer = taskViewModel.Viewer;
             //DataContext= new MainViewModel();
-            var v = (MainViewModel)DataContext;
-            var viewer = v.Viewer;
-            
-            if (viewer != null)
-            {
-                if ((int)viewer.Level >= 4)
-                    TaskListing = s_bl?.Task.ReadAllTask()!; //TODO: maor fix this line so only tasks available to the user will appear
-                else
-                {
-                    IEnumerable<BO.Task> tasks = new List<BO.Task>();
-                    TaskListing = s_bl.Task.changeTaskList(s_bl?.User.Read(viewer.Id).Tasks!);
-                }
-            }
-            
+            //var v = (MainViewModel)DataContext;
+            //var viewer = v.Viewer;
+
+            //if (viewer != null)
+            //{
+            //    if ((int)viewer.Level >= 4)
+            //        TaskListing = s_bl?.Task.ReadAllTask()!; //TODO: maor fix this line so only tasks available to the user will appear
+            //    else
+            //    {
+            //        IEnumerable<BO.Task> tasks = new List<BO.Task>();
+            //        TaskListing = s_bl.Task.changeTaskList(s_bl?.User.Read(viewer.Id).Tasks!);
+            //    }
+            //}
+            TaskListing = s_bl?.Task.ReadAllTask()!;
+
             InitializeComponent();
         }
 
