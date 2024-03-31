@@ -24,6 +24,7 @@
 	  <None Remove="images\Home.png" />
 	  <None Remove="images\LogoLogin.png" />
 	  <None Remove="images\LogoNoText.png" />
+	  <None Remove="images\Settings.png" />
 	  <None Remove="images\Tasks.png" />
 	  <None Remove="images\Users.png" />
 	</ItemGroup>
@@ -48,6 +49,7 @@
 	  <Resource Include="images\Home.png" />
 	  <Resource Include="images\LogoLogin.png" />
 	  <Resource Include="images\LogoNoText.png" />
+	  <Resource Include="images\Settings.png" />
 	  <Resource Include="images\Tasks.png" />
 	  <Resource Include="images\Users.png" />
 	</ItemGroup>

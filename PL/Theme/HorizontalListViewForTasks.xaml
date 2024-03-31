@@ -22,7 +22,7 @@
                         <StackPanel Orientation="Vertical">
                             <Border CornerRadius="10,10,0,0" Height="125" Width="210">
                                 <Border.Background>
-                                    <ImageBrush Stretch="UniformToFill" ImageSource="https://picsum.photos/500/840"/>
+                                    <ImageBrush Stretch="UniformToFill" ImageSource="{Binding Alias, Converter={StaticResource AliasToBannerPicConverter}}"/>
                                 </Border.Background>
                             </Border>
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

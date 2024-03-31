@@ -88,3 +88,39 @@ class IsEnabled : IValueConverter
         throw new NotImplementedException();
     }
 }
+
+public class NameToProfilePicConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value is string name && !string.IsNullOrEmpty(name))
+        {
+            string url = $"https://api.dicebear.com/7.x/lorelei/png?seed={Uri.EscapeDataString(name)}";
+            return url;
+        }
+        return "https://api.dicebear.com/7.x/lorelei/png?seed=default";
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public class AliasToBannerPicConverter : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        if (value is string Alias && !string.IsNullOrEmpty(Alias))
+        {
+            string url = $"https://picsum.photos/seed/Wedding{Uri.EscapeDataString(Alias)}/500/840";
+            return url;
+        }
+        return "https://picsum.photos/seed/Wedding/500/840";
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}

@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Id>341463415</Id>
-    <Email>bigMama@gmail.com</Email>
-    <PhoneNumber>97205</PhoneNumber>
-    <Name>bigMama</Name>
-    <password>123456</password>
-    <Level>Staff</Level>
-  </User>
-  <User>
     <Id>318462828</Id>
     <Email>bigPapa@gmail.com</Email>
     <PhoneNumber>97272</PhoneNumber>
@@ -63,5 +55,13 @@
     <Name>Pro12345</Name>
     <password>Admin</password>
     <Level>Producer</Level>
+  </User>
+  <User>
+    <Id>341463415</Id>
+    <Email>bigMama@gmail.com</Email>
+    <PhoneNumber>97205</PhoneNumber>
+    <Name>bigMama</Name>
+    <password>123456</password>
+    <Level>Staff</Level>
   </User>
 </ArrayOfUser>

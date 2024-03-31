@@ -3,7 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PL"
+        xmlns:local="clr-namespace:PL" 
+        xmlns:ui="clr-namespace:PL.Theme"
         mc:Ignorable="d"
         WindowStyle="None"
         Background="Transparent"
@@ -32,6 +33,9 @@
                 </StackPanel>
             </Border>
             <Border Background="Transparent" Grid.ColumnSpan="2" Height="20" VerticalAlignment="Top" MouseDown="MoveLoginWindow"/>
+            <StackPanel Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="70">
+                <ui:EssentialWindowsButtons Margin="10"/>
+            </StackPanel>
         </Grid>
     </Border>
 </Window>

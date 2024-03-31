@@ -1,5 +1,6 @@
 ﻿using DalTest;
 using PL.MVVM.ViewModel;
+using PL.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PL.Task;
 namespace PL.MVVM.View
 {
     /// <summary>
@@ -28,7 +30,8 @@ namespace PL.MVVM.View
 
         private void btn_AddTaskInList(object sender, RoutedEventArgs e)
         {
-
+            new AddUpdateTask().ShowDialog();
+            //UserListing = s_bl?.User.ReadAllUser()!;
         }
     }
 }

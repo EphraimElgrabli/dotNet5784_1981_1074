@@ -19,6 +19,7 @@
                 <ResourceDictionary Source="Theme/HorizontalListViewForTasks.xaml"/>
                 <ResourceDictionary Source="Theme/Gantt.xaml"/>
                 <ResourceDictionary Source="Theme/CustomDatePicker.xaml"/>
+                <ResourceDictionary Source="Theme/MacButtonStyle.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">

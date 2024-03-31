@@ -20,7 +20,9 @@
                             x:Name="Border">
                         <StackPanel Orientation="Horizontal"
                                     Margin="10,0,0,0">
-                            <Border Width="40" Height="40" CornerRadius="30" Background="{DynamicResource BoldBlue}" VerticalAlignment="Center"/>
+                            <Border Width="40" Height="40" CornerRadius="30" Background="{DynamicResource BoldBlue}" VerticalAlignment="Center">
+                                <Image Source="{Binding Name, Converter={StaticResource NameToProfilePicConverter}}" MaxHeight="30" MaxWidth="30"/>
+                            </Border>
                             <StackPanel Orientation="Horizontal">
                                 <Label Content="{Binding Name}" FontFamily="{DynamicResource Playfair Regular}" FontSize="22" FontWeight="ExtraBold" Foreground="{DynamicResource BoldBlue}" VerticalAlignment="Center" Margin="10,0,0,0"/>
                                 <Label Content="{Binding Level}" FontFamily="{DynamicResource Playfair Italic}" FontSize="12" FontWeight="Thin" Foreground="{DynamicResource GreenTexture}" VerticalAlignment="Center" HorizontalAlignment="Left"/>
