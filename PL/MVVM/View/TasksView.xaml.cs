@@ -1,6 +1,5 @@
 ﻿using DalTest;
 using PL.MVVM.ViewModel;
-using PL.User;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PL.Task;
+using PL;
+using System.ComponentModel;
 namespace PL.MVVM.View
 {
     /// <summary>
@@ -23,6 +24,18 @@ namespace PL.MVVM.View
     /// </summary>
     public partial class TasksView : UserControl
     {
+        static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
+        public bool flag = true;
+        public BO.Task ThisTask
+        {
+            get { return (BO.Task)GetValue(ThisUserProperty); }
+            set { SetValue(ThisUserProperty, value); }
+        }
+
+        // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
+        public static readonly DependencyProperty ThisUserProperty =
+            DependencyProperty.Register("task", typeof(BO.Task), typeof(AddUpdateTask));
+
         public TasksView()
         {
             InitializeComponent();
@@ -31,7 +44,23 @@ namespace PL.MVVM.View
         private void btn_AddTaskInList(object sender, RoutedEventArgs e)
         {
             new AddUpdateTask().ShowDialog();
-            //UserListing = s_bl?.User.ReadAllUser()!;
+            //Refresh();
+        }
+        public void Refresh()
+        {
+            var parent = Parent as Panel;
+            if (parent != null)
+            {
+                var index = parent.Children.IndexOf(this);
+                parent.Children.RemoveAt(index);
+                parent.Children.Insert(index, new TasksView());
+            }
+        }
+        private void TaskListView_DoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            BO.Task? taskToUpdate = (sender as ListView)?.SelectedItem as BO.Task;
+            new AddUpdateTask(taskToUpdate!.Id).ShowDialog();
+            //Refresh();
         }
     }
 }

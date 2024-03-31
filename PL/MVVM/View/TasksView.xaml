@@ -26,7 +26,8 @@
                       Background="Transparent" 
                       BorderThickness="0" 
                       ScrollViewer.VerticalScrollBarVisibility="Disabled"
-                      ScrollViewer.HorizontalScrollBarVisibility="Visible" >
+                      ScrollViewer.HorizontalScrollBarVisibility="Visible" 
+                      MouseDoubleClick="TaskListView_DoubleClick">
                 <ListView.ItemsPanel>
                     <ItemsPanelTemplate>
                         <StackPanel Orientation="Horizontal"/>

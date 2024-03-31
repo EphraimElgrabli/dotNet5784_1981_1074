@@ -34,14 +34,6 @@ namespace PL
             }
         }
 
-        private void initDb_Click(object sender, RoutedEventArgs e)
-        {
-            if (MessageBox.Show("Are you sure you to initialize the Database?", "InitDB - Warning.", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
-            {
-                DalTest.Initialization.Do();
-            }
-        }
-
         private void btnAdminpanel_click(object sender, RoutedEventArgs e)
         {
             //new AdminPanel().Show();

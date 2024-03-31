@@ -9,6 +9,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Theme/MenuButtonIcons.xaml"/>
+                <ResourceDictionary Source="Theme/WarningButtons.xaml"/>
                 <ResourceDictionary Source="Theme/LocalDataBindings.xaml"/>
                 <ResourceDictionary Source="Theme/Colors.xaml"/>
                 <ResourceDictionary Source="Theme/Fonts.xaml"/>

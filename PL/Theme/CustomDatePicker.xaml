@@ -130,7 +130,7 @@
                             Margin="0,0,0,6"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
-                            FontSize="12"
+                            FontSize="8"
                             FontWeight="SemiBold"
                             Foreground="{DynamicResource BoldBlue}"
                             Text="{Binding}" />

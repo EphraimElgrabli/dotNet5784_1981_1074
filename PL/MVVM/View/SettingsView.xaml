@@ -8,6 +8,18 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Border Background="{DynamicResource StrongBeige}" CornerRadius="10">
         <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="7*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Settings." 
+                   FontFamily="{DynamicResource Playfair Regular}" 
+                   FontWeight="ExtraBold" 
+                   FontSize="30"
+                   Foreground="{DynamicResource BoldBlue}"
+                   VerticalAlignment="Center"
+                   Margin="15,0,0,0"/>
+            <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -17,7 +29,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Border Background="{DynamicResource LightBeige}" 
-                Margin="20"
+                Margin="15"
                 Grid.Row="0"
                 Grid.Column="0"
                 CornerRadius="10">
@@ -30,18 +42,36 @@
                     BlurRadius="10"/>
                 </Border.Effect>
 
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
                     <Label Content=" Data Base:"
                     Foreground="{DynamicResource BoldBlue}"
                     FontFamily="{StaticResource Playfair Regular}"
                     FontSize="26" 
                     VerticalAlignment="Top"
-                    HorizontalAlignment="Center"/>
-                </StackPanel>
+                    HorizontalAlignment="Left"/>
+                        <StackPanel Orientation="Vertical">
+                            <Button Content="Initialize DataBase." 
+                                    Margin="20" Style="{StaticResource ModernBtnWarning}" 
+                                    FontFamily="{DynamicResource Playfair Regular}" 
+                                    FontWeight="ExtraBold" 
+                                    FontSize="24" IsCancel="True" 
+                                    Click="initDb_Click"
+                                    HorizontalAlignment="Stretch"/>
+
+                            <Button Content="Reset DataBase." 
+                                    Margin="20" Style="{StaticResource ModernBtnWarning}" 
+                                    FontFamily="{DynamicResource Playfair Regular}" 
+                                    FontWeight="ExtraBold" 
+                                    FontSize="24" IsCancel="True" 
+                                    Click="ResetDB_Click"
+                                    HorizontalAlignment="Stretch"/>
+                        </StackPanel>
+                    </StackPanel>
+
             </Border>
 
             <Border Background="{DynamicResource LightBeige}" 
-                Margin="20"
+                Margin="15"
                 Grid.Row="1"
                 Grid.Column="0"
                 CornerRadius="10">
@@ -66,7 +96,7 @@
             </Border>
             <Border Grid.Column="1" 
                 Grid.RowSpan="2"
-                Margin="20"
+                Margin="15"
                 CornerRadius="10"
                 Background="{DynamicResource MidBeige}">
                 <Border.Effect>
@@ -99,6 +129,7 @@
                     </ScrollViewer>
                 </Grid>
             </Border>
+        </Grid>
         </Grid>
     </Border>
 </UserControl>
