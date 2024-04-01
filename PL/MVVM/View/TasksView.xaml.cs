@@ -56,7 +56,7 @@ namespace PL.MVVM.View
             //        TaskListing = s_bl.Task.changeTaskList(s_bl?.User.Read(viewer.Id).Tasks!);
             //    }
             //}
-            TaskListing = s_bl?.Task.ReadAllTask()!;
+            //TaskListing = s_bl?.Task.ReadAllTask()!;
 
             InitializeComponent();
         }

@@ -6,14 +6,15 @@
              xmlns:local="clr-namespace:PL.MVVM.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
+             
              >
     <Border Background="{DynamicResource StrongBeige}" CornerRadius="10">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="4*"/>
+                <RowDefinition Height="6*"/>
             </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Margin="20">
+            <StackPanel Orientation="Horizontal" Margin="20,10,20,0">
                 <Label Content="Hello"
                       Foreground="{DynamicResource BoldBlue}"
                       FontFamily="{StaticResource Playfair Regular}"
@@ -33,9 +34,47 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+
                 </Grid.ColumnDefinitions>
+                <TextBlock Text="{Binding BIBIHAMELH}" 
+                           FontFamily="{StaticResource Playfair Regular}"
+                           FontSize="36"
+                           Foreground="{DynamicResource BoldBlue}"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center"/>
+                <Border Grid.Column="1"  CornerRadius="13"
+Background="{DynamicResource MidBeige}" Margin="0,-94,0,0">
+                    <Border.Effect>
+                        <DropShadowEffect
+                     ShadowDepth="4"
+                     Direction="290"
+                     Color="Black"
+                     Opacity="0.15"
+                     BlurRadius="10"/>
+                    </Border.Effect>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="/images/AboutUs.png" MaxHeight="150" MaxWidth="150" Margin="0,10,0,0" HorizontalAlignment="Center">
+                            <Image.Effect>
+                                <DropShadowEffect BlurRadius="20" ShadowDepth="4" Opacity="0.1"/>
+                            </Image.Effect>
+                        </Image>
+                        <ScrollViewer Grid.Row="1" Margin="25,10,25,25" VerticalScrollBarVisibility="Hidden">
+                            <TextBlock Text="WedPlan, a university project developed by Ephraim Elgrabli and Maor Levi, is a comprehensive wedding planning management app designed to simplify the complex process of organizing a wedding. The app offers features such as task management, timeline visualization, and cost tracking to help couples stay organized and within budget. Future plans include integrating a WhatsApp-based RSVP system and a guest management tool. Created with the intention of assisting friends and couples planning their weddings, WedPlan demonstrates the developers' commitment to providing a user-friendly solution that addresses real-world challenges in wedding planning."
+               FontFamily="{StaticResource Playfair Regular}"
+               FontSize="18"
+               Foreground="{DynamicResource BoldBlue}"
+               FontStretch="Normal"
+               TextAlignment="Justify"
+               TextWrapping="Wrap"/>
+                        </ScrollViewer>
+                    </Grid>
+                </Border>
             </Grid>
+
         </Grid>
     </Border>
 </UserControl>
