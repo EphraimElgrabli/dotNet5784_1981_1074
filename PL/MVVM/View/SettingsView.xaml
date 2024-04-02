@@ -26,20 +26,21 @@
                    Foreground="{DynamicResource BoldBlue}"
                    VerticalAlignment="Center"
                    Margin="15,0,0,0"/>
-            <Grid Grid.Row="1">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
+            <Grid Grid.Row="1" Margin="60,0,60,40">
                 <Grid.RowDefinitions>
-
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
                 <Border Background="{DynamicResource LightBeige}" 
-               Margin="42,113,42,113"
-                Grid.Row="0"
-                Grid.Column="0"
-                CornerRadius="10">
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    CornerRadius="10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Margin="20,0,20,0">
                     <Border.Effect>
                         <DropShadowEffect
                     ShadowDepth="4"
@@ -56,34 +57,35 @@
                     FontSize="26" 
                     VerticalAlignment="Top"
                     HorizontalAlignment="Left"/>
-                        <StackPanel Orientation="Vertical">
+                        <StackPanel Orientation="Vertical" Margin="10">
                             <Button Content="Initialize DataBase." 
-                                    Margin="20" Style="{StaticResource ModernBtnWarning}" 
+                                    Margin="0,15" Style="{StaticResource ModernBtnWarning}" 
                                     FontFamily="{DynamicResource Playfair Regular}" 
                                     FontWeight="ExtraBold" 
                                     FontSize="24" IsCancel="True" 
                                     Click="initDb_Click"
-                                    HorizontalAlignment="Stretch"/>
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"/>
 
                             <Button Content="Reset DataBase." 
-                                    Margin="20" Style="{StaticResource ModernBtnWarning}" 
+                                    Margin="0,15" Style="{StaticResource ModernBtnWarning}" 
                                     FontFamily="{DynamicResource Playfair Regular}" 
                                     FontWeight="ExtraBold" 
                                     FontSize="24" IsCancel="True" 
                                     Click="ResetDB_Click"
-                                    HorizontalAlignment="Stretch"/>
+                                    HorizontalAlignment="Stretch"
+                                    VerticalAlignment="Stretch"/>
                         </StackPanel>
                     </StackPanel>
-
                 </Border>
 
-
-
-                <Border Background="{DynamicResource LightBeige}" 
-                    
+                <Border Background="{DynamicResource LightBeige}"  
                     Grid.Row="0"
                     Grid.Column="1"
-                    CornerRadius="10" Margin="42,113,42,113">
+                    CornerRadius="10"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Stretch"
+                    Margin="20,0,20,0">
                     <Border.Effect>
                         <DropShadowEffect
                             ShadowDepth="4"
@@ -94,17 +96,11 @@
                     </Border.Effect>
 
                     <Grid>
-
                         <Grid.RowDefinitions>
-
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
-
-
                         </Grid.RowDefinitions>
-
-
 
                         <Label Content=" Update Clock:"
                             Foreground="{DynamicResource BoldBlue}"
@@ -114,24 +110,42 @@
                             HorizontalAlignment="Left"/>
                         <Border  Grid.Row="1" VerticalAlignment="Center"  Background="{DynamicResource LightBeige}" BorderThickness="1,1,0,0"  HorizontalAlignment="Center">
 
-                            <TextBlock Text="{Binding Time }"
-                                           
+                            <TextBlock Text="{Binding Time}" 
                                            Width="220"
                                            Height="50"
-                                           FontSize="22"/>
-                                
-                            
+                                           FontSize="22"
+                                       FontFamily="{StaticResource Playfair Regular}"
+                                       Foreground="{DynamicResource BoldBlue}"/>
                         </Border>
-
-                        <Button Content="Promote Hour" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10"
-                                 Style="{StaticResource ModernBTN}" FontFamily="{DynamicResource Playfair Regular}" 
-                                FontSize="5" IsCancel="True"  Click="Button_Hour"/>
                         
-                        <Button Content="Promote Minute" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
-                                 Style="{StaticResource ModernBTN}" FontFamily="{DynamicResource Playfair Regular}" 
-                           FontSize="4" IsCancel="True"  Click="Button_Minute" Margin="20,0,0,10"/>
-
-
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            
+                        <Button Content="Promote Hour" 
+                                Grid.Column="0" 
+                                HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Stretch"
+                                Margin="10"
+                                Style="{StaticResource ModernBTN}" 
+                                FontFamily="{DynamicResource Playfair Regular}" 
+                                FontSize="5" 
+                                IsCancel="True"  
+                                Click="Button_Hour"/>
+                        
+                        <Button Content="Promote Minute" 
+                                Grid.Column="1"
+                                Margin="10"
+                                HorizontalAlignment="Stretch" 
+                                VerticalAlignment="Stretch" 
+                                Style="{StaticResource ModernBTN}" 
+                                FontFamily="{DynamicResource Playfair Regular}" 
+                                FontSize="4" 
+                                IsCancel="True"  
+                                Click="Button_Minute"/>
+                        </Grid>
                     </Grid>
                 </Border>
             </Grid>

@@ -1,19 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Task>
+    <Id>1000</Id>
+    <Alias>overallBudget</Alias>
+    <Description>Overall Budget</Description>
+    <cost>1546</cost>
+    <pracentstart>16</pracentstart>
+    <pracentbetween>5</pracentbetween>
+    <pracentend>79</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.2476553+03:00</CreatedAtDate>
+    <IsMilestone>false</IsMilestone>
+    <StartDate>2024-08-05T00:00:00</StartDate>
+    <ScheduledDate>2024-08-06T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-08-12T00:00:00</DeadlineDate>
+    <CompleteDate>2024-08-12T00:00:00</CompleteDate>
+    <Deliverables>Finalize the overall wedding budget</Deliverables>
+    <Remarks>Ensure the budget is realistic and comprehensive</Remarks>
+    <UserId xsi:nil="true" />
+    <Complexity>Friends</Complexity>
+  </Task>
+  <Task>
+    <Id>1001</Id>
+    <Alias>guestList</Alias>
+    <Description>Guest List</Description>
+    <cost>1588</cost>
+    <pracentstart>29</pracentstart>
+    <pracentbetween>3</pracentbetween>
+    <pracentend>68</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.2487801+03:00</CreatedAtDate>
+    <IsMilestone>false</IsMilestone>
+    <StartDate>2024-08-28T00:00:00</StartDate>
+    <ScheduledDate>2024-08-29T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-08-31T00:00:00</DeadlineDate>
+    <CompleteDate>2024-08-31T00:00:00</CompleteDate>
+    <Deliverables>Compile the complete guest list</Deliverables>
+    <Remarks>Ensure all important family members and friends are included</Remarks>
+    <UserId xsi:nil="true" />
+    <Complexity>Friends</Complexity>
+  </Task>
+  <Task>
+    <Id>1002</Id>
+    <Alias>venue</Alias>
+    <Description>Venue</Description>
+    <cost>1933</cost>
+    <pracentstart>65</pracentstart>
+    <pracentbetween>5</pracentbetween>
+    <pracentend>30</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.2554844+03:00</CreatedAtDate>
+    <IsMilestone>false</IsMilestone>
+    <StartDate>2024-10-31T00:00:00</StartDate>
+    <ScheduledDate>2024-11-06T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-11-07T00:00:00</DeadlineDate>
+    <CompleteDate>2024-11-07T00:00:00</CompleteDate>
+    <Deliverables>Book the wedding venue</Deliverables>
+    <Remarks>Consider capacity, location, and overall style</Remarks>
+    <UserId xsi:nil="true" />
+    <Complexity>Friends</Complexity>
+  </Task>
+  <Task>
+    <Id>1003</Id>
+    <Alias>weddingPlannerHired</Alias>
+    <Description>Wedding Planner Hired</Description>
+    <cost>1531</cost>
+    <pracentstart>6</pracentstart>
+    <pracentbetween>5</pracentbetween>
+    <pracentend>89</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.2622235+03:00</CreatedAtDate>
+    <IsMilestone>false</IsMilestone>
+    <StartDate>2024-07-18T00:00:00</StartDate>
+    <ScheduledDate>2024-07-22T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-07-25T00:00:00</DeadlineDate>
+    <CompleteDate>2024-07-25T00:00:00</CompleteDate>
+    <Deliverables>Hire a wedding planner</Deliverables>
+    <Remarks>Choose a planner who understands your vision and budget</Remarks>
+    <UserId xsi:nil="true" />
+    <Complexity>Friends</Complexity>
+  </Task>
+  <Task>
+    <Id>1004</Id>
+    <Alias>vendors</Alias>
+    <Description>Vendors</Description>
+    <cost>1048</cost>
+    <pracentstart>2</pracentstart>
+    <pracentbetween>7</pracentbetween>
+    <pracentend>91</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.2730845+03:00</CreatedAtDate>
+    <IsMilestone>false</IsMilestone>
+    <StartDate>2024-07-11T00:00:00</StartDate>
+    <ScheduledDate>2024-07-15T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-07-21T00:00:00</DeadlineDate>
+    <CompleteDate>2024-07-21T00:00:00</CompleteDate>
+    <Deliverables>Book all necessary vendors</Deliverables>
+    <Remarks>Include caterer, florist, photographer, videographer, and entertainment</Remarks>
+    <UserId xsi:nil="true" />
+    <Complexity>Friends</Complexity>
+  </Task>
+  <Task>
+    <Id>1005</Id>
+    <Alias>themeStyle</Alias>
+    <Description>Theme/Style</Description>
+    <cost>1582</cost>
+    <pracentstart>12</pracentstart>
+    <pracentbetween>5</pracentbetween>
+    <pracentend>83</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.2795425+03:00</CreatedAtDate>
+    <IsMilestone>false</IsMilestone>
+    <StartDate>2024-07-28T00:00:00</StartDate>
+    <ScheduledDate>2024-08-03T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-08-04T00:00:00</DeadlineDate>
+    <CompleteDate>2024-08-04T00:00:00</CompleteDate>
+    <Deliverables>Decide on the wedding theme and style</Deliverables>
+    <Remarks>Consider colors, decorations, and overall ambiance</Remarks>
+    <UserId xsi:nil="true" />
+    <Complexity>Friends</Complexity>
+  </Task>
+  <Task>
+    <Id>1006</Id>
+    <Alias>weddingAttire</Alias>
+    <Description>Wedding Attire</Description>
+    <cost>1289</cost>
+    <pracentstart>26</pracentstart>
+    <pracentbetween>5</pracentbetween>
+    <pracentend>69</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.2862244+03:00</CreatedAtDate>
+    <IsMilestone>false</IsMilestone>
+    <StartDate>2024-08-23T00:00:00</StartDate>
+    <ScheduledDate>2024-08-28T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-08-30T00:00:00</DeadlineDate>
+    <CompleteDate>2024-08-30T00:00:00</CompleteDate>
+    <Deliverables>Choose wedding attire for the couple and wedding party</Deliverables>
+    <Remarks>Consider style, color, and comfort</Remarks>
+    <UserId xsi:nil="true" />
+    <Complexity>Friends</Complexity>
+  </Task>
+  <Task>
     <Id>1007</Id>
     <Alias>weddingWebsite</Alias>
     <Description>Wedding Website</Description>
-    <cost>1689</cost>
-    <pracentstart>71</pracentstart>
-    <pracentbetween>4</pracentbetween>
-    <pracentend>25</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.0245141+03:00</CreatedAtDate>
+    <cost>1890</cost>
+    <pracentstart>11</pracentstart>
+    <pracentbetween>7</pracentbetween>
+    <pracentend>82</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.2934154+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-11-11T00:00:00</StartDate>
-    <ScheduledDate>2024-11-13T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-11-16T00:00:00</DeadlineDate>
-    <CompleteDate>2024-11-16T00:00:00</CompleteDate>
+    <StartDate>2024-07-27T00:00:00</StartDate>
+    <ScheduledDate>2024-08-02T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-08-06T00:00:00</DeadlineDate>
+    <CompleteDate>2024-08-06T00:00:00</CompleteDate>
     <Deliverables>Create and launch the wedding website</Deliverables>
     <Remarks>Include important details, RSVP functionality, and travel information</Remarks>
     <UserId xsi:nil="true" />
@@ -23,16 +156,16 @@
     <Id>1008</Id>
     <Alias>saveTheDatesSent</Alias>
     <Description>Save-the-Dates Sent</Description>
-    <cost>1392</cost>
-    <pracentstart>53</pracentstart>
-    <pracentbetween>4</pracentbetween>
-    <pracentend>43</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.0874112+03:00</CreatedAtDate>
+    <cost>1711</cost>
+    <pracentstart>74</pracentstart>
+    <pracentbetween>7</pracentbetween>
+    <pracentend>19</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.3002169+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-10-09T00:00:00</StartDate>
-    <ScheduledDate>2024-10-11T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-10-15T00:00:00</DeadlineDate>
-    <CompleteDate>2024-10-15T00:00:00</CompleteDate>
+    <StartDate>2024-11-17T00:00:00</StartDate>
+    <ScheduledDate>2024-11-22T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-11-27T00:00:00</DeadlineDate>
+    <CompleteDate>2024-11-27T00:00:00</CompleteDate>
     <Deliverables>Send out save-the-date cards</Deliverables>
     <Remarks>Ensure all guests receive the cards well in advance</Remarks>
     <UserId xsi:nil="true" />
@@ -42,16 +175,16 @@
     <Id>1009</Id>
     <Alias>invitationsSent</Alias>
     <Description>Invitations Sent</Description>
-    <cost>1573</cost>
-    <pracentstart>39</pracentstart>
-    <pracentbetween>3</pracentbetween>
-    <pracentend>58</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.1326643+03:00</CreatedAtDate>
+    <cost>1657</cost>
+    <pracentstart>70</pracentstart>
+    <pracentbetween>6</pracentbetween>
+    <pracentend>24</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.3067537+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-09-14T00:00:00</StartDate>
-    <ScheduledDate>2024-09-15T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-09-18T00:00:00</DeadlineDate>
-    <CompleteDate>2024-09-18T00:00:00</CompleteDate>
+    <StartDate>2024-11-10T00:00:00</StartDate>
+    <ScheduledDate>2024-11-15T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-11-19T00:00:00</DeadlineDate>
+    <CompleteDate>2024-11-19T00:00:00</CompleteDate>
     <Deliverables>Send out wedding invitations</Deliverables>
     <Remarks>Include RSVP cards and deadline for response</Remarks>
     <UserId xsi:nil="true" />
@@ -61,16 +194,16 @@
     <Id>1010</Id>
     <Alias>ceremonyDetails</Alias>
     <Description>Ceremony Details</Description>
-    <cost>1105</cost>
-    <pracentstart>39</pracentstart>
-    <pracentbetween>7</pracentbetween>
-    <pracentend>54</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.1857049+03:00</CreatedAtDate>
+    <cost>1886</cost>
+    <pracentstart>45</pracentstart>
+    <pracentbetween>4</pracentbetween>
+    <pracentend>51</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.3132733+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-09-15T00:00:00</StartDate>
-    <ScheduledDate>2024-09-21T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-09-26T00:00:00</DeadlineDate>
-    <CompleteDate>2024-09-26T00:00:00</CompleteDate>
+    <StartDate>2024-09-25T00:00:00</StartDate>
+    <ScheduledDate>2024-09-29T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-10-01T00:00:00</DeadlineDate>
+    <CompleteDate>2024-10-01T00:00:00</CompleteDate>
     <Deliverables>Finalize ceremony details</Deliverables>
     <Remarks>Include officiant, vows, readings, and music</Remarks>
     <UserId xsi:nil="true" />
@@ -80,16 +213,16 @@
     <Id>1011</Id>
     <Alias>receptionDetails</Alias>
     <Description>Reception Details</Description>
-    <cost>1672</cost>
-    <pracentstart>74</pracentstart>
-    <pracentbetween>5</pracentbetween>
-    <pracentend>21</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.2424728+03:00</CreatedAtDate>
+    <cost>1783</cost>
+    <pracentstart>32</pracentstart>
+    <pracentbetween>7</pracentbetween>
+    <pracentend>61</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.3196956+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-11-16T00:00:00</StartDate>
-    <ScheduledDate>2024-11-17T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-11-23T00:00:00</DeadlineDate>
-    <CompleteDate>2024-11-23T00:00:00</CompleteDate>
+    <StartDate>2024-09-03T00:00:00</StartDate>
+    <ScheduledDate>2024-09-08T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-09-13T00:00:00</DeadlineDate>
+    <CompleteDate>2024-09-13T00:00:00</CompleteDate>
     <Deliverables>Finalize reception details</Deliverables>
     <Remarks>Include seating arrangements, menu, and timeline</Remarks>
     <UserId xsi:nil="true" />
@@ -99,16 +232,16 @@
     <Id>1012</Id>
     <Alias>necessaryDocumentsObtained</Alias>
     <Description>Necessary Documents Obtained</Description>
-    <cost>1033</cost>
-    <pracentstart>20</pracentstart>
-    <pracentbetween>3</pracentbetween>
-    <pracentend>77</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.2883711+03:00</CreatedAtDate>
+    <cost>1807</cost>
+    <pracentstart>38</pracentstart>
+    <pracentbetween>5</pracentbetween>
+    <pracentend>57</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.3286471+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-08-11T00:00:00</StartDate>
-    <ScheduledDate>2024-08-14T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-08-15T00:00:00</DeadlineDate>
-    <CompleteDate>2024-08-15T00:00:00</CompleteDate>
+    <StartDate>2024-09-13T00:00:00</StartDate>
+    <ScheduledDate>2024-09-17T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-09-20T00:00:00</DeadlineDate>
+    <CompleteDate>2024-09-20T00:00:00</CompleteDate>
     <Deliverables>Obtain all necessary legal documents</Deliverables>
     <Remarks>Include marriage license and any required permits</Remarks>
     <UserId xsi:nil="true" />
@@ -118,16 +251,16 @@
     <Id>1013</Id>
     <Alias>dayOfTimeline</Alias>
     <Description>Day-Of Timeline</Description>
-    <cost>1475</cost>
-    <pracentstart>77</pracentstart>
-    <pracentbetween>6</pracentbetween>
-    <pracentend>17</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.3508222+03:00</CreatedAtDate>
+    <cost>1746</cost>
+    <pracentstart>41</pracentstart>
+    <pracentbetween>3</pracentbetween>
+    <pracentend>56</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.3349861+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-11-21T00:00:00</StartDate>
-    <ScheduledDate>2024-11-26T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-12-01T00:00:00</DeadlineDate>
-    <CompleteDate>2024-12-01T00:00:00</CompleteDate>
+    <StartDate>2024-09-18T00:00:00</StartDate>
+    <ScheduledDate>2024-09-20T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-09-22T00:00:00</DeadlineDate>
+    <CompleteDate>2024-09-22T00:00:00</CompleteDate>
     <Deliverables>Create a detailed day-of timeline</Deliverables>
     <Remarks>Include all important events and ensure smooth transitions</Remarks>
     <UserId xsi:nil="true" />
@@ -137,16 +270,16 @@
     <Id>1014</Id>
     <Alias>transportationArranged</Alias>
     <Description>Transportation Arranged</Description>
-    <cost>1544</cost>
-    <pracentstart>29</pracentstart>
-    <pracentbetween>4</pracentbetween>
-    <pracentend>67</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.3983918+03:00</CreatedAtDate>
+    <cost>1181</cost>
+    <pracentstart>59</pracentstart>
+    <pracentbetween>5</pracentbetween>
+    <pracentend>36</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.3421137+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-08-28T00:00:00</StartDate>
-    <ScheduledDate>2024-08-31T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-09-03T00:00:00</DeadlineDate>
-    <CompleteDate>2024-09-03T00:00:00</CompleteDate>
+    <StartDate>2024-10-21T00:00:00</StartDate>
+    <ScheduledDate>2024-10-22T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-10-27T00:00:00</DeadlineDate>
+    <CompleteDate>2024-10-27T00:00:00</CompleteDate>
     <Deliverables>Arrange transportation for the wedding party and guests</Deliverables>
     <Remarks>Consider shuttles, limos, or rental cars</Remarks>
     <UserId xsi:nil="true" />
@@ -156,16 +289,16 @@
     <Id>1015</Id>
     <Alias>rehearsalDinnerDetails</Alias>
     <Description>Rehearsal Dinner Details</Description>
-    <cost>1423</cost>
-    <pracentstart>24</pracentstart>
-    <pracentbetween>7</pracentbetween>
-    <pracentend>69</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.4670755+03:00</CreatedAtDate>
+    <cost>1189</cost>
+    <pracentstart>35</pracentstart>
+    <pracentbetween>5</pracentbetween>
+    <pracentend>60</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.3489829+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-08-18T00:00:00</StartDate>
-    <ScheduledDate>2024-08-24T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-08-30T00:00:00</DeadlineDate>
-    <CompleteDate>2024-08-30T00:00:00</CompleteDate>
+    <StartDate>2024-09-07T00:00:00</StartDate>
+    <ScheduledDate>2024-09-10T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-09-15T00:00:00</DeadlineDate>
+    <CompleteDate>2024-09-15T00:00:00</CompleteDate>
     <Deliverables>Plan the rehearsal dinner</Deliverables>
     <Remarks>Include location, menu, and guest list</Remarks>
     <UserId xsi:nil="true" />
@@ -175,16 +308,16 @@
     <Id>1016</Id>
     <Alias>weddingRings</Alias>
     <Description>Wedding Rings</Description>
-    <cost>1108</cost>
-    <pracentstart>68</pracentstart>
-    <pracentbetween>5</pracentbetween>
-    <pracentend>27</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.5429317+03:00</CreatedAtDate>
+    <cost>1655</cost>
+    <pracentstart>60</pracentstart>
+    <pracentbetween>6</pracentbetween>
+    <pracentend>34</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.3565089+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-11-06T00:00:00</StartDate>
-    <ScheduledDate>2024-11-12T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-11-13T00:00:00</DeadlineDate>
-    <CompleteDate>2024-11-13T00:00:00</CompleteDate>
+    <StartDate>2024-10-23T00:00:00</StartDate>
+    <ScheduledDate>2024-10-29T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-11-01T00:00:00</DeadlineDate>
+    <CompleteDate>2024-11-01T00:00:00</CompleteDate>
     <Deliverables>Purchase wedding rings</Deliverables>
     <Remarks>Consider style, material, and engraving</Remarks>
     <UserId xsi:nil="true" />
@@ -194,16 +327,16 @@
     <Id>1017</Id>
     <Alias>accommodations</Alias>
     <Description>Accommodations</Description>
-    <cost>1101</cost>
-    <pracentstart>62</pracentstart>
-    <pracentbetween>4</pracentbetween>
-    <pracentend>34</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.5971212+03:00</CreatedAtDate>
+    <cost>1401</cost>
+    <pracentstart>76</pracentstart>
+    <pracentbetween>3</pracentbetween>
+    <pracentend>21</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.3631191+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-10-25T00:00:00</StartDate>
-    <ScheduledDate>2024-10-27T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-10-31T00:00:00</DeadlineDate>
-    <CompleteDate>2024-10-31T00:00:00</CompleteDate>
+    <StartDate>2024-11-20T00:00:00</StartDate>
+    <ScheduledDate>2024-11-21T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-11-23T00:00:00</DeadlineDate>
+    <CompleteDate>2024-11-23T00:00:00</CompleteDate>
     <Deliverables>Book accommodations for out-of-town guests</Deliverables>
     <Remarks>Consider proximity to wedding venue and group rates</Remarks>
     <UserId xsi:nil="true" />
@@ -213,16 +346,16 @@
     <Id>1018</Id>
     <Alias>hairMakeupTrialsScheduled</Alias>
     <Description>Hair/Makeup Trials Scheduled</Description>
-    <cost>1966</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>3</pracentbetween>
-    <pracentend>97</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.6284597+03:00</CreatedAtDate>
+    <cost>1864</cost>
+    <pracentstart>79</pracentstart>
+    <pracentbetween>5</pracentbetween>
+    <pracentend>16</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.3704605+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-07-06T00:00:00</StartDate>
-    <ScheduledDate>2024-07-09T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-07-11T00:00:00</DeadlineDate>
-    <CompleteDate>2024-07-11T00:00:00</CompleteDate>
+    <StartDate>2024-11-26T00:00:00</StartDate>
+    <ScheduledDate>2024-11-28T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-12-03T00:00:00</DeadlineDate>
+    <CompleteDate>2024-12-03T00:00:00</CompleteDate>
     <Deliverables>Schedule hair and makeup trials</Deliverables>
     <Remarks>Ensure the desired look is achieved</Remarks>
     <UserId xsi:nil="true" />
@@ -232,16 +365,16 @@
     <Id>1019</Id>
     <Alias>honeymoonDetails</Alias>
     <Description>Honeymoon Details</Description>
-    <cost>1919</cost>
-    <pracentstart>46</pracentstart>
-    <pracentbetween>3</pracentbetween>
-    <pracentend>51</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.6730851+03:00</CreatedAtDate>
+    <cost>1966</cost>
+    <pracentstart>31</pracentstart>
+    <pracentbetween>4</pracentbetween>
+    <pracentend>65</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.379328+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-09-27T00:00:00</StartDate>
-    <ScheduledDate>2024-09-28T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-10-01T00:00:00</DeadlineDate>
-    <CompleteDate>2024-10-01T00:00:00</CompleteDate>
+    <StartDate>2024-08-31T00:00:00</StartDate>
+    <ScheduledDate>2024-09-01T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-09-05T00:00:00</DeadlineDate>
+    <CompleteDate>2024-09-05T00:00:00</CompleteDate>
     <Deliverables>Plan the honeymoon</Deliverables>
     <Remarks>Consider destination, activities, and budget</Remarks>
     <UserId xsi:nil="true" />
@@ -251,16 +384,16 @@
     <Id>1020</Id>
     <Alias>giftRegistry</Alias>
     <Description>Gift Registry</Description>
-    <cost>1887</cost>
-    <pracentstart>14</pracentstart>
-    <pracentbetween>2</pracentbetween>
-    <pracentend>84</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.7224096+03:00</CreatedAtDate>
+    <cost>1235</cost>
+    <pracentstart>75</pracentstart>
+    <pracentbetween>5</pracentbetween>
+    <pracentend>20</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.386681+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-08-01T00:00:00</StartDate>
-    <ScheduledDate>2024-08-02T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-08-03T00:00:00</DeadlineDate>
-    <CompleteDate>2024-08-03T00:00:00</CompleteDate>
+    <StartDate>2024-11-19T00:00:00</StartDate>
+    <ScheduledDate>2024-11-21T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-11-26T00:00:00</DeadlineDate>
+    <CompleteDate>2024-11-26T00:00:00</CompleteDate>
     <Deliverables>Create a gift registry</Deliverables>
     <Remarks>Include a variety of price points and styles</Remarks>
     <UserId xsi:nil="true" />
@@ -270,16 +403,16 @@
     <Id>1021</Id>
     <Alias>preWeddingCelebrations</Alias>
     <Description>Pre-Wedding Celebrations</Description>
-    <cost>1389</cost>
-    <pracentstart>20</pracentstart>
-    <pracentbetween>7</pracentbetween>
-    <pracentend>73</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.7890501+03:00</CreatedAtDate>
+    <cost>1368</cost>
+    <pracentstart>21</pracentstart>
+    <pracentbetween>4</pracentbetween>
+    <pracentend>75</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.402645+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-08-12T00:00:00</StartDate>
-    <ScheduledDate>2024-08-17T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-08-22T00:00:00</DeadlineDate>
-    <CompleteDate>2024-08-22T00:00:00</CompleteDate>
+    <StartDate>2024-08-13T00:00:00</StartDate>
+    <ScheduledDate>2024-08-16T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-08-18T00:00:00</DeadlineDate>
+    <CompleteDate>2024-08-18T00:00:00</CompleteDate>
     <Deliverables>Plan pre-wedding celebrations</Deliverables>
     <Remarks>Include bachelor/bachelorette parties and bridal shower</Remarks>
     <UserId xsi:nil="true" />
@@ -289,16 +422,16 @@
     <Id>1022</Id>
     <Alias>finalDetailsConfirmed</Alias>
     <Description>Final Details Confirmed</Description>
-    <cost>1425</cost>
-    <pracentstart>48</pracentstart>
-    <pracentbetween>8</pracentbetween>
-    <pracentend>44</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.8360316+03:00</CreatedAtDate>
+    <cost>1607</cost>
+    <pracentstart>0</pracentstart>
+    <pracentbetween>3</pracentbetween>
+    <pracentend>97</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.4099917+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-10-01T00:00:00</StartDate>
-    <ScheduledDate>2024-10-07T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-10-13T00:00:00</DeadlineDate>
-    <CompleteDate>2024-10-13T00:00:00</CompleteDate>
+    <StartDate>2024-07-06T00:00:00</StartDate>
+    <ScheduledDate>2024-07-07T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-07-10T00:00:00</DeadlineDate>
+    <CompleteDate>2024-07-10T00:00:00</CompleteDate>
     <Deliverables>Confirm all final details with vendors</Deliverables>
     <Remarks>Ensure all contracts are signed and payments are made</Remarks>
     <UserId xsi:nil="true" />
@@ -308,16 +441,16 @@
     <Id>1023</Id>
     <Alias>seatingChart</Alias>
     <Description>Seating Chart</Description>
-    <cost>1882</cost>
-    <pracentstart>53</pracentstart>
-    <pracentbetween>4</pracentbetween>
-    <pracentend>43</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.8833329+03:00</CreatedAtDate>
+    <cost>1436</cost>
+    <pracentstart>12</pracentstart>
+    <pracentbetween>6</pracentbetween>
+    <pracentend>82</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.4174686+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-10-09T00:00:00</StartDate>
-    <ScheduledDate>2024-10-10T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-10-15T00:00:00</DeadlineDate>
-    <CompleteDate>2024-10-15T00:00:00</CompleteDate>
+    <StartDate>2024-07-29T00:00:00</StartDate>
+    <ScheduledDate>2024-08-03T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-08-07T00:00:00</DeadlineDate>
+    <CompleteDate>2024-08-07T00:00:00</CompleteDate>
     <Deliverables>Create the seating chart</Deliverables>
     <Remarks>Consider relationships and any special requirements</Remarks>
     <UserId xsi:nil="true" />
@@ -327,16 +460,16 @@
     <Id>1024</Id>
     <Alias>welcomeBagsAssembled</Alias>
     <Description>Welcome Bags Assembled</Description>
-    <cost>1703</cost>
-    <pracentstart>59</pracentstart>
-    <pracentbetween>6</pracentbetween>
-    <pracentend>35</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.9259633+03:00</CreatedAtDate>
+    <cost>1215</cost>
+    <pracentstart>0</pracentstart>
+    <pracentbetween>4</pracentbetween>
+    <pracentend>96</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.4237923+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-10-21T00:00:00</StartDate>
-    <ScheduledDate>2024-10-23T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-10-29T00:00:00</DeadlineDate>
-    <CompleteDate>2024-10-29T00:00:00</CompleteDate>
+    <StartDate>2024-07-06T00:00:00</StartDate>
+    <ScheduledDate>2024-07-11T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-07-13T00:00:00</DeadlineDate>
+    <CompleteDate>2024-07-13T00:00:00</CompleteDate>
     <Deliverables>Assemble welcome bags for out-of-town guests</Deliverables>
     <Remarks>Include snacks, maps, and wedding weekend itinerary</Remarks>
     <UserId xsi:nil="true" />
@@ -346,16 +479,16 @@
     <Id>1025</Id>
     <Alias>finalGuestCountConfirmed</Alias>
     <Description>Final Guest Count Confirmed</Description>
-    <cost>1327</cost>
-    <pracentstart>35</pracentstart>
-    <pracentbetween>6</pracentbetween>
-    <pracentend>59</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:42.9808006+03:00</CreatedAtDate>
+    <cost>1666</cost>
+    <pracentstart>63</pracentstart>
+    <pracentbetween>4</pracentbetween>
+    <pracentend>33</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.4301929+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-09-07T00:00:00</StartDate>
-    <ScheduledDate>2024-09-10T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-09-16T00:00:00</DeadlineDate>
-    <CompleteDate>2024-09-16T00:00:00</CompleteDate>
+    <StartDate>2024-10-27T00:00:00</StartDate>
+    <ScheduledDate>2024-10-29T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-11-02T00:00:00</DeadlineDate>
+    <CompleteDate>2024-11-02T00:00:00</CompleteDate>
     <Deliverables>Confirm the final guest count with the caterer and venue</Deliverables>
     <Remarks>Ensure accuracy for seating and catering purposes</Remarks>
     <UserId xsi:nil="true" />
@@ -365,11 +498,11 @@
     <Id>1026</Id>
     <Alias>rehearsalConducted</Alias>
     <Description>Rehearsal Conducted</Description>
-    <cost>1297</cost>
+    <cost>1628</cost>
     <pracentstart>98</pracentstart>
     <pracentbetween>2</pracentbetween>
     <pracentend>0</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:43.0368581+03:00</CreatedAtDate>
+    <CreatedAtDate>2024-04-02T17:48:18.4399388+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2024-12-30T00:00:00</StartDate>
     <ScheduledDate>2024-12-31T00:00:00</ScheduledDate>
@@ -384,11 +517,11 @@
     <Id>1027</Id>
     <Alias>hina</Alias>
     <Description>Henna</Description>
-    <cost>1784</cost>
+    <cost>1486</cost>
     <pracentstart>98</pracentstart>
     <pracentbetween>2</pracentbetween>
     <pracentend>0</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:43.08671+03:00</CreatedAtDate>
+    <CreatedAtDate>2024-04-02T17:48:18.4470995+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2024-12-29T00:00:00</StartDate>
     <ScheduledDate>2024-12-30T00:00:00</ScheduledDate>
@@ -403,11 +536,11 @@
     <Id>1028</Id>
     <Alias>mikva</Alias>
     <Description>Mikvah</Description>
-    <cost>1176</cost>
+    <cost>1651</cost>
     <pracentstart>95</pracentstart>
     <pracentbetween>2</pracentbetween>
     <pracentend>3</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:43.1252899+03:00</CreatedAtDate>
+    <CreatedAtDate>2024-04-02T17:48:18.4537261+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2024-12-24T00:00:00</StartDate>
     <ScheduledDate>2024-12-25T00:00:00</ScheduledDate>
@@ -422,11 +555,11 @@
     <Id>1029</Id>
     <Alias>weddingDate</Alias>
     <Description>Wedding Date</Description>
-    <cost>1056</cost>
+    <cost>1863</cost>
     <pracentstart>99</pracentstart>
     <pracentbetween>1</pracentbetween>
     <pracentend>0</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:43.1809207+03:00</CreatedAtDate>
+    <CreatedAtDate>2024-04-02T17:48:18.4600461+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2024-12-31T00:00:00</StartDate>
     <ScheduledDate>2025-01-01T00:00:00</ScheduledDate>
@@ -441,16 +574,16 @@
     <Id>1030</Id>
     <Alias>weddingDayExecuted</Alias>
     <Description>Wedding Day Executed</Description>
-    <cost>1559</cost>
-    <pracentstart>4</pracentstart>
-    <pracentbetween>4</pracentbetween>
-    <pracentend>92</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:43.245075+03:00</CreatedAtDate>
+    <cost>1899</cost>
+    <pracentstart>12</pracentstart>
+    <pracentbetween>6</pracentbetween>
+    <pracentend>82</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.4671436+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-07-14T00:00:00</StartDate>
-    <ScheduledDate>2024-07-18T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-07-19T00:00:00</DeadlineDate>
-    <CompleteDate>2024-07-19T00:00:00</CompleteDate>
+    <StartDate>2024-07-28T00:00:00</StartDate>
+    <ScheduledDate>2024-08-02T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-08-07T00:00:00</DeadlineDate>
+    <CompleteDate>2024-08-07T00:00:00</CompleteDate>
     <Deliverables>Execute the wedding day timeline</Deliverables>
     <Remarks>Ensure all events run smoothly and on schedule</Remarks>
     <UserId xsi:nil="true" />
@@ -460,151 +593,18 @@
     <Id>1031</Id>
     <Alias>postWeddingTasksCompleted</Alias>
     <Description>Post-Wedding Tasks Completed</Description>
-    <cost>1445</cost>
-    <pracentstart>36</pracentstart>
+    <cost>1383</cost>
+    <pracentstart>64</pracentstart>
     <pracentbetween>6</pracentbetween>
-    <pracentend>58</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:43.3059161+03:00</CreatedAtDate>
+    <pracentend>30</pracentend>
+    <CreatedAtDate>2024-04-02T17:48:18.4736043+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
-    <StartDate>2024-09-09T00:00:00</StartDate>
-    <ScheduledDate>2024-09-15T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-09-19T00:00:00</DeadlineDate>
-    <CompleteDate>2024-09-19T00:00:00</CompleteDate>
-    <Deliverables>Complete all post-wedding tasks</Deliverables>
-    <Remarks>Include thank-you cards, vendor reviews, and legal name changes</Remarks>
-    <UserId xsi:nil="true" />
-    <Complexity>Friends</Complexity>
-  </Task>
-  <Task>
-    <Id>1000</Id>
-    <Alias>overallBudget</Alias>
-    <Description>Overall Budget</Description>
-    <cost>1352</cost>
-    <pracentstart>59</pracentstart>
-    <pracentbetween>2</pracentbetween>
-    <pracentend>39</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:41.6880049+03:00</CreatedAtDate>
-    <IsMilestone>false</IsMilestone>
-    <StartDate>2024-10-20T00:00:00</StartDate>
-    <ScheduledDate>2024-10-22T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-10-23T00:00:00</DeadlineDate>
-    <CompleteDate>2024-10-23T00:00:00</CompleteDate>
-    <Deliverables>Finalize the overall wedding budget</Deliverables>
-    <Remarks>Ensure the budget is realistic and comprehensive</Remarks>
-    <UserId xsi:nil="true" />
-    <Complexity>Friends</Complexity>
-  </Task>
-  <Task>
-    <Id>1001</Id>
-    <Alias>guestList</Alias>
-    <Description>Guest List</Description>
-    <cost>1106</cost>
-    <pracentstart>32</pracentstart>
-    <pracentbetween>4</pracentbetween>
-    <pracentend>64</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:41.6962757+03:00</CreatedAtDate>
-    <IsMilestone>false</IsMilestone>
-    <StartDate>2024-09-03T00:00:00</StartDate>
-    <ScheduledDate>2024-09-06T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-09-08T00:00:00</DeadlineDate>
-    <CompleteDate>2024-09-08T00:00:00</CompleteDate>
-    <Deliverables>Compile the complete guest list</Deliverables>
-    <Remarks>Ensure all important family members and friends are included</Remarks>
-    <UserId xsi:nil="true" />
-    <Complexity>Friends</Complexity>
-  </Task>
-  <Task>
-    <Id>1002</Id>
-    <Alias>venue</Alias>
-    <Description>Venue</Description>
-    <cost>1402</cost>
-    <pracentstart>37</pracentstart>
-    <pracentbetween>4</pracentbetween>
-    <pracentend>59</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:41.7669634+03:00</CreatedAtDate>
-    <IsMilestone>false</IsMilestone>
-    <StartDate>2024-09-11T00:00:00</StartDate>
-    <ScheduledDate>2024-09-12T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-09-17T00:00:00</DeadlineDate>
-    <CompleteDate>2024-09-17T00:00:00</CompleteDate>
-    <Deliverables>Book the wedding venue</Deliverables>
-    <Remarks>Consider capacity, location, and overall style</Remarks>
-    <UserId xsi:nil="true" />
-    <Complexity>Friends</Complexity>
-  </Task>
-  <Task>
-    <Id>1003</Id>
-    <Alias>weddingPlannerHired</Alias>
-    <Description>Wedding Planner Hired</Description>
-    <cost>1532</cost>
-    <pracentstart>45</pracentstart>
-    <pracentbetween>5</pracentbetween>
-    <pracentend>50</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:41.8104691+03:00</CreatedAtDate>
-    <IsMilestone>false</IsMilestone>
-    <StartDate>2024-09-26T00:00:00</StartDate>
-    <ScheduledDate>2024-09-29T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-10-03T00:00:00</DeadlineDate>
-    <CompleteDate>2024-10-03T00:00:00</CompleteDate>
-    <Deliverables>Hire a wedding planner</Deliverables>
-    <Remarks>Choose a planner who understands your vision and budget</Remarks>
-    <UserId xsi:nil="true" />
-    <Complexity>Friends</Complexity>
-  </Task>
-  <Task>
-    <Id>1004</Id>
-    <Alias>vendors</Alias>
-    <Description>Vendors</Description>
-    <cost>1474</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:41.86311+03:00</CreatedAtDate>
-    <IsMilestone>false</IsMilestone>
-    <StartDate>2024-10-27T00:00:00</StartDate>
+    <StartDate>2024-10-30T00:00:00</StartDate>
     <ScheduledDate>2024-11-02T00:00:00</ScheduledDate>
     <DeadlineDate>2024-11-07T00:00:00</DeadlineDate>
     <CompleteDate>2024-11-07T00:00:00</CompleteDate>
-    <Deliverables>Book all necessary vendors</Deliverables>
-    <Remarks>Include caterer, florist, photographer, videographer, and entertainment</Remarks>
-    <UserId xsi:nil="true" />
-    <Complexity>Friends</Complexity>
-  </Task>
-  <Task>
-    <Id>1006</Id>
-    <Alias>weddingAttire</Alias>
-    <Description>Wedding Attire</Description>
-    <cost>1877</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:41.9706515+03:00</CreatedAtDate>
-    <IsMilestone>false</IsMilestone>
-    <StartDate>2024-11-03T00:00:00</StartDate>
-    <ScheduledDate>2024-11-05T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-11-10T00:00:00</DeadlineDate>
-    <CompleteDate>2024-11-10T00:00:00</CompleteDate>
-    <Deliverables>Choose wedding attire for the couple and wedding party</Deliverables>
-    <Remarks>Consider style, color, and comfort</Remarks>
-    <UserId xsi:nil="true" />
-    <Complexity>Friends</Complexity>
-  </Task>
-  <Task>
-    <Id>1005</Id>
-    <Alias>themeStyle</Alias>
-    <Description>Theme/Style</Description>
-    <cost>1487</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
-    <CreatedAtDate>2024-03-31T23:45:41.9147943+03:00</CreatedAtDate>
-    <IsMilestone>false</IsMilestone>
-    <StartDate>2024-10-07T00:00:00</StartDate>
-    <ScheduledDate>2024-10-13T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-10-18T00:00:00</DeadlineDate>
-    <CompleteDate>2024-10-18T00:00:00</CompleteDate>
-    <Deliverables>Decide on the wedding theme and style</Deliverables>
-    <Remarks>Consider colors, decorations, and overall ambiance</Remarks>
+    <Deliverables>Complete all post-wedding tasks</Deliverables>
+    <Remarks>Include thank-you cards, vendor reviews, and legal name changes</Remarks>
     <UserId xsi:nil="true" />
     <Complexity>Friends</Complexity>
   </Task>

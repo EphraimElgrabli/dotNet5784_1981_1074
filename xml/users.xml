@@ -1,68 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
-    <Id>378217166</Id>
+    <Id>258099708</Id>
     <Email>Mom Of Bride@gmail.com</Email>
-    <PhoneNumber>97244</PhoneNumber>
+    <PhoneNumber>97207</PhoneNumber>
     <Name>Mom Of Bride</Name>
     <password>123456</password>
     <Level>Friends</Level>
   </User>
   <User>
-    <Id>366876277</Id>
+    <Id>279313336</Id>
     <Email>Father Of Bride@gmail.com</Email>
-    <PhoneNumber>97236</PhoneNumber>
+    <PhoneNumber>97207</PhoneNumber>
     <Name>Father Of Bride</Name>
     <password>123456</password>
-    <Level>FamilyMember</Level>
+    <Level>Staff</Level>
   </User>
   <User>
-    <Id>351785882</Id>
+    <Id>201364282</Id>
     <Email>Bride@gmail.com</Email>
-    <PhoneNumber>97256</PhoneNumber>
+    <PhoneNumber>97296</PhoneNumber>
     <Name>Bride</Name>
     <password>123456</password>
-    <Level>Staff</Level>
+    <Level>FamilyMemberWithRoles</Level>
   </User>
   <User>
-    <Id>341899962</Id>
+    <Id>348927037</Id>
     <Email>Mom Of Groom@gmail.com</Email>
-    <PhoneNumber>97231</PhoneNumber>
+    <PhoneNumber>97229</PhoneNumber>
     <Name>Mom Of Groom</Name>
-    <password>123456</password>
-    <Level>FamilyMemberWithRoles</Level>
-  </User>
-  <User>
-    <Id>302568346</Id>
-    <Email>Father Of Groom@gmail.com</Email>
-    <PhoneNumber>97252</PhoneNumber>
-    <Name>Father Of Groom</Name>
-    <password>123456</password>
-    <Level>FamilyMemberWithRoles</Level>
-  </User>
-  <User>
-    <Id>282127122</Id>
-    <Email>Groom@gmail.com</Email>
-    <PhoneNumber>97269</PhoneNumber>
-    <Name>Groom</Name>
-    <password>123456</password>
-    <Level>Staff</Level>
-  </User>
-  <User>
-    <Id>244167198</Id>
-    <Email>Temporary Friend@gmail.com</Email>
-    <PhoneNumber>97295</PhoneNumber>
-    <Name>Temporary Friend</Name>
     <password>123456</password>
     <Level>Friends</Level>
   </User>
   <User>
-    <Id>226404862</Id>
+    <Id>226961376</Id>
+    <Email>Father Of Groom@gmail.com</Email>
+    <PhoneNumber>97291</PhoneNumber>
+    <Name>Father Of Groom</Name>
+    <password>123456</password>
+    <Level>FamilyMember</Level>
+  </User>
+  <User>
+    <Id>324944723</Id>
+    <Email>Groom@gmail.com</Email>
+    <PhoneNumber>97284</PhoneNumber>
+    <Name>Groom</Name>
+    <password>123456</password>
+    <Level>FamilyMemberWithRoles</Level>
+  </User>
+  <User>
+    <Id>384059118</Id>
+    <Email>Temporary Friend@gmail.com</Email>
+    <PhoneNumber>97277</PhoneNumber>
+    <Name>Temporary Friend</Name>
+    <password>123456</password>
+    <Level>FamilyMember</Level>
+  </User>
+  <User>
+    <Id>383530779</Id>
     <Email>Temporary Family Member@gmail.com</Email>
-    <PhoneNumber>97266</PhoneNumber>
+    <PhoneNumber>97283</PhoneNumber>
     <Name>Temporary Family Member</Name>
     <password>123456</password>
     <Level>FamilyMemberWithRoles</Level>
+  </User>
+  <User>
+    <Id>258534604</Id>
+    <Email>Temporary Staff@gmail.com</Email>
+    <PhoneNumber>97292</PhoneNumber>
+    <Name>Temporary Staff</Name>
+    <password>123456</password>
+    <Level>Staff</Level>
   </User>
   <User>
     <Id>212451074</Id>
@@ -78,22 +86,6 @@
     <PhoneNumber>0501234567</PhoneNumber>
     <Name>Maor Levi</Name>
     <password>Admin</password>
-    <Level>Producer</Level>
-  </User>
-  <User>
-    <Id>302992889</Id>
-    <Email>Temporary Staff@gmail.com</Email>
-    <PhoneNumber>97231</PhoneNumber>
-    <Name>Temporary Staff</Name>
-    <password>123456</password>
-    <Level>Staff</Level>
-  </User>
-  <User>
-    <Id>326256831</Id>
-    <Email>ma@gmail.com</Email>
-    <PhoneNumber>0584615194</PhoneNumber>
-    <Name>Brachi</Name>
-    <password>צשםר</password>
     <Level>Producer</Level>
   </User>
 </ArrayOfUser>

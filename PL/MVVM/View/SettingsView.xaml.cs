@@ -55,7 +55,7 @@ namespace PL.MVVM.View
 
         private void ResetDB_Click(object sender, RoutedEventArgs e)
         {
-            if (MessageBox.Show("Are you sure you to reset the Database?", "InitDB - Warning.", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if (MessageBox.Show("Are you sure you to reset the Database?", "ResetDB - Warning.", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 DalTest.Initialization.Do();
             }

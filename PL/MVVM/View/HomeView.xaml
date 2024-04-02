@@ -14,7 +14,7 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="6*"/>
             </Grid.RowDefinitions>
-            <StackPanel Orientation="Horizontal" Margin="20,10,20,0">
+            <StackPanel Orientation="Horizontal" Margin="17,10,20,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                 <Label Content="Hello"
                       Foreground="{DynamicResource BoldBlue}"
                       FontFamily="{StaticResource Playfair Regular}"
@@ -29,6 +29,37 @@
                         FontSize="36" 
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"/>
+                
+                <Label Content="!" 
+                        Foreground="{DynamicResource BoldBlue}"
+                        FontFamily="{StaticResource Playfair Regular}"
+                        FontWeight="Light"
+                        FontSize="36" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="0,0,5,0"/>
+                
+                <Border Width="45" Height="45" CornerRadius="30" Background="{DynamicResource BoldBlue}" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Image Source="{Binding Viewer.Name, Converter={StaticResource NameToProfilePicConverter}}" MaxHeight="35" MaxWidth="35"/>
+                </Border>
+
+                <Label Content="🕑|" 
+                        Foreground="{DynamicResource BoldBlue}"
+                        FontFamily="{StaticResource Playfair Regular}"
+                        FontWeight="Light"
+                        FontSize="26" 
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Margin="135,0,0,0"/>
+
+                <TextBlock Text="{Binding Time}" 
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           FontFamily="{StaticResource Playfair Regular}"
+                           FontSize="28"
+                           Foreground="{DynamicResource BoldBlue}"
+                           HorizontalAlignment="Right"
+                           VerticalAlignment="Center"/>
             </StackPanel>
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
@@ -36,19 +67,26 @@
                     <ColumnDefinition Width="*"/>
 
                 </Grid.ColumnDefinitions>
-                <Calendar Height="160" Width="200" Margin="100,193,100,33" />
-                <TextBlock Text="{Binding Time}" 
+                <Border Grid.Column="0" 
                            Grid.Row="1"
-                           Grid.Column="0"
-                           Height="38"
-                           Width="250"
-                           FontFamily="{StaticResource Playfair Regular}"
-                           FontSize="20"
-                           Foreground="{DynamicResource BoldBlue}"
-                           HorizontalAlignment="Center"
-                           VerticalAlignment="Top"/>
-                   <Border Grid.Column="1"  CornerRadius="13"
-                    Background="{DynamicResource MidBeige}" Margin="0,-94,0,0">
+                           CornerRadius="13"
+                           Background="Transparent" 
+                            Margin="20,0,20,20">
+                    <Border.Effect>
+                        <DropShadowEffect
+                     ShadowDepth="3"
+                     Direction="290"
+                     Color="Black"
+                     Opacity="0.15"
+                     BlurRadius="10"/>
+                    </Border.Effect>
+                    <Calendar VerticalAlignment="Stretch"/>
+                </Border>
+                <Border Grid.Column="1" 
+                           Grid.Row="1"
+                           CornerRadius="13"
+                           Background="{DynamicResource MidBeige}" 
+                           Margin="20,0,20,20">
                     <Border.Effect>
                         <DropShadowEffect
                      ShadowDepth="4"
@@ -62,7 +100,7 @@
                             <RowDefinition Height="Auto"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Image Source="/images/AboutUs.png" MaxHeight="150" MaxWidth="150" Margin="0,10,0,0" HorizontalAlignment="Center">
+                        <Image Source="/images/AboutUs.png" MaxHeight="75" MaxWidth="75" Margin="0,10,0,0" HorizontalAlignment="Center">
                             <Image.Effect>
                                 <DropShadowEffect BlurRadius="20" ShadowDepth="4" Opacity="0.1"/>
                             </Image.Effect>
@@ -70,7 +108,7 @@
                         <ScrollViewer Grid.Row="1" Margin="25,10,25,25" VerticalScrollBarVisibility="Hidden">
                             <TextBlock Text="WedPlan, a university project developed by Ephraim Elgrabli and Maor Levi, is a comprehensive wedding planning management app designed to simplify the complex process of organizing a wedding. The app offers features such as task management, timeline visualization, and cost tracking to help couples stay organized and within budget. Future plans include integrating a WhatsApp-based RSVP system and a guest management tool. Created with the intention of assisting friends and couples planning their weddings, WedPlan demonstrates the developers' commitment to providing a user-friendly solution that addresses real-world challenges in wedding planning."
                FontFamily="{StaticResource Playfair Regular}"
-               FontSize="18"
+               FontSize="16"
                Foreground="{DynamicResource BoldBlue}"
                FontStretch="Normal"
                TextAlignment="Justify"
