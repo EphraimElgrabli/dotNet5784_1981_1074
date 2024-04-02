@@ -88,4 +88,12 @@
     <password>123456</password>
     <Level>Staff</Level>
   </User>
+  <User>
+    <Id>326256831</Id>
+    <Email>ma@gmail.com</Email>
+    <PhoneNumber>0584615194</PhoneNumber>
+    <Name>Brachi</Name>
+    <password>צשםר</password>
+    <Level>Producer</Level>
+  </User>
 </ArrayOfUser>

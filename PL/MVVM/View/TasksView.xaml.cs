@@ -22,7 +22,7 @@ namespace PL.MVVM.View
     /// <summary>
     /// Interaction logic for TasksView.xaml
     /// </summary>
-    public partial class TasksView : UserControl
+    public partial class TasksView : UserControl, INotifyPropertyChanged
     {
         static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
         public bool flag = true;
@@ -35,6 +35,8 @@ namespace PL.MVVM.View
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ThisUserProperty =
             DependencyProperty.Register("task", typeof(BO.Task), typeof(AddUpdateTask));
+
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public TasksView()
         {
@@ -68,6 +70,7 @@ namespace PL.MVVM.View
         }
         public void Refresh()
         {
+
             var parent = Parent as Panel;
             if (parent != null)
             {

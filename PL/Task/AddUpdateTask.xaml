@@ -73,7 +73,7 @@
                              FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Remarks:"/>
-                    <TextBox Text="{Binding Password, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
+                    <TextBox Text="{Binding Cost, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="10" 

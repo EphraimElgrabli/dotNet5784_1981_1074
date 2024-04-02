@@ -12,6 +12,7 @@ public interface ITask
     public void promoteStatusTask(int id);
     public IEnumerable<BO.Task> changeTaskList(IEnumerable<BO.TaskInUser> tasks);
     public DateTime CalculateStartTime(BO.Task task);
+    public BO.Status CalculateStatus(int id);
     public void GanttTime();
 
 }

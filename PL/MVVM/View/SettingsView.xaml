@@ -4,11 +4,15 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:PL.MVVM.View"
+        xmlns:viewModel="clr-namespace:PL.MVVM.ViewModel"
              xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml" x:Class="PL.MVVM.View.SettingsView"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
-             DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
-    
+             >
+    <UserControl.DataContext>
+        <viewModel:MainViewModel/>
+    </UserControl.DataContext>
+
     <Border Background="{DynamicResource StrongBeige}" CornerRadius="10">
         <Grid>
             <Grid.RowDefinitions>
@@ -108,22 +112,24 @@
                             FontSize="26" 
                             VerticalAlignment="Top "
                             HorizontalAlignment="Left"/>
-                        <Border  Grid.Row="1" VerticalAlignment="Center"  Background="{DynamicResource LightBeige}" BorderThickness="1,1,0,0" BorderBrush="Gray" HorizontalAlignment="Center">
-                            
-                                <TextBlock Text="{Binding Date}" 
-                                           Width="200"
+                        <Border  Grid.Row="1" VerticalAlignment="Center"  Background="{DynamicResource LightBeige}" BorderThickness="1,1,0,0"  HorizontalAlignment="Center">
+
+                            <TextBlock Text="{Binding Time }"
+                                           
+                                           Width="220"
                                            Height="50"
-                                           FontSize="12"/>
+                                           FontSize="22"/>
                                 
                             
                         </Border>
 
                         <Button Content="Promote Hour" Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10"
                                  Style="{StaticResource ModernBTN}" FontFamily="{DynamicResource Playfair Regular}" 
-                                FontSize="5" IsCancel="True"  Click="Button_Click"/>
+                                FontSize="5" IsCancel="True"  Click="Button_Hour"/>
+                        
                         <Button Content="Promote Minute" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
                                  Style="{StaticResource ModernBTN}" FontFamily="{DynamicResource Playfair Regular}" 
-                           FontSize="4" IsCancel="True"  Click="Button_Click" Margin="20,0,0,10"/>
+                           FontSize="4" IsCancel="True"  Click="Button_Minute" Margin="20,0,0,10"/>
 
 
                     </Grid>

@@ -325,13 +325,15 @@ internal class TaskImplemtation : BlApi.ITask
                 }
                 _bl.User.Update(t);
             }
-
-            foreach (DO.Dependency dependency in _dal.Dependency.ReadAll(d => d.DependentTask == task.Id))
-            { _dal.Dependency.Delete(dependency.Id); }
-
-            foreach (var d in task.Dependencies)
+            if (task.Dependencies != null)
             {
-                _dal.Dependency.Create(new DO.Dependency(0, d.Id, task.Id));
+                foreach (DO.Dependency dependency in _dal.Dependency.ReadAll(d => d.DependentTask == task.Id))
+                { _dal.Dependency.Delete(dependency.Id); }
+
+                foreach (var d in task.Dependencies)
+                {
+                    _dal.Dependency.Create(new DO.Dependency(0, d.Id, task.Id));
+                }
             }
         }
         catch (DO.DalDoesNotExistException ex)

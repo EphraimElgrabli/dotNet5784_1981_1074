@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
 using BO;
+using DO;
 
 namespace PL;
 
@@ -49,6 +50,42 @@ class NameOfViewer : IValueConverter
         if (value is BO.User user)
         {
              return user.Name;
+        }
+        return "Unkown User";
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+        throw new NotImplementedException();
+    }
+}
+class Color : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+    {
+       
+        if (value is BO.Task)
+        {
+            if(((BO.Task)value).Status == BO.Status.Unscheduled )
+            { 
+                return "Black";
+            }
+            if (((BO.Task)value).Status == BO.Status.Scheduled)
+            {
+                return "Blue";
+            }
+            if (((BO.Task)value).Status == BO.Status.OnTrack)
+            {
+                return "Green";
+            }
+            if (((BO.Task)value).Status == BO.Status.Done)
+            {
+                return "Red";
+            }
+            if (((BO.Task)value).Status == BO.Status.InJeopardy)
+            {
+                return "Orange";
+            }
         }
         return "Unkown User";
     }
