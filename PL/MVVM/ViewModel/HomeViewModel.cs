@@ -19,5 +19,16 @@ namespace PL.MVVM.ViewModel
                 OnPropertyChanged(nameof(Viewer));
             }
         }
+
+        private DateTime _time;
+        public DateTime Time
+        {
+            get { return _time; }
+            set
+            {
+                _time = value;
+                OnPropertyChanged(nameof(Time));
+            }
+        }
     }
 }

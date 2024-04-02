@@ -1,5 +1,4 @@
-﻿using PL.MVVM.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,12 +16,11 @@ using System.Windows.Shapes;
 namespace PL.MVVM.View
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for UpdateTime.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class UpdateTime : Page
     {
-        static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
-        public HomeView()
+        public UpdateTime()
         {
             InitializeComponent();
         }

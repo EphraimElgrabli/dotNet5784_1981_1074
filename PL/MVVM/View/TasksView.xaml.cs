@@ -22,7 +22,7 @@ namespace PL.MVVM.View
     /// <summary>
     /// Interaction logic for TasksView.xaml
     /// </summary>
-    public partial class TasksView : UserControl
+    public partial class TasksView : UserControl, INotifyPropertyChanged
     {
         static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
         public bool flag = true;
@@ -36,8 +36,30 @@ namespace PL.MVVM.View
         public static readonly DependencyProperty ThisUserProperty =
             DependencyProperty.Register("task", typeof(BO.Task), typeof(AddUpdateTask));
 
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         public TasksView()
         {
+
+            //DataContext = new TasksViewModel();
+            //var taskViewModel = (TasksViewModel)DataContext;
+            //var viewer = taskViewModel.Viewer;
+            //DataContext= new MainViewModel();
+            //var v = (MainViewModel)DataContext;
+            //var viewer = v.Viewer;
+
+            //if (viewer != null)
+            //{
+            //    if ((int)viewer.Level >= 4)
+            //        TaskListing = s_bl?.Task.ReadAllTask()!; //TODO: maor fix this line so only tasks available to the user will appear
+            //    else
+            //    {
+            //        IEnumerable<BO.Task> tasks = new List<BO.Task>();
+            //        TaskListing = s_bl.Task.changeTaskList(s_bl?.User.Read(viewer.Id).Tasks!);
+            //    }
+            //}
+            //TaskListing = s_bl?.Task.ReadAllTask()!;
+
             InitializeComponent();
         }
 
@@ -48,6 +70,7 @@ namespace PL.MVVM.View
         }
         public void Refresh()
         {
+
             var parent = Parent as Panel;
             if (parent != null)
             {

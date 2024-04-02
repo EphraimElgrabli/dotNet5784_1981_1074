@@ -164,7 +164,7 @@ public static class Initialization
         }
         User DemoUser = new(212451074, "Ephraim.Elgrabli@gmail.com","0501234567","Ephraim Elgrabli","Admin", DO.UserLevel.Producer);
         s_dal!.User.Create(DemoUser);
-        User DemoUser1 = new(212451074, "Maor.Levi@gmail.com", "0501234567", "Ephraim Elgrabli", "Admin", DO.UserLevel.Producer);
+        User DemoUser1 = new(328301981, "Maor.Levi@gmail.com", "0501234567", "Maor Levi", "Admin", DO.UserLevel.Producer);
         s_dal!.User.Create(DemoUser1);
     }
 

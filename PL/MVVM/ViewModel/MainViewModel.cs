@@ -20,6 +20,17 @@ namespace PL.MVVM.ViewModel
                 OnPropertyChanged();
             }
         }
+
+        private DateTime _time;
+        public DateTime Time
+        {
+            get { return _time; }
+            set
+            {
+                _time = value;
+                OnPropertyChanged(nameof(Time));
+            }
+        }
         public RelayCommend  HomeViewCommand{ get; set; }
         public RelayCommend UserListViewCommand { get; set; }
         public RelayCommend TasksViewCommand { get; set; }
@@ -69,6 +80,7 @@ namespace PL.MVVM.ViewModel
             {
                 CurrentView = GanttVM;
             });
+
         }
     }
 }

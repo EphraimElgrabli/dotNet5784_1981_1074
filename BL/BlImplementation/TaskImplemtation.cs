@@ -325,13 +325,15 @@ internal class TaskImplemtation : BlApi.ITask
                 }
                 _bl.User.Update(t);
             }
-
-            foreach (DO.Dependency dependency in _dal.Dependency.ReadAll(d => d.DependentTask == task.Id))
-            { _dal.Dependency.Delete(dependency.Id); }
-
-            foreach (var d in task.Dependencies)
+            if (task.Dependencies != null)
             {
-                _dal.Dependency.Create(new DO.Dependency(0, d.Id, task.Id));
+                foreach (DO.Dependency dependency in _dal.Dependency.ReadAll(d => d.DependentTask == task.Id))
+                { _dal.Dependency.Delete(dependency.Id); }
+
+                foreach (var d in task.Dependencies)
+                {
+                    _dal.Dependency.Create(new DO.Dependency(0, d.Id, task.Id));
+                }
             }
         }
         catch (DO.DalDoesNotExistException ex)
@@ -395,7 +397,15 @@ internal class TaskImplemtation : BlApi.ITask
 
         }
         return Convert.ToDateTime(minTime);
-
+    }
+    public IEnumerable<BO.Task> changeTaskList(IEnumerable<BO.TaskInUser>? tasks)
+    {
+        List<BO.Task> temp = new List<BO.Task>();
+        foreach (var t in tasks)
+        {
+            temp.Add(Read(t.Id)!);//add the task to the list of
+        }
+        return temp;    
     }
     public void GanttTime() 
     {

@@ -29,9 +29,10 @@ namespace PL.Task
 
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ThisUserProperty =
-            DependencyProperty.Register("task", typeof(BO.Task), typeof(AddUpdateTask));
+            DependencyProperty.Register("ThisTask", typeof(BO.Task), typeof(AddUpdateTask));
         public AddUpdateTask(int Id = 0)
         {
+          
             try
             {
                 if (Id == 0)
@@ -60,12 +61,15 @@ namespace PL.Task
                 }
                 InitializeComponent();
             }
-            catch (Exception ex) { Console.WriteLine(ex.Message); }
+            catch (Exception ex) { Console.WriteLine(ex.Message); Close(); }
+
+            
         }
 
 
         private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
         {
+            
             try
             {
                 BO.Task task = new BO.Task()
@@ -80,7 +84,8 @@ namespace PL.Task
                     CompleteDate = ThisTask.CompleteDate,
                     Deliverables = ThisTask.Deliverables,
                     Remarks = ThisTask.Remarks,
-                    Complexity = ThisTask.Complexity
+                    Complexity = ThisTask.Complexity,
+                    Cost= ThisTask.Cost
                 };
                 if (flag == false)
                     s_bl?.Task.Update(task);
@@ -97,6 +102,7 @@ namespace PL.Task
                          MessageBoxImage.Hand,
                          MessageBoxResult.Cancel);
             }
+         
         }
 
         private void AddUser_Draggable(object sender, MouseButtonEventArgs e)

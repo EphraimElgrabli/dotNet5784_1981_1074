@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BO;
 using PL;
+using PL.MVVM.ViewModel;
 using PL.User;
 
 namespace PL
@@ -46,18 +47,12 @@ namespace PL
                 UserToLogin = s_bl?.User.Read((int.Parse(Id)));
                 if (UserToLogin.Password == Password)
                 {
+
                     new MainWindow(UserToLogin!).Show();
                     this.Close();
                 }
                 else
-                {
-                    MessageBox.Show(
-                       "you dumb",
-                       "FU",
-                       MessageBoxButton.OK,
-                       MessageBoxImage.Hand,
-                       MessageBoxResult.Cancel);
-                }
+                    throw new Exception("The Password Wrong");
             }
             catch (Exception ex)
             {
