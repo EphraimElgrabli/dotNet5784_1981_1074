@@ -8,4 +8,5 @@ public interface IUser
     public IEnumerable<BO.User> ReadAllUser(Func<BO.User, bool>? filter = null);
     public void Update(BO.User user);
     public void Delete(int id);
+    public int GetCost(BO.User user);
 }

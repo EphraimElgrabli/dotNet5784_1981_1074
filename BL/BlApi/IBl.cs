@@ -8,6 +8,7 @@ public interface IBl
 
     #region Time and Clock
     public DateTime DateNow { get; }
+    void DeleteAll();
     void PrometeSecond();
     void PrometeMinute();
     void PrometeHour();

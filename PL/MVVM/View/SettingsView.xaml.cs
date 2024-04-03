@@ -57,7 +57,7 @@ namespace PL.MVVM.View
         {
             if (MessageBox.Show("Are you sure you to reset the Database?", "ResetDB - Warning.", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                DalTest.Initialization.Do();
+                s_bl.DeleteAll();
             }
         }
 

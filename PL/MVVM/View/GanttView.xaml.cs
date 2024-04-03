@@ -34,7 +34,7 @@ namespace PL.MVVM.View
 
         public GanttView()
         {
-            s_bl.Task.GanttTime();
+            //s_bl.Task.GanttTime();
             TaskListingGantt = s_bl?.Task.ReadAllTask()!;
             TaskListingGantt = TaskListingGantt.OrderBy(Task => Task.pracentstart);
             InitializeComponent();

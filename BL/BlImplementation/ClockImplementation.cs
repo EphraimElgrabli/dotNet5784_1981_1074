@@ -24,12 +24,12 @@ internal class ClockImplementation : BlApi.IClock
     /// <summary>
     /// Sets the start date of the project.
     /// </summary>
-    public DateTime? SetStartProject(DateTime startdateTime) => _dal.Clock.SetStartProject(startdateTime);
+    public DateTime? SetStartProject() => _dal.Clock.SetStartProject();
 
     /// <summary>
     /// Sets the end date of the project.
     /// </summary>
-    public DateTime? SetEndProject(DateTime enddateTime) => _dal.Clock.SetEndProject(enddateTime);
+    public DateTime? SetEndProject() => _dal.Clock.SetEndProject();
 
     /// <summary>
     /// Gets the status of the project based on current date.

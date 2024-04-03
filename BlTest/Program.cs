@@ -1,4 +1,5 @@
 ﻿using BO;
+using DalApi;
 namespace BlTest;
 
 internal class Program
@@ -139,7 +140,10 @@ internal class Program
                 case 4:
                     Console.WriteLine("enter the start date of the project");
                     DateTime start = DateTime.Parse(Console.ReadLine()!);
-                    s_bl.Clock.SetStartProject(start);
+                    DateTime? minTime = DateTime.MaxValue; ;
+
+                
+                    s_bl.Clock.SetStartProject();
                     Console.WriteLine("Now you are about to set dates for tasks");
                     foreach (var task in s_bl.Task.ReadAllTask())
                     {

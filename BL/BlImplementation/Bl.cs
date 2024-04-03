@@ -1,11 +1,18 @@
 ﻿namespace BlImplementation;
 using BlApi;
+using DO;
 internal class Bl : IBl
 {
+    private DalApi.IDal _dal = DalApi.Factory.Get;
     private static DateTime s_TimeNow = DateTime.Now;
     public IUser User => new UserImplementation(this);
     public ITask Task => new TaskImplemtation(this);
     public IClock Clock => new ClockImplementation(this);
+    public void  DeleteAll(){
+        _dal.Task.DeleteAll();
+        _dal.User.DeleteAll();
+        _dal.Dependency.DeleteAll();
+    }
     public DateTime DateNow
     {
         get { return s_TimeNow; }
