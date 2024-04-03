@@ -2,7 +2,7 @@
 using BlApi;
 internal class Bl : IBl
 {
-    private static DateTime s_TimeNow = DateTime.Now.Date;
+    private static DateTime s_TimeNow = DateTime.Now;
     public IUser User => new UserImplementation(this);
     public ITask Task => new TaskImplemtation(this);
     public IClock Clock => new ClockImplementation(this);

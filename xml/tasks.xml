@@ -575,9 +575,9 @@
     <Alias>overallBudget</Alias>
     <Description>Overall Budget</Description>
     <cost>1546</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
+    <pracentstart>14</pracentstart>
+    <pracentbetween>7</pracentbetween>
+    <pracentend>79</pracentend>
     <CreatedAtDate>2024-04-02T17:48:18.2476553+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2024-08-04T00:00:00</StartDate>
@@ -594,9 +594,9 @@
     <Alias>guestList</Alias>
     <Description>Guest List</Description>
     <cost>1588</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
+    <pracentstart>27</pracentstart>
+    <pracentbetween>4</pracentbetween>
+    <pracentend>69</pracentend>
     <CreatedAtDate>2024-04-02T17:48:18.2487801+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2024-08-27T00:00:00</StartDate>
@@ -613,9 +613,9 @@
     <Alias>venue</Alias>
     <Description>Venue</Description>
     <cost>1933</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
+    <pracentstart>65</pracentstart>
+    <pracentbetween>4</pracentbetween>
+    <pracentend>31</pracentend>
     <CreatedAtDate>2024-04-02T17:48:18.2554844+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2024-11-01T00:00:00</StartDate>
@@ -632,9 +632,9 @@
     <Alias>weddingAttire</Alias>
     <Description>Wedding Attire</Description>
     <cost>1289</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
+    <pracentstart>24</pracentstart>
+    <pracentbetween>6</pracentbetween>
+    <pracentend>70</pracentend>
     <CreatedAtDate>2024-04-02T17:48:18.2862244+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2024-08-21T00:00:00</StartDate>
