@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/EphraimElgrabli/dotNet5784_1981_1074">
-    <img src="logo.png" alt="Logo" width="80" height="80">
+    <img src="Icon.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">WedPlan 👰🤵</h3>
@@ -80,6 +80,11 @@ See the [open issues](https://github.com/EphraimElgrabli/dotNet5784_1981_1074/is
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+## Made By:
+WedPlan is a university project created by [Ephraim Elgrabli](https://www.linkedin.com/in/ephraim-g-elgrabli-43810422a/) and [Maor Levi](https://www.linkedin.com/in/מאור-לוי-198988275/). It was developed as part of their coursework and showcases their skills in C# programming, WPF development, and software engineering principles. 🎓
+We hope that WedPlan will make your wedding planning experience more enjoyable and less stressful. Happy planning! 🥂✨
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -98,34 +103,16 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Made By:
-WedPlan is a university project created by [Ephraim Elgrabli](https://www.linkedin.com/in/ephraim-g-elgrabli-43810422a/) and [Maor Levi](https://www.linkedin.com/in/מאור-לוי-198988275/). It was developed as part of their coursework and showcases their skills in C# programming, WPF development, and software engineering principles. 🎓
-We hope that WedPlan will make your wedding planning experience more enjoyable and less stressful. Happy planning! 🥂✨
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
-* [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/EphraimElgrabli/dotNet5784_1981_1074.svg?style=for-the-badge
 [contributors-url]: https://github.com/EphraimElgrabli/dotNet5784_1981_1074/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/EphraimElgrabli/dotNet5784_1981_1074.svg?style=for-the-badge
 [forks-url]: https://github.com/EphraimElgrabli/dotNet5784_1981_1074/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/EphraimElgrabli/dotNet5784_1981_1074.svg?style=for-the-badge
 [stars-url]: https://github.com/EphraimElgrabli/dotNet5784_1981_1074/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/EphraimElgrabli/dotNet5784_1981_1074.svg?style=for-the-badge
 [issues-url]: https://github.com/EphraimElgrabli/dotNet5784_1981_1074/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [product-screenshot]: Screenshot.png
