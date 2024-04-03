@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Task>
-    <Id>1002</Id>
-    <Alias>venue</Alias>
-    <Description>Venue</Description>
-    <cost>1884</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
-    <CreatedAtDate>2024-04-03T17:08:40.1794138+03:00</CreatedAtDate>
-    <IsMilestone>true</IsMilestone>
-    <StartDate>2024-08-04T00:00:00</StartDate>
-    <ScheduledDate>2024-08-06T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-08-09T00:00:00</DeadlineDate>
-    <CompleteDate>2024-08-09T00:00:00</CompleteDate>
-    <Deliverables>Book the wedding venue</Deliverables>
-    <Remarks>Consider capacity, location, and overall style</Remarks>
-    <UserId xsi:nil="true" />
-    <Complexity>Staff</Complexity>
-  </Task>
-  <Task>
     <Id>1003</Id>
     <Alias>weddingPlannerHired</Alias>
     <Description>Wedding Planner Hired</Description>
@@ -37,25 +18,6 @@
     <Remarks>Choose a planner who understands your vision and budget</Remarks>
     <UserId xsi:nil="true" />
     <Complexity>Friends</Complexity>
-  </Task>
-  <Task>
-    <Id>1004</Id>
-    <Alias>vendors</Alias>
-    <Description>Vendors</Description>
-    <cost>1164</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
-    <CreatedAtDate>2024-04-03T17:08:40.2142417+03:00</CreatedAtDate>
-    <IsMilestone>false</IsMilestone>
-    <StartDate>2024-09-27T00:00:00</StartDate>
-    <ScheduledDate>2024-10-03T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-10-07T00:00:00</DeadlineDate>
-    <CompleteDate>2024-10-07T00:00:00</CompleteDate>
-    <Deliverables>Book all necessary vendors</Deliverables>
-    <Remarks>Include caterer, florist, photographer, videographer, and entertainment</Remarks>
-    <UserId xsi:nil="true" />
-    <Complexity>FamilyMemberWithRoles</Complexity>
   </Task>
   <Task>
     <Id>1005</Id>
@@ -643,6 +605,44 @@
     <CompleteDate>2024-09-22T00:00:00</CompleteDate>
     <Deliverables>Finalize the overall wedding budget</Deliverables>
     <Remarks>Ensure the budget is realistic and comprehensive</Remarks>
+    <UserId xsi:nil="true" />
+    <Complexity>Friends</Complexity>
+  </Task>
+  <Task>
+    <Id>1002</Id>
+    <Alias>venue</Alias>
+    <Description>Venue</Description>
+    <cost>1884</cost>
+    <pracentstart>0</pracentstart>
+    <pracentbetween>0</pracentbetween>
+    <pracentend>0</pracentend>
+    <CreatedAtDate>2024-04-03T17:08:40.1794138+03:00</CreatedAtDate>
+    <IsMilestone>false</IsMilestone>
+    <StartDate>2024-08-04T00:00:00</StartDate>
+    <ScheduledDate>2024-08-06T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-08-09T00:00:00</DeadlineDate>
+    <CompleteDate>2024-08-09T00:00:00</CompleteDate>
+    <Deliverables>Book the wedding venue</Deliverables>
+    <Remarks>Consider capacity, location, and overall style</Remarks>
+    <UserId xsi:nil="true" />
+    <Complexity>Friends</Complexity>
+  </Task>
+  <Task>
+    <Id>1004</Id>
+    <Alias>vendors</Alias>
+    <Description>Vendors</Description>
+    <cost>1164</cost>
+    <pracentstart>0</pracentstart>
+    <pracentbetween>0</pracentbetween>
+    <pracentend>0</pracentend>
+    <CreatedAtDate>2024-04-03T17:08:40.2142417+03:00</CreatedAtDate>
+    <IsMilestone>false</IsMilestone>
+    <StartDate>2024-09-27T00:00:00</StartDate>
+    <ScheduledDate>2024-10-03T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-10-07T00:00:00</DeadlineDate>
+    <CompleteDate>2024-10-07T00:00:00</CompleteDate>
+    <Deliverables>Book all necessary vendors</Deliverables>
+    <Remarks>Include caterer, florist, photographer, videographer, and entertainment</Remarks>
     <UserId xsi:nil="true" />
     <Complexity>Friends</Complexity>
   </Task>

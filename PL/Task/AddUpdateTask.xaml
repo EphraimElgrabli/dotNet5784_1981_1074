@@ -51,6 +51,7 @@
                              FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Description:"/>
+                    
 
                     <TextBox Text="{Binding Deliverables, Mode=TwoWay, NotifyOnValidationError=True,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
@@ -73,7 +74,7 @@
                              FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Remarks:"/>
-                    
+
                     <TextBox Text="{Binding Cost, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
                              Width="360" 
@@ -84,16 +85,14 @@
                              FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Cost:"/>
-                    <TextBox Text="{Binding User.Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
-                            HorizontalAlignment="Center" 
-                            Width="360" 
-                            Margin="8" 
-                            Height="40" 
-                            Style="{StaticResource ModernTB}" 
-                            FontFamily="{DynamicResource Playfair Italic}" 
-                            FontSize="16" 
-                            FontWeight="ExtraBold"
-                            ToolTip="Assign Task To User::"/>
+                    <TextBox Text="{Binding User.Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
+        Width="360" 
+        Height="40" 
+        Style="{StaticResource ModernTB}" 
+        FontFamily="{DynamicResource Playfair Italic}" 
+        FontSize="16" 
+        FontWeight="ExtraBold"
+        ToolTip="Assign Task To User::"/>
                 </StackPanel>
             </Border>
 
@@ -114,7 +113,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        
+
                         <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,5,0">
                             <Label Content="Start Date:"
                                    FontFamily="{StaticResource Playfair Regular}"
@@ -145,7 +144,7 @@
                             <Calendar Height="160"
                                       SelectedDate="{Binding CompleteDate}"/>
                         </StackPanel>
-                        
+
                         <StackPanel Grid.Row="1" Grid.Column="1" Margin="10,5,10,0">
                             <Label Content="Dedline Date:"
                                    FontFamily="{StaticResource Playfair Regular}"
@@ -158,7 +157,7 @@
                     </Grid>
                 </StackPanel>
             </Border>
-            
+
             <Button Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"   
                             HorizontalAlignment="Center"
                             VerticalAlignment="Bottom"

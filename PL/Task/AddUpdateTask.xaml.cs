@@ -33,12 +33,13 @@ namespace PL.Task
             DependencyProperty.Register("ThisTask", typeof(BO.Task), typeof(AddUpdateTask));
         public AddUpdateTask(int Id = 0)
         {
-          
+
             try
             {
                 if (Id == 0)
                 {
-                    ThisTask = new BO.Task() { 
+                    ThisTask = new BO.Task()
+                    {
                         Id = 0,
                         Alias = "",
                         Description = "",
@@ -53,8 +54,8 @@ namespace PL.Task
                         Deliverables = "",
                         Remarks = "",
                         Complexity = BO.UserLevel.None
-                        
-                        };
+
+                    };
                     flag = true;
                 }
                 else
@@ -66,22 +67,26 @@ namespace PL.Task
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); Close(); }
 
-            
+
         }
 
 
         private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
         {
-            
+
             try
             {
                 UserInTask? UserToAssign;
-                if (ThisTask.User.Id != null)
+                if (ThisTask.User != null)
                 {
-                     UserToAssign = s_bl?.Task.userintask(ThisTask.User.Id);//(ThisTask.User.Id);
-                }
-                else {
-                    UserToAssign = null;
+                    if (ThisTask.User.Id != null)
+                    {
+                        UserToAssign = s_bl?.Task.userintask(ThisTask.User.Id);//(ThisTask.User.Id);
+                    }
+                    else
+                    {
+                        UserToAssign = null;
+                    }
                 }
                 BO.Task task = new BO.Task()
                 {
@@ -115,7 +120,7 @@ namespace PL.Task
                          MessageBoxImage.Hand,
                          MessageBoxResult.Cancel);
             }
-         
+
         }
 
         private void AddUser_Draggable(object sender, MouseButtonEventArgs e)
