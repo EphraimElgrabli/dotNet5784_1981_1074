@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,7 +52,9 @@ namespace PL.Task
                         CompleteDate = null,
                         Deliverables = "",
                         Remarks = "",
-                        Complexity = BO.UserLevel.None};
+                        Complexity = BO.UserLevel.None
+                        
+                        };
                     flag = true;
                 }
                 else
@@ -72,6 +75,14 @@ namespace PL.Task
             
             try
             {
+                UserInTask? UserToAssign;
+                if (ThisTask.User.Id != null)
+                {
+                     UserToAssign = s_bl?.Task.userintask(ThisTask.User.Id);//(ThisTask.User.Id);
+                }
+                else {
+                    UserToAssign = null;
+                }
                 BO.Task task = new BO.Task()
                 {
                     Id = ThisTask.Id,
@@ -85,7 +96,9 @@ namespace PL.Task
                     Deliverables = ThisTask.Deliverables,
                     Remarks = ThisTask.Remarks,
                     Complexity = ThisTask.Complexity,
-                    Cost= ThisTask.Cost
+                    Cost = ThisTask.Cost,
+                    User = UserToAssign,
+
                 };
                 if (flag == false)
                     s_bl?.Task.Update(task);

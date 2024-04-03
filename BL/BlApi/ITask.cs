@@ -1,4 +1,6 @@
-﻿namespace BlApi;
+﻿using BO;
+
+namespace BlApi;
 
 public interface ITask
 {
@@ -14,5 +16,6 @@ public interface ITask
     public DateTime CalculateStartTime(BO.Task task);
     public BO.Status CalculateStatus(int id);
     public void GanttTime();
+    public UserInTask? userintask(int? id);
 
 }

@@ -84,7 +84,7 @@
                              FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Cost:"/>
-                    <TextBox Text="{Binding Cost, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
+                    <TextBox Text="{Binding User.Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
                             HorizontalAlignment="Center" 
                             Width="360" 
                             Margin="8" 
