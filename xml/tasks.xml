@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfTask xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Task>
-    <Id>1025</Id>
-    <Alias>finalGuestCountConfirmed</Alias>
-    <Description>Final Guest Count Confirmed</Description>
-    <cost>1065</cost>
-    <pracentstart>98</pracentstart>
-    <pracentbetween>1</pracentbetween>
-    <pracentend>1</pracentend>
-    <CreatedAtDate>2024-04-03T17:08:40.5458272+03:00</CreatedAtDate>
-    <IsMilestone>false</IsMilestone>
-    <StartDate>2024-09-30T00:00:00</StartDate>
-    <ScheduledDate>2024-10-05T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-10-06T00:00:00</DeadlineDate>
-    <CompleteDate>2024-10-06T00:00:00</CompleteDate>
-    <Deliverables>Confirm the final guest count with the caterer and venue</Deliverables>
-    <Remarks>Ensure accuracy for seating and catering purposes</Remarks>
-    <UserId xsi:nil="true" />
-    <Complexity>Friends</Complexity>
-  </Task>
-  <Task>
     <Id>1027</Id>
     <Alias>hina</Alias>
     <Description>Henna</Description>
@@ -613,9 +594,9 @@
     <Alias>welcomeBagsAssembled</Alias>
     <Description>Welcome Bags Assembled</Description>
     <cost>1492</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
-    <pracentend>0</pracentend>
+    <pracentstart>98</pracentstart>
+    <pracentbetween>1</pracentbetween>
+    <pracentend>1</pracentend>
     <CreatedAtDate>2024-04-03T17:08:40.5311919+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
     <StartDate>2024-10-20T00:00:00</StartDate>
@@ -632,8 +613,8 @@
     <Alias>rehearsalConducted</Alias>
     <Description>Rehearsal Conducted</Description>
     <cost>1173</cost>
-    <pracentstart>0</pracentstart>
-    <pracentbetween>0</pracentbetween>
+    <pracentstart>99</pracentstart>
+    <pracentbetween>1</pracentbetween>
     <pracentend>0</pracentend>
     <CreatedAtDate>2024-04-03T17:08:40.5539742+03:00</CreatedAtDate>
     <IsMilestone>false</IsMilestone>
@@ -644,6 +625,25 @@
     <Deliverables>Conduct the wedding rehearsal</Deliverables>
     <Remarks>Ensure all participants understand their roles and responsibilities</Remarks>
     <UserId>379659829</UserId>
+    <Complexity>Friends</Complexity>
+  </Task>
+  <Task>
+    <Id>1025</Id>
+    <Alias>finalGuestCountConfirmed</Alias>
+    <Description>Final Guest Count Confirmed</Description>
+    <cost>1065</cost>
+    <pracentstart>98</pracentstart>
+    <pracentbetween>1</pracentbetween>
+    <pracentend>1</pracentend>
+    <CreatedAtDate>2024-04-03T17:08:40.5458272+03:00</CreatedAtDate>
+    <IsMilestone>false</IsMilestone>
+    <StartDate>2024-09-30T00:00:00</StartDate>
+    <ScheduledDate>2024-10-05T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-10-06T00:00:00</DeadlineDate>
+    <CompleteDate>2024-10-06T00:00:00</CompleteDate>
+    <Deliverables>Confirm the final guest count with the caterer and venue</Deliverables>
+    <Remarks>Ensure accuracy for seating and catering purposes</Remarks>
+    <UserId xsi:nil="true" />
     <Complexity>Friends</Complexity>
   </Task>
 </ArrayOfTask>
