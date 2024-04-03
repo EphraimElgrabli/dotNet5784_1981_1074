@@ -1,66 +1,115 @@
-# קורס מיני פרוייקט
-### מאת: אפרים ומאור
+<a name="readme-top"></a>
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+
+<br />
+<div align="center">
+  <a href="https://github.com/EphraimElgrabli/dotNet5784_1981_1074">
+    <img src="Icon.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">WedPlan 👰🤵</h3>
+
+  <p align="center">
+    WedPlan: A C# wedding planner with task assignment, budgeting, and guest management. 
+    <br />
+    ·
+    <a href="https://github.com/EphraimElgrabli/dotNet5784_1981_1074/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/EphraimElgrabli/dotNet5784_1981_1074/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]]()
+
+WedPlan is an innovative program designed to help you manage your upcoming wedding with ease and efficiency. Say goodbye to the stress and chaos of wedding planning and hello to a streamlined, organized experience! 🎉
+
+## Features ✨
+* Task Assignment: Assign tasks to your friends and family members, making sure everyone is involved and knows their responsibilities. 📋👥
+* Budget Tracking: Keep a close eye on your wedding budget and expenses, ensuring you stay within your financial limits. 💸📊
+* WhatsApp-based RSVP (coming soon): Allow your guests to easily RSVP via WhatsApp, making the process convenient and accessible for everyone. 📱✅
+* Auto Table Management (coming soon): Let WedPlan handle the seating arrangements for your reception, taking the hassle out of table planning. 🍽️🪑
+* Guest Management (coming soon): Keep track of your guest list, dietary requirements, and other important information in one centralized location. 👥📝
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
+### Technology 🖥️
+
+WedPlan is built using the following technologies and principles:
+
+* C#: The core programming language used for the application.
+* WPF: The framework used to create the beautiful and intuitive graphical user interface. 🎨
+* 3 Layers Model: The application follows a three-layer architecture for a modular and maintainable codebase. �層
+* MVVM: The Model-View-ViewModel pattern is employed to ensure a clean separation of concerns. 🏗️
+* Performance: WedPlan is designed with running time efficiency in mind, providing a smooth and responsive user experience. ⚡
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-      Welcome to Your Dream Wedding Planner!
+### Download 📥
 
-Congratulations on your upcoming wedding! Planning your special day should be an exciting journey, not a stressful one. That's where **Your Dream Wedding Planner** comes in.
+To download WedPlan, simply visit the Releases section of this repository and download the latest version. 🎁
 
-## About
-
-Your Dream Wedding Planner is a comprehensive web application designed to simplify and enhance the wedding planning process. Whether you're a newly engaged couple embarking on this adventure together or a seasoned wedding planner helping others create their dream day, this app has everything you need to plan, organize, and execute a flawless wedding.
-
-## Features
-
-- **Effortless Guest Management:** Seamlessly manage your guest list, track RSVPs, and communicate with your guests in real-time.
-- **Budget Bliss:** Keep your finances in check with our intuitive budget tracker, ensuring you stay on track without sacrificing your dream wedding.
-- **Vendor Wonderland:** Easily organize and keep track of all your vendors, contracts, and payments in one convenient location.
-- **Task Mastery:** Assign and manage tasks to your wedding party, ensuring nothing falls through the cracks.
-- **Seating Serenity:** Design and manage your seating arrangements with ease, ensuring every guest feels welcome and comfortable.
-- **Timeline Tamer:** Plan and visualize the timeline of events for your big day, ensuring everything runs smoothly from start to finish.
-- **Memory Lane:** Collect and share photos with your loved ones, creating lasting memories of your magical day.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+<!-- ROADMAP -->
+## Roadmap
 
-## Stage 0
-- [x] completed.
+- [x] Building the Base of the project
+- [x] Creating a nice GUI to the project.
+- [ ] Guests and table auto managment
+- [ ] Whatsapp-Based RSVP wtih a js server
+- [ ] Multi-language Support
+    - [ ] Hebrew
+    - [ ] French
 
-## Stage 1
-- [x] completed. test.
+See the [open issues](https://github.com/EphraimElgrabli/dotNet5784_1981_1074/issues) for a full list of proposed features (and known issues).
 
-## Stage 2
-- [x] Ch 1: Creating an ICrud.
-- [x] Ch 2: Implementing DalApi with ICrud.
-- [x] Ch 3: Creating IDal.
-- [x] Ch 4: Implementing DalList for finishing IDal.
-- [x] Ch 5: Updating to internal.
-- [x] Ch 6: Updating the initlaztion in DalList.
-- [x] Ch 7: Updating the main program of DalTest.
-- [x] Ch 8: Updating the CRUD to work with Linq.
-- [x] Ch 9: Updateing the readall function to return a list of object using a specific filter
-- [x] Ch 10: Adding a new readfunction that will return object based on a filter.
-- [x] Ch 11: Adding exceptions to the entire program.
-- [x] Ch 12: Making sure that we didnt broke anything and creating a tag.
-
-## Stage 3
-- [x] Ch 1: Creating a new project named DalXml in Class Library type.
-- [x] Ch 2: Creating a configuration files that will used as the database for the project in a library called "xml".
-- [x] Ch 3: Creating a config class.
-- [x] Ch 4: Implemelmentig the XmlTools file into the project.
-- [x] Ch 5: IMplamnting the data access classes in the project DalXml
-- [x] Ch 6: Creating a new class named DalXml that will implemnt IDal
-- [x] Ch 7: Testing the entire project and the database layer using DalTest.
-- [x] Ch 8: Making sure that we didnt broke anything and creating a tag.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## Stage 4
-- [x] completed. test.
-      
-## Stage 5
-- [x] completed. test.
-      
-## Stage 6
-- [x] completed. test.
+## Made By:
+WedPlan is a university project created by [Ephraim Elgrabli](https://www.linkedin.com/in/ephraim-g-elgrabli-43810422a/) and [Maor Levi](https://www.linkedin.com/in/מאור-לוי-198988275/). It was developed as part of their coursework and showcases their skills in C# programming, WPF development, and software engineering principles. 🎓
+We hope that WedPlan will make your wedding planning experience more enjoyable and less stressful. Happy planning! 🥂✨
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/EphraimElgrabli/dotNet5784_1981_1074.svg?style=for-the-badge
+[contributors-url]: https://github.com/EphraimElgrabli/dotNet5784_1981_1074/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/EphraimElgrabli/dotNet5784_1981_1074.svg?style=for-the-badge
+[forks-url]: https://github.com/EphraimElgrabli/dotNet5784_1981_1074/network/members
+[stars-shield]: https://img.shields.io/github/stars/EphraimElgrabli/dotNet5784_1981_1074.svg?style=for-the-badge
+[stars-url]: https://github.com/EphraimElgrabli/dotNet5784_1981_1074/stargazers
+[issues-shield]: https://img.shields.io/github/issues/EphraimElgrabli/dotNet5784_1981_1074.svg?style=for-the-badge
+[issues-url]: https://github.com/EphraimElgrabli/dotNet5784_1981_1074/issues
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[product-screenshot]: Screenshot.png
