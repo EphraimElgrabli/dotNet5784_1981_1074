@@ -75,13 +75,18 @@ namespace PL.Task
             
             try
             {
-                UserInTask? UserToAssign;
-                if (ThisTask.User.Id != null)
+
+                
+                if (ThisTask.User != null)
                 {
-                     UserToAssign = s_bl?.Task.userintask(ThisTask.User.Id);//(ThisTask.User.Id);
-                }
-                else {
-                    UserToAssign = null;
+                    if (ThisTask.User.Id != null)
+                    {
+                        ThisTask.User = s_bl?.Task.userintask(ThisTask.User.Id);//(ThisTask.User.Id);
+                    }
+                    else
+                    {
+                        ThisTask.User = null;
+                    }
                 }
                 BO.Task task = new BO.Task()
                 {
@@ -97,7 +102,7 @@ namespace PL.Task
                     Remarks = ThisTask.Remarks,
                     Complexity = ThisTask.Complexity,
                     Cost = ThisTask.Cost,
-                    User = UserToAssign,
+                    User = ThisTask.User,
 
                 };
                 if (flag == false)
