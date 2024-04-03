@@ -9,6 +9,7 @@ namespace PL.MVVM.ViewModel
 {
     class SettingsViewModel:ObservableObject
     {
+        static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
         private DateTime _time;
         public DateTime Time
         {
@@ -18,6 +19,10 @@ namespace PL.MVVM.ViewModel
                 _time = value;
                 OnPropertyChanged(nameof(Time));
             }
+        }
+        public void UpdateTime()
+        {
+            Time = s_bl.DateNow;
         }
     }
 }

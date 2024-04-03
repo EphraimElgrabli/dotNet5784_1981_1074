@@ -24,7 +24,20 @@ namespace PL.MVVM.View
         static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
         public HomeView()
         {
+
             InitializeComponent();
         }
+        public void Refresh()
+        {
+
+            var parent = Parent as Panel;
+            if (parent != null)
+            {
+                var index = parent.Children.IndexOf(this);
+                parent.Children.RemoveAt(index);
+                parent.Children.Insert(index, new HomeView());
+            }
+        }
+                                                                                                               
     }
 }

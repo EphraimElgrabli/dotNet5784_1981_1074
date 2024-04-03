@@ -65,13 +65,21 @@ namespace PL.MVVM.View
         {
             s_bl.PrometeMinute();
             ((MainViewModel)DataContext).Time = s_bl.DateNow;
+            ((MainViewModel)DataContext).SettingsVM.Time = s_bl.DateNow;
+            ((MainViewModel)DataContext).HomeVM.Time = s_bl.DateNow;
+            
 
         }
 
         private void Button_Hour(object sender, RoutedEventArgs e)
         {
+            
             s_bl.PrometeHour();
             ((MainViewModel)DataContext).Time = s_bl.DateNow;
+            ((MainViewModel)DataContext).SettingsVM.Time = s_bl.DateNow;
+            ((MainViewModel)DataContext).HomeVM.Time = s_bl.DateNow;
+            var setting = (SettingsViewModel)DataContext;
+            setting.UpdateTime();
         }
     }
 }

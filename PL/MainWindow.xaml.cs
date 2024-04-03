@@ -36,11 +36,13 @@ namespace PL
             {
                 
                 var mainViewModel = (MainViewModel)DataContext;
+             
                 mainViewModel.Viewer = viewer;
                 mainViewModel.HomeVM.Viewer = viewer;
                 mainViewModel.TasksVM.Viewer = viewer;
-                mainViewModel.HomeVM.Time = s_bl.DateNow;
                 mainViewModel.Time = s_bl.DateNow;
+                mainViewModel.SettingsVM.Time= s_bl.DateNow;
+                mainViewModel.HomeVM.Time = s_bl.DateNow;
                 mainViewModel.TasksVM.GetUserTasks();
             }
             
