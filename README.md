@@ -15,9 +15,6 @@
   <p align="center">
     WedPlan: A C# wedding planner with task assignment, budgeting, and guest management. 
     <br />
-    <a href="https://github.com/EphraimElgrabli/dotNet5784_1981_1074"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
     ·
     <a href="https://github.com/EphraimElgrabli/dotNet5784_1981_1074/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
@@ -29,7 +26,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]]()
 
 WedPlan is an innovative program designed to help you manage your upcoming wedding with ease and efficiency. Say goodbye to the stress and chaos of wedding planning and hello to a streamlined, organized experience! 🎉
 
