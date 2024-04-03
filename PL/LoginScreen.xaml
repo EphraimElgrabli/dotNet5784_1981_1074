@@ -15,7 +15,7 @@
         DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
     <Border Background="#EADBC8" 
             CornerRadius="20"
-            BorderThickness="10"
+            BorderThickness="5"
             BorderBrush="{DynamicResource BoldBlue}">
         <Grid>
             <Grid.ColumnDefinitions>
