@@ -32,11 +32,20 @@
 - [x] Ch 8: Making sure that we didnt broke anything and creating a tag.
 
 
+# Stage 4
+- [x] completed. test.
+      
+# Stage 5
+- [x] completed. test.
+      
+# Stage 6
+- [x] completed. test.
 
 
 
 
-                                  Welcome to Your Dream Wedding Planner!
+
+                                           Welcome to Your Dream Wedding Planner!
 
 Congratulations on your upcoming wedding! Planning your special day should be an exciting journey, not a stressful one. That's where **Your Dream Wedding Planner** comes in.
 
@@ -53,8 +62,4 @@ Your Dream Wedding Planner is a comprehensive web application designed to simpli
 - **Seating Serenity:** Design and manage your seating arrangements with ease, ensuring every guest feels welcome and comfortable.
 - **Timeline Tamer:** Plan and visualize the timeline of events for your big day, ensuring everything runs smoothly from start to finish.
 - **Memory Lane:** Collect and share photos with your loved ones, creating lasting memories of your magical day.
-
-## Getting Started
-
-To get started with Your Dream Wedding Planner, follow these simple steps:
 
