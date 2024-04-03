@@ -20,7 +20,7 @@ internal class TaskImplemtation : BlApi.ITask
     {
         BO.Task? task = Read(id);
 
-        DateTime currentDate = DateTime.Now;
+        DateTime currentDate = DateTime.Now.AddMonths(6);
 
         if (task.ScheduledDate > currentDate)
         {
