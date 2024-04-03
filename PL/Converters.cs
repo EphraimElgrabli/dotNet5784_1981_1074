@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Data;
+using System.Windows.Media;
 using BO;
 using DO;
 
@@ -59,35 +60,28 @@ class NameOfViewer : IValueConverter
         throw new NotImplementedException();
     }
 }
-class Color : IValueConverter
+class StatusColor : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-       
-        if (value is BO.Task)
+
+        if (value is BO.Task task)
         {
-            if(((BO.Task)value).Status == BO.Status.Unscheduled )
-            { 
-                return "Black";
-            }
-            if (((BO.Task)value).Status == BO.Status.Scheduled)
+            switch (task.Status)
             {
-                return "Blue";
-            }
-            if (((BO.Task)value).Status == BO.Status.OnTrack)
-            {
-                return "Green";
-            }
-            if (((BO.Task)value).Status == BO.Status.Done)
-            {
-                return "Red";
-            }
-            if (((BO.Task)value).Status == BO.Status.InJeopardy)
-            {
-                return "Orange";
+                case BO.Status.Unscheduled:
+                    return Brushes.Red;
+                case BO.Status.Scheduled:
+                    return Brushes.DarkOliveGreen;
+                case BO.Status.OnTrack:
+                    return Brushes.DarkSeaGreen;
+                case BO.Status.Done:
+                    return Brushes.Green;
+                case BO.Status.InJeopardy:
+                    return Brushes.DarkRed;
             }
         }
-        return "Unkown User";
+        return Brushes.DeepPink;
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

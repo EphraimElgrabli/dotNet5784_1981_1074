@@ -6,7 +6,7 @@
 
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="{DynamicResource BoldBlue}"/>
+                <Setter Property="Background" Value="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ListViewItem}, Converter={StaticResource StatusColorConverter}}"/>
             </Trigger>
         </Style.Triggers>
 
@@ -34,7 +34,7 @@
 
                             <Border HorizontalAlignment="Stretch" 
                                     VerticalAlignment="Stretch"
-                                    Background="{DynamicResource BoldBlue}"
+                                    Background="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ListViewItem}, Converter={StaticResource StatusColorConverter}}"
                                     Grid.Column="1"
                                     CornerRadius="10"/>
 

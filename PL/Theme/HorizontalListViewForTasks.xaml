@@ -136,7 +136,7 @@
                                                 VerticalAlignment="Stretch"
                                                 Margin="0,50,0,0">
                                         <ui:ModernBadge BadgeText="{Binding DataContext.Status, RelativeSource={RelativeSource AncestorType=ListViewItem}}" 
-                                                        BadgeColor="DarkRed" 
+                                                        BadgeColor="{Binding DataContext, RelativeSource={RelativeSource AncestorType=ListViewItem}, Converter={StaticResource StatusColorConverter}}" 
                                                         HorizontalAlignment="Left"
                                                         VerticalAlignment="Bottom"/>
          

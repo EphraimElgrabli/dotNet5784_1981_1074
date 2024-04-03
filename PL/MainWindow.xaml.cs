@@ -30,7 +30,6 @@ namespace PL
         static readonly BlApi.IBl? s_bl = BlApi.Factory.Get();
         public MainWindow(BO.User? viewer = null)
         {
-            //BIBIHAMELH = s_bl?.DateNow;
             InitializeComponent();
             if (viewer != null)
             {
@@ -58,6 +57,13 @@ namespace PL
         {
             if (e.LeftButton == MouseButtonState.Pressed)
                 DragMove();
+        }
+
+        private void rdb_click(object sender, MouseEventArgs e)
+        {
+            var mainViewModel = (MainViewModel)DataContext;
+            mainViewModel.Time = s_bl.DateNow;
+            mainViewModel.HomeVM.Time = s_bl.DateNow;
         }
     }
 }

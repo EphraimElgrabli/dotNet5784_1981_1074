@@ -8,4 +8,5 @@
     <local:NameOfViewer x:Key="NameConveter"/>
     <local:NameToProfilePicConverter x:Key="NameToProfilePicConverter"/>
     <local:AliasToBannerPicConverter x:Key="AliasToBannerPicConverter"/>
+    <local:StatusColor x:Key="StatusColorConverter"/>
 </ResourceDictionary>

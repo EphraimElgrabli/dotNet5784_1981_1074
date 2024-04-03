@@ -9,10 +9,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800"
              >
-    <UserControl.DataContext>
-        <viewModel:MainViewModel/>
-    </UserControl.DataContext>
-
     <Border Background="{DynamicResource StrongBeige}" CornerRadius="10">
         <Grid>
             <Grid.RowDefinitions>
@@ -110,7 +106,7 @@
                             HorizontalAlignment="Left"/>
                         <Border  Grid.Row="1" VerticalAlignment="Center"  Background="{DynamicResource LightBeige}" BorderThickness="1,1,0,0"  HorizontalAlignment="Center">
 
-                            <TextBlock Text="{Binding Time}" 
+                            <TextBlock Text="{Binding Time, Mode=TwoWay}" 
                                            Width="220"
                                            Height="50"
                                            FontSize="22"

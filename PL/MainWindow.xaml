@@ -16,7 +16,10 @@
     <Window.DataContext>
         <viewModel:MainViewModel/>
     </Window.DataContext>
-    <Border Background="{DynamicResource LightBeige}" CornerRadius="20">
+    <Border Background="{DynamicResource LightBeige}" 
+            CornerRadius="20"
+            BorderThickness="10"
+            BorderBrush="{DynamicResource BoldBlue}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="70"/>
@@ -31,7 +34,9 @@
                              Height="50"
                              Style="{StaticResource MenuIcons}"
                              IsChecked="True"
-                             Command="{Binding HomeViewCommand}"/>
+                             Command="{Binding HomeViewCommand}"                                                                                                                      
+                             MouseEnter="rdb_click"
+                             />
 
                 <RadioButton Content="../images/Tasks.png"
                              Height="50"

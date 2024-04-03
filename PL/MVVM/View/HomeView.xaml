@@ -52,7 +52,7 @@
                         HorizontalAlignment="Center"
                         Margin="135,0,0,0"/>
 
-                <TextBlock Text="{Binding Time}" 
+                <TextBlock Text="{Binding Time, Mode=TwoWay}" 
                            Grid.Row="0"
                            Grid.Column="0"
                            FontFamily="{StaticResource Playfair Regular}"
