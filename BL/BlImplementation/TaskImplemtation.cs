@@ -129,7 +129,7 @@ internal class TaskImplemtation : BlApi.ITask
         DO.Task? doTask = _dal.Task.Read(id);
         if (doTask == null)
             throw new BO.BlDoesNotExistException($"Task with ID={id} does Not exist");
-        UserInTask? u = userintask(doTask.Id);
+        UserInTask? u = userintask(doTask.UserId);
         return new BO.Task()
         {
             Id = doTask.Id,
@@ -232,7 +232,7 @@ internal class TaskImplemtation : BlApi.ITask
                         Deliverables = doTask.Deliverables,
                         Cost=doTask.cost,
                         Remarks = doTask.Remarks,
-                        User = userintask(doTask.Id),
+                        User = userintask(doTask.UserId),
                         Dependencies = GetAllDependencie(doTask.Id),
                         pracentstart = doTask.pracentstart,
                         pracentbetween = doTask.pracentbetween,
@@ -256,7 +256,7 @@ internal class TaskImplemtation : BlApi.ITask
                         Deliverables = doTask.Deliverables,
                         Cost=doTask.cost,
                         Remarks = doTask.Remarks,
-                        User = userintask(doTask.Id),
+                        User = userintask(doTask.UserId),
                         Dependencies = GetAllDependencie(doTask.Id)
                     }
                     where filter(boTask)

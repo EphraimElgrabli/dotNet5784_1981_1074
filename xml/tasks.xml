@@ -20,25 +20,6 @@
     <Complexity>Friends</Complexity>
   </Task>
   <Task>
-    <Id>1026</Id>
-    <Alias>rehearsalConducted</Alias>
-    <Description>Rehearsal Conducted</Description>
-    <cost>1173</cost>
-    <pracentstart>99</pracentstart>
-    <pracentbetween>1</pracentbetween>
-    <pracentend>0</pracentend>
-    <CreatedAtDate>2024-04-03T17:08:40.5539742+03:00</CreatedAtDate>
-    <IsMilestone>false</IsMilestone>
-    <StartDate>2024-12-30T00:00:00</StartDate>
-    <ScheduledDate>2024-12-31T00:00:00</ScheduledDate>
-    <DeadlineDate>2024-12-31T00:00:00</DeadlineDate>
-    <CompleteDate>2024-12-31T00:00:00</CompleteDate>
-    <Deliverables>Conduct the wedding rehearsal</Deliverables>
-    <Remarks>Ensure all participants understand their roles and responsibilities</Remarks>
-    <UserId xsi:nil="true" />
-    <Complexity>Friends</Complexity>
-  </Task>
-  <Task>
     <Id>1027</Id>
     <Alias>hina</Alias>
     <Description>Henna</Description>
@@ -643,6 +624,25 @@
     <CompleteDate>2024-10-27T00:00:00</CompleteDate>
     <Deliverables>Assemble welcome bags for out-of-town guests</Deliverables>
     <Remarks>Include snacks, maps, and wedding weekend itinerary</Remarks>
+    <UserId>379659829</UserId>
+    <Complexity>Friends</Complexity>
+  </Task>
+  <Task>
+    <Id>1026</Id>
+    <Alias>rehearsalConducted</Alias>
+    <Description>Rehearsal Conducted</Description>
+    <cost>1173</cost>
+    <pracentstart>0</pracentstart>
+    <pracentbetween>0</pracentbetween>
+    <pracentend>0</pracentend>
+    <CreatedAtDate>2024-04-03T17:08:40.5539742+03:00</CreatedAtDate>
+    <IsMilestone>false</IsMilestone>
+    <StartDate>2024-12-30T00:00:00</StartDate>
+    <ScheduledDate>2024-12-31T00:00:00</ScheduledDate>
+    <DeadlineDate>2024-12-31T00:00:00</DeadlineDate>
+    <CompleteDate>2024-12-31T00:00:00</CompleteDate>
+    <Deliverables>Conduct the wedding rehearsal</Deliverables>
+    <Remarks>Ensure all participants understand their roles and responsibilities</Remarks>
     <UserId>379659829</UserId>
     <Complexity>Friends</Complexity>
   </Task>
