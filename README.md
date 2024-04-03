@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/EphraimElgrabli/dotNet5784_1981_1074">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">WedPlan 👰🤵</h3>
@@ -98,16 +98,8 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Made By:
-WedPlan is a university project created by Ephraim Elgrabli and Maor Levi. It was developed as part of their coursework and showcases their skills in C# programming, WPF development, and software engineering principles. 🎓
+WedPlan is a university project created by [Ephraim Elgrabli](https://www.linkedin.com/in/ephraim-g-elgrabli-43810422a/) and [Maor Levi](https://www.linkedin.com/in/מאור-לוי-198988275/). It was developed as part of their coursework and showcases their skills in C# programming, WPF development, and software engineering principles. 🎓
 We hope that WedPlan will make your wedding planning experience more enjoyable and less stressful. Happy planning! 🥂✨
 
 
@@ -136,6 +128,4 @@ Use this space to list resources you find helpful and would like to give credit 
 [issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
 [issues-url]: https://github.com/EphraimElgrabli/dotNet5784_1981_1074/issues
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/מאור-לוי-198988275/
-[linkedin-url2]: https://www.linkedin.com/in/ephraim-g-elgrabli-43810422a/
 [product-screenshot]: Screenshot.png
