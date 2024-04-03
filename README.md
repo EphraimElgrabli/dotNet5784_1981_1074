@@ -5,7 +5,7 @@
 
 
 
-                                           Welcome to Your Dream Wedding Planner!
+      Welcome to Your Dream Wedding Planner!
 
 Congratulations on your upcoming wedding! Planning your special day should be an exciting journey, not a stressful one. That's where **Your Dream Wedding Planner** comes in.
 
