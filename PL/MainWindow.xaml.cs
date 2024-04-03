@@ -65,5 +65,10 @@ namespace PL
             mainViewModel.Time = s_bl.DateNow;
             mainViewModel.HomeVM.Time = s_bl.DateNow;
         }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -35,7 +35,7 @@
                              Style="{StaticResource MenuIcons}"
                              IsChecked="True"
                              Command="{Binding HomeViewCommand}"                                                                                                                      
-                             MouseEnter="rdb_click"
+                             MouseEnter="rdb_click" Checked="RadioButton_Checked"
                              />
 
                 <RadioButton Content="../images/Tasks.png"

@@ -17,14 +17,6 @@
     <Level>FamilyMemberWithRoles</Level>
   </User>
   <User>
-    <Id>379659829</Id>
-    <Email>Bride@gmail.com</Email>
-    <PhoneNumber>97275</PhoneNumber>
-    <Name>Bride</Name>
-    <password>123456</password>
-    <Level>Staff</Level>
-  </User>
-  <User>
     <Id>344312600</Id>
     <Email>Mom Of Groom@gmail.com</Email>
     <PhoneNumber>97242</PhoneNumber>
@@ -87,5 +79,13 @@
     <Name>Maor Levi</Name>
     <password>Admin</password>
     <Level>Producer</Level>
+  </User>
+  <User>
+    <Id>379659829</Id>
+    <Email>Bride@gmail.com</Email>
+    <PhoneNumber>97275</PhoneNumber>
+    <Name>Bride</Name>
+    <password>123456</password>
+    <Level>Staff</Level>
   </User>
 </ArrayOfUser>

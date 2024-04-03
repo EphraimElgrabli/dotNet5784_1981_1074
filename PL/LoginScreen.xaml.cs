@@ -36,6 +36,7 @@ namespace PL
         public LoginScreen()
         {
             InitializeComponent();
+          
         }
 
         private void loginBtn_click(object sender, RoutedEventArgs e)
