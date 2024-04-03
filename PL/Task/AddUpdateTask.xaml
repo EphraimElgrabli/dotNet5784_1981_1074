@@ -111,7 +111,8 @@
                                    FontWeight="Bold"
                                    Foreground="{DynamicResource BoldBlue}"/>
 
-                            <Calendar Height="160"/>
+                            <Calendar Height="160"
+                                      SelectedDate="{Binding StartDate}"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="0" Grid.Column="1" Margin="10,0,10,0">
@@ -120,7 +121,8 @@
                                    FontSize="16"
                                    FontWeight="Bold"
                                    Foreground="{DynamicResource BoldBlue}"/>
-                            <Calendar Height="160"/>
+                            <Calendar Height="160"
+                                      SelectedDate="{Binding ScheduledDate}"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,5,5,0">
@@ -129,7 +131,8 @@
                                    FontSize="16"
                                    FontWeight="Bold"
                                    Foreground="{DynamicResource BoldBlue}"/>
-                            <Calendar Height="160"/>
+                            <Calendar Height="160"
+                                      SelectedDate="{Binding CompleteDate}"/>
                         </StackPanel>
                         
                         <StackPanel Grid.Row="1" Grid.Column="1" Margin="10,5,10,0">
@@ -138,7 +141,8 @@
                                    FontSize="16"
                                    FontWeight="Bold"
                                    Foreground="{DynamicResource BoldBlue}"/>
-                            <Calendar Height="160"/>
+                            <Calendar Height="160"
+                                      SelectedDate="{Binding DeadlineDate}"/>
                         </StackPanel>
                     </Grid>
                 </StackPanel>
