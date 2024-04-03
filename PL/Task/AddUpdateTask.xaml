@@ -9,7 +9,9 @@
         Title="AddUpdateUser" Height="640" Width="880"
         WindowStyle="None" Background="Transparent"
         ResizeMode="NoResize"
-        DataContext="{Binding ThisTask, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        >
+    <!--DataContext="{Binding ThisTask, RelativeSource={RelativeSource Self}, Mode=TwoWay}">-->
     <Border CornerRadius="10,10,10,10">
         <Border.Background>
             <ImageBrush Stretch="Fill" ImageSource="https://picsum.photos/1760/1280"/>
@@ -25,7 +27,7 @@
             </Grid.ColumnDefinitions>
             <Border Background="{DynamicResource StrongBeige}" CornerRadius="10,0,0,10" Grid.Row="1">
                 <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Center" Margin="0,50,0,15">
-                    <TextBox Text="{Binding Alias, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
+                    <TextBox Text="{Binding ThisTask.Alias, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="6" 
@@ -38,7 +40,7 @@
                              />
 
 
-                    <TextBox Text="{Binding Description, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
+                    <TextBox Text="{Binding ThisTask.Description, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}"  
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="6" 
@@ -52,7 +54,8 @@
                              FontWeight="ExtraBold"
                              ToolTip="Description:"/>
 
-                    <TextBox Text="{Binding Deliverables, Mode=TwoWay, NotifyOnValidationError=True,  ValidatesOnExceptions=true}" 
+
+                    <TextBox Text="{Binding ThisTask.Deliverables, Mode=TwoWay, NotifyOnValidationError=True,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="6" 
@@ -63,7 +66,7 @@
                              FontWeight="ExtraBold"
                              ToolTip="Delivarables:"/>
 
-                    <TextBox Text="{Binding Remarks, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
+                    <TextBox Text="{Binding ThisTask.Remarks, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="6" 
@@ -73,8 +76,8 @@
                              FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Remarks:"/>
-                    
-                    <TextBox Text="{Binding Cost, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
+
+                    <TextBox Text="{Binding ThisTask.Cost, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
                              HorizontalAlignment="Center" 
                              Width="360" 
                              Margin="6" 
@@ -84,16 +87,15 @@
                              FontSize="16" 
                              FontWeight="ExtraBold"
                              ToolTip="Cost:"/>
-                    <TextBox Text="{Binding User.Id, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" 
-                            HorizontalAlignment="Center" 
-                            Width="360" 
-                            Margin="8" 
-                            Height="40" 
-                            Style="{StaticResource ModernTB}" 
-                            FontFamily="{DynamicResource Playfair Italic}" 
-                            FontSize="16" 
-                            FontWeight="ExtraBold"
-                            ToolTip="Assign Task To User::"/>
+                    <TextBox Text="{Binding UserId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
+                             PreviewKeyUp="TextBox_PreviewKeyDown"
+        Width="360" 
+        Height="40" 
+        Style="{StaticResource ModernTB}" 
+        FontFamily="{DynamicResource Playfair Italic}" 
+        FontSize="16" 
+        FontWeight="ExtraBold"
+        ToolTip="Assign Task To User::" TextChanged="TextBox_TextChanged_1"/>
                 </StackPanel>
             </Border>
 
@@ -114,7 +116,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        
+
                         <StackPanel Grid.Row="0" Grid.Column="0" Margin="0,0,5,0">
                             <Label Content="Start Date:"
                                    FontFamily="{StaticResource Playfair Regular}"
@@ -123,7 +125,7 @@
                                    Foreground="{DynamicResource BoldBlue}"/>
 
                             <Calendar Height="160"
-                                      SelectedDate="{Binding StartDate}"/>
+                                      SelectedDate="{Binding ThisTask.StartDate}"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="0" Grid.Column="1" Margin="10,0,10,0">
@@ -133,7 +135,7 @@
                                    FontWeight="Bold"
                                    Foreground="{DynamicResource BoldBlue}"/>
                             <Calendar Height="160"
-                                      SelectedDate="{Binding ScheduledDate}"/>
+                                      SelectedDate="{Binding ThisTask.ScheduledDate}"/>
                         </StackPanel>
 
                         <StackPanel Grid.Row="1" Grid.Column="0" Margin="0,5,5,0">
@@ -143,9 +145,9 @@
                                    FontWeight="Bold"
                                    Foreground="{DynamicResource BoldBlue}"/>
                             <Calendar Height="160"
-                                      SelectedDate="{Binding CompleteDate}"/>
+                                      SelectedDate="{Binding ThisTask.CompleteDate}"/>
                         </StackPanel>
-                        
+
                         <StackPanel Grid.Row="1" Grid.Column="1" Margin="10,5,10,0">
                             <Label Content="Dedline Date:"
                                    FontFamily="{StaticResource Playfair Regular}"
@@ -153,13 +155,13 @@
                                    FontWeight="Bold"
                                    Foreground="{DynamicResource BoldBlue}"/>
                             <Calendar Height="160"
-                                      SelectedDate="{Binding DeadlineDate}"/>
+                                      SelectedDate="{Binding ThisTask.DeadlineDate}"/>
                         </StackPanel>
                     </Grid>
                 </StackPanel>
             </Border>
-            
-            <Button Content="{Binding Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"   
+
+            <Button Content="{Binding ThisTask.Id, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}"   
                             HorizontalAlignment="Center"
                             VerticalAlignment="Bottom"
                             Height="50" 

@@ -1,6 +1,7 @@
 ﻿using BO;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,14 +32,24 @@ namespace PL.Task
         // Using a DependencyProperty as the backing store for MyProperty.  This enables animation, styling, binding, etc...
         public static readonly DependencyProperty ThisUserProperty =
             DependencyProperty.Register("ThisTask", typeof(BO.Task), typeof(AddUpdateTask));
+
+        public int? UserId
+        { 
+            get { return (int?)GetValue(UserIdProperty); }
+            set { SetValue(UserIdProperty, value); }
+}
+        public static readonly DependencyProperty UserIdProperty =
+    DependencyProperty.Register("UserId", typeof(int?), typeof(AddUpdateTask));
+
         public AddUpdateTask(int Id = 0)
         {
-          
+
             try
             {
                 if (Id == 0)
                 {
-                    ThisTask = new BO.Task() { 
+                    ThisTask = new BO.Task()
+                    {
                         Id = 0,
                         Alias = "",
                         Description = "",
@@ -53,41 +64,41 @@ namespace PL.Task
                         Deliverables = "",
                         Remarks = "",
                         Complexity = BO.UserLevel.None
-                        
-                        };
+
+                    };
                     flag = true;
                 }
                 else
                 {
                     ThisTask = s_bl.Task.Read(Id)!;
+                    UserId = ThisTask.User?.Id;
                     flag = false;
                 }
                 InitializeComponent();
             }
             catch (Exception ex) { Console.WriteLine(ex.Message); Close(); }
 
-            
+
         }
 
 
         private void btnAddUpdate_Click(object sender, RoutedEventArgs e)
         {
-            
+
             try
             {
+               
 
-                
-                if (ThisTask.User != null)
+                if (UserId != null)
                 {
-                    if (ThisTask.User.Id != null)
-                    {
-                        ThisTask.User = s_bl?.Task.userintask(ThisTask.User.Id);//(ThisTask.User.Id);
-                    }
-                    else
-                    {
-                        ThisTask.User = null;
-                    }
+
+                    ThisTask.User = s_bl?.Task.userintask(UserId);//(ThisTask.User.Id);
                 }
+                else
+                {
+                    ThisTask.User = null;
+                }
+                
                 BO.Task task = new BO.Task()
                 {
                     Id = ThisTask.Id,
@@ -110,6 +121,7 @@ namespace PL.Task
                 else
                     s_bl?.Task.Create(task);
                 this.Close();
+                
             }
             catch (Exception ex)
             {
@@ -120,7 +132,7 @@ namespace PL.Task
                          MessageBoxImage.Hand,
                          MessageBoxResult.Cancel);
             }
-         
+
         }
 
         private void AddUser_Draggable(object sender, MouseButtonEventArgs e)
@@ -132,6 +144,24 @@ namespace PL.Task
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void TextBox_PreviewKeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+            UserId = (sender as TextBox)?.Text == "" ? null : int.Parse((sender as TextBox)?.Text);
+
+            }
+            catch (Exception ex)
+            {
+                UserId = 0;
+            }
         }
     }
 }

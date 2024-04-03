@@ -187,16 +187,13 @@ internal class TaskImplemtation : BlApi.ITask
 
         foreach(var v in _bl.User.ReadAllUser())
         {
-            if (v.Tasks != null)
-            {
-                foreach (var t in v.Tasks)
-                {
-                    if (t.Id == id)
+           
+                    if (v.Id == id)
                     {
                         return new UserInTask() { Id = v.Id, Name = v.Name };
                     }
-                }
-            }
+                
+            
         }
         return null;
      /*   BO.Task u = Read((int)id)!;
@@ -314,8 +311,12 @@ internal class TaskImplemtation : BlApi.ITask
                 //all this because i do in User a list of tasks and here i add the task to the list
                 BO.User? t = _bl.User.Read(task.User.Id);
 
-                BO.TaskInUser temp = new BO.TaskInUser() { Id = task.Id, Alias = task.Alias };
-                if (t.Tasks == null) t.Tasks.Add(temp);
+                BO.TaskInUser temp = new BO.TaskInUser() { Id = task.User.Id, Alias = task.User.Name };
+                if (t.Tasks == null)
+                {
+                    t.Tasks = new List<TaskInUser>();
+                    t.Tasks.Add(temp);
+                }
                 else
                 {
                     if (t.Tasks.Find(t => t.Id == task.Id).Id != temp.Id)

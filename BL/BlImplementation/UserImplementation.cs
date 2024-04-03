@@ -189,7 +189,7 @@ internal class UserImplementation : BlApi.IUser
             });
             if (user.Tasks != null)
             {
-                Read(user.Id).Tasks.Clear();
+                 Read(user.Id).Tasks=new List<BO.TaskInUser>();
                 Read(user.Id).Tasks = user.Tasks;
             }
             else
