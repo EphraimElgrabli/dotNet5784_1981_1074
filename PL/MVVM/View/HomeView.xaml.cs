@@ -25,6 +25,7 @@ namespace PL.MVVM.View
         public HomeView()
         {
             InitializeComponent();
+            
         }
         public void Refresh()
         {

@@ -200,4 +200,13 @@ internal class UserImplementation : BlApi.IUser
             throw new BO.BlDoesNotExistException(ex.Message, ex);
         }
     }
+    public int GetCost(BO.User user)
+    {
+        int sum = 0;
+        foreach (var item in user.Tasks)
+        {
+           sum += (_dal.Task.Read(item.Id)).cost;
+        }
+        return sum; 
+    }
 }

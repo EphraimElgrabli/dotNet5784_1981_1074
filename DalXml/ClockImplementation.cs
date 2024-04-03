@@ -3,12 +3,14 @@
 using System;
 using System.Xml.Linq;
 using DalApi;
-
 namespace Dal;
+
+
 
 internal class ClockImplementation : IClock
 {
     private readonly string s_clock_xml = "data-config";
+    private DalApi.IDal _dal = DalApi.Factory.Get;
     public DateTime? GetEndProject()
     {
         XElement root= XMLTools.LoadListFromXMLElement(s_clock_xml).Element("EndProject")!;
@@ -36,19 +38,39 @@ internal class ClockImplementation : IClock
         
     }
 
-    public DateTime? SetEndProject(DateTime dateTime)
+    public DateTime? SetEndProject()
     {
         XElement root = XMLTools.LoadListFromXMLElement(s_clock_xml);
-        root.Element("EndProject")!.Value = dateTime.ToString();
+        //automatic calculation of the end project time
+        DateTime? maxTime = DateTime.MinValue; ;
+        foreach (var task in _dal.Task.ReadAll())
+        {
+            if (maxTime < task.DeadlineDate)
+            {
+                maxTime = task.DeadlineDate;
+            }
+        }
+        
+        root.Element("EndProject")!.Value = maxTime.ToString();
         XMLTools.SaveListToXMLElement(root, s_clock_xml);
-        return dateTime;
+        return maxTime;
     }
 
-    public DateTime? SetStartProject(DateTime dateTime)
+    public DateTime? SetStartProject()
     {
         XElement root = XMLTools.LoadListFromXMLElement(s_clock_xml);
-        root.Element("StartProject")!.Value = dateTime.ToString();
+        //automatic calculation of the the start project time
+        DateTime? minTime = DateTime.MaxValue; ;
+
+        foreach (var task in _dal.Task.ReadAll())
+        {
+            if (minTime > task.StartDate)
+            {
+                minTime = task.StartDate;
+            }
+        }
+        root.Element("StartProject")!.Value = minTime.ToString();
         XMLTools.SaveListToXMLElement(root, s_clock_xml);
-        return dateTime;
+        return minTime;
     }
 }

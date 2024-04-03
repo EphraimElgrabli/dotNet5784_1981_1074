@@ -6,7 +6,7 @@ public  interface IClock
     public DateTime? GetStartProject();
     public DateTime? GetEndProject();
 
-    public DateTime? SetStartProject(DateTime dateTime);
-    public DateTime? SetEndProject(DateTime dateTime);
+    public DateTime? SetStartProject();
+    public DateTime? SetEndProject();
     public void resetTimeProject();
 }
