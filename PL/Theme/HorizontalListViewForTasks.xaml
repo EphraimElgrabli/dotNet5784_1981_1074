@@ -27,9 +27,9 @@
                                 </Border.Background>
                             </Border>
                             <StackPanel Orientation="Vertical" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                                <TextBlock Text="{Binding Alias}" 
+                                <TextBlock Text="{Binding Description}" 
                                            FontFamily="{DynamicResource Playfair Regular}" 
-                                           FontSize="26" 
+                                           FontSize="20" 
                                            FontWeight="ExtraBold" 
                                            Foreground="{DynamicResource BoldBlue}" 
                                            VerticalAlignment="Center"
