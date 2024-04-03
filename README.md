@@ -45,7 +45,7 @@ Your Dream Wedding Planner is a comprehensive web application designed to simpli
 - [x] Ch 11: Adding exceptions to the entire program.
 - [x] Ch 12: Making sure that we didnt broke anything and creating a tag.
 
-# Stage 3
+## Stage 3
 - [x] Ch 1: Creating a new project named DalXml in Class Library type.
 - [x] Ch 2: Creating a configuration files that will used as the database for the project in a library called "xml".
 - [x] Ch 3: Creating a config class.
@@ -56,11 +56,11 @@ Your Dream Wedding Planner is a comprehensive web application designed to simpli
 - [x] Ch 8: Making sure that we didnt broke anything and creating a tag.
 
 
-# Stage 4
+## Stage 4
 - [x] completed. test.
       
-# Stage 5
+## Stage 5
 - [x] completed. test.
       
-# Stage 6
+## Stage 6
 - [x] completed. test.
