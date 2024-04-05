@@ -47,7 +47,7 @@ WedPlan is built using the following technologies and principles:
 
 * C#: The core programming language used for the application.
 * WPF: The framework used to create the beautiful and intuitive graphical user interface. 🎨
-* 3 Layers Model: The application follows a three-layer architecture for a modular and maintainable codebase. �層
+* 3 Layers Model: The application follows a three-layer architecture for a modular and maintainable codebase. 
 * MVVM: The Model-View-ViewModel pattern is employed to ensure a clean separation of concerns. 🏗️
 * Performance: WedPlan is designed with running time efficiency in mind, providing a smooth and responsive user experience. ⚡
 
